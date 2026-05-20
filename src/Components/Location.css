@@ -1,0 +1,192 @@
+/* ===== LOCATION ===== */
+.location {
+  padding: 130px 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.location::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.35), transparent);
+}
+
+/* Shared reveal */
+.reveal-up, .reveal-left, .reveal-right {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
+              transform 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-up    { transform: translateY(48px); }
+.reveal-left  { transform: translateX(-48px); }
+.reveal-right { transform: translateX(48px); }
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible { opacity: 1; transform: translate(0); }
+
+/* ── Header ── */
+.location__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+
+.location__intro {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--text-body);
+  padding-top: 8px;
+}
+
+/* ── Grid ── */
+.location__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Map ── */
+.location__map-wrap { position: relative; }
+
+.location__map {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 32px 80px rgba(26,36,86,0.18);
+}
+
+.location__map-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.location__map:hover .location__map-img { transform: scale(1.03); }
+
+.location__map-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10,15,38,0.35) 0%,
+    rgba(26,36,86,0.15) 50%,
+    rgba(10,15,38,0.5) 100%
+  );
+}
+
+/* Pin markers */
+.location__pin {
+  position: absolute;
+  width: 28px; height: 28px;
+  background: var(--gold);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(201,168,76,0.5);
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location__pin:hover {
+  transform: rotate(-45deg) scale(1.2);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.7);
+}
+
+.location__pin span {
+  transform: rotate(45deg);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--navy-deep);
+  line-height: 1;
+}
+
+/* Map badge */
+.location__map-badge {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  background: rgba(248,238,225,0.97);
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 8px 24px rgba(26,36,86,0.2);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+}
+
+.location__map-badge span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.location__map-badge strong {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+/* ── Points ── */
+.location__points {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.location__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.25s;
+}
+
+.location__point:first-child { border-top: 1px solid var(--border-light); }
+
+.location__point:hover {
+  padding-left: 8px;
+}
+
+.location__point-num {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  flex-shrink: 0;
+  line-height: 1;
+  min-width: 40px;
+  transition: color 0.25s;
+}
+
+.location__point:hover .location__point-num { color: var(--gold); }
+
+.location__point-text {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--text-body);
+  transition: color 0.25s;
+}
+
+.location__point:hover .location__point-text { color: var(--text-primary); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .location__header { grid-template-columns: 1fr; gap: 20px; }
+  .location__grid   { grid-template-columns: 1fr; gap: 48px; }
+}

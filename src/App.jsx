@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
+import Location from "./Components/Location";
+import Founder from "./Components/Founder";
 import Values from "./Components/Values";
 import Projects from "./Components/Projects";
+import Features from "./Components/Features";
 import Marquee from "./Components/Marquee";
 import Footer from "./Components/Footer";
 
@@ -60,8 +63,11 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Location />
+      <Founder />
       <Values />
       <Projects />
+      <Features />
       <Marquee />
       <Footer />
       <ScrollToTop />

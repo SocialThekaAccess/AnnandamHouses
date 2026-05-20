@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --gold:         #c9a84c;
   --gold-light:   #ddb95e;
   --gold-lighter: #eecf7a;
   --gold-dark:    #a07830;
+  --gold-glow:    rgba(201,168,76,0.18);
 
   --navy:         #1a2456;
-  --navy-deep:    #0f1535;
+  --navy-deep:    #0b0f1e;
   --navy-mid:     #1e2d6a;
+  --navy-card:    #111827;
 
   --bg:           #F8EEE1;
-  --bg-alt:       #F2E4D0;
+  --bg-alt:       #F0E6D3;
   --bg-card:      #ffffff;
 
   --text-primary: #1a2456;
   --text-body:    #3a4060;
   --text-muted:   #7a8099;
 
-  --border-gold:  rgba(201,168,76,0.3);
-  --border-light: rgba(26,36,86,0.1);
+  --border-gold:  rgba(201,168,76,0.25);
+  --border-light: rgba(26,36,86,0.08);
 
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Montserrat', sans-serif;
 
-  --shadow-sm:   0 2px 12px rgba(26,36,86,0.07);
-  --shadow-md:   0 6px 28px rgba(26,36,86,0.11);
-  --shadow-lg:   0 16px 48px rgba(26,36,86,0.15);
+  --shadow-xs:  0 1px 4px rgba(26,36,86,0.06);
+  --shadow-sm:  0 4px 16px rgba(26,36,86,0.08);
+  --shadow-md:  0 8px 32px rgba(26,36,86,0.12);
+  --shadow-lg:  0 20px 56px rgba(26,36,86,0.16);
+  --shadow-xl:  0 32px 80px rgba(26,36,86,0.2);
 }
 
+/* ── Reset ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 
@@ -37,6 +42,7 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
@@ -45,36 +51,46 @@ body {
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-serif);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--text-primary);
 }
 
-p   { line-height: 1.75; color: var(--text-body); }
+p   { line-height: 1.8; color: var(--text-body); }
 a   { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; background: none; }
 
-/* ── Shared ── */
+/* ── Layout ── */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 5%;
 }
 
+/* ── Section labels ── */
 .section-label {
-  font-family: var(--font-sans);
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: '';
   display: block;
-  margin-bottom: 10px;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4vw, 54px);
+  font-size: clamp(30px, 3.8vw, 52px);
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.1;
@@ -82,28 +98,39 @@ button { cursor: pointer; border: none; background: none; }
 
 .section-title span { color: var(--gold-dark); }
 
+/* ── Buttons ── */
 .gold-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: var(--gold);
   color: var(--navy-deep);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 14px 32px;
-  border-radius: 2px;
+  padding: 15px 34px;
+  border-radius: 1px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .gold-btn:hover {
   background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(201,168,76,0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(201,168,76,0.45);
 }
 
 .navy-btn {
@@ -112,21 +139,21 @@ button { cursor: pointer; border: none; background: none; }
   gap: 10px;
   background: var(--navy);
   color: var(--bg);
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 14px 32px;
-  border-radius: 2px;
+  padding: 15px 34px;
+  border-radius: 1px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .navy-btn:hover {
   background: var(--navy-mid);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(26,36,86,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(26,36,86,0.3);
 }
 
 .outline-btn {
@@ -134,24 +161,44 @@ button { cursor: pointer; border: none; background: none; }
   align-items: center;
   gap: 10px;
   background: transparent;
-  color: var(--bg);
-  font-size: 11px;
+  color: rgba(248,238,225,0.85);
+  font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 13px 30px;
-  border-radius: 2px;
-  border: 1.5px solid rgba(248,238,225,0.4);
+  padding: 14px 32px;
+  border-radius: 1px;
+  border: 1px solid rgba(248,238,225,0.3);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .outline-btn:hover {
   border-color: var(--gold);
   color: var(--gold-light);
+  background: rgba(201,168,76,0.06);
+  transform: translateY(-3px);
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+/* ── Keyframes ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
