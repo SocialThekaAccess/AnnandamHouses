@@ -165,13 +165,6 @@ export default function About() {
               <div className="ae-img-bg" />
               <div className="ae-img-overlay" aria-hidden="true" />
 
-              {/* Badge */}
-              <div className="ae-badge">
-                {icons.skyline}
-                {/* <span className="ae-badge-eyebrow">India's Most Advanced</span>
-                <span className="ae-badge-title">Smart City</span> */}
-              </div>
-
               {/* Feature strip */}
               <div className="ae-feature-strip">
                 {features.map((f) => (
