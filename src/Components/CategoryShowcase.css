@@ -1,0 +1,221 @@
+/* ===== CATEGORY SHOWCASE — Jubilee-style 3-panel ===== */
+
+.cat-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Each Panel ── */
+.cat-panel {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* reveal animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cat-panel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Divider between panels */
+.cat-panel + .cat-panel {
+  border-left: 1px solid rgba(184, 151, 90, 0.25);
+}
+
+/* ── Background image ── */
+.cat-panel__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cat-panel:hover .cat-panel__bg {
+  transform: scale(1.07);
+}
+
+/* ── Overlay ── */
+.cat-panel__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.15) 0%,
+    rgba(10, 15, 38, 0.45) 40%,
+    rgba(5, 8, 20, 0.88) 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.cat-panel:hover .cat-panel__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.25) 0%,
+    rgba(10, 15, 38, 0.55) 40%,
+    rgba(5, 8, 20, 0.92) 100%
+  );
+}
+
+/* ── Gold left accent line ── */
+.cat-panel__accent {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(
+    to top,
+    var(--antique-gold, #B8975A),
+    var(--warm-gold, #C3A95E),
+    transparent
+  );
+  transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 3;
+}
+
+.cat-panel:hover .cat-panel__accent {
+  height: 60%;
+}
+
+/* ── Content ── */
+.cat-panel__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 36px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateY(8px);
+  transition: transform 0.4s ease;
+}
+
+.cat-panel:hover .cat-panel__content {
+  transform: translateY(0);
+}
+
+/* Subtitle */
+.cat-panel__sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--antique-gold, #B8975A);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.cat-panel__sub::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--antique-gold, #B8975A);
+  flex-shrink: 0;
+}
+
+/* Title */
+.cat-panel__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 700;
+  color: #F5F0E8;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Desc */
+.cat-panel__desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(245, 240, 232, 0.5);
+  margin-bottom: 8px;
+}
+
+/* Button */
+.cat-panel__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--antique-gold, #B8975A);
+  color: #fff;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: 2px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(184, 151, 90, 0.35);
+
+  /* hidden by default, slides up on hover */
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cat-panel:hover .cat-panel__btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cat-panel__btn:hover {
+  background: var(--warm-gold, #C3A95E);
+  box-shadow: 0 8px 28px rgba(184, 151, 90, 0.55);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cat-showcase {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .cat-panel {
+    height: 340px;
+    border-left: none !important;
+    border-top: 1px solid rgba(184, 151, 90, 0.2);
+  }
+
+  .cat-panel:first-child { border-top: none; }
+
+  /* Always show button on mobile */
+  .cat-panel__btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .cat-panel { height: 280px; }
+  .cat-panel__content { padding: 28px 24px; }
+  .cat-panel__title { font-size: clamp(28px, 8vw, 40px); }
+}

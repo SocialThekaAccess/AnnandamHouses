@@ -3,12 +3,14 @@ import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Location from "./Components/Location";
-import Founder from "./Components/Founder";
 import Values from "./Components/Values";
 import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import Marquee from "./Components/Marquee";
+import Contact from "./Components/Contact";
+import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
+
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -32,9 +34,9 @@ function ScrollToTop() {
         width: "46px",
         height: "46px",
         borderRadius: "50%",
-        background: "var(--navy)",
-        border: "1.5px solid rgba(201,168,76,0.4)",
-        color: "#c9a84c",
+        background: "var(--royal-navy, #1A2456)",
+        border: "1.5px solid rgba(184,151,90,0.4)",
+        color: "#B8975A",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -62,15 +64,17 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <CategoryShowcase />
       <About />
       <Location />
-      <Founder />
       <Values />
       <Projects />
       <Features />
       <Marquee />
+      <Contact />
       <Footer />
       <ScrollToTop />
+  
     </>
   );
 }

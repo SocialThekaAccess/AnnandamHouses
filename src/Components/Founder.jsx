@@ -19,7 +19,7 @@ const ACHIEVEMENTS = [
   { num: "15+", label: "Years in Real Estate" },
   { num: "500+", label: "Families Served" },
   { num: "200+", label: "Plots Delivered" },
-  { num: "100%", label: "RERA Compliant" },
+  { num: "100%", label: "GujRERA Compliant" },
 ];
 
 export default function Founder() {

@@ -98,8 +98,8 @@ const FEATURES = [
         <line x1="8" y1="52" x2="56" y2="52"/>
       </svg>
     ),
-    title: "RERA Approved Plots",
-    desc: "All plots are RERA registered with clear titles, approved layouts and transparent documentation.",
+    title: "GujRERA Approved Plots",
+    desc: "All plots are GujRERA registered with clear titles, approved layouts and transparent documentation.",
   },
   {
     icon: (

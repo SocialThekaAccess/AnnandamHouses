@@ -1,15 +1,14 @@
-/* ===== MARQUEE — Luxury ===== */
+/* ===== MARQUEE — Anandam Exotica ===== */
 .marquee-wrap {
   background: #07090f;
-  border-top: 1px solid rgba(201,168,76,0.18);
-  border-bottom: 1px solid rgba(201,168,76,0.18);
+  border-top: 1px solid rgba(184,151,90,0.18);
+  border-bottom: 1px solid rgba(184,151,90,0.18);
   padding: 20px 0;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
 }
 
-/* Fade edges */
 .marquee-wrap::before,
 .marquee-wrap::after {
   content: '';
@@ -44,20 +43,21 @@
   align-items: center;
   gap: 14px;
   padding: 0 44px;
+  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(248,238,225,0.35);
+  color: rgba(245,240,232,0.35);
   white-space: nowrap;
   transition: color 0.25s;
 }
 
-.marquee-item:hover { color: var(--gold); }
+.marquee-item:hover { color: var(--antique-gold, #B8975A); }
 
 .marquee-dot {
   font-size: 6px;
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
   opacity: 0.5;
   flex-shrink: 0;
 }

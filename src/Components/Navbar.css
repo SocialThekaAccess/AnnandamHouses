@@ -1,55 +1,8 @@
-/* ─── NAVBAR.CSS — Anandam Homes ─────────────────────────────────────────── */
-/* Color palette from logo:
-   Navy Blue  : #1a2456
-   Deep Navy  : #0e163a
-   Gold       : #c9a84c
-   Gold Light : #e2c47a
-   Gold Dark  : #a07830
-   Cream      : #f5f0e8
-   White      : #ffffff
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@300;400;600;700&display=swap');
-
+/* ─── NAVBAR — Anandam Exotica (Jubilee-style) ─────────────────────────── */
 :root {
-  --navy:       #1a2456;
-  --navy-deep:  #0e163a;
-  --gold:       #c9a84c;
-  --gold-light: #e2c47a;
-  --gold-dark:  #a07830;
-  --cream:      #f5f0e8;
-  --white:      #ffffff;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans:  'Josefin Sans', sans-serif;
-  --nav-height: 74px;
-  --transition: all 0.35s ease;
+  --nav-height: 76px;
 }
 
-/* ── Reset ── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); background: var(--navy-deep); color: var(--white); overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-ul, ol { list-style: none; }
-button { cursor: pointer; font-family: var(--font-sans); }
-
-/* ── Keyframes ── */
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position:  200% 0; }
-}
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.55; }
-}
-
-/* ──────────────────────────────────────────────────────────────────────────── */
-/*  NAV WRAPPER                                                                 */
-/* ──────────────────────────────────────────────────────────────────────────── */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -61,18 +14,18 @@ button { cursor: pointer; font-family: var(--font-sans); }
   padding: 0 5%;
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition: var(--transition);
+  transition: all 0.35s ease;
 }
 
 .navbar.scrolled {
   background: rgba(14, 22, 58, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom-color: rgba(201, 168, 76, 0.18);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+  border-bottom-color: rgba(184,151,90,0.2);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
 }
 
-/* ── LOGO ── */
+/* ── Logo ── */
 .navbar__logo {
   display: flex;
   align-items: center;
@@ -82,11 +35,11 @@ button { cursor: pointer; font-family: var(--font-sans); }
 }
 
 .navbar__logo-img {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   border-radius: 4px;
-  filter: drop-shadow(0 2px 8px rgba(201,168,76,0.3));
+  filter: drop-shadow(0 2px 8px rgba(184,151,90,0.3));
 }
 
 .navbar__logo-text {
@@ -96,40 +49,43 @@ button { cursor: pointer; font-family: var(--font-sans); }
 }
 
 .navbar__logo-name {
-  font-family: var(--font-serif);
-  font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.04em;
+  color: #fff;
+  letter-spacing: 0.03em;
 }
 
 .navbar__logo-tagline {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
   margin-top: 3px;
 }
 
-/* ── DESKTOP LINKS ── */
+/* ── Desktop Links ── */
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
+  list-style: none;
 }
 
 .navbar__link-btn {
   background: none;
   border: none;
+  font-family: 'Poppins', sans-serif;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.65);
   padding: 4px 0;
   position: relative;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .navbar__link-btn::after {
@@ -138,7 +94,7 @@ button { cursor: pointer; font-family: var(--font-sans); }
   bottom: -2px;
   left: 0; right: 0;
   height: 1.5px;
-  background: var(--gold);
+  background: var(--antique-gold, #B8975A);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -146,7 +102,7 @@ button { cursor: pointer; font-family: var(--font-sans); }
 
 .navbar__link-btn:hover,
 .navbar__link-btn.active {
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
 }
 
 .navbar__link-btn.active::after,
@@ -154,46 +110,49 @@ button { cursor: pointer; font-family: var(--font-sans); }
   transform: scaleX(1);
 }
 
-/* ── ACTIONS ── */
+/* ── Actions ── */
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .navbar__cta {
-  background: var(--gold);
-  color: var(--navy-deep);
+  background: var(--antique-gold, #B8975A);
+  color: #fff;
   border: none;
-  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 11px 22px;
+  padding: 11px 24px;
   border-radius: 2px;
-  transition: var(--transition);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .navbar__cta:hover {
-  background: var(--gold-light);
+  background: var(--warm-gold, #C3A95E);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.35);
+  box-shadow: 0 6px 20px rgba(184,151,90,0.4);
 }
 
-/* ── HAMBURGER ── */
+/* ── Hamburger ── */
 .navbar__hamburger {
   background: none;
   border: none;
-  color: var(--white);
+  color: #fff;
   display: none;
   padding: 6px;
   border-radius: 2px;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
-.navbar__hamburger:hover { color: var(--gold); }
+.navbar__hamburger:hover { color: var(--antique-gold, #B8975A); }
 
-/* ── MOBILE MENU DRAWER ── */
+/* ── Mobile Drawer ── */
 .navbar__mobile-drawer {
   position: fixed;
   top: var(--nav-height);
@@ -202,7 +161,7 @@ button { cursor: pointer; font-family: var(--font-sans); }
   background: rgba(14, 22, 58, 0.99);
   backdrop-filter: blur(20px);
   padding: 20px 5% 28px;
-  border-bottom: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(184,151,90,0.2);
   animation: fadeDown 0.3s ease;
 }
 
@@ -212,7 +171,8 @@ button { cursor: pointer; font-family: var(--font-sans); }
   text-align: left;
   background: none;
   border: none;
-  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -220,18 +180,15 @@ button { cursor: pointer; font-family: var(--font-sans); }
   padding: 15px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .navbar__mobile-link:hover,
 .navbar__mobile-link.active {
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
 }
 
-.navbar__mobile-link:last-child {
-  border-bottom: none;
-}
-
-/* ── LIVE BADGE ── */
+/* ── Live dot ── */
 .navbar__live-dot {
   width: 7px;
   height: 7px;
@@ -242,9 +199,18 @@ button { cursor: pointer; font-family: var(--font-sans); }
   margin-right: 6px;
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+/* ── Responsive ── */
+@media (max-width: 960px) {
   .navbar__links { display: none; }
   .navbar__cta   { display: none; }
   .navbar__hamburger { display: flex; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
 }

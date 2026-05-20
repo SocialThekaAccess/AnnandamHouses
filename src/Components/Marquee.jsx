@@ -2,7 +2,7 @@ import "./Marquee.css";
 
 const ITEMS = [
   "200+ Premium Plots",
-  "RERA Approved",
+  "GujRERA Approved",
   "Dholera Smart City",
   "High ROI Investment",
   "Clear Title Property",

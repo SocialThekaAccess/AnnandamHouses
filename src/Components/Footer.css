@@ -1,4 +1,4 @@
-/* ===== FOOTER — Luxury ===== */
+/* ===== FOOTER — Anandam Exotica ===== */
 @keyframes shimmer {
   0%   { background-position: -200% 0; }
   100% { background-position:  200% 0; }
@@ -10,7 +10,7 @@
 
 /* ── CTA Band ── */
 .cta-band {
-  background: linear-gradient(105deg, var(--gold-dark) 0%, var(--gold) 45%, var(--gold-lighter) 100%);
+  background: linear-gradient(105deg, var(--gold-dark, #9A7A3A) 0%, var(--antique-gold, #B8975A) 45%, var(--gold-lighter, #E8D09A) 100%);
   padding: 44px 5%;
   display: flex;
   align-items: center;
@@ -21,7 +21,6 @@
   overflow: hidden;
 }
 
-/* Shine sweep */
 .cta-band::before {
   content: '';
   position: absolute; inset: 0;
@@ -29,7 +28,6 @@
   pointer-events: none;
 }
 
-/* Bottom shadow line */
 .cta-band::after {
   content: '';
   position: absolute;
@@ -49,10 +47,10 @@
 }
 
 .cta-band__title {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 2.8vw, 32px);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(20px, 2.8vw, 30px);
   font-weight: 700;
-  color: var(--navy-deep);
+  color: var(--navy-deep, #0e163a);
   position: relative;
   line-height: 1.2;
 }
@@ -69,7 +67,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  color: var(--navy-deep);
+  color: var(--navy-deep, #0e163a);
   font-weight: 800;
   font-size: 17px;
   letter-spacing: 0.02em;
@@ -80,15 +78,16 @@
 .cta-band__phone:hover { opacity: 0.7; }
 
 .cta-band__btn {
-  background: var(--navy-deep);
-  color: var(--gold);
+  background: var(--navy-deep, #0e163a);
+  color: var(--antique-gold, #B8975A);
   border: none;
+  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   padding: 16px 32px;
-  border-radius: 1px;
+  border-radius: 2px;
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -105,19 +104,18 @@
 .footer {
   background: #05070d;
   padding: 80px 5% 36px;
-  border-top: 1px solid rgba(201,168,76,0.07);
+  border-top: 1px solid rgba(184,151,90,0.07);
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle gold orb */
 .footer::before {
   content: '';
   position: absolute;
   top: -200px; left: -200px;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,168,76,0.03) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(184,151,90,0.03) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -146,14 +144,14 @@
 .footer__logo-img {
   width: 48px; height: 48px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 12px rgba(201,168,76,0.3));
+  filter: drop-shadow(0 2px 12px rgba(184,151,90,0.3));
 }
 
 .footer__brand-name {
-  font-family: var(--font-serif);
-  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
   font-weight: 700;
-  color: #F8EEE1;
+  color: var(--pearl-white, #F5F0E8);
   letter-spacing: 0.03em;
 }
 
@@ -162,7 +160,7 @@
   font-weight: 700;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
   margin-bottom: 18px;
   display: block;
 }
@@ -170,7 +168,7 @@
 .footer__brand-desc {
   font-size: 13px;
   font-weight: 300;
-  color: rgba(248,238,225,0.26);
+  color: rgba(245,240,232,0.26);
   line-height: 1.9;
   max-width: 240px;
   margin-bottom: 26px;
@@ -181,9 +179,9 @@
 .footer__social-btn {
   width: 40px; height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(201,168,76,0.16);
+  border: 1px solid rgba(184,151,90,0.16);
   background: transparent;
-  color: rgba(248,238,225,0.3);
+  color: rgba(245,240,232,0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,20 +190,21 @@
 }
 
 .footer__social-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: rgba(201,168,76,0.08);
+  border-color: var(--antique-gold, #B8975A);
+  color: var(--antique-gold, #B8975A);
+  background: rgba(184,151,90,0.08);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(201,168,76,0.15);
+  box-shadow: 0 6px 20px rgba(184,151,90,0.15);
 }
 
 /* Columns */
 .footer__col-title {
+  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--antique-gold, #B8975A);
   margin-bottom: 24px;
   padding-bottom: 14px;
   position: relative;
@@ -216,7 +215,7 @@
   position: absolute;
   bottom: 0; left: 0;
   width: 24px; height: 1px;
-  background: var(--gold);
+  background: var(--antique-gold, #B8975A);
   opacity: 0.45;
 }
 
@@ -226,9 +225,10 @@
   background: none;
   border: none;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
   font-weight: 400;
-  color: rgba(248,238,225,0.28);
+  color: rgba(245,240,232,0.28);
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -237,7 +237,7 @@
 }
 
 .footer__link:hover {
-  color: var(--gold-light);
+  color: var(--gold-light, #D4B87A);
   padding-left: 5px;
 }
 
@@ -248,12 +248,12 @@
   margin-bottom: 16px;
 }
 
-.footer__contact-icon { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+.footer__contact-icon { color: var(--antique-gold, #B8975A); flex-shrink: 0; margin-top: 1px; }
 
 .footer__contact-text {
   font-size: 13px;
   font-weight: 300;
-  color: rgba(248,238,225,0.32);
+  color: rgba(245,240,232,0.32);
   line-height: 1.7;
 }
 
@@ -264,7 +264,8 @@
   background: #25d366;
   color: #fff;
   padding: 11px 20px;
-  border-radius: 1px;
+  border-radius: 2px;
+  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -284,7 +285,7 @@
 /* Shimmer divider */
 .footer__divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), rgba(201,168,76,0.65), rgba(201,168,76,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(184,151,90,0.4), rgba(184,151,90,0.65), rgba(184,151,90,0.4), transparent);
   background-size: 200% 100%;
   animation: shimmer 4s linear infinite;
   margin-bottom: 30px;
@@ -301,22 +302,23 @@
 
 .footer__copyright {
   font-size: 11.5px;
-  color: rgba(248,238,225,0.16);
+  color: rgba(245,240,232,0.16);
   letter-spacing: 0.04em;
 }
 
-.footer__copyright span { color: rgba(201,168,76,0.3); }
+.footer__copyright span { color: rgba(184,151,90,0.3); }
 
 .footer__rera {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(201,168,76,0.28);
-  border: 1px solid rgba(201,168,76,0.1);
+  color: rgba(184,151,90,0.28);
+  border: 1px solid rgba(184,151,90,0.1);
   padding: 6px 14px;
   border-radius: 1px;
 }

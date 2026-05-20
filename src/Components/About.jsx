@@ -128,7 +128,7 @@ const stats = [
   { icon: "plots",  target: 200, suffix: "+", label: "Premium Plots" },
   { icon: "star",   target: 12,  suffix: "+", label: "Years Experience" },
   { icon: "family", target: 500, suffix: "+", label: "Happy Families" },
-  { icon: "shield", target: 100, suffix: "%", label: "RERA Approved" },
+  { icon: "shield", target: 100, suffix: "%", label: "GujRERA Approved" },
 ];
 
 /* ── Component ── */
@@ -202,7 +202,7 @@ export default function About() {
             </p>
             <p className="ae-desc">
               Anandam Exotica brings you an exclusive opportunity to own premium residential plots
-              in this landmark development — backed by RERA approval and transparent processes.
+              in this landmark development — backed by GujRERA approval and transparent processes.
             </p>
 
             {/* Counters */}

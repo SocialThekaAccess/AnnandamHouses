@@ -70,7 +70,7 @@ const PROJECT_LINKS = [
   { label: "150 Sq. Yd Plots", href: "#projects" },
   { label: "200 Sq. Yd Plots", href: "#projects" },
   { label: "500 Sq. Yd Plots", href: "#projects" },
-  { label: "RERA Details",     href: "#about"    },
+  { label: "GujRERA Details", href: "#about" },
   { label: "Master Layout",    href: "#gallery"  },
 ];
 
@@ -200,7 +200,7 @@ export default function Footer() {
               <span>| Anandamhomesofficial@gmail.com</span>
             </p>
             <div className="footer__rera">
-              ✅ RERA Registered
+              ✅ GujRERA Registered
             </div>
           </div>
         </div>

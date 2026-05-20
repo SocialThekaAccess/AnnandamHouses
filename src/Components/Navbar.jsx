@@ -4,12 +4,11 @@ import "./Navbar.css";
 import logo from "../assets/anandamhomeslogo.png";
 
 const NAV_LINKS = [
-  { label: "Home",             href: "#home" },
-  { label: "About Us",         href: "#about" },
-  { label: "Meet the Founder", href: "#founder" },
-  { label: "Projects",         href: "#projects" },
-  { label: "Blogs",            href: "#blogs" },
-  { label: "Contact Us",       href: "#contact" },
+  { label: "Home",       href: "#home"     },
+  { label: "About Us",   href: "#about"    },
+  { label: "Projects",   href: "#projects" },
+  { label: "Blogs",      href: "#blogs"    },
+  { label: "Contact Us", href: "#contact"  },
 ];
 
 const MenuIcon = () => (
