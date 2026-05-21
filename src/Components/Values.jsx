@@ -45,14 +45,14 @@ const VALUES = [
     num: "04",
     title: "Excellence",
     desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Dholera Smart City.",
-    image: Value4,
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
     imagePosition: "center center",
   },
   {
     num: "05",
     title: "Transparency",
     desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in — no surprises, no hidden charges, ever.",
-    image: Value2,
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
     imagePosition: "center center",
   },
   {
