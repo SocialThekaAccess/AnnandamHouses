@@ -32,13 +32,6 @@ const CATEGORIES = [
     href: "#contact",
   },
   {
-<<<<<<< HEAD
-    bg: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85&auto=format&fit=crop",
-   
-  },
-  {
-    bg: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop",
-=======
     title: "Growth Potential",
     subtitle: "Location Advantage",
     desc: "Positioned to benefit from expanding infrastructure and stronger future visibility.",
@@ -51,7 +44,6 @@ const CATEGORIES = [
     desc: "A focused mix of plotted opportunities presented with clarity and personalized guidance.",
     bg: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop",
     href: "#values",
->>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
   },
 ];
 
