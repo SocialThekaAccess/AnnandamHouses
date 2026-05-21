@@ -1,4 +1,3 @@
-// ─── CategoryShowcase.jsx — Jubilee-style 3-panel section ───────────────────
 import { useRef, useEffect, useState } from "react";
 import "./CategoryShowcase.css";
 
@@ -26,25 +25,25 @@ const ArrowIcon = () => (
 
 const CATEGORIES = [
   {
-    title: "Residential",
-    subtitle: "Premium Plots",
-    desc: "100 – 500 Sq. Yards",
+    title: "Residential Plots",
+    subtitle: "Thoughtfully Planned",
+    desc: "Spaces shaped for end use, family comfort, and long-term ownership.",
     bg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format&fit=crop",
-    href: "#projects",
+    href: "#contact",
   },
   {
-    title: "Commercial",
-    subtitle: "Business Plots",
-    desc: "500+ Sq. Yards",
+    title: "Growth Potential",
+    subtitle: "Location Advantage",
+    desc: "Positioned to benefit from expanding infrastructure and stronger future visibility.",
     bg: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85&auto=format&fit=crop",
-    href: "#projects",
+    href: "#about",
   },
   {
-    title: "Corner Plots",
-    subtitle: "Prime Locations",
-    desc: "150 – 600 Sq. Yards",
+    title: "Curated Inventory",
+    subtitle: "Premium Selection",
+    desc: "A focused mix of plotted opportunities presented with clarity and personalized guidance.",
     bg: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop",
-    href: "#projects",
+    href: "#values",
   },
 ];
 
@@ -63,19 +62,14 @@ export default function CategoryShowcase() {
           className={`cat-panel${visible ? " is-visible" : ""}`}
           style={{ transitionDelay: `${i * 0.15}s` }}
         >
-          {/* Background image */}
           <div
             className="cat-panel__bg"
             style={{ backgroundImage: `url(${cat.bg})` }}
           />
 
-          {/* Dark overlay — stronger at bottom */}
           <div className="cat-panel__overlay" />
-
-          {/* Gold side accent line */}
           <div className="cat-panel__accent" />
 
-          {/* Content */}
           <div className="cat-panel__content">
             <span className="cat-panel__sub">{cat.subtitle}</span>
             <h2 className="cat-panel__title">{cat.title}</h2>
@@ -85,7 +79,7 @@ export default function CategoryShowcase() {
               className="cat-panel__btn"
               onClick={() => scrollTo(cat.href)}
             >
-              View Projects <ArrowIcon />
+              Explore More <ArrowIcon />
             </button>
           </div>
         </div>

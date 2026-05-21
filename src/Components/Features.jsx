@@ -25,8 +25,8 @@ const FEATURES = [
         <line x1="32" y1="8" x2="32" y2="4"/>
       </svg>
     ),
-    title: "Grand Entrance Gate",
-    desc: "Majestic double-height entrance with 24/7 security cabin, boom barriers and CCTV surveillance.",
+    title: "Grand Arrival Experience",
+    desc: "A polished entry statement with controlled access, surveillance support, and a stronger first impression for residents and guests.",
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const FEATURES = [
         <rect x="26" y="38" width="12" height="18"/>
       </svg>
     ),
-    title: "Luxury Clubhouse",
-    desc: "World-class clubhouse with swimming pool, gymnasium, indoor games and banquet facilities.",
+    title: "Community-Led Amenities",
+    desc: "Purposeful shared spaces planned to support recreation, comfort, and a more complete day-to-day lifestyle within the development.",
   },
   {
     icon: (
@@ -51,8 +51,8 @@ const FEATURES = [
         <path d="M40 18 Q44 10 36 8"/>
       </svg>
     ),
-    title: "Landscaped Gardens",
-    desc: "Lush green parks, tree-lined avenues and curated gardens spread across the entire township.",
+    title: "Green Open Surroundings",
+    desc: "Landscaped pockets, tree-lined stretches, and breathing space that add calm visual character across the community.",
   },
   {
     icon: (
@@ -64,8 +64,8 @@ const FEATURES = [
         <line x1="40" y1="10" x2="40" y2="54"/>
       </svg>
     ),
-    title: "Wide Internal Roads",
-    desc: "60-ft and 40-ft wide asphalted roads with footpaths, street lighting and proper drainage.",
+    title: "Well-Planned Internal Roads",
+    desc: "Wide movement corridors with supporting street lighting and drainage planning for smoother everyday access.",
   },
   {
     icon: (
@@ -77,8 +77,8 @@ const FEATURES = [
         <path d="M42 14 Q54 22 54 32"/>
       </svg>
     ),
-    title: "24/7 Security & CCTV",
-    desc: "Round-the-clock security personnel, boom barriers, perimeter wall and HD CCTV coverage.",
+    title: "Security-Focused Planning",
+    desc: "A development approach that prioritizes monitored entry, perimeter definition, and reassurance for modern families.",
   },
   {
     icon: (
@@ -86,8 +86,8 @@ const FEATURES = [
         <path d="M32 8 L38 20 L52 22 L42 32 L44 46 L32 40 L20 46 L22 32 L12 22 L26 20 Z"/>
       </svg>
     ),
-    title: "Underground Utilities",
-    desc: "Underground electricity, water supply, drainage and telecom lines for a clutter-free environment.",
+    title: "Organized Utility Network",
+    desc: "Cleaner infrastructure planning for essential services, supporting a more orderly and future-ready neighborhood environment.",
   },
   {
     icon: (
@@ -98,8 +98,8 @@ const FEATURES = [
         <line x1="8" y1="52" x2="56" y2="52"/>
       </svg>
     ),
-    title: "GujRERA Approved Plots",
-    desc: "All plots are GujRERA registered with clear titles, approved layouts and transparent documentation.",
+    title: "Documentation With Clarity",
+    desc: "Approvals, layout understanding, and essential paperwork are handled with greater transparency so decisions feel more secure.",
   },
   {
     icon: (
@@ -110,17 +110,17 @@ const FEATURES = [
         <circle cx="32" cy="32" r="4"/>
       </svg>
     ),
-    title: "Water Supply & Drainage",
-    desc: "24/7 treated water supply with overhead tanks, underground drainage and rainwater harvesting.",
+    title: "Essential Infrastructure Support",
+    desc: "Core service planning for water flow, drainage, and long-term functionality across the plotted community.",
   },
 ];
 
-const VISIBLE = 3; // cards visible at once
+const VISIBLE = 3;
 
 export default function Features() {
   const [start, setStart] = useState(0);
   const [headerRef, headerVisible] = useInView(0.2);
-  const [cardsRef,  cardsVisible]  = useInView(0.1);
+  const [cardsRef, cardsVisible] = useInView(0.1);
 
   const prev = () => setStart(s => Math.max(0, s - 1));
   const next = () => setStart(s => Math.min(FEATURES.length - VISIBLE, s + 1));
@@ -130,24 +130,21 @@ export default function Features() {
   return (
     <section className="features" id="features">
       <div className="container">
-
-        {/* Header */}
         <div
           ref={headerRef}
           className={`features__header reveal-up${headerVisible ? " is-visible" : ""}`}
         >
-          <span className="section-label features__label">Project Highlights</span>
+          <span className="section-label features__label">Development Highlights</span>
           <h2 className="section-title features__title">
-            Premium Plots With<br />
-            <span>World Class Features</span>
+            Carefully Planned Plots With<br />
+            <span>Modern Lifestyle Features</span>
           </h2>
           <p className="features__subtitle">
-            Anandam Homes brings you a gated community in Dholera Smart City with
-            world-class amenities and a prime location. Here are some of the key features:
+            Inspired by thoughtful large-format communities, Anandam Homes brings together
+            infrastructure, presentation, and practical amenities to create a more complete plotted address.
           </p>
         </div>
 
-        {/* Cards */}
         <div
           ref={cardsRef}
           className="features__cards-wrap"
@@ -166,7 +163,6 @@ export default function Features() {
             ))}
           </div>
 
-          {/* Navigation */}
           <div className="features__nav">
             <button
               className={`features__nav-btn${start === 0 ? " disabled" : ""}`}
@@ -179,7 +175,6 @@ export default function Features() {
               </svg>
             </button>
 
-            {/* Dots */}
             <div className="features__dots">
               {Array.from({ length: FEATURES.length - VISIBLE + 1 }).map((_, i) => (
                 <button
@@ -203,7 +198,6 @@ export default function Features() {
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );

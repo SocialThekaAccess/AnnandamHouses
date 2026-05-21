@@ -1,16 +1,16 @@
 import "./Marquee.css";
 
 const ITEMS = [
-  "200+ Premium Plots",
-  "GujRERA Approved",
-  "Dholera Smart City",
-  "High ROI Investment",
-  "Clear Title Property",
-  "24/7 Security",
-  "Wide Roads",
-  "Green Landscape",
-  "Smart City Infrastructure",
-  "World Class Amenities",
+  "Thoughtful Development",
+  "Customer-First Approach",
+  "Clear Communication",
+  "Future-Focused Planning",
+  "Premium Plot Opportunities",
+  "Modern Infrastructure Vision",
+  "Trust and Transparency",
+  "Guided Site Visits",
+  "Refined Buyer Experience",
+  "Quality-Led Growth",
 ];
 
 export default function Marquee() {
