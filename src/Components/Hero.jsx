@@ -1,10 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import "./Hero.css";
-<<<<<<< HEAD
-import Anandamhomes1 from "../assets/Annandamhomes1.png";
-=======
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";  // ya .png / .webp
->>>>>>> d8c6c78aeb19125da3fbbdc696067f08655f9fa5
 
 const ChevronDown = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
