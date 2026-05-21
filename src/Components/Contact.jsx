@@ -1,4 +1,3 @@
-// ─── Contact.jsx — Anandam Exotica (Jubilee-style) ───────────────────────────
 import { useState, useRef, useEffect } from "react";
 import "./Contact.css";
 
@@ -44,20 +43,20 @@ const SendIcon = () => (
 
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
-  { icon: <MailIcon />,  label: "Email Us", value: "Anandamhomesofficial@gmail.com", href: "mailto:Anandamhomesofficial@gmail.com" },
-  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat — 382120", href: null },
+  { icon: <MailIcon />, label: "Email Us", value: "Anandamhomesofficial@gmail.com", href: "mailto:Anandamhomesofficial@gmail.com" },
+  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat - 382120", href: null },
 ];
 
 export default function Contact() {
-  const [leftRef,  leftVisible]  = useInView(0.15);
+  const [leftRef, leftVisible] = useInView(0.15);
   const [rightRef, rightVisible] = useInView(0.15);
 
   const [form, setForm] = useState({ name: "", phone: "", email: "", plot: "", message: "" });
   const [sent, setSent] = useState(false);
 
-  const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }));
+  const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSent(true);
     setForm({ name: "", phone: "", email: "", plot: "", message: "" });
@@ -66,24 +65,20 @@ export default function Contact() {
 
   return (
     <section className="contact" id="contact">
-      {/* Top gold line */}
       <div className="contact__top-line" />
 
       <div className="container">
-        {/* Header */}
         <div className="contact__header">
           <span className="section-label">Get In Touch</span>
           <h2 className="section-title contact__title">
-            Request A <span>Call Back</span>
+            Let Us Help You <span>Take The Next Step</span>
           </h2>
           <p className="contact__subtitle">
-            Our team will reach out within 30 minutes. Free site visit available.
+            Speak with our team for project details, documentation guidance, and a planned site visit experience.
           </p>
         </div>
 
         <div className="contact__grid">
-
-          {/* LEFT — Info */}
           <div
             ref={leftRef}
             className={`contact__info reveal-left${leftVisible ? " is-visible" : ""}`}
@@ -94,17 +89,17 @@ export default function Contact() {
             <div className="contact__info-content">
               <div className="contact__info-eyebrow">
                 <span className="contact__info-dot" />
-                Now Selling — Phase 1
+                Enquiries Open - Premium Inventory
               </div>
 
               <h3 className="contact__info-title">
                 Anandam Homes
-                <em>Dholera Smart City</em>
+                <em>Future-Ready Development</em>
               </h3>
 
               <p className="contact__info-desc">
-                India's first greenfield smart city. GujRERA approved plots with
-                world-class infrastructure and high ROI potential.
+                A more considered plotted offering shaped around trust, planning, and a better
+                customer journey from first call to final decision.
               </p>
 
               <div className="contact__info-items">
@@ -122,16 +117,14 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Trust badges */}
               <div className="contact__badges">
-                {["GujRERA Approved", "Clear Title", "Free Site Visit"].map(b => (
+                {["Transparent Guidance", "Priority Assistance", "Site Visit Support"].map((b) => (
                   <span key={b} className="contact__badge">✓ {b}</span>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* RIGHT — Form */}
           <div
             ref={rightRef}
             className={`contact__form-wrap reveal-right${rightVisible ? " is-visible" : ""}`}
@@ -139,12 +132,12 @@ export default function Contact() {
             <div className="contact__form-topbar" />
 
             <div className="contact__form-body">
-              <h3 className="contact__form-title">Book Your Free Site Visit</h3>
-              <p className="contact__form-sub">No obligation · GujRERA Approved · Expert guidance</p>
+              <h3 className="contact__form-title">Book a Personalized Consultation</h3>
+              <p className="contact__form-sub">No obligation · project insights · guided support</p>
 
               {sent && (
                 <div className="contact__success">
-                  ✓ Thank you! Our team will call you within 30 minutes.
+                  Thank you. Our team will connect with you shortly.
                 </div>
               )}
 
@@ -189,18 +182,18 @@ export default function Contact() {
                 </div>
 
                 <div className="contact__field">
-                  <label className="contact__label">Plot Size Interest</label>
+                  <label className="contact__label">Area of Interest</label>
                   <select
                     className="contact__select"
                     name="plot"
                     value={form.plot}
                     onChange={handleChange}
                   >
-                    <option value="">Select plot size</option>
-                    <option>100 Sq. Yd — ₹2.5 Lakh</option>
-                    <option>150 Sq. Yd — ₹3.8 Lakh</option>
-                    <option>200 Sq. Yd — ₹5.2 Lakh</option>
-                    <option>500 Sq. Yd — ₹12 Lakh</option>
+                    <option value="">Select your preference</option>
+                    <option>Residential Plot Enquiry</option>
+                    <option>Investment Consultation</option>
+                    <option>Site Visit Planning</option>
+                    <option>Documentation Support</option>
                   </select>
                 </div>
 
@@ -209,7 +202,7 @@ export default function Contact() {
                   <textarea
                     className="contact__textarea"
                     name="message"
-                    placeholder="Any specific requirements or questions?"
+                    placeholder="Tell us what you would like to know or plan for"
                     value={form.message}
                     onChange={handleChange}
                   />
@@ -217,14 +210,13 @@ export default function Contact() {
 
                 <button type="submit" className="contact__submit">
                   <SendIcon />
-                  Request Free Callback
+                  Request a Callback
                 </button>
 
-                <p className="contact__privacy">🔒 Your information is 100% secure and private</p>
+                <p className="contact__privacy">Your information stays private and is used only to assist your enquiry.</p>
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>

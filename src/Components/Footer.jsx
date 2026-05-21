@@ -45,11 +45,11 @@ const LinkedInIcon = () => (
 
 const FOOTER_NAV = [
   { label: "About Us", href: "/about-us" },
-  { label: "Premium Plots", href: HOME_PATH },
+  { label: "Home", href: HOME_PATH },
   { label: "Our Values", href: `${HOME_PATH}#values` },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: CONTACT_PATH },
-  { label: "Book Visit", href: CONTACT_PATH },
+  { label: "Request Callback", href: CONTACT_PATH },
 ];
 
 const SOCIALS = [
@@ -63,15 +63,15 @@ function CtaBand({ onNavigate }) {
   return (
     <div className="cta-band">
       <div>
-        <div className="cta-band__label">Limited Plots Available - Act Now</div>
-        <div className="cta-band__title">Take the first step toward your next landmark investment.</div>
+        <div className="cta-band__label">Thoughtful guidance starts here</div>
+        <div className="cta-band__title">Speak with our team and explore a plotted opportunity with more clarity.</div>
       </div>
       <div className="cta-band__actions">
         <a href="tel:+916384800001" className="cta-band__phone">
           <PhoneIcon /> +91 63848 00001
         </a>
         <button className="cta-band__btn" onClick={() => onNavigate?.(CONTACT_PATH)}>
-          Book Site Visit
+          Plan Your Visit
         </button>
       </div>
     </div>
@@ -101,11 +101,11 @@ export default function Footer({ onNavigate }) {
         <div className="footer-disclaimer">
           <div className="footer-disclaimer__inner">
             <p className="footer-disclaimer__text">
-              <strong>Disclaimer</strong> — Anandam Homes, its logo, and all related project names are proprietary.
+              <strong>Disclaimer</strong> - Anandam Homes, its logo, and all related project names are proprietary.
               Information on this website is for general guidance only and does not constitute an offer or legal advice.
               Plot availability, pricing, and approvals are subject to change. Please verify all details during your site visit.
             </p>
-            <div className="footer-disclaimer__badge">GujRERA Registered</div>
+            <div className="footer-disclaimer__badge">Buyer Guidance Focused</div>
           </div>
         </div>
 
@@ -130,7 +130,7 @@ export default function Footer({ onNavigate }) {
               <div className="footer-main__brand">
                 <img src={logo} alt="Anandam Homes" className="footer-main__logo" />
                 <div className="footer-main__brand-name">Anandam Homes</div>
-                <div className="footer-main__brand-tag">Builders of Better Tomorrow</div>
+                <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>
 
               <div className="footer-main__col">
@@ -149,7 +149,7 @@ export default function Footer({ onNavigate }) {
                 <p className="footer-main__address">
                   Dholera Smart City,<br />
                   Ahmedabad District,<br />
-                  Gujarat — 382120, India
+                  Gujarat - 382120, India
                 </p>
                 <a
                   href="https://maps.google.com/?q=Dholera+Smart+City+Gujarat"

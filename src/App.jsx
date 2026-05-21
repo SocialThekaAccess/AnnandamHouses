@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
@@ -58,7 +59,7 @@ function ScrollToTop() {
 
 function HomePage() {
   return (
-    <>
+    <div className="home-page">
       <Hero />
       <About />
       {/* <Location /> */}
@@ -68,7 +69,7 @@ function HomePage() {
       <CategoryShowcase />
       <Marquee />
       <Contact />
-    </>
+    </div>
   );
 }
 

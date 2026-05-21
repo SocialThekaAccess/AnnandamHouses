@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./About.css";
 import doleaImg from "../assets/Dolera.png";
 
-/* ── Intersection observer hook ── */
 function useInView(threshold = 0.18) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -24,7 +23,6 @@ function useInView(threshold = 0.18) {
   return [ref, visible];
 }
 
-/* ── Animated counter ── */
 function Counter({ target, suffix = "", duration = 2400, run }) {
   const [val, setVal] = useState(0);
 
@@ -44,7 +42,6 @@ function Counter({ target, suffix = "", duration = 2400, run }) {
   return <>{val}{suffix}</>;
 }
 
-/* ── SVG Icons ── */
 const icons = {
   skyline: (
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -105,27 +102,25 @@ const icons = {
   ),
 };
 
-/* ── Data ── */
 const features = [
-  { icon: "factory", label: "Global Manufacturing Hub" },
-  { icon: "leaf",    label: "Sustainable & Green Development" },
-  { icon: "network", label: "World Class Infrastructure" },
-  { icon: "shield",  label: "Government Approved Project" },
+  { icon: "factory", label: "Growth-Led Investment Zone" },
+  { icon: "leaf", label: "Planned Green Urban Expansion" },
+  { icon: "network", label: "Modern Roads and Connectivity" },
+  { icon: "shield", label: "Clear Process and Documentation" },
 ];
 
 const stats = [
-  { icon: "plots",  target: 200, suffix: "+", label: "Premium Plots" },
-  { icon: "star",   target: 12,  suffix: "+", label: "Years Experience" },
+  { icon: "plots", target: 200, suffix: "+", label: "Premium Plots" },
+  { icon: "star", target: 12, suffix: "+", label: "Years Experience" },
   { icon: "family", target: 500, suffix: "+", label: "Happy Families" },
-  { icon: "shield", target: 100, suffix: "%", label: "GujRERA Approved" },
+  { icon: "shield", target: 100, suffix: "%", label: "Buyer-Focused Support" },
 ];
 
-/* ── Component ── */
 export default function About() {
-  const [sectionRef, sectionVisible] = useInView(0.08);
-  const [mediaRef,   mediaVisible]   = useInView(0.15);
+  const [sectionRef] = useInView(0.08);
+  const [mediaRef, mediaVisible] = useInView(0.15);
   const [contentRef, contentVisible] = useInView(0.15);
-  const [countersRef, countersRun]   = useInView(0.25);
+  const [countersRef, countersRun] = useInView(0.25);
 
   return (
     <section
@@ -133,7 +128,6 @@ export default function About() {
       id="about"
       ref={sectionRef}
     >
-      {/* Ambient dots */}
       <div className="ae-dots" aria-hidden="true">
         {Array.from({ length: 32 }).map((_, i) => <span key={i} />)}
       </div>
@@ -141,8 +135,6 @@ export default function About() {
 
       <div className="ae-container">
         <div className="ae-grid">
-
-          {/* ── Media ── */}
           <div
             ref={mediaRef}
             className={`ae-media ae-reveal-left${mediaVisible ? " vis" : ""}`}
@@ -157,7 +149,6 @@ export default function About() {
               />
               <div className="ae-img-overlay" aria-hidden="true" />
 
-              {/* Feature strip */}
               <div className="ae-feature-strip">
                 {features.map((f) => (
                   <div className="ae-feature" key={f.label}>
@@ -168,15 +159,14 @@ export default function About() {
               </div>
             </div>
 
-            <p className="ae-signature">Building the future, creating value for generations</p>
+            <p className="ae-signature">Creating lasting value through planning, trust, and buyer-focused development</p>
           </div>
 
-          {/* ── Content ── */}
           <div
             ref={contentRef}
             className={`ae-content ae-reveal-right${contentVisible ? " vis" : ""}`}
           >
-            <div className="ae-eyebrow">About Anandam</div>
+            <div className="ae-eyebrow">About Anandam Homes</div>
 
             <h2 className="ae-heading">
               Invest in India’s &amp; First Greenfield Smart City
@@ -194,10 +184,13 @@ export default function About() {
             </p>
             <p className="ae-desc">
               Anandam Exotica brings you an exclusive opportunity to own premium residential plots
+<<<<<<< HEAD
               in this landmark development.
+=======
+              in this landmark development - backed by GujRERA approval and transparent processes.
+>>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
             </p>
 
-            {/* Counters */}
             <div className="ae-counters" ref={countersRef}>
               {stats.map((s) => (
                 <div className="ae-counter" key={s.label}>
@@ -209,8 +202,19 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+<<<<<<< HEAD
+=======
 
+            <button
+              className="ae-cta"
+              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              <div className="ae-cta-icon">{icons.pin}</div>
+              <span className="ae-cta-text">Explore Premium Plot Options</span>
+              <span className="ae-cta-arrow">{icons.arrow}</span>
+            </button>
+>>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
+          </div>
         </div>
       </div>
     </section>
