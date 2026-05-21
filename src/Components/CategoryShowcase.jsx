@@ -33,18 +33,11 @@ const CATEGORIES = [
     href: "#projects",
   },
   {
-    title: "Commercial",
-    subtitle: "Business Plots",
-    desc: "500+ Sq. Yards",
     bg: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=85&auto=format&fit=crop",
-    href: "#projects",
+   
   },
   {
-    title: "Corner Plots",
-    subtitle: "Prime Locations",
-    desc: "150 – 600 Sq. Yards",
     bg: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop",
-    href: "#projects",
   },
 ];
 

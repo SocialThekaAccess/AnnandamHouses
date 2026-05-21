@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./About.css";
+import doleaImg from "../assets/Dolera.png";
 
 /* ── Intersection observer hook ── */
 function useInView(threshold = 0.18) {
@@ -102,18 +103,6 @@ const icons = {
       <path d="M22 21v-2a4 4 0 0 0-3-3.87M2 21v-2a4 4 0 0 1 3-3.87" />
     </svg>
   ),
-  pin: (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
-      <circle cx="12" cy="10" r="2.5" />
-    </svg>
-  ),
-  arrow: (
-    <svg width="36" height="16" viewBox="0 0 38 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M1 9h34" />
-      <path d="m28 2 7 7-7 7" />
-    </svg>
-  ),
 };
 
 /* ── Data ── */
@@ -158,11 +147,14 @@ export default function About() {
             ref={mediaRef}
             className={`ae-media ae-reveal-left${mediaVisible ? " vis" : ""}`}
           >
-            <div className="ae-corner ae-corner--tl" aria-hidden="true" />
-            <div className="ae-corner ae-corner--br" aria-hidden="true" />
-
             <div className="ae-img-wrap">
-              <div className="ae-img-bg" />
+              <div className="ae-corner ae-corner--tl" aria-hidden="true" />
+              <div className="ae-corner ae-corner--br" aria-hidden="true" />
+              <img
+                src={doleaImg}
+                alt="Dholera Smart City — Anandam Homes"
+                className="ae-img-bg"
+              />
               <div className="ae-img-overlay" aria-hidden="true" />
 
               {/* Feature strip */}
@@ -184,11 +176,11 @@ export default function About() {
             ref={contentRef}
             className={`ae-content ae-reveal-right${contentVisible ? " vis" : ""}`}
           >
-            <div className="ae-eyebrow">About Dholera</div>
+            <div className="ae-eyebrow">About Anandam</div>
 
             <h2 className="ae-heading">
-              India's First &amp; Biggest
-              <em>Greenfield Smart City</em>
+              Invest in India’s &amp; First Greenfield Smart City
+              {/* <em>Greenfield Smart City</em> */}
             </h2>
 
             <div className="ae-divider" aria-hidden="true">
@@ -202,7 +194,7 @@ export default function About() {
             </p>
             <p className="ae-desc">
               Anandam Exotica brings you an exclusive opportunity to own premium residential plots
-              in this landmark development — backed by GujRERA approval and transparent processes.
+              in this landmark development.
             </p>
 
             {/* Counters */}
@@ -217,16 +209,6 @@ export default function About() {
                 </div>
               ))}
             </div>
-
-            {/* CTA */}
-            <button
-              className="ae-cta"
-              onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              <div className="ae-cta-icon">{icons.pin}</div>
-              <span className="ae-cta-text">Explore Plots in Dholera</span>
-              <span className="ae-cta-arrow">{icons.arrow}</span>
-            </button>
           </div>
 
         </div>
