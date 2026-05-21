@@ -388,4 +388,26 @@
   .ae-counter:nth-child(2)::after { display: none; }
   .ae-counter:nth-child(3),
   .ae-counter:nth-child(4) { border-top: 1px solid rgba(184,151,90,0.22); }
+  .ae-dots,
+  .ae-side-accent { display: none; }
+}
+
+@media (max-width: 640px) {
+  .ae-about { padding: 64px 0; }
+  .ae-container { padding: 0 16px; }
+  .ae-grid { gap: 40px; }
+  .ae-media { padding: 0 0 48px; }
+  .ae-img-wrap { border-radius: 6px 40px 6px 6px; }
+  .ae-feature-strip { grid-template-columns: repeat(2, 1fr); }
+  .ae-feature:nth-child(2) { border-right: none; }
+  .ae-feature:nth-child(3),
+  .ae-feature:nth-child(4) { border-top: 1px solid rgba(184,151,90,0.18); }
+  .ae-signature { display: none; }
+  .ae-cta { flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+  .ae-counters { grid-template-columns: 1fr; }
+  .ae-counter::after { display: none !important; }
+  .ae-counter + .ae-counter { border-top: 1px solid rgba(184,151,90,0.22); }
 }

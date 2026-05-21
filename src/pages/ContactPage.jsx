@@ -64,7 +64,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="page-contact-grid" style={{ padding: "0 44px 44px" }}>
+            <div className="page-contact-grid">
               {CHANNELS.map((channel) => (
                 <article key={channel.label} className="page-contact-card">
                   <div className="page-contact-card__label">{channel.label}</div>

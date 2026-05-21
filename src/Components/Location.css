@@ -164,6 +164,20 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .location { padding: 90px 0; }
   .location__header { grid-template-columns: 1fr; gap: 20px; }
   .location__grid   { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 640px) {
+  .location { padding: 72px 0; }
+  .location__header { margin-bottom: 36px; }
+  .location__intro { font-size: 13.5px; }
+  .location__map-badge {
+    bottom: 12px;
+    left: 12px;
+    padding: 10px 14px;
+  }
+  .location__point { padding: 16px 0; gap: 14px; }
+  .location__point-num { font-size: 18px; min-width: 32px; }
 }

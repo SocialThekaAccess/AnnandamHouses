@@ -1,0 +1,92 @@
+/* ===== GLOBAL MOBILE RESPONSIVE ===== */
+
+:root {
+  --fab-bottom: 28px;
+  --fab-side: 28px;
+  --fab-size: 56px;
+  --scroll-top-size: 46px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 68px;
+    --fab-bottom: 20px;
+    --fab-side: 16px;
+    --fab-size: 50px;
+    --scroll-top-size: 50px;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .gold-btn,
+  .navy-btn {
+    padding: 14px 24px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Scroll-to-top button — aligned with WhatsApp FAB */
+.scroll-top-btn {
+  position: fixed;
+  bottom: var(--fab-bottom);
+  left: var(--fab-side);
+  width: var(--scroll-top-size);
+  height: var(--scroll-top-size);
+  border-radius: 50%;
+  background: var(--royal-navy, #1A2456);
+  border: 1.5px solid rgba(184, 151, 90, 0.4);
+  color: #B8975A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(26, 36, 86, 0.25);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: calc(var(--fab-bottom) + env(safe-area-inset-bottom, 0px));
+    left: calc(var(--fab-side) + env(safe-area-inset-left, 0px));
+  }
+}
+
+/* Body lock when mobile menu open */
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}

@@ -347,14 +347,18 @@ a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 
 /* Responsive */
 @media (max-width: 960px) {
+  .contact { padding: 90px 0; }
   .contact__grid { grid-template-columns: 1fr; }
   .contact__info { min-height: 400px; }
 }
 
 @media (max-width: 560px) {
-  .contact__form-body { padding: 32px 24px; }
-  .contact__info-content { padding: 36px 24px; }
+  .contact { padding: 72px 0; }
+  .contact__header { margin-bottom: 40px; }
+  .contact__form-body { padding: 28px 20px; }
+  .contact__info-content { padding: 32px 20px; }
   .contact__form-row { grid-template-columns: 1fr; }
+  .contact__info-title { font-size: clamp(22px, 6vw, 28px); }
 }
 
 @keyframes shimmer {

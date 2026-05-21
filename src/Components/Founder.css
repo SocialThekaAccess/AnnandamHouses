@@ -190,9 +190,20 @@
 }
 
 @media (max-width: 900px) {
+  .founder { padding: 90px 0; }
   .founder__grid { grid-template-columns: 1fr; gap: 52px; }
   .founder__achievements { grid-template-columns: repeat(2, 1fr); }
   .founder__achievement:nth-child(2) { border-right: none; }
   .founder__achievement:nth-child(3),
   .founder__achievement:nth-child(4) { border-top: 1px solid rgba(184,151,90,0.1); }
+}
+
+@media (max-width: 560px) {
+  .founder { padding: 72px 0; }
+  .founder__achievements { grid-template-columns: 1fr; }
+  .founder__achievement {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(184,151,90,0.1);
+  }
+  .founder__achievement:last-child { border-bottom: none; }
 }

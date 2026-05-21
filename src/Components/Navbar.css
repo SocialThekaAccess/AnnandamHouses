@@ -1,16 +1,18 @@
-/* ─── NAVBAR — Anandam Exotica (Jubilee-style) ─────────────────────────── */
+/* ─── HEADER — Logo only (Jubilee-style) ─────────────────────────── */
 :root {
   --nav-height: 76px;
 }
 
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 5%;
   background: transparent;
   border-bottom: 1px solid transparent;
@@ -21,196 +23,97 @@
   background: rgba(14, 22, 58, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom-color: rgba(184,151,90,0.2);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.35);
+  border-bottom-color: rgba(184, 151, 90, 0.2);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
 }
 
-/* ── Logo ── */
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
   flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 
 .navbar__logo-img {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   border-radius: 4px;
-  filter: drop-shadow(0 2px 8px rgba(184,151,90,0.3));
+  filter: drop-shadow(0 2px 8px rgba(184, 151, 90, 0.3));
 }
 
 .navbar__logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .navbar__logo-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .navbar__logo-tagline {
-  font-size: 8.5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--antique-gold, #B8975A);
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
-/* ── Desktop Links ── */
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar__logo-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .navbar__logo-name {
+    font-size: 18px;
+  }
+
+  .navbar__logo-tagline {
+    font-size: 7.5px;
+    letter-spacing: 0.22em;
+  }
 }
 
-.navbar__link-btn {
-  background: none;
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  padding: 4px 0;
-  position: relative;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
+@media (max-width: 400px) {
+  :root {
+    --nav-height: 64px;
+  }
 
-.navbar__link-btn::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0; right: 0;
-  height: 1.5px;
-  background: var(--antique-gold, #B8975A);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
+  .navbar {
+    padding: 0 16px;
+  }
 
-.navbar__link-btn:hover,
-.navbar__link-btn.active {
-  color: var(--antique-gold, #B8975A);
-}
+  .navbar__logo {
+    gap: 10px;
+  }
 
-.navbar__link-btn.active::after,
-.navbar__link-btn:hover::after {
-  transform: scaleX(1);
-}
+  .navbar__logo-img {
+    width: 40px;
+    height: 40px;
+  }
 
-/* ── Actions ── */
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.navbar__cta {
-  background: var(--antique-gold, #B8975A);
-  color: #fff;
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 11px 24px;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.navbar__cta:hover {
-  background: var(--warm-gold, #C3A95E);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(184,151,90,0.4);
-}
-
-/* ── Hamburger ── */
-.navbar__hamburger {
-  background: none;
-  border: none;
-  color: #fff;
-  display: none;
-  padding: 6px;
-  border-radius: 2px;
-  transition: color 0.3s;
-  cursor: pointer;
-}
-
-.navbar__hamburger:hover { color: var(--antique-gold, #B8975A); }
-
-/* ── Mobile Drawer ── */
-.navbar__mobile-drawer {
-  position: fixed;
-  top: var(--nav-height);
-  left: 0; right: 0;
-  z-index: 999;
-  background: rgba(14, 22, 58, 0.99);
-  backdrop-filter: blur(20px);
-  padding: 20px 5% 28px;
-  border-bottom: 1px solid rgba(184,151,90,0.2);
-  animation: fadeDown 0.3s ease;
-}
-
-.navbar__mobile-link {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: color 0.3s;
-  cursor: pointer;
-}
-
-.navbar__mobile-link:hover,
-.navbar__mobile-link.active {
-  color: var(--antique-gold, #B8975A);
-}
-
-/* ── Live dot ── */
-.navbar__live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22c55e;
-  display: inline-block;
-  animation: pulse 2s infinite;
-  margin-right: 6px;
-}
-
-/* ── Responsive ── */
-@media (max-width: 960px) {
-  .navbar__links { display: none; }
-  .navbar__cta   { display: none; }
-  .navbar__hamburger { display: flex; }
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.55; }
+  .navbar__logo-name {
+    font-size: 16px;
+  }
 }

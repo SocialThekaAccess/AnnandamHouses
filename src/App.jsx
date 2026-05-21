@@ -4,7 +4,7 @@ import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Location from "./Components/Location";
 import Values from "./Components/Values";
-import Projects from "./Components/Projects";
+// import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import Marquee from "./Components/Marquee";
 import Contact from "./Components/Contact";
@@ -36,27 +36,8 @@ function ScrollToTop() {
     <button
       onClick={scrollUp}
       title="Back to top"
-      style={{
-        position: "fixed",
-        bottom: "32px",
-        left: "32px",
-        width: "46px",
-        height: "46px",
-        borderRadius: "50%",
-        background: "var(--royal-navy, #1A2456)",
-        border: "1.5px solid rgba(184,151,90,0.4)",
-        color: "#B8975A",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: "pointer",
-        zIndex: 999,
-        boxShadow: "0 4px 20px rgba(26,36,86,0.25)",
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(16px)",
-        transition: "opacity 0.3s ease, transform 0.3s ease",
-        pointerEvents: visible ? "auto" : "none",
-      }}
+      className={`scroll-top-btn${visible ? " is-visible" : ""}`}
+      aria-label="Back to top"
     >
       <svg
         width="18"
@@ -79,12 +60,12 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <CategoryShowcase />
       <About />
-      <Location />
+      {/* <Location /> */}
       <Values />
-      <Projects />
+      {/* <Projects /> */}
       <Features />
+      <CategoryShowcase />
       <Marquee />
       <Contact />
     </>

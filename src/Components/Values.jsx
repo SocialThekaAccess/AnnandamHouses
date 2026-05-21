@@ -48,17 +48,10 @@ const VALUES = [
   },
 ];
 
-const PANEL_STATS = [
-  { icon: "👨‍👩‍👧‍👦", value: "500+",    label: "Happy Families"   },
-  { icon: "✅",        value: "100%",    label: "GujRERA Approved" },
-  { icon: "🏆",        value: "15+ Yrs", label: "Of Trust"         },
-  { icon: "📍",        value: "Prime",   label: "Locations"        },
-];
-
 export default function Values() {
   const [active, setActive] = useState(0);
   const [headerRef, headerVisible] = useInView(0.2);
-  const [bodyRef,   bodyVisible]   = useInView(0.1);
+  const [bodyRef, bodyVisible] = useInView(0.1);
 
   const current = VALUES[active];
 
@@ -66,7 +59,6 @@ export default function Values() {
     <section className="values" id="values">
       <div className="container">
 
-        {/* Header */}
         <div ref={headerRef} className={`values__header reveal-up${headerVisible ? " is-visible" : ""}`}>
           <div className="values__header-eyebrow">
             <span className="values__eyebrow-line" />
@@ -80,68 +72,51 @@ export default function Values() {
           </p>
         </div>
 
-        {/* Body */}
-        <div ref={bodyRef} className={`values__body reveal-up${bodyVisible ? " is-visible" : ""}`}>
-
-          {/* LEFT — Image + Description Panel */}
-          <div className="values__panel">
-            <div className="values__panel-photo">
-              <img
-                key={active}
-                src={current.image}
-                alt={current.title}
-                className="values__panel-img"
-              />
-              <div className="values__panel-photo-overlay" />
+        <div ref={bodyRef} className={`values__slider reveal-up${bodyVisible ? " is-visible" : ""}`}>
+          <div className="values__content">
+            <div className="values__content-img-wrap" key={active}>
+              <img src={current.image} alt={current.title} className="values__content-img" />
             </div>
-            <div className="values__panel-text">
-              <div className="values__panel-num-label">{current.num}</div>
-              <h3 className="values__panel-title" key={`title-${active}`}>{current.title}</h3>
-              <p className="values__panel-desc" key={`desc-${active}`}>{current.desc}</p>
-              <div className="values__panel-stats">
-                {PANEL_STATS.map((s) => (
-                  <div key={s.label} className="values__panel-stat">
-                    <div className="values__panel-stat-icon">{s.icon}</div>
-                    <div>
-                      <strong>{s.value}</strong>
-                      <span>{s.label}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="values__content-text" key={`text-${active}`}>
+              <h3 className="values__content-title">{current.title}</h3>
+              <p className="values__content-desc">{current.desc}</p>
             </div>
           </div>
 
-          {/* RIGHT — Vertical Columns */}
-          <div className="values__cols">
+          <div className="values__tabs">
             {VALUES.map((v, i) => (
               <button
                 key={v.num}
-                className={`values__col${active === i ? " active" : ""}`}
+                type="button"
+                className={`values__tab${active === i ? " active" : ""}`}
                 onClick={() => setActive(i)}
+                aria-pressed={active === i}
+                aria-label={v.title}
               >
-                {/* Top arrow icon */}
-                <div className="values__col-arrow">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="7 17 17 7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
+                <div className="values__tab-arrow">
+                  {active === i ? (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="1.8"
+                      strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="17 7 7 17" />
+                      <polyline points="7 7 7 17 17 17" />
+                    </svg>
+                  ) : (
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="1.8"
+                      strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="7 17 17 7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  )}
                 </div>
-
-                {/* Rotated title */}
-                <div className="values__col-text-wrap">
-                  <span className="values__col-title">{v.title}</span>
-                </div>
-
-                {/* Large number at bottom */}
-                <div className="values__col-num">{v.num}</div>
+                <span className="values__tab-title">{v.title}</span>
+                <span className="values__tab-num">{v.num}</span>
               </button>
             ))}
           </div>
-
         </div>
 
-        {/* Bottom CTA */}
         <div className={`values__cta reveal-up${bodyVisible ? " is-visible" : ""}`} style={{ transitionDelay: "0.2s" }}>
           <div className="values__cta-left">
             <div className="values__cta-icon">
