@@ -81,7 +81,6 @@
 
 /* ── Tab button ── */
 .values__tab {
-  /* each tab gets equal share of the row width */
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
@@ -103,7 +102,6 @@
 }
 .values__tab.active {
   background: #fafaf8;
-  /* shrink the active tab slightly so the panel has more room */
   flex: 0.6 1 0;
 }
 
@@ -119,7 +117,7 @@
   flex-shrink: 0;
 }
 .values__tab:hover:not(.active) .values__tab-arrow { color: rgba(26, 36, 86, 0.6); }
-.values__tab.active .values__tab-arrow             { color: #ba2a33; }
+.values__tab.active .values__tab-arrow { color: #ba2a33; }
 
 /* Vertical label */
 .values__tab-title {
@@ -139,7 +137,7 @@
   align-items: center;
 }
 .values__tab:hover:not(.active) .values__tab-title { color: rgba(26, 36, 86, 0.55); }
-.values__tab.active .values__tab-title             { color: #1a2456; font-weight: 600; }
+.values__tab.active .values__tab-title { color: #1a2456; font-weight: 600; }
 
 /* Number */
 .values__tab-num {
@@ -153,9 +151,8 @@
 }
 .values__tab.active .values__tab-num { color: rgba(184, 151, 90, 0.2); }
 
-/* ── Content panel — injected between tabs ── */
+/* ── Content panel ── */
 .values__panel {
-  /* expands to fill available space between the surrounding tabs */
   flex: 4 1 0;
   display: flex;
   align-items: stretch;
@@ -316,13 +313,10 @@ a.values__cta-val:hover { color: #b8975a; }
   .values__row {
     flex-direction: column;
     min-height: unset;
-  }
-
-  /* On mobile all tabs sit in a horizontal scrollable strip */
-  .values__row {
     flex-wrap: nowrap;
     overflow-x: auto;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .values__tab {
@@ -335,11 +329,6 @@ a.values__cta-val:hover { color: #b8975a; }
   .values__tab:first-child { border-left: none; }
   .values__tab.active { flex: 0 0 90px; }
 
-  /* Panel goes full width below the tab row — we achieve this by
-     making the row wrap and the panel break to a new line */
-  .values__row {
-    flex-wrap: wrap;
-  }
   .values__panel {
     flex: 0 0 100%;
     flex-direction: column;
@@ -347,7 +336,7 @@ a.values__cta-val:hover { color: #b8975a; }
     border-right: none;
     border-top: 1px solid rgba(184, 151, 90, 0.16);
     min-height: unset;
-    order: 99; /* always after all tabs */
+    order: 99;
   }
   .values__panel-img-wrap {
     flex: 0 0 220px;
@@ -364,14 +353,14 @@ a.values__cta-val:hover { color: #b8975a; }
     margin-left: 16px;
     margin-right: 16px;
   }
-  .values__cta-mid  { width: 100%; }
-  .values__cta-btn  { width: 100%; justify-content: center; }
+  .values__cta-mid { width: 100%; }
+  .values__cta-btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 480px) {
   .values__tab { flex: 0 0 74px; min-height: 155px; }
   .values__tab-title { font-size: 10px; }
-  .values__tab-num   { font-size: 30px; }
+  .values__tab-num { font-size: 30px; }
   .values__panel-img-wrap { flex: 0 0 180px; }
   .values__cta { margin-left: 12px; margin-right: 12px; }
 }
