@@ -27,8 +27,8 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
       <button type="button" className="navbar__logo" onClick={goHome} aria-label="Anandam Homes — Home">
         <img src={logo} alt="Anandam Homes" className="navbar__logo-img" />
         <div className="navbar__logo-text">
-          <span className="navbar__logo-name">Anandam Homes</span>
-          <span className="navbar__logo-tagline">Premium Plots</span>
+          {/* <span className="navbar__logo-name">Anandam Homes</span> */}
+          {/* <span className="navbar__logo-tagline">Premium Plots</span> */}
         </div>
       </button>
     </nav>
