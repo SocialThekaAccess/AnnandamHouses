@@ -10,7 +10,16 @@ import Marquee from "./Components/Marquee";
 import Contact from "./Components/Contact";
 import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
+import AboutPage from "./pages/AboutPage";
+import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
 
+const ROUTES = {
+  HOME: "/",
+  ABOUT: "/about-us",
+  BLOG: "/blog",
+  CONTACT: "/contact-us",
+};
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -49,20 +58,26 @@ function ScrollToTop() {
         pointerEvents: visible ? "auto" : "none",
       }}
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" strokeWidth="2.5"
-        strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="19" x2="12" y2="5"/>
-        <polyline points="5 12 12 5 19 12"/>
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
       </svg>
     </button>
   );
 }
 
-function App() {
+function HomePage() {
   return (
     <>
-      <Navbar />
       <Hero />
       <CategoryShowcase />
       <About />
@@ -72,9 +87,70 @@ function App() {
       <Features />
       <Marquee />
       <Contact />
-      <Footer />
+    </>
+  );
+}
+
+function getPathname() {
+  const path = window.location.pathname || ROUTES.HOME;
+  if (Object.values(ROUTES).includes(path)) {
+    return path;
+  }
+  return ROUTES.HOME;
+}
+
+function App() {
+  const [pathname, setPathname] = useState(getPathname);
+
+  useEffect(() => {
+    const handlePopState = () => setPathname(getPathname());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const titles = {
+      [ROUTES.HOME]: "Anandam Homes",
+      [ROUTES.ABOUT]: "About Us | Anandam Homes",
+      [ROUTES.BLOG]: "Blog | Anandam Homes",
+      [ROUTES.CONTACT]: "Contact Us | Anandam Homes",
+    };
+
+    document.title = titles[pathname] || "Anandam Homes";
+  }, [pathname]);
+
+  const navigate = (nextPath) => {
+    if (nextPath === pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    window.history.pushState({}, "", nextPath);
+    setPathname(nextPath);
+  };
+
+  const renderPage = () => {
+    switch (pathname) {
+      case ROUTES.ABOUT:
+        return <AboutPage onNavigate={navigate} />;
+      case ROUTES.BLOG:
+        return <BlogPage onNavigate={navigate} />;
+      case ROUTES.CONTACT:
+        return <ContactPage />;
+      case ROUTES.HOME:
+      default:
+        return <HomePage />;
+    }
+  };
+
+  return (
+    <>
+      <Navbar currentPath={pathname} onNavigate={navigate} />
+      {renderPage()}
+      <Footer currentPath={pathname} onNavigate={navigate} />
       <ScrollToTop />
-  
     </>
   );
 }
