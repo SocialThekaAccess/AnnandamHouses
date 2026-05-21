@@ -21,32 +21,6 @@ function useInView(threshold = 0.12) {
 
 const VALUES = [
   {
-<<<<<<< HEAD
-    num: "01",
-    title: "Customer First",
-    desc: "Focused on the needs of our customers, we create spaces that nurture and inspire. Building trust through transparent processes and unparalleled quality, we place our customers at the heart of every endeavor.",
-    image: Value1,
-    imagePosition: "center center",
-  },
-  {
-    num: "02",
-    title: "Commitment",
-    desc: "We stand by every promise made to our customers. From plot delivery timelines to infrastructure quality — our commitment is absolute and non-negotiable at every step of the journey.",
-    image: Value2,
-    imagePosition: "center center",
-  },
-  {
-    num: "03",
-    title: "Integrity",
-    desc: "Every transaction, every document, every interaction is rooted in complete honesty. GujRERA approved, legally clear titles, zero hidden charges — always.",
-    image: Value3,
-    imagePosition: "center center",
-  },
-  {
-    num: "04",
-    title: "Excellence",
-    desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Dholera Smart City.",
-=======
     num: "01", title: "Customer First",
     desc: "Every decision begins with the buyer. We shape communication, support, and project presentation around what helps families and investors feel informed, comfortable, and confident.",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop",
@@ -64,34 +38,19 @@ const VALUES = [
   {
     num: "04", title: "Excellence",
     desc: "We keep raising the bar in planning, presentation, and buyer service. The goal is not just to sell plots, but to deliver an experience that feels polished and professionally managed.",
->>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
     imagePosition: "center center",
   },
   {
-<<<<<<< HEAD
-    num: "05",
-    title: "Transparency",
-    desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in — no surprises, no hidden charges, ever.",
-=======
     num: "05", title: "Transparency",
     desc: "Clear information builds stronger trust. We communicate with simplicity, explain practical details properly, and help buyers understand what they are choosing and why it matters.",
->>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
     imagePosition: "center center",
   },
   {
-<<<<<<< HEAD
-    num: "06",
-    title: "One Team One Goal",
-    desc: "Our entire team works with a single mission — to help you secure the best investment of your life in India's fastest growing smart city, Dholera.",
-    image: Value4,
-    imagePosition: "center center",
-=======
     num: "06", title: "One Team One Goal",
     desc: "A strong project experience takes coordinated effort. Our team works with a shared purpose: to make the path from first enquiry to site visit feel seamless, respectful, and reliable.",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop",
->>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
   },
 ];
 
@@ -142,23 +101,6 @@ export default function Values() {
           </p>
         </div>
 
-<<<<<<< HEAD
-        <div ref={bodyRef} className={`values__slider reveal-up${bodyVisible ? " is-visible" : ""}`}>
-          <div className="values__content">
-            <div className="values__content-img-wrap" key={active}>
-              <img
-                src={current.image}
-                alt={current.title}
-                className="values__content-img"
-                style={{ objectPosition: current.imagePosition || "center center" }}
-              />
-            </div>
-            <div className="values__content-text" key={`text-${active}`}>
-              <h3 className="values__content-title">{current.title}</h3>
-              <p className="values__content-desc">{current.desc}</p>
-            </div>
-          </div>
-=======
         {/* Accordion Row */}
         <div
           ref={bodyRef}
@@ -185,7 +127,6 @@ export default function Values() {
                 </button>
               );
             }
->>>>>>> b8abe67fdb71064610405531a00ff72f7613c9d7
 
             // panel
             return (
