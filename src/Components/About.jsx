@@ -100,6 +100,18 @@ const icons = {
       <path d="M22 21v-2a4 4 0 0 0-3-3.87M2 21v-2a4 4 0 0 1 3-3.87" />
     </svg>
   ),
+  pin: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  ),
+  arrow: (
+    <svg width="36" height="16" viewBox="0 0 38 18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M1 9h34" />
+      <path d="m28 2 7 7-7 7" />
+    </svg>
+  ),
 };
 
 const features = [
@@ -142,12 +154,14 @@ export default function About() {
             <div className="ae-img-wrap">
               <div className="ae-corner ae-corner--tl" aria-hidden="true" />
               <div className="ae-corner ae-corner--br" aria-hidden="true" />
-              <img
-                src={doleaImg}
-                alt="Dholera Smart City — Anandam Homes"
-                className="ae-img-bg"
-              />
-              <div className="ae-img-overlay" aria-hidden="true" />
+              <div className="ae-img-photo">
+                <img
+                  src={doleaImg}
+                  alt="Dholera Smart City — Anandam Homes"
+                  className="ae-img-bg"
+                />
+                <div className="ae-img-overlay" aria-hidden="true" />
+              </div>
 
               <div className="ae-feature-strip">
                 {features.map((f) => (
@@ -169,8 +183,8 @@ export default function About() {
             <div className="ae-eyebrow">About Anandam Homes</div>
 
             <h2 className="ae-heading">
-              Invest in India’s &amp; First Greenfield Smart City
-              {/* <em>Greenfield Smart City</em> */}
+              Invest in India&apos;s
+              <em>First Greenfield Smart City</em>
             </h2>
 
             <div className="ae-divider" aria-hidden="true">

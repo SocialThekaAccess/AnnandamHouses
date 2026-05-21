@@ -366,8 +366,18 @@
 }
 
 @media (max-width: 768px) {
+  .page-hero {
+    min-height: auto;
+    padding: calc(var(--nav-height) + 40px) 0 72px;
+  }
+
   .page-hero__inner {
     padding: 0 20px;
+    gap: 32px;
+  }
+
+  .page-hero__panel {
+    max-width: 100%;
   }
 
   .page-section {
@@ -378,6 +388,13 @@
   .page-card {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .page-feature-grid,
+  .page-article-grid,
+  .page-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 

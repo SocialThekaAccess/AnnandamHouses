@@ -382,8 +382,11 @@ a.values__cta-val:hover { color: #B8975A; }
 
 @media (max-width: 900px) {
   .values { padding: 72px 0 0; }
-  .values .container { padding: 0 20px; }
-  .values__header { margin-bottom: 40px; }
+  .values .container { padding: 0; }
+  .values__header {
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
 
   .values__slider {
     flex-direction: column;
@@ -451,7 +454,8 @@ a.values__cta-val:hover { color: #B8975A; }
 
 @media (max-width: 560px) {
   .values { padding: 60px 0 0; }
-  .values .container { padding: 0 16px; }
+  .values .container { padding: 0; }
+  .values__header { padding: 0 16px; }
 
   .values__heading { font-size: clamp(24px, 7vw, 32px); }
   .values__subheading br { display: none; }

@@ -203,6 +203,13 @@
   .features__header { margin-bottom: 48px; }
 }
 
+@media (max-width: 768px) {
+  .features { padding: 72px 0; }
+  .features__cards { grid-template-columns: 1fr; gap: 16px; }
+  .features__header { margin-bottom: 40px; }
+  .features__subtitle { padding: 0 4px; }
+}
+
 @media (max-width: 560px) {
   .features { padding: 72px 0; }
   .features__cards { grid-template-columns: 1fr; gap: 16px; }

@@ -214,6 +214,11 @@
   }
 }
 
+@media (max-width: 768px) {
+  .cat-panel__content { padding: 32px 24px; }
+  .cat-panel__desc { font-size: 11px; }
+}
+
 @media (max-width: 560px) {
   .cat-panel { height: 280px; }
   .cat-panel__content { padding: 28px 20px; }
