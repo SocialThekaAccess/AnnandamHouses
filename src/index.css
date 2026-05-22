@@ -68,6 +68,8 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-width: 0;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 body,

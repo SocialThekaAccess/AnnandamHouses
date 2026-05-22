@@ -35,7 +35,7 @@
 }
 
 .cta-band__title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: clamp(20px, 2.8vw, 30px);
   font-weight: 700;
   color: var(--navy-deep, #0e163a);
@@ -66,7 +66,7 @@
   background: var(--navy-deep, #0e163a);
   color: var(--antique-gold, #B8975A);
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -106,7 +106,7 @@
 
 .footer-disclaimer__text {
   flex: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 11px;
   font-weight: 300;
   line-height: 1.75;
@@ -121,7 +121,7 @@
 
 .footer-disclaimer__badge {
   flex-shrink: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -153,7 +153,7 @@
 .footer-nav__link {
   background: none;
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -203,7 +203,7 @@
 }
 
 .footer-main__brand-name {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 28px;
   font-weight: 700;
   color: #fff;
@@ -212,7 +212,7 @@
 }
 
 .footer-main__brand-tag {
-  font-family: 'Lora', serif;
+  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
   font-style: italic;
   font-size: 14px;
   color: rgba(255,255,255,0.55);
@@ -225,7 +225,7 @@
 }
 
 .footer-main__label {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 12px;
   font-weight: 400;
   color: rgba(255,255,255,0.45);
@@ -233,14 +233,14 @@
 }
 
 .footer-main__sub {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 13px;
   font-weight: 600;
   color: rgba(255,255,255,0.75);
 }
 
 .footer-main__value {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 15px;
   font-weight: 500;
   color: #fff;
@@ -254,7 +254,7 @@
 }
 
 .footer-main__address {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 14px;
   font-weight: 400;
   color: rgba(255,255,255,0.82);
@@ -263,7 +263,7 @@
 }
 
 .footer-main__map-link {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 13px;
   font-weight: 500;
   color: var(--antique-gold, #B8975A);
@@ -310,7 +310,7 @@
 }
 
 .footer-main__crafted {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 11px;
   font-weight: 300;
   color: rgba(255,255,255,0.28);
@@ -320,7 +320,7 @@
 .footer-main__privacy {
   background: none;
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 11px;
   font-weight: 400;
   color: rgba(255,255,255,0.35);

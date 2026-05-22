@@ -44,7 +44,7 @@ const SendIcon = () => (
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
   { icon: <MailIcon />, label: "Email Us", value: "Anandamhomesofficial@gmail.com", href: "mailto:Anandamhomesofficial@gmail.com" },
-  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat - 382120", href: null },
+  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat-382120", href: null },
 ];
 
 export default function Contact() {
@@ -159,7 +159,7 @@ export default function Contact() {
                     <label className="contact__label">Mobile Number *</label>
                     <input
                       className="contact__input"
-                      type="tel"
+                      type="text"
                       name="phone"
                       placeholder="+91 XXXXX XXXXX"
                       required
