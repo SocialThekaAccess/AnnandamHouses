@@ -121,7 +121,7 @@
 .founder__content .section-label { color: var(--antique-gold, #B8975A); }
 .founder__content .section-label::before { background: var(--antique-gold, #B8975A); }
 
-.founder__title { color: #F5F0E8 !important; }
+.founder__title { color: #F5F0E8 !important; font-family: 'Crimson Text', 'crimson-regular', Georgia, serif !important; font-weight: 600; }
 .founder__title span { color: var(--antique-gold, #B8975A) !important; }
 
 .founder__desc {

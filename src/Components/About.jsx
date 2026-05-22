@@ -198,7 +198,7 @@ export default function About() {
             </p>
             <p className="ae-desc">
               Anandam Exotica brings you an exclusive opportunity to own premium residential plots
-              in this landmark development - backed by GujRERA approval and transparent processes.
+              in this landmark development - backed by RERA approval and transparent processes.
             </p>
 
             <div className="ae-counters" ref={countersRef}>

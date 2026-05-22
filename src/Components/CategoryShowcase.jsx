@@ -26,25 +26,19 @@ const ArrowIcon = () => (
 
 const CATEGORIES = [
   {
+    href: "#about",
+    showBtn: false,
+  },
+  {
     title: "Residential Plots",
     subtitle: "Thoughtfully Planned",
     desc: "Spaces shaped for end use, family comfort, and long-term ownership.",
     href: "#contact",
-    videoOffset: "0%",
+    showBtn: true,
   },
   {
-    title: "Growth Potential",
-    subtitle: "Location Advantage",
-    desc: "Positioned to benefit from expanding infrastructure and stronger future visibility.",
-    href: "#about",
-    videoOffset: "33.33%",
-  },
-  {
-    title: "Curated Inventory",
-    subtitle: "Premium Selection",
-    desc: "A focused mix of plotted opportunities presented with clarity and personalized guidance.",
     href: "#values",
-    videoOffset: "66.66%",
+    showBtn: false,
   },
 ];
 
@@ -57,39 +51,37 @@ export default function CategoryShowcase() {
 
   return (
     <section className="cat-showcase" ref={ref}>
+      <video
+        className="cat-showcase__video"
+        src={doleraVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="cat-showcase__video-overlay" />
+
       {CATEGORIES.map((cat, i) => (
         <div
-          key={cat.title}
+          key={i}
           className={`cat-panel${visible ? " is-visible" : ""}`}
           style={{ transitionDelay: `${i * 0.15}s` }}
         >
-          {/* Video background — each panel shows a different horizontal slice */}
-          <div className="cat-panel__video-wrap">
-            <video
-              className="cat-panel__video"
-              src={doleraVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ left: `-${cat.videoOffset}` }}
-            />
-          </div>
-
           <div className="cat-panel__overlay" />
-          <div className="cat-panel__accent" />
 
           <div className="cat-panel__content">
-            <span className="cat-panel__sub">{cat.subtitle}</span>
-            <h2 className="cat-panel__title">{cat.title}</h2>
-            <span className="cat-panel__desc">{cat.desc}</span>
+            {cat.subtitle && <span className="cat-panel__sub">{cat.subtitle}</span>}
+            {cat.title && <h2 className="cat-panel__title">{cat.title}</h2>}
+            {cat.desc && <span className="cat-panel__desc">{cat.desc}</span>}
 
-            <button
-              className="cat-panel__btn"
-              onClick={() => scrollTo(cat.href)}
-            >
-              Explore More <ArrowIcon />
-            </button>
+            {cat.showBtn && (
+              <button
+                className="cat-panel__btn"
+                onClick={() => scrollTo(cat.href)}
+              >
+                Explore More <ArrowIcon />
+              </button>
+            )}
           </div>
         </div>
       ))}

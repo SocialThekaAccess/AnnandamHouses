@@ -71,7 +71,7 @@ export default function Contact() {
         <div className="contact__header">
           <span className="section-label">Get In Touch</span>
           <h2 className="section-title contact__title">
-            Let Us Help You <span>Take The Next Step</span>
+            Let Us Help You Take The Next Step
           </h2>
           <p className="contact__subtitle">
             Speak with our team for project details, documentation guidance, and a planned site visit experience.
@@ -87,10 +87,10 @@ export default function Contact() {
             <div className="contact__info-overlay" />
 
             <div className="contact__info-content">
-              <div className="contact__info-eyebrow">
+              {/* <div className="contact__info-eyebrow">
                 <span className="contact__info-dot" />
                 Enquiries Open - Premium Inventory
-              </div>
+              </div> */}
 
               <h3 className="contact__info-title">
                 Anandam Homes

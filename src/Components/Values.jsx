@@ -35,7 +35,7 @@ const VALUES = [
   {
     num: "03",
     title: "Integrity",
-    desc: "Every transaction, every document, every interaction is rooted in complete honesty. GujRERA approved, legally clear titles, zero hidden charges — always.",
+    desc: "Every transaction, every document, every interaction is rooted in complete honesty. RERA approved, legally clear titles, zero hidden charges — always.",
     image: Value3,
   },
   {

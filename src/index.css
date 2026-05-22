@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --royal-navy: #1A2456;
@@ -30,8 +30,8 @@
   --border-gold: rgba(184, 151, 90, 0.25);
   --border-light: rgba(26, 36, 86, 0.08);
 
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-accent: "Playfair Display", Georgia, serif;
+  --font-heading: 'Crimson Text', 'crimson-regular', Georgia, serif;
+  --font-accent: 'Crimson Text', 'crimson-regular', Georgia, serif;
   --font-body: "Raleway", sans-serif;
 
   --font-serif: var(--font-heading);
@@ -92,10 +92,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading) !important;
-  font-weight: 700;
+  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif !important;
+  font-weight: 600;
   line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
@@ -156,11 +156,11 @@ button {
 }
 
 .section-title {
-  font-family: var(--font-heading) !important;
+  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif !important;
   font-size: clamp(30px, 3.8vw, 50px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
