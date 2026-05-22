@@ -25,42 +25,36 @@ const VALUES = [
     title: "Customer First",
     desc: "Focused on the needs of our customers, we create spaces that nurture and inspire. Building trust through transparent processes and unparalleled quality, we place our customers at the heart of every endeavor.",
     image: Value1,
-    imagePosition: "center center",
   },
   {
     num: "02",
     title: "Commitment",
     desc: "We stand by every promise made to our customers. From plot delivery timelines to infrastructure quality — our commitment is absolute and non-negotiable at every step of the journey.",
     image: Value2,
-    imagePosition: "center center",
   },
   {
     num: "03",
     title: "Integrity",
     desc: "Every transaction, every document, every interaction is rooted in complete honesty. GujRERA approved, legally clear titles, zero hidden charges — always.",
     image: Value3,
-    imagePosition: "center center",
   },
   {
     num: "04",
     title: "Excellence",
     desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Dholera Smart City.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
-    imagePosition: "center center",
   },
   {
     num: "05",
     title: "Transparency",
     desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in — no surprises, no hidden charges, ever.",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
-    imagePosition: "center center",
   },
   {
     num: "06",
     title: "One Team One Goal",
     desc: "Our entire team works with a single mission — to help you secure the best investment of your life in India's fastest growing smart city, Dholera.",
     image: Value4,
-    imagePosition: "center center",
   },
 ];
 
@@ -75,6 +69,7 @@ export default function Values() {
     <section className="values" id="values">
       <div className="container">
 
+        {/* ── Header ── */}
         <div ref={headerRef} className={`values__header reveal-up${headerVisible ? " is-visible" : ""}`}>
           <div className="values__header-eyebrow">
             <span className="values__eyebrow-line" />
@@ -88,22 +83,29 @@ export default function Values() {
           </p>
         </div>
 
-        <div ref={bodyRef} className={`values__slider reveal-up${bodyVisible ? " is-visible" : ""}`}>
-          <div className="values__content">
-            <div className="values__content-img-wrap" key={active}>
-              <img
-                src={current.image}
-                alt={current.title}
-                className="values__content-img"
-                style={{ objectPosition: current.imagePosition || "center center" }}
-              />
-            </div>
-            <div className="values__content-text" key={`text-${active}`}>
+        {/* ── Jubilee-style Slider ── */}
+        <div
+          ref={bodyRef}
+          className={`values__slider reveal-up${bodyVisible ? " is-visible" : ""}`}
+        >
+          {/* LEFT — text panel */}
+          <div className="values__left">
+            <div className="values__left-inner" key={`text-${active}`}>
               <h3 className="values__content-title">{current.title}</h3>
               <p className="values__content-desc">{current.desc}</p>
             </div>
           </div>
 
+          {/* CENTER — portrait image */}
+          <div className="values__center" key={`img-${active}`}>
+            <img
+              src={current.image}
+              alt={current.title}
+              className="values__center-img"
+            />
+          </div>
+
+          {/* RIGHT — vertical tabs */}
           <div className="values__tabs">
             {VALUES.map((v, i) => (
               <button
@@ -114,16 +116,17 @@ export default function Values() {
                 aria-pressed={active === i}
                 aria-label={v.title}
               >
+                {/* Arrow icon top */}
                 <div className="values__tab-arrow">
                   {active === i ? (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="1.8"
                       strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="17 7 7 17" />
                       <polyline points="7 7 7 17 17 17" />
                     </svg>
                   ) : (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="1.8"
                       strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="7 17 17 7" />
@@ -131,19 +134,30 @@ export default function Values() {
                     </svg>
                   )}
                 </div>
+
+                {/* Vertical title */}
                 <span className="values__tab-title">{v.title}</span>
+
+                {/* Number bottom */}
                 <span className="values__tab-num">{v.num}</span>
               </button>
             ))}
           </div>
         </div>
 
-        <div className={`values__cta reveal-up${bodyVisible ? " is-visible" : ""}`} style={{ transitionDelay: "0.2s" }}>
+        {/* ── Bottom CTA ── */}
+        <div
+          className={`values__cta reveal-up${bodyVisible ? " is-visible" : ""}`}
+          style={{ transitionDelay: "0.2s" }}
+        >
           <div className="values__cta-left">
             <div className="values__cta-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="1.6"
+                strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
                 <line x1="3" y1="10" x2="21" y2="10"/>
               </svg>
             </div>
@@ -165,8 +179,11 @@ export default function Values() {
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Book Now
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5"
+              strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
             </svg>
           </button>
         </div>
