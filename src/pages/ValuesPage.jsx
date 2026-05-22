@@ -97,7 +97,7 @@ export default function ValuesPage({ onNavigate }) {
     <div className="page-shell">
 
       {/* ── Hero ── */}
-      <section className="page-hero">
+      <section className="page-hero page-hero--no-overlay">
         <div
           className="page-hero__backdrop"
           style={{

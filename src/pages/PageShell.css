@@ -19,8 +19,9 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(115deg, rgba(7, 12, 33, 0.95) 0%, rgba(12, 22, 58, 0.82) 42%, rgba(12, 22, 58, 0.35) 100%);
+    linear-gradient(115deg, rgba(7, 12, 33, 0.92) 0%, rgba(12, 22, 58, 0.85) 42%, rgba(7, 12, 33, 0.72) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .page-hero::after {
@@ -45,7 +46,7 @@
 
 .page-hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -718,4 +719,13 @@
   color: #B8975A;
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+/* ── No overlay variant ── */
+.page-hero--no-overlay::before {
+  display: none;
+}
+
+.page-hero--no-overlay::after {
+  display: none;
 }

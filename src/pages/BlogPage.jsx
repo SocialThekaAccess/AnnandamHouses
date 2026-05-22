@@ -1,4 +1,5 @@
 import "./PageShell.css";
+import BlogImg from "../assets/BlogSection.png";
 
 const CallNowBtn = () => (
   <a href="tel:+916384800001" className="page-hero__call-btn" aria-label="Call Now">
@@ -45,8 +46,7 @@ export default function BlogPage({ onNavigate }) {
         <div
           className="page-hero__backdrop"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80)",
+            backgroundImage: `url(${BlogImg})`,
           }}
         />
         <CallNowBtn />
