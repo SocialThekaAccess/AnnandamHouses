@@ -1,4 +1,5 @@
 import "./PageShell.css";
+import aboutBg from "../assets/AboutUsimg.png";
 
 const CallNowBtn = () => (
   <a href="tel:+916384800001" className="page-hero__call-btn" aria-label="Call Now">
@@ -36,32 +37,32 @@ export default function AboutPage({ onNavigate }) {
         <div
           className="page-hero__backdrop"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1600&q=80)",
+            backgroundImage: `url(${aboutBg})`,
+            backgroundPosition: "center center",
           }}
         />
         <CallNowBtn />
         <div className="page-hero__inner">
           <div className="page-hero__copy">
             <div className="page-hero__eyebrow">Brand Story</div>
-            <h1 className="page-hero__title">
+            {/* <h1 className="page-hero__title">
               Built for <span>disciplined growth</span> and elevated living.
-            </h1>
-            <p className="page-hero__description">
+            </h1> */}
+            {/* <p className="page-hero__description">
               Anandam Homes brings a luxury tone to plotted real estate by pairing refined presentation with
               grounded market guidance. The ambition is simple: make the journey feel premium, informed, and
               deeply trustworthy from the very first interaction.
-            </p>
+            </p> */}
           </div>
 
-          <div className="page-hero__panel">
+          {/* <div className="page-hero__panel">
             <div className="page-hero__panel-label">Positioning</div>
             <div className="page-hero__panel-value">Luxury plotted real estate with investor-grade confidence.</div>
             <div className="page-hero__panel-copy">
               The visual system follows the home page language: rich navy, antique gold, assertive typography,
               spacious composition, and a calm premium rhythm.
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -87,6 +88,48 @@ export default function AboutPage({ onNavigate }) {
                   means elegant storytelling, disciplined color use, strong hierarchy, and practical details that
                   help buyers act with clarity.
                 </p>
+                <div className="about-quick-facts">
+                  <div className="about-quick-fact">
+                    <span className="about-quick-fact__icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>RERA approved &amp; legally clear titles</span>
+                  </div>
+                  <div className="about-quick-fact">
+                    <span className="about-quick-fact__icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Zero hidden charges — complete transparency</span>
+                  </div>
+                  <div className="about-quick-fact">
+                    <span className="about-quick-fact__icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Dholera Smart City — India's fastest growing corridor</span>
+                  </div>
+                  <div className="about-quick-fact">
+                    <span className="about-quick-fact__icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Dedicated relationship manager for every buyer</span>
+                  </div>
+                  <div className="about-quick-fact">
+                    <span className="about-quick-fact__icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Guided site visits at your convenience</span>
+                  </div>
+                </div>
+                <button
+                  className="gold-btn"
+                  style={{ marginTop: "24px" }}
+                  onClick={() => onNavigate?.("/contact-us")}
+                >
+                  Talk to Our Team
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </button>
               </div>
             </div>
 

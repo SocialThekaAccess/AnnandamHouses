@@ -3,6 +3,7 @@ import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
 import Value3 from "../assets/Value3.png";
 import Value4 from "../assets/Value4.png";
+import Valuesimg from "../assets/Valuesimg.png";
 
 const CallNowBtn = () => (
   <a href="tel:+916384800001" className="page-hero__call-btn" aria-label="Call Now">
@@ -100,31 +101,30 @@ export default function ValuesPage({ onNavigate }) {
         <div
           className="page-hero__backdrop"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=1600&q=80)",
+            backgroundImage: `url(${Valuesimg})`,
           }}
         />
         <CallNowBtn />
         <div className="page-hero__inner">
           <div className="page-hero__copy">
             <div className="page-hero__eyebrow">Our Foundation</div>
-            <h1 className="page-hero__title">
+            {/* <h1 className="page-hero__title">
               Values that guide <span>every decision</span> we make.
-            </h1>
-            <p className="page-hero__description">
+            </h1> */}
+            {/* <p className="page-hero__description">
               At Anandam Homes, our values are not just words on a wall — they are the principles
               that shape every interaction, every plot, and every promise we make to our customers.
-            </p>
+            </p> */}
           </div>
 
-          <div className="page-hero__panel">
+          {/* <div className="page-hero__panel">
             <div className="page-hero__panel-label">What We Stand For</div>
             <div className="page-hero__panel-value">Six core values. One unwavering commitment to excellence.</div>
             <div className="page-hero__panel-copy">
               From customer-first thinking to absolute transparency — these values define who we are
               and how we build trust in every relationship.
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
