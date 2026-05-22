@@ -13,18 +13,21 @@ const SLIDES = [
   {
     bg: Anandamhomes1,
     pos: "center 35%",
+    mobilePos: "center 55%",   // show building structure, skip top sky
     headline: <>Thoughtfully<br />Planned Living</>,
     tagline: <>Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</>,
   },
   {
     bg: "https://images.pexels.com/photos/8654110/pexels-photo-8654110.jpeg",
     pos: "center center",
+    mobilePos: "center center",
     headline: <>Built Around<br />Real Value</>,
     tagline: <>Designed for families, end users,<br />and long-term confidence.</>,
   },
   {
     bg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85&auto=format&fit=crop",
     pos: "center 40%",
+    mobilePos: "center 40%",
     headline: <>A Better<br />Address Ahead</>,
     tagline: <>Infrastructure-led growth, refined presentation,<br />and a smoother buying journey.</>,
   },
@@ -75,7 +78,11 @@ export default function Hero() {
         <div
           key={i}
           className={`hero__slide${i === current ? " hero__slide--active" : ""}${i === prev ? " hero__slide--prev" : ""}`}
-          style={{ backgroundImage: `url(${s.bg})`, backgroundPosition: s.pos }}
+          style={{
+            backgroundImage: `url(${s.bg})`,
+            backgroundPosition: s.pos,
+            "--mobile-pos": s.mobilePos,
+          }}
         />
       ))}
 

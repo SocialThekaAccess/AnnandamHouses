@@ -271,63 +271,90 @@
   .hero__overlay {
     background: linear-gradient(
       180deg,
-      rgba(5, 10, 30, 0.88) 0%,
-      rgba(5, 10, 30, 0.72) 55%,
-      rgba(5, 10, 30, 0.45) 100%
+      rgba(5, 10, 30, 0.20) 0%,
+      rgba(5, 10, 30, 0.20) 35%,
+      rgba(5, 10, 30, 0.88) 100%
     );
   }
 
-  .hero__container {
-    padding: calc(var(--nav-height) + 48px) 20px 100px;
-    justify-content: center;
+  /* Show building properly — use per-slide mobile position */
+  .hero__slide {
+    background-position: var(--mobile-pos, center center) !important;
+    background-size: cover;
   }
 
-  .hero__headline {
-    font-size: clamp(30px, 8vw, 52px);
+  /* Content sits at bottom-left — Jubilee style */
+  .hero__container {
+    padding: 0 5% 100px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    min-height: 100svh;
   }
 
   .hero__left {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
+  }
+
+  .hero__headline {
+    font-size: clamp(32px, 9vw, 52px);
+    line-height: 0.95;
+    margin-bottom: 16px;
+  }
+
+  .hero__tagline {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.6;
   }
 
   .hero__rule {
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
   }
 
+  /* Scroll arrow — bottom center, visible */
   .hero__scroll {
-    display: none;
+    display: flex;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2.2s ease-in-out infinite;
   }
 
+  /* Slide numbers — bottom left */
   .hero__slider-nums {
-    bottom: 24px;
-    right: 50%;
-    transform: translateX(50%);
+    bottom: 28px;
+    left: 5%;
+    right: auto;
+    transform: none;
     gap: 14px;
   }
 
+  .hero__tagline br {
+    display: none;
+  }
+
   .hero__logo img {
-    height: 48px;
+    height: 52px;
   }
 }
 
 @media (max-width: 560px) {
   .hero__container {
-    padding: calc(var(--nav-height) + 36px) 16px 88px;
+    padding: 0 5% 90px;
   }
 
   .hero__headline {
-    font-size: clamp(26px, 9vw, 40px);
-    margin-bottom: 14px;
+    font-size: clamp(28px, 10vw, 44px);
+    margin-bottom: 12px;
   }
 
   .hero__tagline {
-    font-size: clamp(15px, 4.5vw, 19px);
+    font-size: clamp(13px, 4.2vw, 17px);
   }
 
   .hero__slider-nums {
-    bottom: 16px;
+    bottom: 22px;
     gap: 10px;
   }
 
@@ -336,6 +363,6 @@
   }
 
   .hero__logo img {
-    height: 40px;
+    height: 44px;
   }
 }
