@@ -81,7 +81,7 @@ export default function Values() {
             <span className="values__eyebrow-text">Our Foundation</span>
             <span className="values__eyebrow-line" />
           </div>
-          <h2 className="values__heading">What We <span>Stand For</span></h2>
+          <h2 className="values__heading">What We Stand For</h2>
           <p className="values__subheading">
             Our values are the cornerstone of every decision we make.<br />
             They guide us in creating spaces that last for generations.

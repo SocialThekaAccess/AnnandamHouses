@@ -61,21 +61,35 @@
 }
 
 .values__heading {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
-  color: #1A2456;
-  line-height: 1.1;
+  font-family: 'crimson-regular', 'Crimson Text', serif;
+  font-size: clamp(28px, 5vw, 62px);
+  font-weight: 400;
+  color: #545b61;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   margin: 0 0 14px;
 }
 
 .values__heading span {
-  background: linear-gradient(135deg, #E8D09A, #B8975A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 400;
+  color: #545b61;
+  background: none;
+  -webkit-text-fill-color: #545b61;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
+@media (max-width: 768px) {
+  .values__heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values__heading {
+    font-size: 28px;
+  }
+}
 .values__subheading {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
 import Location from "./Components/Location";
@@ -129,7 +129,7 @@ function App() {
 
   return (
     <>
-      <Navbar currentPath={pathname} onNavigate={navigate} />
+      {/* <Navbar currentPath={pathname} onNavigate={navigate} /> */}
       {renderPage()}
       <Footer currentPath={pathname} onNavigate={navigate} />
       <ScrollToTop />

@@ -255,22 +255,24 @@
 }
 
 .ae-heading {
+  font-family: 'crimson-regular', 'Crimson Text', serif;
   font-size: clamp(34px, 4vw, 58px);
-  font-weight: 700;
-  line-height: 1.05;
-  color: var(--royal-navy, #1A2456);
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  line-height: 0.97;
+  color: #545b61;
+  letter-spacing: -0.01em;
 }
 
 .ae-heading em {
-  font-style: italic;
-  color: var(--antique-gold, #B8975A);
-  font-weight: 600;
+  font-family: 'crimson-regular', 'Crimson Text', serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #545b61;
   display: block;
-  font-size: clamp(36px, 4.4vw, 64px);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin-top: 8px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 0.97;
+  letter-spacing: -0.01em;
+  margin-top: 0;
 }
 
 .ae-divider {
@@ -463,11 +465,13 @@
   .ae-heading {
     font-size: clamp(26px, 7vw, 34px);
     line-height: 1.12;
+    font-family: crimson-regular;
   }
 
   .ae-heading em {
     font-size: clamp(28px, 7.5vw, 38px);
     margin-top: 6px;
+    font-family: crimson-regular;
   }
 
   .ae-desc {

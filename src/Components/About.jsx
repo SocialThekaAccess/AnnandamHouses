@@ -184,7 +184,7 @@ export default function About() {
 
             <h2 className="ae-heading">
               Invest in India&apos;s
-              <em>First Greenfield Smart City</em>
+              First Greenfield Smart City
             </h2>
 
             <div className="ae-divider" aria-hidden="true">
@@ -213,14 +213,14 @@ export default function About() {
               ))}
             </div>
 
-            <button
+            {/* <button
               className="ae-cta"
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               <div className="ae-cta-icon">{icons.pin}</div>
               <span className="ae-cta-text">Explore Premium Plot Options</span>
               <span className="ae-cta-arrow">{icons.arrow}</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 
 const ChevronDown = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,6 +80,12 @@ export default function Hero() {
       ))}
 
       <div className="hero__overlay" />
+      <div className="hero__grid-pattern" />
+
+      {/* Logo */}
+      <div className="hero__logo">
+        <img src={logoImg} alt="Anandam Homes" />
+      </div>
 
       <div className="hero__container">
         <div className={`hero__left${loaded ? "" : " hidden"}${textVisible ? "" : " text-out"}`}>
