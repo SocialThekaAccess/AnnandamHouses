@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
+import Anandamslider2 from "../assets/Anandamslider2.png";
 
 const ChevronDown = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,7 +19,7 @@ const SLIDES = [
     tagline: <>Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</>,
   },
   {
-    bg: "https://images.pexels.com/photos/8654110/pexels-photo-8654110.jpeg",
+    bg: Anandamslider2,
     pos: "center center",
     mobilePos: "center center",
     headline: <>Built Around<br />Real Value</>,

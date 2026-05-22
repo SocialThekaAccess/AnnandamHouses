@@ -1,5 +1,9 @@
+import { useState } from "react";
 import "./Footer.css";
 import logo from "../assets/anandamhomeslogo.png";
+import googleEarthVideo from "../assets/GoogleEarth.mp4";
+
+const MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
 
 const HOME_PATH = "/";
 const CONTACT_PATH = "/contact-us";
@@ -79,6 +83,7 @@ function CtaBand({ onNavigate }) {
 }
 
 export default function Footer({ onNavigate }) {
+  const [videoOpen, setVideoOpen] = useState(false);
   const handleNavigate = (href) => {
     if (href.includes("#")) {
       const [path, hash] = href.split("#");
@@ -151,14 +156,12 @@ export default function Footer({ onNavigate }) {
                   Ahmedabad District,<br />
                   Gujarat - 382120, India
                 </p>
-                <a
-                  href="https://maps.google.com/?q=Dholera+Smart+City+Gujarat"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setVideoOpen(true)}
                   className="footer-main__map-link"
                 >
-                  Google Location
-                </a>
+                  📍 View Location
+                </button>
               </div>
 
               <div className="footer-main__col footer-main__col--social">
@@ -201,6 +204,34 @@ export default function Footer({ onNavigate }) {
       >
         <WhatsAppIcon />
       </a>
+
+      {/* ── Location Video Modal ── */}
+      {videoOpen && (
+        <div className="loc-modal__backdrop" onClick={() => setVideoOpen(false)}>
+          <div className="loc-modal__box" onClick={(e) => e.stopPropagation()}>
+            <div className="loc-modal__header">
+              <span className="loc-modal__title">📍 Anandam Homes — Location View</span>
+              <button className="loc-modal__close" onClick={() => setVideoOpen(false)} aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+            <video
+              className="loc-modal__video"
+              src={googleEarthVideo}
+              autoPlay
+              controls
+              playsInline
+            />
+            <div className="loc-modal__footer">
+              <a href={MAP_URL} target="_blank" rel="noopener noreferrer" className="loc-modal__maps-link">
+                Open in Google Maps →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -444,3 +444,95 @@
     height: 60px;
   }
 }
+
+/* ── Location Video Modal ── */
+.loc-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.loc-modal__box {
+  background: #0e163a;
+  border: 1px solid rgba(184, 151, 90, 0.3);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 860px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+}
+
+.loc-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+}
+
+.loc-modal__title {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(245, 240, 232, 0.85);
+}
+
+.loc-modal__close {
+  background: none;
+  border: none;
+  color: rgba(245, 240, 232, 0.5);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  border-radius: 2px;
+}
+
+.loc-modal__close:hover {
+  color: #B8975A;
+}
+
+.loc-modal__video {
+  width: 100%;
+  display: block;
+  max-height: 70vh;
+  background: #000;
+}
+
+.loc-modal__footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(184, 151, 90, 0.15);
+  text-align: right;
+}
+
+.loc-modal__maps-link {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #B8975A;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.loc-modal__maps-link:hover {
+  opacity: 0.75;
+}
+
+/* Also style the trigger button same as the old link */
+button.footer-main__map-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
