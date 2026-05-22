@@ -96,9 +96,71 @@
 }
 
 .hero__logo img {
-  height: 90px;  /* 64px se badha ke 90px */
+  height: 90px;
   width: auto;
   object-fit: contain;
+}
+
+/* ── Call Now button — top right ── */
+.hero__call-btn {
+  position: absolute;
+  top: 32px;
+  right: 5%;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(184, 151, 90, 0.4);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hero__call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(184, 151, 90, 0.7);
+}
+
+/* Left — gold icon circle */
+.hero__call-btn__icon {
+  width: 40px;
+  height: 40px;
+  background: #B8975A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.hero__call-btn:hover .hero__call-btn__icon {
+  background: #C3A95E;
+}
+
+/* Right — glass text pill */
+.hero__call-btn__text {
+  padding: 0 18px 0 14px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(184, 151, 90, 0.3);
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.hero__call-btn:hover .hero__call-btn__text {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 /* ── Main container ── */
@@ -332,6 +394,23 @@
 
   .hero__tagline br {
     display: none;
+  }
+
+  .hero__call-btn {
+    top: 22px;
+    right: 4%;
+  }
+
+  .hero__call-btn__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero__call-btn__text {
+    height: 36px;
+    font-size: 9.5px;
+    padding: 0 14px 0 12px;
+    letter-spacing: 0.15em;
   }
 
   .hero__logo img {
