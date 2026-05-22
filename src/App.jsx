@@ -14,10 +14,12 @@ import Footer from "./Components/Footer";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import ValuesPage from "./pages/ValuesPage";
 
 const ROUTES = {
   HOME: "/",
   ABOUT: "/about-us",
+  VALUES: "/our-values",
   BLOG: "/blog",
   CONTACT: "/contact-us",
 };
@@ -96,6 +98,7 @@ function App() {
     const titles = {
       [ROUTES.HOME]: "Anandam Homes",
       [ROUTES.ABOUT]: "About Us | Anandam Homes",
+      [ROUTES.VALUES]: "Our Values | Anandam Homes",
       [ROUTES.BLOG]: "Blog | Anandam Homes",
       [ROUTES.CONTACT]: "Contact Us | Anandam Homes",
     };
@@ -117,6 +120,8 @@ function App() {
     switch (pathname) {
       case ROUTES.ABOUT:
         return <AboutPage onNavigate={navigate} />;
+      case ROUTES.VALUES:
+        return <ValuesPage onNavigate={navigate} />;
       case ROUTES.BLOG:
         return <BlogPage onNavigate={navigate} />;
       case ROUTES.CONTACT:
