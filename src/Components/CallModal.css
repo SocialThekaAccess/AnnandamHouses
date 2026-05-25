@@ -1,0 +1,399 @@
+/* ===== CALL MODAL — Anandam Homes ===== */
+
+/* ── Backdrop ── */
+.call-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: backdropFadeIn 0.25s ease forwards;
+}
+
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal Box ── */
+.call-modal__box {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(184, 151, 90, 0.15);
+  animation: modalSlideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Close Button ── */
+.call-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.call-modal__close:hover {
+  background: rgba(184, 151, 90, 0.25);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* ══════════════════════════════════════
+   LEFT PANEL — Dark Navy
+══════════════════════════════════════ */
+.call-modal__left {
+  background: #0e163a;
+  padding: 44px 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle ambient glow */
+.call-modal__left::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 151, 90, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Gold phone icon circle */
+.call-modal__phone-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(184, 151, 90, 0.12);
+  border: 1px solid rgba(184, 151, 90, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B8975A;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.call-modal__left-heading {
+  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 400;
+  color: #F5F0E8;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Subtext */
+.call-modal__left-sub {
+  font-family: 'DM Sans', 'DM-Sans-Light', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.5);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Big phone number */
+.call-modal__phone-number {
+  display: block;
+  font-family: 'Raleway', var(--font-body, sans-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: #B8975A;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.call-modal__phone-number:hover {
+  color: #E8D09A;
+}
+
+/* WhatsApp button */
+.call-modal__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #22c55e;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Raleway', var(--font-body, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-radius: 50px;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
+  width: fit-content;
+}
+
+.call-modal__whatsapp:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.45);
+}
+
+/* Divider */
+.call-modal__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(245, 240, 232, 0.25);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.call-modal__divider::before,
+.call-modal__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(184, 151, 90, 0.15);
+}
+
+/* ══════════════════════════════════════
+   RIGHT PANEL — White / Cream
+══════════════════════════════════════ */
+.call-modal__right {
+  background: #faf8f4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gold shimmer top bar */
+.call-modal__right-topbar {
+  height: 4px;
+  background: linear-gradient(90deg, #9A7A3A, #B8975A, #E8D09A, #B8975A);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.call-modal__right-body {
+  padding: 36px 32px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.call-modal__right-heading {
+  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1A2456;
+  margin: 0 0 4px;
+}
+
+.call-modal__right-sub {
+  font-family: 'DM Sans', 'DM-Sans-Light', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: #7A7A7A;
+  letter-spacing: 0.06em;
+  margin: 0 0 24px;
+}
+
+/* ── Form ── */
+.call-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.call-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.call-modal__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+}
+
+.call-modal__input,
+.call-modal__select {
+  width: 100%;
+  background: #f8f9fc;
+  border: 1px solid rgba(26, 36, 86, 0.12);
+  border-radius: 2px;
+  padding: 12px 14px;
+  font-family: 'Raleway', var(--font-body, sans-serif) !important;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #1A2456;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+.call-modal__input::placeholder {
+  color: rgba(26, 36, 86, 0.3);
+}
+
+.call-modal__input:focus,
+.call-modal__select:focus {
+  border-color: #B8975A;
+  background: #fffdf7;
+}
+
+.call-modal__select {
+  cursor: pointer;
+  color: rgba(26, 36, 86, 0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239A7A3A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-color: #f8f9fc;
+}
+
+.call-modal__select option {
+  background: #fff;
+  color: #1A2456;
+}
+
+/* Submit button */
+.call-modal__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #B8975A;
+  color: #fff;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(184, 151, 90, 0.35);
+  margin-top: 4px;
+}
+
+.call-modal__submit:hover {
+  background: #C3A95E;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(184, 151, 90, 0.5);
+}
+
+/* Success message */
+.call-modal__success {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 2px;
+  padding: 12px;
+  text-align: center;
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Privacy note */
+.call-modal__privacy {
+  font-size: 10px;
+  color: rgba(26, 36, 86, 0.3);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Single column on mobile
+══════════════════════════════════════ */
+@media (max-width: 640px) {
+  .call-modal__backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .call-modal__box {
+    grid-template-columns: 1fr;
+    border-radius: 16px 16px 0 0;
+    max-height: 92vh;
+    overflow-y: auto;
+    animation: modalSlideUpMobile 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes modalSlideUpMobile {
+    from { opacity: 0; transform: translateY(100%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .call-modal__left {
+    padding: 36px 24px 28px;
+  }
+
+  .call-modal__phone-number {
+    font-size: 24px;
+  }
+
+  .call-modal__right-body {
+    padding: 28px 24px 24px;
+  }
+
+  .call-modal__close {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .call-modal__phone-number {
+    font-size: 20px;
+  }
+
+  .call-modal__left-heading {
+    font-size: 20px;
+  }
+}

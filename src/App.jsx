@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 // import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
+import CallModal from "./Components/CallModal";
 import About from "./Components/About";
 import Location from "./Components/Location";
 import Values from "./Components/Values";
@@ -138,6 +139,7 @@ function App() {
       {renderPage()}
       <Footer currentPath={pathname} onNavigate={navigate} />
       <ScrollToTop />
+      <CallModal />
     </>
   );
 }

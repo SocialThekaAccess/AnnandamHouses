@@ -18,8 +18,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(115deg, rgba(7, 12, 33, 0.92) 0%, rgba(12, 22, 58, 0.85) 42%, rgba(7, 12, 33, 0.72) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(7, 12, 33, 0.45) 0%,
+    rgba(7, 12, 33, 0.35) 50%,
+    rgba(7, 12, 33, 0.60) 100%
+  );
   pointer-events: none;
   z-index: 1;
 }
@@ -728,4 +732,10 @@
 
 .page-hero--no-overlay::after {
   display: none;
+}
+
+/* ── Hidden inner (when image has its own content) ── */
+.page-hero__inner--hidden {
+  visibility: hidden;
+  pointer-events: none;
 }

@@ -4,17 +4,26 @@ import Value2 from "../assets/Value2.png";
 import Value3 from "../assets/Value3.png";
 import Value4 from "../assets/Value4.png";
 import Valuesimg from "../assets/Valuesimg.png";
+import { useCallModal } from "../context/CallModalContext";
 
-const CallNowBtn = () => (
-  <a href="tel:+916384800001" className="page-hero__call-btn" aria-label="Call Now">
-    <span className="page-hero__call-btn__icon">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-      </svg>
-    </span>
-    <span className="page-hero__call-btn__text">Call Now</span>
-  </a>
-);
+const CallNowBtn = () => {
+  const { setOpen } = useCallModal();
+  return (
+    <button
+      onClick={() => setOpen(true)}
+      className="page-hero__call-btn"
+      aria-label="Call Now"
+      type="button"
+    >
+      <span className="page-hero__call-btn__icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </span>
+      <span className="page-hero__call-btn__text">Call Now</span>
+    </button>
+  );
+};
 
 const VALUES = [
   {
@@ -105,26 +114,7 @@ export default function ValuesPage({ onNavigate }) {
           }}
         />
         <CallNowBtn />
-        <div className="page-hero__inner">
-          <div className="page-hero__copy">
-            <div className="page-hero__eyebrow">Our Foundation</div>
-            {/* <h1 className="page-hero__title">
-              Values that guide <span>every decision</span> we make.
-            </h1> */}
-            {/* <p className="page-hero__description">
-              At Anandam Homes, our values are not just words on a wall — they are the principles
-              that shape every interaction, every plot, and every promise we make to our customers.
-            </p> */}
-          </div>
-
-          {/* <div className="page-hero__panel">
-            <div className="page-hero__panel-label">What We Stand For</div>
-            <div className="page-hero__panel-value">Six core values. One unwavering commitment to excellence.</div>
-            <div className="page-hero__panel-copy">
-              From customer-first thinking to absolute transparency — these values define who we are
-              and how we build trust in every relationship.
-            </div>
-          </div> */}
+        <div className="page-hero__inner page-hero__inner--hidden">
         </div>
       </section>
 
