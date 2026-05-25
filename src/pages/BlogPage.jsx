@@ -88,7 +88,7 @@ export default function BlogPage({ onNavigate }) {
               <div>
                 <div className="section-label">Blog Design</div>
                 <h2 className="page-heading">
-                  Crafted to read like a <span>premium property journal</span>.
+                  Crafted to read like a premium property journal.
                 </h2>
                 <p className="page-copy">
                   Instead of a default blog archive look, this page leans into stronger imagery, luxury spacing, and

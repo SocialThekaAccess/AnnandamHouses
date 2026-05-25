@@ -68,7 +68,7 @@ export default function ContactPage() {
               <div>
                 <div className="section-label">Reach Us</div>
                 <h2 className="page-heading">
-                  Multiple ways to connect, one <span>consistent luxury experience</span>.
+                  Multiple ways to connect, one consistent luxury experience.
                 </h2>
                 <p className="page-copy">
                   The upper section gives the contact page presence and breathing room before the form begins. It

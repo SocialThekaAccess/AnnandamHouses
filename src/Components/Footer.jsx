@@ -134,7 +134,7 @@ export default function Footer({ onNavigate }) {
             <div className="footer-main__grid">
               <div className="footer-main__brand">
                 <img src={logo} alt="Anandam Homes" className="footer-main__logo" />
-                <div className="footer-main__brand-name">Anandam Homes</div>
+                {/* <div className="footer-main__brand-name">Anandam Homes</div> */}
                 <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>
 
@@ -151,11 +151,11 @@ export default function Footer({ onNavigate }) {
               <div className="footer-main__col">
                 <div className="footer-main__label">Anandam Homes</div>
                 <div className="footer-main__sub">Corporate Office:</div>
-                <p className="footer-main__address">
+                {/* <p className="footer-main__address">
                   Dholera Smart City,<br />
                   Ahmedabad District,<br />
                   Gujarat - 382120, India
-                </p>
+                </p> */}
                 <button
                   onClick={() => setVideoOpen(true)}
                   className="footer-main__map-link"

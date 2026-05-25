@@ -1,4 +1,4 @@
-/* ─── HERO — Anandam Homes (Jubilee-style) ─────────────────────── */
+/* ─── HERO — Anandam Homes ─────────────────────── */
 @keyframes fadeUp   { from { opacity:0; transform:translateY(36px); } to { opacity:1; transform:translateY(0); } }
 @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.45; } }
 @keyframes bounce   { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
@@ -75,18 +75,6 @@
   pointer-events: none;
 }
 
-/* Gold shimmer line */
-
-/* .hero::after {
-  content: '';
-  position: absolute;
-  top: 80px; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184,151,90,0.4), transparent);
-  z-index: 4;
-  pointer-events: none;
-} */
-
 /* ── Logo ── */
 .hero__logo {
   position: absolute;
@@ -111,44 +99,46 @@
   align-items: center;
   gap: 0;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(184, 151, 90, 0.4);
+  background: #c0392b;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .hero__call-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(184, 151, 90, 0.7);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
-/* Left — gold icon circle */
+/* Left — red square icon */
 .hero__call-btn__icon {
-  width: 40px;
-  height: 40px;
-  background: #B8975A;
+  width: 42px;
+  height: 42px;
+  background: #c0392b;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   transition: background 0.3s ease;
 }
 
 .hero__call-btn:hover .hero__call-btn__icon {
-  background: #C3A95E;
+  background: #a93226;
 }
 
-/* Right — glass text pill */
+/* Right — dark olive text */
 .hero__call-btn__text {
   padding: 0 18px 0 14px;
-  height: 40px;
+  height: 42px;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-left: 1px solid rgba(184, 151, 90, 0.3);
+  background: #4a5240;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-left: none;
   font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 10.5px;
   font-weight: 700;
@@ -160,7 +150,7 @@
 }
 
 .hero__call-btn:hover .hero__call-btn__text {
-  background: rgba(255, 255, 255, 0.16);
+  background: #5a6250;
 }
 
 /* ── Main container ── */
@@ -258,7 +248,7 @@
   position: absolute;
   bottom: -4px; left: 0; right: 0;
   height: 1.5px;
-  background: #B8975A;
+  background: #c0392b;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -285,7 +275,7 @@
 
 .hero__progress-bar {
   height: 100%;
-  background: #B8975A;
+  background: #c0392b;
   animation: progress 5s linear forwards;
 }
 
@@ -317,7 +307,7 @@
 }
 
 .hero__scroll:hover .hero__scroll-circle {
-  border-color: rgba(184,151,90,0.7);
+  border-color: rgba(192, 57, 43, 0.7);
 }
 
 .hero__scroll svg {
@@ -339,13 +329,11 @@
     );
   }
 
-  /* Show building properly — use per-slide mobile position */
   .hero__slide {
     background-position: var(--mobile-pos, center center) !important;
     background-size: cover;
   }
 
-  /* Content sits at bottom-left — Jubilee style */
   .hero__container {
     padding: 0 5% 100px;
     justify-content: flex-start;
@@ -374,7 +362,6 @@
     margin-right: auto;
   }
 
-  /* Scroll arrow — bottom center, visible */
   .hero__scroll {
     display: flex;
     bottom: 20px;
@@ -383,7 +370,6 @@
     animation: bounce 2.2s ease-in-out infinite;
   }
 
-  /* Slide numbers — bottom left */
   .hero__slider-nums {
     bottom: 28px;
     left: 5%;
@@ -399,6 +385,7 @@
   .hero__call-btn {
     top: 22px;
     right: 4%;
+    border-radius: 0;
   }
 
   .hero__call-btn__icon {

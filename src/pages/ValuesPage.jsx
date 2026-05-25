@@ -127,7 +127,7 @@ export default function ValuesPage({ onNavigate }) {
               <div>
                 <div className="section-label">Our Core Values</div>
                 <h2 className="page-heading">
-                  The principles behind <span>every plot we sell</span>.
+                  The principles behind every plot we sell
                 </h2>
                 <p className="page-copy">
                   These six values are the cornerstone of everything we do at Anandam Homes.
@@ -184,7 +184,7 @@ export default function ValuesPage({ onNavigate }) {
             <div>
               <div className="section-label">Live Our Values</div>
               <h2 className="page-heading">
-                Experience the difference that <span>values-driven</span> real estate makes.
+                Experience the difference that values-driven real estate makes.
               </h2>
               <p className="page-copy">
                 When you invest with Anandam Homes, you're not just buying a plot — you're

@@ -1,5 +1,5 @@
 import "./PageShell.css";
-import aboutBg from "../assets/AboutUsimgImg.png";
+import aboutBg from "../assets/Aboutimg1.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -65,7 +65,7 @@ export default function AboutPage({ onNavigate }) {
               <div>
                 <div className="section-label">Who We Are</div>
                 <h2 className="page-heading">
-                  A modern real estate brand with a <span>luxury editorial lens</span>.
+                  A modern real estate brand with a luxury editorial lens.
                 </h2>
                 <p className="page-copy">
                   The brand board is not treated as decoration. It shapes the way every page feels: measured,
