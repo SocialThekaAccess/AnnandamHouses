@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./Features.css";
+import mapImg from "../assets/map.png";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -143,6 +144,10 @@ export default function Features() {
             Inspired by thoughtful large-format communities, Anandam Homes brings together
             infrastructure, presentation, and practical amenities to create a more complete plotted address.
           </p>
+        </div>
+
+        <div className={`features__map reveal-up${headerVisible ? " is-visible" : ""}`}>
+          <img src={mapImg} alt="Development map" className="features__map-img" />
         </div>
 
         <div
