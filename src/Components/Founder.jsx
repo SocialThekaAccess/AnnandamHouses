@@ -66,7 +66,7 @@ export default function Founder() {
             </p>
 
             <p className="founder__desc">
-              His deep understanding of the Dholera Smart City project and its long-term
+              His deep understanding of the Lothal Smart City project and its long-term
               potential has positioned Anandam Homes as one of the most trusted names
               in the region. Every plot sold carries his personal commitment to quality,
               legal clarity, and customer satisfaction.
@@ -75,7 +75,7 @@ export default function Founder() {
             {/* Quote */}
             <blockquote className="founder__quote">
               <span className="founder__quote-mark">"</span>
-              Investing in Dholera today is not just buying land — it's securing a
+              Investing in Lothal today is not just buying land — it's securing a
               legacy for your family's future.
               <span className="founder__quote-mark">"</span>
             </blockquote>

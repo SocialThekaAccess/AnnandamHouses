@@ -34,7 +34,7 @@ const PILLARS = [
 ];
 
 const HIGHLIGHTS = [
-  "Strategic positioning around the Dholera smart city growth corridor.",
+  "Strategic positioning around the Lothal smart city growth corridor.",
   "Premium plotted inventory presented with a hospitality-inspired customer journey.",
   "A design-first brand board translated consistently across digital touchpoints.",
 ];
@@ -97,7 +97,7 @@ export default function AboutPage({ onNavigate }) {
                     <span className="about-quick-fact__icon">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </span>
-                    <span>Dholera Smart City — India's fastest growing corridor</span>
+                    <span>Lothal Smart City — India's fastest growing corridor</span>
                   </div>
                   <div className="about-quick-fact">
                     <span className="about-quick-fact__icon">

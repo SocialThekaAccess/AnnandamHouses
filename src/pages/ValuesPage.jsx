@@ -50,7 +50,7 @@ const VALUES = [
   {
     num: "04",
     title: "Excellence",
-    desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Dholera Smart City.",
+    desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Lothal Smart City.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
     tag: "Our Craft",
   },
@@ -64,7 +64,7 @@ const VALUES = [
   {
     num: "06",
     title: "One Team One Goal",
-    desc: "Our entire team works with a single mission — to help you secure the best investment of your life in India's fastest growing smart city, Dholera.",
+    desc: "Our entire team works with a single mission — to help you secure the best investment of your life in India's fastest growing smart city, Lothal.",
     image: Value4,
     tag: "Our Mission",
   },

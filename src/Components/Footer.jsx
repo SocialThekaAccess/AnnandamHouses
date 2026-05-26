@@ -152,7 +152,7 @@ export default function Footer({ onNavigate }) {
                 <div className="footer-main__label">Anandam Homes</div>
                 <div className="footer-main__sub">Corporate Office:</div>
                 {/* <p className="footer-main__address">
-                  Dholera Smart City,<br />
+                    Lothal Smart City,<br />
                   Ahmedabad District,<br />
                   Gujarat - 382120, India
                 </p> */}

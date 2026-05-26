@@ -82,7 +82,7 @@ const PROJECTS = [
   {
     cat: "Commercial",
     title: "Commercial Zone",
-    sub: "Business District • Dholera SIR",
+      sub: "Business District • Lothal SIR",
     // tag: "Limited Units",
     hot: false,
     area: "500+\nSq. Yards",

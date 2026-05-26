@@ -44,7 +44,7 @@ const SendIcon = () => (
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
 { icon: <MailIcon />, label: "Email Us", value: "anandamhomesofficial@gmail.com", href: "mailto:anandamhomesofficial@gmail.com" },
-  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat-382120", href: null },
+  { icon: <MapPinIcon />, label: "Location", value: "Lothal Smart City, Ahmedabad District, Gujarat-382120", href: null },
 ];
 
 export default function Contact() {
