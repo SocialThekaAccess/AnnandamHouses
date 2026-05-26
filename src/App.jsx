@@ -61,48 +61,6 @@ function ScrollToTop() {
   );
 }
 
-function HomeValuesHighlight() {
-  const highlights = [
-    "RERA approved & legally clear titles",
-    "Zero hidden charges — ever",
-    "Dedicated relationship manager",
-    "Guided site visits at your convenience",
-  ];
-
-  return (
-    <section className="home-values-highlight">
-      <div className="home-values-highlight__band">
-        <div className="home-values-highlight__copy">
-          <div className="home-values-highlight__label">Live Our Values</div>
-          <h2 className="home-values-highlight__title">
-            Experience the difference that values-driven real estate makes.
-          </h2>
-          <p className="home-values-highlight__text">
-            When you invest with Anandam Homes, you're not just buying a plot — you're
-            partnering with a team that holds itself to the highest standards of integrity,
-            transparency, and customer care.
-          </p>
-        </div>
-
-        <div className="home-values-highlight__list">
-          {highlights.map((item) => (
-            <div key={item} className="home-values-highlight__item">
-              ✓ {item}
-            </div>
-          ))}
-          <button
-            type="button"
-            className="home-values-highlight__btn"
-            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            Book a Site Visit
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function HomePage() {
   return (
     <div className="home-page">
@@ -115,7 +73,6 @@ function HomePage() {
       <CategoryShowcase />
       <Marquee />
       <Contact />
-      <HomeValuesHighlight />
       <div className="home-map">
         <img src={mapImg} alt="Development map" className="home-map__img" />
       </div>
