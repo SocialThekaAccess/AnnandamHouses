@@ -46,8 +46,11 @@
 }
 
 .features__title span {
-  font-family: 'crimson-regular', 'Crimson Text', serif;
+  font-family: 'crimson-regular', 'Crimson Text', serif !important;
+  font-size: inherit;
   font-weight: 500;
+  line-height: inherit;
+  letter-spacing: inherit;
   color: var(--warm-gold, #C3A95E);
 }
 
