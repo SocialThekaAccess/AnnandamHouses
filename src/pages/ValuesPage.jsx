@@ -4,6 +4,7 @@ import Value2 from "../assets/Value2.png";
 import Value3 from "../assets/Value3.png";
 import Value4 from "../assets/Value4.png";
 import Valuesimg from "../assets/Valuesimg.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -149,6 +150,9 @@ export default function ValuesPage({ onNavigate }) {
             backgroundImage: `url(${Valuesimg})`,
           }}
         />
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden"></div>
       </section>

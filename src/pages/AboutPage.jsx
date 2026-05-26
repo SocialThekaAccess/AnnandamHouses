@@ -1,5 +1,6 @@
 import "./PageShell.css";
 import aboutBg from "../assets/AnnandamHomes1.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -50,6 +51,9 @@ export default function AboutPage({ onNavigate }) {
             backgroundPosition: "60% center",
           }}
         />
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">

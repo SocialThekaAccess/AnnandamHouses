@@ -1,5 +1,6 @@
 import "./PageShell.css";
 import BlogImg from "../assets/BlogSection.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -58,6 +59,9 @@ export default function BlogPage({ onNavigate }) {
             backgroundImage: `url(${BlogImg})`,
           }}
         />
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
         <div className="page-hero__inner">
           <div className="page-hero__copy">

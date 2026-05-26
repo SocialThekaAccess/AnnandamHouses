@@ -1,6 +1,7 @@
 import Contact from "../Components/Contact";
 import "./PageShell.css";
 import ContactUs from "../assets/ContactUsA.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -38,6 +39,9 @@ export default function ContactPage() {
             backgroundImage:`url(${ContactUs})`
           }}
         />
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
         <div className="page-hero__inner">
           <div className="page-hero__copy">
