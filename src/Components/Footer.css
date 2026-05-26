@@ -79,7 +79,7 @@
 }
 
 .cta-band__btn:hover {
-  background: #060810;
+  background: #0f261d;
   transform: translateY(-2px);
 }
 
@@ -459,7 +459,7 @@
 }
 
 .loc-modal__box {
-  background: #0e163a;
+  background: #143427;
   border: 1px solid rgba(184, 151, 90, 0.3);
   border-radius: 4px;
   width: 100%;

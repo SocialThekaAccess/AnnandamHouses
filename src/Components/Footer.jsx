@@ -140,8 +140,8 @@ export default function Footer({ onNavigate }) {
 
               <div className="footer-main__col">
                 <div className="footer-main__label">Contact us:</div>
-                <a href="mailto:Anandamhomesofficial@gmail.com" className="footer-main__value">
-                  Anandamhomesofficial@gmail.com
+                  <a href="mailto:anandamhomesofficial@gmail.com" className="footer-main__value">
+                    anandamhomesofficial@gmail.com
                 </a>
                 <a href="tel:+916384800001" className="footer-main__value">
                   +91 63848 00001

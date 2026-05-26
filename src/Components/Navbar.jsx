@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-// import logo from "../assets/anandamhomeslogo.png";
 
 const HOME_PATH = "/";
+
+const NAV_ITEMS = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about-us" },
+  { label: "Our Values", path: "/our-values" },
+  { label: "Blog", path: "/blog" },
+  { label: "Contact Us", path: "/contact-us" },
+];
 
 export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
@@ -14,23 +21,33 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [currentPath]);
 
-  const goHome = () => {
-    if (currentPath === HOME_PATH) {
+  const handleNavigate = (path) => {
+    if (currentPath === path) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    onNavigate?.(HOME_PATH);
+
+    onNavigate?.(path);
   };
 
   return (
-    <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
-      <button type="button" className="navbar__logo" onClick={goHome} aria-label="Anandam Homes — Home">
-        {/* <img src={logo} alt="Anandam Homes" className="navbar__logo-img" /> */}
-        <div className="navbar__logo-text">
-          {/* <span className="navbar__logo-name">Anandam Homes</span> */}
-          {/* <span className="navbar__logo-tagline">Premium Plots</span> */}
-        </div>
-      </button>
+    <nav className={`navbar${scrolled ? " scrolled" : ""}`} aria-label="Primary">
+      <div className="navbar__spacer" aria-hidden="true" />
+
+      <div className="navbar__links">
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.path}
+            type="button"
+            className={`navbar__link${currentPath === item.path ? " is-active" : ""}`}
+            onClick={() => handleNavigate(item.path)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="navbar__spacer" aria-hidden="true" />
     </nav>
   );
 }

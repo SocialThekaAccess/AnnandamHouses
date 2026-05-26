@@ -1,10 +1,9 @@
-/* ─── HEADER — Logo only (Jubilee-style) ─────────────────────────── */
 :root {
   --nav-height: 76px;
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -12,63 +11,76 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 0 5%;
   background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: all 0.35s ease;
+  border-bottom: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: opacity 0.25s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(14, 22, 58, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom-color: rgba(184, 151, 90, 0.2);
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
-.navbar__logo {
+.navbar__spacer {
+  width: 170px;
+  flex-shrink: 0;
+}
+
+.navbar__links {
   display: flex;
   align-items: center;
-  gap: 14px;
-  cursor: pointer;
-  flex-shrink: 0;
+  justify-content: center;
+  gap: 28px;
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar__link {
+  position: relative;
+  padding: 10px 0;
   background: none;
   border: none;
-  padding: 0;
-  text-align: left;
-}
-
-.navbar__logo-img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  border-radius: 4px;
-  filter: drop-shadow(0 2px 8px rgba(184, 151, 90, 0.3));
-}
-
-.navbar__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.navbar__logo-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.92;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
-.navbar__logo-tagline {
-  font-family: 'Poppins', sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--antique-gold, #B8975A);
-  margin-top: 4px;
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 1.5px;
+  background: #2f6b4f;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.navbar__link:hover,
+.navbar__link.is-active {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.navbar__link:hover::after,
+.navbar__link.is-active::after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 768px) {
@@ -80,18 +92,25 @@
     padding: 0 20px;
   }
 
-  .navbar__logo-img {
-    width: 44px;
-    height: 44px;
+  .navbar__spacer {
+    display: none;
   }
 
-  .navbar__logo-name {
-    font-size: 18px;
+  .navbar__links {
+    width: 100%;
+    gap: 16px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
   }
 
-  .navbar__logo-tagline {
-    font-size: 7.5px;
-    letter-spacing: 0.22em;
+  .navbar__links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar__link {
+    font-size: 10px;
+    letter-spacing: 0.14em;
   }
 }
 
@@ -102,18 +121,5 @@
 
   .navbar {
     padding: 0 16px;
-  }
-
-  .navbar__logo {
-    gap: 10px;
-  }
-
-  .navbar__logo-img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .navbar__logo-name {
-    font-size: 16px;
   }
 }

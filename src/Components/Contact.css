@@ -61,7 +61,7 @@
   gap: 0;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 40px 100px rgba(26,36,86,0.15);
+  box-shadow: 0 40px 100px rgba(27,67,50,0.15);
 }
 
 /* ── LEFT — Info ── */
@@ -81,9 +81,9 @@
   position: absolute; inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(10,16,50,0.93) 0%,
-    rgba(14,22,58,0.88) 50%,
-    rgba(26,36,86,0.82) 100%
+    rgba(20,52,39,0.93) 0%,
+    rgba(20,52,39,0.88) 50%,
+    rgba(27,67,50,0.82) 100%
   );
 }
 
@@ -199,6 +199,12 @@
   white-space: nowrap;
 }
 
+.contact__info-value--location {
+  white-space: normal;
+  max-width: 360px;
+  line-height: 1.45;
+}
+
 a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 
 /* Trust badges */
@@ -303,7 +309,7 @@ a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 .contact__textarea {
   width: 100%;
   background: #f8f9fc;
-  border: 1px solid rgba(26,36,86,0.12);
+  border: 1px solid rgba(27,67,50,0.12);
   border-radius: 2px;
   padding: 13px 16px;
   font-family: var(--font-body, 'Raleway', sans-serif) !important;
@@ -328,7 +334,7 @@ a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 
 .contact__input::placeholder,
 .contact__textarea::placeholder {
-  color: rgba(26,36,86,0.3);
+  color: rgba(27,67,50,0.3);
 }
 
 .contact__input:focus,
@@ -340,7 +346,7 @@ a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 
 .contact__select {
   cursor: pointer;
-  color: rgba(26,36,86,0.5);
+  color: rgba(27,67,50,0.5);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239A7A3A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
@@ -379,7 +385,7 @@ a.contact__info-value:hover { color: var(--antique-gold, #B8975A); }
 
 .contact__privacy {
   font-size: 10px;
-  color: rgba(26,36,86,0.3);
+  color: rgba(27,67,50,0.3);
   text-align: center;
   margin-top: 12px;
   letter-spacing: 0.04em;

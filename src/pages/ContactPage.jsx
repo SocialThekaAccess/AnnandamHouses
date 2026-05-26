@@ -24,7 +24,7 @@ const CallNowBtn = () => {
 
 const CHANNELS = [
   { label: "Phone", value: "+91 63848 00001", copy: "Best for immediate callback requests and site-visit confirmations." },
-  { label: "Email", value: "Anandamhomesofficial@gmail.com", copy: "Ideal for document sharing, investor questions, and detailed follow-ups." },
+  { label: "Email", value: "anandamhomesofficial@gmail.com", copy: "Ideal for document sharing, investor questions, and detailed follow-ups." },
   // { label: "Location", value: "Dholera Smart City, Ahmedabad District", copy: "Use the form below to schedule a guided discussion before your visit." },
 ];
 

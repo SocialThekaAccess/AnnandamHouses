@@ -1,5 +1,5 @@
 import "./PageShell.css";
-import aboutBg from "../assets/Aboutimg1.png";
+import aboutBg from "../assets/AnnandamHomes1.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {

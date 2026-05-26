@@ -7,9 +7,9 @@
 
 /* ── CSS Variables ── */
 :root {
-  --jub-red:        #c0392b;
-  --jub-red-dark:   #96281b;
-  --jub-navy:       #1a1a2e;
+  --jub-red:        #2f6b4f;
+  --jub-red-dark:   #234f3b;
+  --jub-navy:       #183327;
   --jub-dark:       #1c1c1c;
   --jub-text:       #3a3a3a;
   --jub-text-light: #777;
@@ -84,9 +84,7 @@
 
 /* Hero eyebrow label */
 .page-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
+  display: inline-block;
   font-family: var(--font-body);
   color: rgba(255, 255, 255, 0.75);
   font-size: 10px;
@@ -97,11 +95,7 @@
 }
 
 .page-hero__eyebrow::before {
-  content: "";
-  width: 42px;
-  height: 1px;
-  background: var(--jub-red);
-  flex-shrink: 0;
+  display: none;
 }
 
 /* Hero title */
@@ -376,7 +370,7 @@
   font-family: var(--font-heading);
   font-size: 48px;
   font-weight: 700;
-  color: rgba(192, 57, 43, 0.07);
+  color: rgba(47, 107, 79, 0.07);
   line-height: 1;
   pointer-events: none;
 }
@@ -770,7 +764,7 @@
   font-family: var(--font-heading);
   font-size: 40px;
   font-weight: 700;
-  color: rgba(192, 57, 43, 0.12);
+  color: rgba(47, 107, 79, 0.12);
   line-height: 1;
 }
 
@@ -781,8 +775,8 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--jub-red);
-  background: rgba(192, 57, 43, 0.06);
-  border: 1px solid rgba(192, 57, 43, 0.18);
+  background: rgba(47, 107, 79, 0.06);
+  border: 1px solid rgba(47, 107, 79, 0.18);
   padding: 4px 10px;
 }
 
@@ -812,8 +806,8 @@
 .values-page__pillar-icon {
   width: 52px;
   height: 52px;
-  background: rgba(192, 57, 43, 0.06);
-  border: 1px solid rgba(192, 57, 43, 0.18);
+  background: rgba(47, 107, 79, 0.06);
+  border: 1px solid rgba(47, 107, 79, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;

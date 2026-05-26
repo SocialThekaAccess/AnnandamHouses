@@ -188,7 +188,7 @@ svg {
   justify-content: center;
   cursor: pointer;
   z-index: 999;
-  box-shadow: 0 4px 20px rgba(26, 36, 86, 0.25);
+  box-shadow: 0 4px 20px rgba(27, 67, 50, 0.25);
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.3s ease, transform 0.3s ease;
