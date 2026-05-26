@@ -52,7 +52,7 @@ const VALUES = [
   {
     num: "03",
     title: "Integrity",
-    desc: "Every transaction, every document, every interaction is rooted in complete honesty. RERA approved, legally clear titles, zero hidden charges — always.",
+    desc: "Every transaction, every document, and every interaction is rooted in complete honesty. Legally clear titles and zero hidden charges remain at the heart of every deal.",
     image: Value3,
     tag: "Our Standard",
   },
@@ -214,7 +214,7 @@ export default function ValuesPage({ onNavigate }) {
             </div>
             <div className="page-highlight-list">
               {[
-                "RERA approved & legally clear titles",
+                "Legally clear titles",
                 "Zero hidden charges — ever",
                 "Dedicated relationship manager",
                 "Guided site visits at your convenience",

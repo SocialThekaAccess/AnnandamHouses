@@ -85,7 +85,7 @@ export default function AboutPage({ onNavigate }) {
                     <span className="about-quick-fact__icon">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </span>
-                    <span>RERA approved &amp; legally clear titles</span>
+                    <span>Legally clear titles and transparent guidance</span>
                   </div>
                   <div className="about-quick-fact">
                     <span className="about-quick-fact__icon">
