@@ -28,6 +28,11 @@ svg {
   height: auto;
 }
 
+/* Prevent horizontal scroll from any element */
+* {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
   :root {
     --nav-height: 72px;
@@ -37,7 +42,7 @@ svg {
 
 @media (max-width: 768px) {
   :root {
-    --nav-height: 68px;
+    --nav-height: 64px;
     --fab-bottom: 20px;
     --fab-side: 16px;
     --fab-size: 50px;
@@ -143,11 +148,16 @@ svg {
   .cta-band__phone {
     font-size: 15px;
   }
+
+  /* Home map */
+  .home-map {
+    padding: 20px 20px 0;
+  }
 }
 
 @media (max-width: 480px) {
   :root {
-    --nav-height: 64px;
+    --nav-height: 60px;
     --section-pad-x: 16px;
   }
 
@@ -170,9 +180,14 @@ svg {
     margin-left: 12px !important;
     margin-right: 12px !important;
   }
+
+  /* Home map */
+  .home-map {
+    padding: 16px 16px 0;
+  }
 }
 
-/* Scroll-to-top — above WhatsApp FAB on mobile */
+/* ── Scroll-to-top — above WhatsApp FAB on mobile ── */
 .scroll-top-btn {
   position: fixed;
   bottom: var(--fab-bottom);
@@ -204,10 +219,8 @@ svg {
 @media (max-width: 768px) {
   .scroll-top-btn {
     left: auto;
-    right: calc(var(--fab-side) + env(safe-area-inset-right, 0px));
-    bottom: calc(
-      var(--fab-bottom) + var(--fab-size) + 12px + env(safe-area-inset-bottom, 0px)
-    );
+    right: calc(var(--fab-side) + var(--fab-size) + 12px + env(safe-area-inset-right, 0px));
+    bottom: calc(var(--fab-bottom) + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -215,4 +228,11 @@ svg {
 body.menu-open {
   overflow: hidden;
   touch-action: none;
+}
+
+/* Safe area padding for fixed elements */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .footer__float-wa {
+    bottom: calc(var(--fab-bottom) + env(safe-area-inset-bottom));
+  }
 }

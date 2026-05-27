@@ -36,14 +36,17 @@ export default function ContactPage() {
         <div
           className="page-hero__backdrop"
           style={{
-            backgroundImage:`url(${ContactUs})`
+            backgroundImage:`url(${ContactUs})`,
+            "--img-ratio": "57%",
           }}
-        />
+        >
+          <img src={ContactUs} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
         <div className="page-hero__logo">
           <img src={logoImg} alt="Anandam Homes" />
         </div>
         <CallNowBtn />
-        <div className="page-hero__inner">
+        <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">
             {/* <div className="page-hero__eyebrow">Contact</div> */}
               {/* <h1 className="page-hero__title">

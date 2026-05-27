@@ -33,8 +33,11 @@ export default function LegalPage({ eyebrow, title, intro, summaryTitle, summary
           style={{
             backgroundImage: `url(${aboutBg})`,
             backgroundPosition: "center center",
+            "--img-ratio": "67%",
           }}
-        />
+        >
+          <img src={aboutBg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
         <div className="page-hero__logo">
           <img src={logoImg} alt="Anandam Homes" />
         </div>

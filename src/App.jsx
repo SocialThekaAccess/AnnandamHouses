@@ -5,7 +5,6 @@ import Hero from "./Components/Hero";
 import mapImg from "./assets/map.png";
 import CallModal from "./Components/CallModal";
 import About from "./Components/About";
-import Location from "./Components/Location";
 import Values from "./Components/Values";
 // import Projects from "./Components/Projects";
 import Features from "./Components/Features";

@@ -148,8 +148,11 @@ export default function ValuesPage({ onNavigate }) {
           className="page-hero__backdrop"
           style={{
             backgroundImage: `url(${Valuesimg})`,
+            "--img-ratio": "57%",
           }}
-        />
+        >
+          <img src={Valuesimg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
         <div className="page-hero__logo">
           <img src={logoImg} alt="Anandam Homes" />
         </div>

@@ -132,8 +132,11 @@ export default function ProjectsPage({ onNavigate }) {
           style={{
             backgroundImage: `url(${heroBg})`,
             backgroundPosition: "center 40%",
+            "--img-ratio": "56%",
           }}
-        />
+        >
+          <img src={heroBg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
         <div className="page-hero__logo">
           <img src={logoImg} alt="Anandam Homes" />
         </div>
