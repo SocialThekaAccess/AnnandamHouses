@@ -333,6 +333,13 @@
   color: var(--antique-gold, #B8975A);
 }
 
+.footer-main__legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
 /* Floating WhatsApp */
 .footer__float-wa {
   position: fixed;
@@ -425,6 +432,10 @@
   .footer-main__meta {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-main__legal {
     gap: 12px;
   }
 
