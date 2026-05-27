@@ -10,6 +10,7 @@ import Values from "./Components/Values";
 // import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import Marquee from "./Components/Marquee";
+import CustomerReviews from "./Components/CustomerReviews";
 import Contact from "./Components/Contact";
 import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
@@ -160,6 +161,7 @@ function HomePage() {
       <Values />
       {/* <Projects /> */}
       <Features />
+      <CustomerReviews />
       <CategoryShowcase />
       <Marquee />
       <Contact />

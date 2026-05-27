@@ -1,5 +1,5 @@
 import "./PageShell.css";
-import aboutBg from "../assets/AnnandamHomes1.png";
+import aboutBg from "../assets/about.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
@@ -48,7 +48,7 @@ export default function AboutPage({ onNavigate }) {
           className="page-hero__backdrop"
           style={{
             backgroundImage: `url(${aboutBg})`,
-            backgroundPosition: "60% center",
+            backgroundPosition: "center center",
           }}
         />
         <div className="page-hero__logo">

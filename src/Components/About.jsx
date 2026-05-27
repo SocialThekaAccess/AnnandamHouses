@@ -157,7 +157,7 @@ export default function About() {
               <div className="ae-img-photo">
                 <img
                   src={doleaImg}
-              alt="Lothal Smart City — Anandam Homes"
+                  alt="Lothal Smart City — Anandam Homes"
                   className="ae-img-bg"
                 />
                 <div className="ae-img-overlay" aria-hidden="true" />

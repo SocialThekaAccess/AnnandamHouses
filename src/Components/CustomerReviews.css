@@ -1,0 +1,223 @@
+.customer-reviews {
+  padding: 104px 0 36px;
+  background:
+    radial-gradient(circle at top left, rgba(184, 151, 90, 0.14), transparent 34%),
+    linear-gradient(180deg, #faf8f5 0%, #f5f0e8 100%);
+  overflow: hidden;
+}
+
+.customer-reviews__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.customer-reviews__intro {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.customer-reviews__text {
+  max-width: 620px;
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(60, 61, 61, 0.82);
+}
+
+.reviews-ticker {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0 18px;
+}
+
+.reviews-ticker::before,
+.reviews-ticker::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.reviews-ticker::before {
+  left: 0;
+  background: linear-gradient(90deg, #f6f1e8 0%, rgba(246, 241, 232, 0) 100%);
+}
+
+.reviews-ticker::after {
+  right: 0;
+  background: linear-gradient(270deg, #f6f1e8 0%, rgba(246, 241, 232, 0) 100%);
+}
+
+.reviews-ticker__track {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 22px;
+  width: max-content;
+  padding-left: 5%;
+  animation: reviews-scroll 34s linear infinite;
+}
+
+.reviews-card {
+  width: min(340px, 78vw);
+  min-height: 206px;
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(184, 151, 90, 0.24);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(250, 248, 245, 0.98) 100%);
+  box-shadow: 0 18px 42px rgba(20, 52, 39, 0.08);
+  flex: 0 0 auto;
+}
+
+.reviews-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reviews-card__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(27, 67, 50, 0.08);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1b4332;
+}
+
+.reviews-card__source::before {
+  content: "G";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc05 75%, #ea4335 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: normal;
+}
+
+.reviews-card__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #f4b400;
+  flex-shrink: 0;
+}
+
+.reviews-card__star {
+  width: 15px;
+  height: 15px;
+}
+
+.reviews-card__copy {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #33443d;
+}
+
+.reviews-card__author {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1b4332;
+}
+
+@keyframes reviews-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 11px));
+  }
+}
+
+@media (max-width: 1024px) {
+  .customer-reviews {
+    padding: 88px 0 24px;
+  }
+
+  .reviews-ticker__track {
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-reviews {
+    padding: 72px 0 20px;
+  }
+
+  .customer-reviews__container {
+    padding: 0 20px;
+  }
+
+  .customer-reviews__intro {
+    margin-bottom: 26px;
+  }
+
+  .customer-reviews__text {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .reviews-ticker::before,
+  .reviews-ticker::after {
+    width: 52px;
+  }
+
+  .reviews-ticker__track {
+    gap: 16px;
+    padding-left: 20px;
+    animation-duration: 30s;
+  }
+
+  .reviews-card {
+    width: min(300px, 84vw);
+    min-height: 194px;
+    padding: 20px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .reviews-card__meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .reviews-card__copy {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-reviews__container {
+    padding: 0 16px;
+  }
+
+  .reviews-ticker__track {
+    padding-left: 16px;
+  }
+
+  .reviews-card {
+    width: min(286px, 86vw);
+  }
+}

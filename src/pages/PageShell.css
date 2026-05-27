@@ -945,6 +945,106 @@
   flex-shrink: 0;
 }
 
+.project-page__project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--jub-border);
+  border-bottom: 1px solid var(--jub-border);
+}
+
+.project-page__project-card {
+  padding: 40px 36px;
+  background: var(--jub-bg);
+  transition: background 0.25s ease;
+}
+
+.project-page__project-card:hover {
+  background: var(--jub-bg-warm);
+}
+
+.project-page__project-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--jub-red);
+  margin-bottom: 14px;
+}
+
+.project-page__project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--jub-dark);
+  margin: 0 0 14px;
+}
+
+.project-page__project-copy {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--jub-text);
+  margin: 0 0 22px;
+  max-width: 760px;
+}
+
+.project-page__project-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  gap: 28px;
+  align-items: end;
+}
+
+.project-page__project-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.project-page__project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-page__project-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--jub-red);
+  background: rgba(47, 107, 79, 0.06);
+  border: 1px solid rgba(47, 107, 79, 0.18);
+  padding: 8px 12px;
+}
+
+.project-page__project-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 28px;
+  background: var(--jub-red);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.project-page__project-link:hover {
+  background: var(--jub-red-dark);
+  transform: translateY(-1px);
+}
+
 .project-page__showcase {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -970,6 +1070,74 @@
 
 .project-page__content {
   padding: 48px 42px;
+}
+
+.project-page__table-box {
+  margin-top: 28px;
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 28px;
+}
+
+.project-page__table-head,
+.project-page__plot-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1fr 1.3fr;
+  gap: 18px;
+}
+
+.project-page__table-head {
+  padding: 0 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.project-page__table-head > div {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.84);
+  letter-spacing: -0.01em;
+}
+
+.project-page__plot-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-page__plot-row {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-page__plot-row:last-child {
+  border-bottom: none;
+}
+
+.project-page__plot-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-page__plot-label {
+  display: none;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.project-page__plot-value {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.project-page__plot-value--strong {
+  font-weight: 700;
 }
 
 .project-page__doc-grid {
@@ -1115,12 +1283,27 @@
     grid-template-columns: 1fr;
   }
 
+  .project-page__project-main {
+    grid-template-columns: 1fr;
+  }
+
   .project-page__visual {
     border-right: none;
     border-bottom: 1px solid var(--jub-border);
   }
 
-  .project-page__doc-grid,
+  .project-page__table-head {
+    display: none;
+  }
+
+  .project-page__plot-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-page__plot-label {
+    display: inline-block;
+  }
+
   .project-page__size-list {
     grid-template-columns: 1fr;
   }
@@ -1254,5 +1437,18 @@
   .project-page__content,
   .project-page__visual {
     padding: 24px;
+  }
+
+  .project-page__table-box {
+    padding: 18px;
+  }
+
+  .project-page__project-card {
+    padding: 28px 24px;
+  }
+
+  .project-page__plot-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

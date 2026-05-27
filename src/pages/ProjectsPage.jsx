@@ -1,84 +1,106 @@
 import "./PageShell.css";
 import heroBg from "../assets/AnnandamHomes1.png";
+import exoticaPlanImg from "../assets/exoticaPlan.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
-const PROJECT_MAP_PREVIEW = "/projects/anandam-exotica/map-preview.png";
-const PROJECT_LAYOUT_PDF = "/projects/anandam-exotica/PlotNo.73516thMay2026.pdf";
-const PROJECT_KML = "/projects/anandam-exotica/Untitled-map.kml";
 const PROJECT_MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
 
 const PROJECT_STATS = [
   {
-    value: "200+",
-    label: "Premium Plots",
-    copy: "A plotted master plan shaped for residential buyers looking for clarity, road structure, and stronger long-term positioning.",
+    value: "60-106.26",
+    label: "SQMT Options",
+    copy: "Diverse residential plot sizes, from compact 60 SQMT options to expansive 106.26 SQMT premium sites.",
   },
   {
-    value: "7.5 M",
-    label: "Internal Roads",
-    copy: "The provided layout highlights organized internal roads that improve circulation, frontage definition, and everyday movement.",
+    value: "40 FT",
+    label: "Main Road",
+    copy: "Grand planning with a 40-feet main road and wide internal avenues for smooth, comfortable movement across the community.",
   },
   {
-    value: "12 M",
-    label: "Crossover Road",
-    copy: "A wider internal crossover spine helps organize the plotted grid while connecting the blocks more efficiently.",
-  },
-];
-
-const PROJECT_DOCUMENTS = [
-  {
-    label: "Plot Layout PDF",
-    title: "Plot No. 73 reference layout",
-    copy: "Includes the plotted scheme, internal road structure, common plot references, and size legend extracted from the provided PDF.",
-    href: PROJECT_LAYOUT_PDF,
-    action: "View PDF",
-  },
-  {
-    label: "Google Earth KML",
-    title: "Project boundary file",
-    copy: "Uses the provided KML boundary around 22.480659, 72.336837 so the site can be reviewed in Google Earth or other compatible map tools.",
-    href: PROJECT_KML,
-    action: "Download KML",
-    download: true,
-  },
-  {
-    label: "Google Maps",
-    title: "Open live location",
-    copy: "A direct map link for quick route planning, on-ground orientation, and site visit coordination with the Anandam Homes team.",
-    href: PROJECT_MAP_URL,
-    action: "Open Maps",
+    value: "2,800+",
+    label: "SQMT Open Space",
+    copy: "Large common plot and landscaped green zones designed for recreation, breathing space, and community use.",
   },
 ];
 
 const PROJECT_SIZES = [
-  "6.9 x 15.4 m = 106.26 sqmt carpet",
-  "7.5 x 12 m = 90 sqmt carpet",
-  "7 x 12 m = 84 sqmt carpet",
-  "6 x 10 m = 60 sqmt carpet",
-  "Corner plots in non-standard sizes",
+  "The Ultimate & The Destined: Prime plots located at the northern edge.",
+  "The Six Senses & The Ritz Plaza: Centrally located for easy access to all amenities.",
+  "Castle Rock & Empire Enclave: Premium blocks flanking the main boulevard.",
+  "The Courtyard & Elite Grove: Located near the grand entrance and major open green zones.",
+];
+
+const PLOT_OPTIONS = [
+  {
+    type: "The Elite",
+    dimensions: "6.9 x 15.4",
+    area: "106.26 SQMT",
+    idealFor: "Luxury villas and more spacious garden-facing homes.",
+  },
+  {
+    type: "The Standard",
+    dimensions: "7.5 x 12",
+    area: "90.00 SQMT",
+    idealFor: "Family homes with comfortable planning and ample parking potential.",
+  },
+  {
+    type: "The Classic",
+    dimensions: "7.0 x 12",
+    area: "84.00 SQMT",
+    idealFor: "Optimized modern residences with balanced living spaces.",
+  },
+  {
+    type: "The Smart",
+    dimensions: "6.0 x 10",
+    area: "60.00 SQMT",
+    idealFor: "Weekend retreats, compact homes, and investor-led builds.",
+  },
+  {
+    type: "Corner Plots",
+    dimensions: "Non-Standard",
+    area: "Varies",
+    idealFor: "Premium visibility, open edges, and stronger frontage value.",
+  },
+];
+
+const PROJECT_BADGES = [
+  "Gated Community",
+  "Ready-to-Build",
+  "Clear Title Plots",
+  "Heritage-Led Location",
 ];
 
 const PROJECT_HIGHLIGHTS = [
   {
-    title: "Lothal Smart City Positioning",
-    copy: "Anandam Exotica continues the brand's focus on plotted opportunities inside the Lothal growth corridor, where infrastructure and long-range visibility matter most.",
+    title: "The Ultimate & The Destined",
+    copy: "Prime plots positioned along the northern edge for buyers who value quieter placement and a more exclusive address feel.",
   },
   {
-    title: "Documentation With Clarity",
-    copy: "The page brings together the saved PDF layout and KML boundary so buyers can review project planning and map context before a call or visit.",
+    title: "The Six Senses & The Ritz Plaza",
+    copy: "Centrally placed residential clusters with practical access to the broader layout, making everyday movement more convenient.",
   },
   {
-    title: "Buyer-First Guidance",
-    copy: "The same values used across the website remain central here: transparent communication, legally clear guidance, and a calmer project review experience.",
+    title: "Castle Rock, Empire Enclave, The Courtyard & Elite Grove",
+    copy: "Premium blocks arranged around the main boulevard, entrance edge, and green zones to create privacy, prestige, and visual balance.",
   },
 ];
 
 const QUICK_POINTS = [
-  "Common plot area: 2836.65 sqmt",
-  "Road area: 9301.71 sqmt",
-  "Frontage aligned with the major district road",
-  "Guided site visits and documentation support available",
+  "Strategic location near the UNESCO World Heritage site of Lothal",
+  "Secure gated community planned for serene modern living",
+  "Ready-to-build infrastructure with clear title plots",
+  "Ideal for weekend homes and long-term investment positioning",
+];
+
+const PROJECT_LIST = [
+  {
+    label: "First Project",
+    title: "Anandam Exotica",
+    copy: "Discover a lifestyle of serenity and sophistication in Lothal, where heritage meets modern living through meticulously planned residential plots inside a secure gated community.",
+    href: PROJECT_MAP_URL,
+    action: "Open Project Location",
+  },
 ];
 
 const CallNowBtn = () => {
@@ -104,7 +126,7 @@ const CallNowBtn = () => {
 export default function ProjectsPage({ onNavigate }) {
   return (
     <div className="page-shell">
-      <section className="page-hero">
+      <section className="page-hero page-hero--no-overlay">
         <div
           className="page-hero__backdrop"
           style={{
@@ -116,26 +138,7 @@ export default function ProjectsPage({ onNavigate }) {
           <img src={logoImg} alt="Anandam Homes" />
         </div>
         <CallNowBtn />
-        <div className="page-hero__inner">
-          <div className="page-hero__copy">
-            <div className="page-hero__eyebrow">Our Projects</div>
-            <h1 className="page-hero__title">
-              <span>Anandam Exotica</span> with plotted clarity, mapped access, and a more professional project view.
-            </h1>
-            <p className="page-hero__description">
-              This page brings together the project's saved layout PDF, Google Earth boundary file, and the site's
-              existing brand narrative so buyers can understand the offering with more confidence before a conversation or site visit.
-            </p>
-          </div>
-
-          <div className="page-hero__panel">
-            <div className="page-hero__panel-label">Project Access</div>
-            <div className="page-hero__panel-value">Layout PDF, KML map, and location preview in one place.</div>
-            <div className="page-hero__panel-copy">
-              Built in the same editorial style as the rest of the website so the project presentation feels premium, consistent, and easy to review.
-            </div>
-          </div>
-        </div>
+        <div className="page-hero__inner page-hero__inner--hidden" />
       </section>
 
       <main className="page-main">
@@ -145,18 +148,18 @@ export default function ProjectsPage({ onNavigate }) {
               <div>
                 <div className="section-label">Project Overview</div>
                 <h2 className="page-heading">
-                  A plotted opportunity shaped around Lothal connectivity, layout structure, and buyer-focused guidance.
+                  Welcome to Anandam Exotica – Lothal
                 </h2>
                 <p className="page-copy">
-                  Anandam Exotica extends the same approach already visible across the website: premium plotted positioning,
-                  transparent communication, and a calmer buyer journey built around real review material instead of vague promises.
+                  Where heritage meets modern living. Anandam Exotica is a premium plotted development created for those
+                  who seek the right blend of tranquility, connectivity, and long-term value in the historic heart of Lothal.
                 </p>
               </div>
 
               <div>
                 <p className="page-copy">
-                  Using the provided project documents, this page now gives visitors a clearer way to examine planning logic,
-                  internal roads, common plot allocation, and map context before they speak with the team or schedule a visit.
+                  Whether you are planning a dream weekend home or making a high-yield investment in Gujarat's
+                  fastest-growing corridor, Anandam Exotica is designed as the place where your future begins.
                 </p>
                 <div className="project-page__quick-list">
                   {QUICK_POINTS.map((item) => (
@@ -188,46 +191,90 @@ export default function ProjectsPage({ onNavigate }) {
         </section>
 
         <section className="page-section page-section--spaced">
+          <div className="project-page__project-grid">
+            {PROJECT_LIST.map((project) => (
+              <article key={project.title} className="project-page__project-card page-card">
+                <div className="project-page__project-main">
+                  <div>
+                    <div className="project-page__project-label">{project.label}</div>
+                    <h2 className="project-page__project-title">{project.title}</h2>
+                    <p className="project-page__project-copy">{project.copy}</p>
+                  </div>
+
+                  <div className="project-page__project-side">
+                    <div className="project-page__project-badges">
+                      {PROJECT_BADGES.map((badge) => (
+                        <span key={badge} className="project-page__project-badge">{badge}</span>
+                      ))}
+                    </div>
+                    <a
+                      href={project.href}
+                      className="project-page__project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.action}
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="page-section page-section--spaced">
           <div className="project-page__showcase page-card">
             <div className="project-page__visual">
               <img
-                src={PROJECT_MAP_PREVIEW}
+                src={exoticaPlanImg}
                 alt="Anandam Exotica plotted layout preview"
                 className="project-page__visual-img"
               />
             </div>
 
             <div className="project-page__content">
-              <div className="section-label">Project Documents</div>
+              <div className="section-label">Plot Options</div>
               <h2 className="page-heading">
-                Saved layout files, now presented as part of the live project page.
+                Choose Your Perfect Space
               </h2>
               <p className="page-copy">
-                The layout preview comes from the provided project files and is paired here with direct access to the
-                PDF plan, the KML boundary, and the live map point for faster review and smoother buyer conversations.
+                We offer a variety of plot sizes tailored to different budgets, lifestyles, and architectural goals,
+                from compact weekend-home options to larger premium plots with a more expansive feel.
               </p>
 
-              <div className="project-page__doc-grid">
-                {PROJECT_DOCUMENTS.map((doc) => (
-                  <article key={doc.title} className="project-page__doc-card">
-                    <div className="project-page__doc-label">{doc.label}</div>
-                    <h3 className="project-page__doc-title">{doc.title}</h3>
-                    <p className="project-page__doc-copy">{doc.copy}</p>
-                    <a
-                      href={doc.href}
-                      className="project-page__doc-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download={doc.download ? true : undefined}
-                    >
-                      {doc.action}
-                    </a>
-                  </article>
-                ))}
+              <div className="project-page__table-box">
+                <div className="project-page__table-head">
+                  <div>Plot Type</div>
+                  <div>Dimensions (Meters)</div>
+                  <div>Area (Carpet)</div>
+                  <div>Ideal For</div>
+                </div>
+                <div className="project-page__plot-list">
+                  {PLOT_OPTIONS.map((option) => (
+                    <article key={option.type} className="project-page__plot-row">
+                      <div className="project-page__plot-cell">
+                        <span className="project-page__plot-label">Plot Type</span>
+                        <span className="project-page__plot-value project-page__plot-value--strong">{option.type}</span>
+                      </div>
+                      <div className="project-page__plot-cell">
+                        <span className="project-page__plot-label">Dimensions (Meters)</span>
+                        <span className="project-page__plot-value">{option.dimensions}</span>
+                      </div>
+                      <div className="project-page__plot-cell">
+                        <span className="project-page__plot-label">Area (Carpet)</span>
+                        <span className="project-page__plot-value project-page__plot-value--strong">{option.area}</span>
+                      </div>
+                      <div className="project-page__plot-cell">
+                        <span className="project-page__plot-label">Ideal For</span>
+                        <span className="project-page__plot-value">{option.idealFor}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
 
               <div className="project-page__size-block">
-                <div className="project-page__size-label">Plot Size References</div>
+                <div className="project-page__size-label">The Master Plan</div>
                 <div className="project-page__size-list">
                   {PROJECT_SIZES.map((size) => (
                     <div key={size} className="project-page__size-item">{size}</div>
@@ -253,18 +300,19 @@ export default function ProjectsPage({ onNavigate }) {
           <div className="page-highlight-band page-card">
             <div>
               <div className="section-label">Why This Page Helps</div>
-              <h2 className="page-heading">A stronger project page makes decisions feel more informed before the first call.</h2>
+              <h2 className="page-heading">Why Invest in Lothal?</h2>
               <p className="page-copy">
-                Instead of leaving project information scattered across files and messages, Anandam Exotica now has a
-                single destination that reflects the brand's premium tone while staying practical, document-backed, and visitor-friendly.
+                As a key node in the Delhi-Mumbai Industrial Corridor and close to the upcoming National Maritime
+                Heritage Complex, Lothal is seeing powerful infrastructure growth. Investing here is not just buying
+                land, it is securing a stake in one of India's most promising heritage-tourism hubs.
               </p>
             </div>
 
             <div className="page-highlight-list">
               {[
-                "Legally clear titles and transparent guidance remain central to the project story.",
-                "Zero hidden charges and practical documentation support continue the values already established on the site.",
-                "Live location access and Google Earth files make review easier for remote buyers and planned site visits.",
+                "Heritage value meets modern infrastructure in a high-potential corridor.",
+                "Strong tourism and industrial momentum supports long-term appreciation.",
+                "Experience a life of peace, pride, and prosperity at Anandam Exotica.",
               ].map((item) => (
                 <div key={item} className="page-highlight-item">{item}</div>
               ))}
