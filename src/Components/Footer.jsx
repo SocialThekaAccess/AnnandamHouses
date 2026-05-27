@@ -7,6 +7,7 @@ const MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.336836838153
 
 const HOME_PATH = "/";
 const CONTACT_PATH = "/contact-us";
+const PROJECTS_PATH = "/our-projects";
 const PRIVACY_PATH = "/privacy-policy";
 const TERMS_PATH = "/terms-and-conditions";
 
@@ -52,6 +53,7 @@ const LinkedInIcon = () => (
 const FOOTER_NAV = [
     { label: "Home", href: HOME_PATH },
   { label: "About Us", href: "/about-us" },
+  { label: "Our Projects", href: PROJECTS_PATH },
   { label: "Our Values", href: "/our-values" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: CONTACT_PATH },

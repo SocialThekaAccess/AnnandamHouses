@@ -17,11 +17,13 @@ import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
+import ProjectsPage from "./pages/ProjectsPage";
 import ValuesPage from "./pages/ValuesPage";
 
 const ROUTES = {
   HOME: "/",
   ABOUT: "/about-us",
+  PROJECTS: "/our-projects",
   VALUES: "/our-values",
   BLOG: "/blog",
   CONTACT: "/contact-us",
@@ -191,6 +193,7 @@ function App() {
     const titles = {
       [ROUTES.HOME]: "Anandam Homes",
       [ROUTES.ABOUT]: "About Us | Anandam Homes",
+      [ROUTES.PROJECTS]: "Our Projects | Anandam Homes",
       [ROUTES.VALUES]: "Our Values | Anandam Homes",
       [ROUTES.BLOG]: "Blog | Anandam Homes",
       [ROUTES.CONTACT]: "Contact Us | Anandam Homes",
@@ -215,6 +218,8 @@ function App() {
     switch (pathname) {
       case ROUTES.ABOUT:
         return <AboutPage onNavigate={navigate} />;
+      case ROUTES.PROJECTS:
+        return <ProjectsPage onNavigate={navigate} />;
       case ROUTES.VALUES:
         return <ValuesPage onNavigate={navigate} />;
       case ROUTES.BLOG:

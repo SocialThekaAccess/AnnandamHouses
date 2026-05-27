@@ -6,6 +6,7 @@ const HOME_PATH = "/";
 const NAV_ITEMS = [
   { label: "Home", path: "/" },
   { label: "About Us", path: "/about-us" },
+  { label: "Our Projects", path: "/our-projects" },
   { label: "Our Values", path: "/our-values" },
   { label: "Blog", path: "/blog" },
   { label: "Contact Us", path: "/contact-us" },
