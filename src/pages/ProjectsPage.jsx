@@ -1,5 +1,5 @@
 import "./PageShell.css";
-import heroBg from "../assets/AnnandamHomes1.png";
+import heroBg from "../assets/ourProjects.png";
 import exoticaPlanImg from "../assets/exoticaPlan.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
