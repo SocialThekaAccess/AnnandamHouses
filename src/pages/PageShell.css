@@ -1068,8 +1068,10 @@
   border-right: 1px solid var(--jub-border);
   padding: 28px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  gap: 22px;
 }
 
 .project-page__visual-img {
@@ -1077,6 +1079,11 @@
   height: auto;
   display: block;
   box-shadow: 0 24px 60px rgba(24, 51, 39, 0.12);
+}
+
+.project-page__visual .project-page__size-block {
+  width: 100%;
+  margin-top: 0;
 }
 
 .project-page__content {

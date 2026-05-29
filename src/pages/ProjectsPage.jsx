@@ -1,6 +1,5 @@
 import "./PageShell.css";
 import heroBg from "../assets/ourProjects.png";
-import exoticaPlanImg from "../assets/exoticaPlan.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
@@ -229,10 +228,19 @@ export default function ProjectsPage({ onNavigate }) {
           <div className="project-page__showcase page-card">
             <div className="project-page__visual">
               <img
-                src={exoticaPlanImg}
-                alt="Anandam Exotica plotted layout preview"
+                src="/projects/anandam-exotica/map-preview.png"
+                alt="Anandam Exotica full master plan"
                 className="project-page__visual-img"
               />
+
+              <div className="project-page__size-block">
+                <div className="project-page__size-label">The Master Plan</div>
+                <div className="project-page__size-list">
+                  {PROJECT_SIZES.map((size) => (
+                    <div key={size} className="project-page__size-item">{size}</div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="project-page__content">
@@ -272,15 +280,6 @@ export default function ProjectsPage({ onNavigate }) {
                         <span className="project-page__plot-value">{option.idealFor}</span>
                       </div>
                     </article>
-                  ))}
-                </div>
-              </div>
-
-              <div className="project-page__size-block">
-                <div className="project-page__size-label">The Master Plan</div>
-                <div className="project-page__size-list">
-                  {PROJECT_SIZES.map((size) => (
-                    <div key={size} className="project-page__size-item">{size}</div>
                   ))}
                 </div>
               </div>
