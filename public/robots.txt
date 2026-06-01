@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://annandam-houses.vercel.app/sitemap.xml
+
+# Disallow admin/private paths (add as needed)
+Disallow: /api/
