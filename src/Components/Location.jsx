@@ -16,10 +16,10 @@ function useInView(threshold = 0.15) {
 }
 
 const POINTS = [
-  { num: "01", text: "Located inside Dholera Special Investment Region (SIR) — India's first planned greenfield smart city." },
-  { num: "02", text: "Adjacent to the upcoming Dholera International Airport — one of India's largest greenfield airports." },
-  { num: "03", text: "Connected via 6-lane Ahmedabad–Dholera Expressway for seamless city access." },
-  { num: "04", text: "Metro rail connectivity planned under the Dholera Metro Rail project." },
+  { num: "01", text: "Located inside Lothal Special Investment Region (SIR) — India's first planned greenfield smart city." },
+  { num: "02", text: "Adjacent to the upcoming Lothal International Airport — one of India's largest greenfield airports." },
+  { num: "03", text: "Connected via 6-lane Ahmedabad–Lothal Expressway for seamless city access." },
+  { num: "04", text: "Metro rail connectivity planned under the Lothal Metro Rail project." },
   { num: "05", text: "Close proximity to DMIC (Delhi–Mumbai Industrial Corridor) industrial zones." },
   { num: "06", text: "Within 100 km of Ahmedabad — Gujarat's commercial and financial capital." },
 ];
@@ -38,11 +38,11 @@ export default function Location() {
             <span className="section-label">Strategic Location</span>
             <h2 className="section-title">
               Our Location<br />
-              <span>Dholera Smart City</span>
+              <span>Lothal Smart City</span>
             </h2>
           </div>
           <p className="location__intro">
-            Dholera Smart City is more than just an address — it's a dynamic hub
+              Lothal Smart City is more than just an address — it's a dynamic hub
             in a prime location, presenting a rapidly growing investment opportunity
             set to redefine India's future. Strategically positioned with world-class
             connectivity on all fronts.
@@ -57,7 +57,7 @@ export default function Location() {
             <div className="location__map">
               <img
                 src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format&fit=crop"
-                alt="Dholera Smart City aerial view"
+              alt="Lothal Smart City aerial view"
                 className="location__map-img"
               />
               <div className="location__map-overlay" />
@@ -78,7 +78,7 @@ export default function Location() {
 
               {/* Badge */}
               <div className="location__map-badge">
-                <span>Dholera SIR</span>
+                <span>Lothal SIR</span>
                 <strong>Gujarat, India</strong>
               </div>
             </div>

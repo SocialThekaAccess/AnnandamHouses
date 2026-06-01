@@ -1,6 +1,7 @@
 import Contact from "../Components/Contact";
 import "./PageShell.css";
 import ContactUs from "../assets/ContactUsA.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -24,8 +25,8 @@ const CallNowBtn = () => {
 
 const CHANNELS = [
   { label: "Phone", value: "+91 63848 00001", copy: "Best for immediate callback requests and site-visit confirmations." },
-  { label: "Email", value: "Anandamhomesofficial@gmail.com", copy: "Ideal for document sharing, investor questions, and detailed follow-ups." },
-  // { label: "Location", value: "Dholera Smart City, Ahmedabad District", copy: "Use the form below to schedule a guided discussion before your visit." },
+  { label: "Email", value: "anandamhomesofficial@gmail.com", copy: "Ideal for document sharing, investor questions, and detailed follow-ups." },
+  // { label: "Location", value: "Lothal Smart City, Ahmedabad District", copy: "Use the form below to schedule a guided discussion before your visit." },
 ];
 
 export default function ContactPage() {
@@ -35,11 +36,17 @@ export default function ContactPage() {
         <div
           className="page-hero__backdrop"
           style={{
-            backgroundImage:`url(${ContactUs})`
+            backgroundImage:`url(${ContactUs})`,
+            "--img-ratio": "57%",
           }}
-        />
+        >
+          <img src={ContactUs} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
-        <div className="page-hero__inner">
+        <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">
             {/* <div className="page-hero__eyebrow">Contact</div> */}
               {/* <h1 className="page-hero__title">

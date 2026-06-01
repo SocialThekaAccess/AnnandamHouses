@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --royal-navy: #1A2456;
-  --navy-deep: #0e163a;
-  --navy-mid: #1e2d6a;
-  --navy-card: #111827;
+  --royal-navy: #1e4d3b;
+  --navy-deep: #143427;
+  --navy-mid: #2d6a51;
+  --navy-card: #10271f;
 
   --antique-gold: #B8975A;
   --warm-gold: #C3A95E;
@@ -20,15 +20,15 @@
 
   --bg: #FAF8F5;
   --bg-alt: #F5F0E8;
-  --bg-dark: #0e163a;
+  --bg-dark: #143427;
   --bg-card: #ffffff;
 
-  --text-primary: #1A2456;
+  --text-primary: #1b4332;
   --text-body: #3C3D3D;
   --text-muted: #7A7A7A;
 
   --border-gold: rgba(184, 151, 90, 0.25);
-  --border-light: rgba(26, 36, 86, 0.08);
+  --border-light: rgba(27, 67, 50, 0.08);
 
   --font-heading: 'Crimson Text', 'crimson-regular', Georgia, serif;
   --font-accent: 'Crimson Text', 'crimson-regular', Georgia, serif;
@@ -39,11 +39,11 @@
   --navy: var(--royal-navy);
   --gold: var(--antique-gold);
 
-  --shadow-xs: 0 1px 4px rgba(26, 36, 86, 0.06);
-  --shadow-sm: 0 4px 16px rgba(26, 36, 86, 0.08);
-  --shadow-md: 0 8px 32px rgba(26, 36, 86, 0.12);
-  --shadow-lg: 0 20px 56px rgba(26, 36, 86, 0.16);
-  --shadow-xl: 0 32px 80px rgba(26, 36, 86, 0.2);
+  --shadow-xs: 0 1px 4px rgba(27, 67, 50, 0.06);
+  --shadow-sm: 0 4px 16px rgba(27, 67, 50, 0.08);
+  --shadow-md: 0 8px 32px rgba(27, 67, 50, 0.12);
+  --shadow-lg: 0 20px 56px rgba(27, 67, 50, 0.16);
+  --shadow-xl: 0 32px 80px rgba(27, 67, 50, 0.2);
 }
 
 *, *::before, *::after {
@@ -138,9 +138,7 @@ button {
 }
 
 .section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.34em;
@@ -150,11 +148,7 @@ button {
 }
 
 .section-label::before {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 1.5px;
-  background: var(--antique-gold);
+  display: none;
 }
 
 .section-title {
@@ -207,7 +201,7 @@ button {
 .navy-btn:hover {
   background: var(--navy-mid);
   transform: translateY(-3px);
-  box-shadow: 0 10px 32px rgba(26, 36, 86, 0.3);
+  box-shadow: 0 10px 32px rgba(27, 67, 50, 0.3);
 }
 
 ::-webkit-scrollbar {

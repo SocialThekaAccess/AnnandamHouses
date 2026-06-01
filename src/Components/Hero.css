@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: #060c0a;
 }
 
 /* ── Slider backgrounds ── */
@@ -48,10 +49,10 @@
   z-index: 2;
   background: linear-gradient(
     105deg,
-    rgba(5, 10, 30, 0.90) 0%,
-    rgba(5, 10, 30, 0.75) 38%,
-    rgba(5, 10, 30, 0.35) 62%,
-    rgba(5, 10, 30, 0.08) 100%
+      rgba(10, 35, 24, 0.90) 0%,
+      rgba(10, 35, 24, 0.75) 38%,
+      rgba(10, 35, 24, 0.35) 62%,
+      rgba(10, 35, 24, 0.08) 100%
   );
 }
 
@@ -60,7 +61,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 180px;
-  background: linear-gradient(to top, rgba(5,10,30,0.60) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(10,35,24,0.60) 0%, transparent 100%);
 }
 
 /* ── Gold grid ── */
@@ -94,7 +95,7 @@
   position: absolute;
   top: 32px;
   right: 5%;
-  z-index: 6;
+  z-index: 1002;
   display: inline-flex;
   align-items: center;
   gap: 0;
@@ -116,7 +117,7 @@
 .hero__call-btn__icon {
   width: 42px;
   height: 42px;
-  background: #c0392b;
+  background: #2f6b4f;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +128,7 @@
 }
 
 .hero__call-btn:hover .hero__call-btn__icon {
-  background: #a93226;
+  background: #234f3b;
 }
 
 /* Right — dark olive text */
@@ -249,7 +250,7 @@
   position: absolute;
   bottom: -4px; left: 0; right: 0;
   height: 1.5px;
-  background: #c0392b;
+  background: #2f6b4f;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -276,11 +277,51 @@
 
 .hero__progress-bar {
   height: 100%;
-  background: #c0392b;
+  background: #2f6b4f;
   animation: progress 5s linear forwards;
 }
 
-/* ── Scroll indicator ── */
+/* ── Desktop slides wrapper ── */
+.hero__slides-desktop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ── Mobile slides wrapper — hidden on desktop ── */
+.hero__slides-mobile {
+  display: none;
+  position: relative;
+  width: 100%;
+}
+
+.hero__mobile-slide {
+  display: none;
+  width: 100%;
+}
+
+.hero__mobile-slide--active {
+  display: block;
+}
+
+.hero__mobile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.hero__overlay--mobile {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 35, 24, 0.05) 0%,
+    rgba(10, 35, 24, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
 .hero__scroll {
   position: absolute;
   bottom: 28px;
@@ -308,7 +349,7 @@
 }
 
 .hero__scroll:hover .hero__scroll-circle {
-  border-color: rgba(192, 57, 43, 0.7);
+  border-color: rgba(47, 107, 79, 0.7);
 }
 
 .hero__scroll svg {
@@ -316,120 +357,139 @@
 }
 
 /* ── Responsive ── */
+/* ══════════════════════════════════════════
+   MOBILE — ≤768px
+   Image renders as real <img>, zero crop,
+   text block sits below on dark bg
+══════════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* Hero becomes a column — image on top, text below */
   .hero {
-    min-height: 100svh;
+    min-height: unset !important;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
   }
 
+  /* Hide desktop background-image slides */
+  .hero__slides-desktop {
+    display: none;
+  }
+
+  /* Show mobile <img> slides */
+  .hero__slides-mobile {
+    display: block;
+  }
+
+  /* Overlay on desktop slides — hide */
   .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(5, 10, 30, 0.20) 0%,
-      rgba(5, 10, 30, 0.20) 35%,
-      rgba(5, 10, 30, 0.88) 100%
-    );
+    display: none;
   }
 
-  .hero__slide {
-    background-position: var(--mobile-pos, center center) !important;
-    background-size: cover;
+  /* Grid pattern — hide on mobile */
+  .hero__grid-pattern {
+    display: none;
   }
 
+  /* Hide desktop logo & call btn — navbar handles them */
+  .hero__logo,
+  .hero__call-btn {
+    display: none;
+  }
+
+  /* Hide desktop scroll indicator */
+  .hero__scroll {
+    display: none;
+  }
+
+  /* Progress bar — sits at very top of section */
+  .hero__progress {
+    position: relative;
+    bottom: unset;
+    top: unset;
+    order: -1;
+  }
+
+  /* Text container — below the image, dark background */
   .hero__container {
-    padding: 0 5% 100px;
+    position: relative;
+    z-index: 2;
+    padding: 24px 20px 48px;
+    min-height: unset;
+    align-items: flex-start;
     justify-content: flex-start;
-    align-items: flex-end;
-    min-height: 100svh;
+    background: #060c0a;
   }
 
   .hero__left {
+    display: block;
     max-width: 100%;
     text-align: left;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .hero__headline {
-    font-size: clamp(32px, 9vw, 52px);
-    line-height: 0.95;
-    margin-bottom: 16px;
+    font-size: clamp(26px, 8vw, 40px);
+    line-height: 1.05;
+    margin-bottom: 10px;
+    color: #fff;
   }
 
   .hero__tagline {
-    font-size: clamp(14px, 4vw, 18px);
-    line-height: 1.6;
-  }
-
-  .hero__rule {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  .hero__scroll {
-    display: flex;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2.2s ease-in-out infinite;
-  }
-
-  .hero__slider-nums {
-    bottom: 28px;
-    left: 5%;
-    right: auto;
-    transform: none;
-    gap: 14px;
+    font-size: clamp(13px, 4vw, 16px);
+    line-height: 1.65;
+    color: rgba(255,255,255,0.78);
   }
 
   .hero__tagline br {
     display: none;
   }
 
-  .hero__call-btn {
-    top: 22px;
-    right: 4%;
-    border-radius: 0;
+  .hero__rule {
+    width: 48px;
+    margin: 16px 0 0;
   }
 
-  .hero__call-btn__icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .hero__call-btn__text {
-    height: 36px;
-    font-size: 9.5px;
-    padding: 0 14px 0 12px;
-    letter-spacing: 0.15em;
-  }
-
-  .hero__logo img {
-    height: 52px;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero__container {
-    padding: 0 5% 90px;
-  }
-
-  .hero__headline {
-    font-size: clamp(28px, 10vw, 44px);
-    margin-bottom: 12px;
-  }
-
-  .hero__tagline {
-    font-size: clamp(13px, 4.2vw, 17px);
-  }
-
+  /* Slider numbers — inline below text */
   .hero__slider-nums {
-    bottom: 22px;
-    gap: 10px;
+    position: relative;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    margin-top: 18px;
+    gap: 12px;
+    z-index: 2;
   }
 
   .hero__slider-num {
     font-size: 12px;
+    color: rgba(255,255,255,0.45);
   }
 
-  .hero__logo img {
-    height: 44px;
+  .hero__slider-num.active {
+    color: #fff;
+  }
+
+  /* page-hero logo & call btn (inner pages) — navbar handles them */
+  .page-hero__logo,
+  .page-hero__call-btn {
+    display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .hero__container {
+    padding: 20px 16px 40px;
+  }
+
+  .hero__headline {
+    font-size: clamp(22px, 8vw, 34px);
+  }
+
+  .hero__tagline {
+    font-size: clamp(12px, 4vw, 14px);
+  }
+}
+

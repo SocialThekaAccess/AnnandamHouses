@@ -1,5 +1,6 @@
 import "./PageShell.css";
 import BlogImg from "../assets/BlogSection.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -56,10 +57,16 @@ export default function BlogPage({ onNavigate }) {
           className="page-hero__backdrop"
           style={{
             backgroundImage: `url(${BlogImg})`,
+            "--img-ratio": "57%",
           }}
-        />
+        >
+          <img src={BlogImg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
-        <div className="page-hero__inner">
+        <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">
             {/* <div className="page-hero__eyebrow">Journal</div> */}
             {/* <h1 className="page-hero__title">

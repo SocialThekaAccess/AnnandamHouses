@@ -79,7 +79,7 @@
 }
 
 .cta-band__btn:hover {
-  background: #060810;
+  background: #0f261d;
   transform: translateY(-2px);
 }
 
@@ -333,6 +333,13 @@
   color: var(--antique-gold, #B8975A);
 }
 
+.footer-main__legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
 /* Floating WhatsApp */
 .footer__float-wa {
   position: fixed;
@@ -378,10 +385,19 @@
     align-items: flex-start;
   }
 
+  .cta-band__title {
+    font-size: clamp(16px, 5vw, 22px);
+  }
+
   .cta-band__actions {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .cta-band__phone {
+    font-size: 15px;
+    word-break: break-all;
   }
 
   .cta-band__btn {
@@ -396,12 +412,11 @@
   }
 
   .footer-nav__inner {
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    flex-wrap: nowrap;
-    padding: 0 12px;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    padding: 8px 12px;
+    overflow: visible;
   }
 
   .footer-nav__inner::-webkit-scrollbar {
@@ -409,7 +424,9 @@
   }
 
   .footer-nav__link {
-    padding: 16px 18px;
+    width: 100%;
+    text-align: center;
+    padding: 14px 10px;
     font-size: 11px;
   }
 
@@ -425,6 +442,10 @@
   .footer-main__meta {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-main__legal {
     gap: 12px;
   }
 
@@ -459,7 +480,7 @@
 }
 
 .loc-modal__box {
-  background: #0e163a;
+  background: #143427;
   border: 1px solid rgba(184, 151, 90, 0.3);
   border-radius: 4px;
   width: 100%;

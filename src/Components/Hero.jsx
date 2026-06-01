@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -15,21 +15,18 @@ const SLIDES = [
   {
     bg: Anandamhomes1,
     pos: "center 35%",
-    mobilePos: "center 55%",   // show building structure, skip top sky
     headline: <>Thoughtfully<br />Planned Living</>,
     tagline: <>Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</>,
   },
   {
     bg: Anandamslider2,
     pos: "center center",
-    mobilePos: "center center",
     headline: <>Built Around<br />Real Value</>,
     tagline: <>Designed for families, end users,<br />and long-term confidence.</>,
   },
   {
     bg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85&auto=format&fit=crop",
     pos: "center 40%",
-    mobilePos: "center 40%",
     headline: <>A Better<br />Address Ahead</>,
     tagline: <>Infrastructure-led growth, refined presentation,<br />and a smoother buying journey.</>,
   },
@@ -41,6 +38,8 @@ export default function Hero() {
   const [prev, setPrev] = useState(null);
   const [fading, setFading] = useState(false);
   const [textVisible, setTextVisible] = useState(true);
+  const introTimeoutRef = useRef(null);
+  const transitionTimeoutRef = useRef(null);
   const { setOpen } = useCallModal();
 
   useEffect(() => {
@@ -48,21 +47,39 @@ export default function Hero() {
     return () => clearTimeout(t);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (introTimeoutRef.current) {
+        clearTimeout(introTimeoutRef.current);
+      }
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const goTo = useCallback((idx) => {
     if (idx === current || fading) return;
 
-    setTextVisible(false);
+    if (introTimeoutRef.current) {
+      clearTimeout(introTimeoutRef.current);
+    }
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+    }
 
-    setTimeout(() => {
+    setTextVisible(false);
+    introTimeoutRef.current = setTimeout(() => {
       setPrev(current);
       setFading(true);
       setCurrent(idx);
-
-      setTimeout(() => {
+      transitionTimeoutRef.current = setTimeout(() => {
         setTextVisible(true);
         setPrev(null);
         setFading(false);
+        transitionTimeoutRef.current = null;
       }, 500);
+      introTimeoutRef.current = null;
     }, 300);
   }, [current, fading]);
 
@@ -77,50 +94,68 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      {SLIDES.map((s, i) => (
-        <div
-          key={i}
-          className={`hero__slide${i === current ? " hero__slide--active" : ""}${i === prev ? " hero__slide--prev" : ""}`}
-          style={{
-            backgroundImage: `url(${s.bg})`,
-            backgroundPosition: s.pos,
-            "--mobile-pos": s.mobilePos,
-          }}
-        />
-      ))}
 
-      <div className="hero__overlay" />
-      <div className="hero__grid-pattern" />
+      {/* ── Desktop: background-image slides (absolute, full-bleed) ── */}
+      <div className="hero__slides-desktop">
+        {SLIDES.map((s, i) => (
+          <div
+            key={i}
+            className={`hero__slide${i === current ? " hero__slide--active" : ""}${i === prev ? " hero__slide--prev" : ""}`}
+            style={{ backgroundImage: `url(${s.bg})`, backgroundPosition: s.pos }}
+          />
+        ))}
+        <div className="hero__overlay" />
+        <div className="hero__grid-pattern" />
+      </div>
 
-      {/* Logo */}
+      {/* ── Mobile: real <img> — zero crop, natural height ── */}
+      <div className="hero__slides-mobile" aria-hidden="true">
+        {SLIDES.map((s, i) => (
+          <div
+            key={i}
+            className={`hero__mobile-slide${i === current ? " hero__mobile-slide--active" : ""}`}
+          >
+            <img
+              src={s.bg}
+              alt=""
+              className="hero__mobile-img"
+              draggable="false"
+            />
+          </div>
+        ))}
+        <div className="hero__overlay hero__overlay--mobile" />
+      </div>
+
+      {/* Logo — desktop only */}
       <div className="hero__logo">
         <img src={logoImg} alt="Anandam Homes" />
       </div>
 
-      {/* Call Now button — top right */}
-      <a href="tel:+916384800001" className="hero__call-btn" aria-label="Call Now">
+      {/* Call Now — desktop only */}
+      <button
+        type="button"
+        className="hero__call-btn"
+        aria-label="Call Now"
+        onClick={() => setOpen(true)}
+      >
         <span className="hero__call-btn__icon">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
           </svg>
         </span>
         <span className="hero__call-btn__text">Call Now</span>
-      </a>
+      </button>
 
+      {/* Text content */}
       <div className="hero__container">
         <div className={`hero__left${loaded ? "" : " hidden"}${textVisible ? "" : " text-out"}`}>
-          <h1 className="hero__headline">
-            {slide.headline}
-          </h1>
-
-          <p className="hero__tagline">
-            {slide.tagline}
-          </p>
-
+          <h1 className="hero__headline">{slide.headline}</h1>
+          <p className="hero__tagline">{slide.tagline}</p>
           <div className="hero__rule" />
         </div>
       </div>
 
+      {/* Slide numbers */}
       <div className="hero__slider-nums">
         {SLIDES.map((_, i) => (
           <button

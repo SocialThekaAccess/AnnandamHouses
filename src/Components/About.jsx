@@ -157,7 +157,7 @@ export default function About() {
               <div className="ae-img-photo">
                 <img
                   src={doleaImg}
-                  alt="Dholera Smart City — Anandam Homes"
+                  alt="Lothal Smart City — Anandam Homes"
                   className="ae-img-bg"
                 />
                 <div className="ae-img-overlay" aria-hidden="true" />
@@ -192,7 +192,7 @@ export default function About() {
             </div>
 
             <p className="ae-desc">
-              Dholera Smart City is envisioned to be a global manufacturing hub and a smart,
+              Lothal Smart City is envisioned to be a global manufacturing hub and a smart,
               sustainable city of the future. Excellent infrastructure, world-class connectivity
               and government initiatives make it the perfect destination for investment.
             </p>

@@ -7,6 +7,9 @@ const MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.336836838153
 
 const HOME_PATH = "/";
 const CONTACT_PATH = "/contact-us";
+const PROJECTS_PATH = "/our-projects";
+const PRIVACY_PATH = "/privacy-policy";
+const TERMS_PATH = "/terms-and-conditions";
 
 const PhoneIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -50,6 +53,7 @@ const LinkedInIcon = () => (
 const FOOTER_NAV = [
     { label: "Home", href: HOME_PATH },
   { label: "About Us", href: "/about-us" },
+  { label: "Our Projects", href: PROJECTS_PATH },
   { label: "Our Values", href: "/our-values" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: CONTACT_PATH },
@@ -57,7 +61,7 @@ const FOOTER_NAV = [
 ];
 
 const SOCIALS = [
-  { label: "LinkedIn", icon: <LinkedInIcon />, href: "#" },
+  { label: "LinkedIn", icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/anandam-exotica-082002410/" },
   { label: "Facebook", icon: <FacebookIcon />, href: "#" },
   { label: "Instagram", icon: <InstagramIcon />, href: "#" },
   { label: "YouTube", icon: <YoutubeIcon />, href: "#" },
@@ -140,8 +144,8 @@ export default function Footer({ onNavigate }) {
 
               <div className="footer-main__col">
                 <div className="footer-main__label">Contact us:</div>
-                <a href="mailto:Anandamhomesofficial@gmail.com" className="footer-main__value">
-                  Anandamhomesofficial@gmail.com
+                  <a href="mailto:anandamhomesofficial@gmail.com" className="footer-main__value">
+                    anandamhomesofficial@gmail.com
                 </a>
                 <a href="tel:+916384800001" className="footer-main__value">
                   +91 63848 00001
@@ -152,7 +156,7 @@ export default function Footer({ onNavigate }) {
                 <div className="footer-main__label">Anandam Homes</div>
                 <div className="footer-main__sub">Corporate Office:</div>
                 {/* <p className="footer-main__address">
-                  Dholera Smart City,<br />
+                    Lothal Smart City,<br />
                   Ahmedabad District,<br />
                   Gujarat - 382120, India
                 </p> */}
@@ -187,9 +191,14 @@ export default function Footer({ onNavigate }) {
               <p className="footer-main__crafted">
                 &copy; {new Date().getFullYear()} Anandam Homes. All rights reserved.
               </p>
-              <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(CONTACT_PATH)}>
-                Privacy Policy
-              </button>
+              <div className="footer-main__legal">
+                <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(PRIVACY_PATH)}>
+                  Privacy Policy
+                </button>
+                <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(TERMS_PATH)}>
+                  Terms and Conditions
+                </button>
+              </div>
             </div>
           </div>
         </div>

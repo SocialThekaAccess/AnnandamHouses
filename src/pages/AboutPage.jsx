@@ -1,5 +1,6 @@
 import "./PageShell.css";
-import aboutBg from "../assets/Aboutimg1.png";
+import aboutBg from "../assets/about.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 
@@ -35,7 +36,7 @@ const PILLARS = [
 ];
 
 const HIGHLIGHTS = [
-  "Strategic positioning around the Dholera smart city growth corridor.",
+  "Strategic positioning around the Lothal smart city growth corridor.",
   "Premium plotted inventory presented with a hospitality-inspired customer journey.",
   "A design-first brand board translated consistently across digital touchpoints.",
 ];
@@ -48,9 +49,15 @@ export default function AboutPage({ onNavigate }) {
           className="page-hero__backdrop"
           style={{
             backgroundImage: `url(${aboutBg})`,
-            backgroundPosition: "60% center",
+            backgroundPosition: "center center",
+            "--img-ratio": "56%",
           }}
-        />
+        >
+          <img src={aboutBg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Homes" />
+        </div>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">
@@ -86,7 +93,7 @@ export default function AboutPage({ onNavigate }) {
                     <span className="about-quick-fact__icon">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </span>
-                    <span>RERA approved &amp; legally clear titles</span>
+                    <span>Legally clear titles and transparent guidance</span>
                   </div>
                   <div className="about-quick-fact">
                     <span className="about-quick-fact__icon">
@@ -98,7 +105,7 @@ export default function AboutPage({ onNavigate }) {
                     <span className="about-quick-fact__icon">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </span>
-                    <span>Dholera Smart City — India's fastest growing corridor</span>
+                    <span>Lothal Smart City — India's fastest growing corridor</span>
                   </div>
                   <div className="about-quick-fact">
                     <span className="about-quick-fact__icon">

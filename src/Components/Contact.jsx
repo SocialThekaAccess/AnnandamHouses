@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import "./Contact.css";
 
+const CONTACT_EMAIL = "anandamhomesofficial@gmail.com";
+
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -43,8 +45,8 @@ const SendIcon = () => (
 
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
-  { icon: <MailIcon />, label: "Email Us", value: "Anandamhomesofficial@gmail.com", href: "mailto:Anandamhomesofficial@gmail.com" },
-  { icon: <MapPinIcon />, label: "Location", value: "Dholera Smart City, Ahmedabad District, Gujarat-382120", href: null },
+{ icon: <MailIcon />, label: "Email Us", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { icon: <MapPinIcon />, label: "Location", value: "Lothal Smart City, Ahmedabad District, Gujarat-382120", href: null },
 ];
 
 export default function Contact() {
@@ -58,6 +60,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const subject = `New enquiry from ${form.name}`;
+    const body = [
+      `Full Name: ${form.name}`,
+      `Mobile Number: ${form.phone}`,
+      `Email Address: ${form.email || "Not provided"}`,
+      `Area of Interest: ${form.plot || "Not selected"}`,
+      "",
+      "Message:",
+      form.message || "No message provided.",
+    ].join("\n");
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
     setForm({ name: "", phone: "", email: "", plot: "", message: "" });
     setTimeout(() => setSent(false), 5000);
@@ -109,8 +123,8 @@ export default function Contact() {
                     <div>
                       <span className="contact__info-label">{label}</span>
                       {href
-                        ? <a href={href} className="contact__info-value">{value}</a>
-                        : <span className="contact__info-value">{value}</span>
+                        ? <a href={href} className={`contact__info-value${label === "Location" ? " contact__info-value--location" : ""}`}>{value}</a>
+                        : <span className={`contact__info-value${label === "Location" ? " contact__info-value--location" : ""}`}>{value}</span>
                       }
                     </div>
                   </div>
@@ -137,7 +151,7 @@ export default function Contact() {
 
               {sent && (
                 <div className="contact__success">
-                  Thank you. Our team will connect with you shortly.
+                  Your email app has been opened with a pre-filled enquiry draft.
                 </div>
               )}
 
