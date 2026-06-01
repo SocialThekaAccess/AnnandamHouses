@@ -129,26 +129,22 @@ export default function BlogPage({ onNavigate }) {
         </section>
 
         <section className="page-section page-section--spaced">
-          <div className="page-highlight-band page-card">
-            <div>
-              <div className="section-label">Publishing Value</div>
-              <h2 className="page-heading">This page gives the brand room to educate, not just promote.</h2>
-              <p className="page-copy">
-                With a distinct blog route, the site can publish insights that improve SEO depth, strengthen authority,
-                and support buyer trust without crowding the home page experience.
-              </p>
-            </div>
+  <div className="page-highlight-band page-card">
+    <div>
+      <div className="section-label">India's Next Landmark Investment Corridor</div>
+      <h2 className="page-heading">Lothal — Where 5,000 Years of History Meets India's Future Smart City</h2>
+      <p className="page-copy">
+        Located near the rapidly developing Dholera Smart City region, Lothal is emerging as one of Gujarat's most strategically positioned growth destinations.
+      </p>
+    </div>
 
-            <div className="page-highlight-list">
-              {NOTES.map((note) => (
-                <div key={note.title} className="page-highlight-item">
-                  <strong>{note.title}:</strong> {note.copy}
-                </div>
-              ))}
-              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>Talk To The Team</button>
-            </div>
-          </div>
-        </section>
+    <div className="page-highlight-list">
+      <div className="page-highlight-item">Once known globally as the world's oldest dockyard city of the Indus Valley Civilization, Lothal is now entering a new era — powered by mega infrastructure, tourism, industrial expansion, and smart-city connectivity.</div>
+      <div className="page-highlight-item">With the rise of the ₹4,500+ crore National Maritime Heritage Complex (NMHC), international attention is shifting toward the Lothal–Dholera growth belt.</div>
+      <button className="gold-btn" style={{ marginTop: '20px' }} onClick={() => window.open('https://wa.me/916384800001', '_blank')}>Talk To The Team</button>
+    </div>
+  </div>
+</section>
       </main>
     </div>
   );
