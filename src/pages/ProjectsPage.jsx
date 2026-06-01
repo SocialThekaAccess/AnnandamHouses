@@ -318,9 +318,13 @@ export default function ProjectsPage({ onNavigate }) {
               ].map((item) => (
                 <div key={item} className="page-highlight-item">{item}</div>
               ))}
-              <button className="gold-btn" type="button" onClick={() => onNavigate?.("/contact-us")}>
-                Talk To The Team
-              </button>
+              <button 
+  className="gold-btn" 
+  type="button" 
+  onClick={() => window.open('https://wa.me/916384800001', '_blank')}
+>
+  Talk To The Team
+</button>
             </div>
           </div>
         </section>
