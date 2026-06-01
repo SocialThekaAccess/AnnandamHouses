@@ -3,6 +3,7 @@ import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import Anandamslider2 from "../assets/Anandamslider2.png";
+import Anandamslider3 from "../assets/sliderhome3.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const ChevronDown = () => (
@@ -25,7 +26,7 @@ const SLIDES = [
     tagline: <>Designed for families, end users,<br />and long-term confidence.</>,
   },
   {
-    bg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85&auto=format&fit=crop",
+    bg: Anandamslider3,
     pos: "center 40%",
     headline: <>A Better<br />Address Ahead</>,
     tagline: <>Infrastructure-led growth, refined presentation,<br />and a smoother buying journey.</>,

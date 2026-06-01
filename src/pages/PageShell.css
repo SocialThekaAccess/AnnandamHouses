@@ -423,6 +423,7 @@
   color: #fff;
   overflow: hidden;
   padding: 0;
+  align-items: start;
 }
 
 .page-highlight-band > div:first-child {

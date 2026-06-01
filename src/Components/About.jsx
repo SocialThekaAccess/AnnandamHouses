@@ -157,7 +157,7 @@ export default function About() {
               <div className="ae-img-photo">
                 <img
                   src={doleaImg}
-                  alt="Lothal Smart City — Anandam Homes"
+                  alt="Lothal Smart City — Anandam"
                   className="ae-img-bg"
                 />
                 <div className="ae-img-overlay" aria-hidden="true" />
@@ -180,7 +180,7 @@ export default function About() {
             ref={contentRef}
             className={`ae-content ae-reveal-right${contentVisible ? " vis" : ""}`}
           >
-            <div className="ae-eyebrow">About Anandam Homes</div>
+            <div className="ae-eyebrow">About Anandam </div>
 
             <h2 className="ae-heading">
               Invest in India&apos;s
@@ -200,6 +200,15 @@ export default function About() {
               Anandam Exotica brings you an exclusive opportunity to own premium residential plots
               in this landmark development.
             </p>
+            <p className="ae-desc">
+             The Future Begins Here
+Dholera Smart City is India's most ambitious infrastructure and industrial development project, designed to become a global hub for innovation, manufacturing, and sustainable urban living.
+
+
+A City Built for Tomorrow
+Positioned as a key growth engine of Gujarat, Dholera is attracting industries, investors, entrepreneurs, and visionaries from across the globe.
+            </p>
+            
 
             <div className="ae-counters" ref={countersRef}>
               {stats.map((s) => (

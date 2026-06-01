@@ -156,27 +156,57 @@ export default function AboutPage({ onNavigate }) {
           </div>
         </section>
 
-        <section className="page-section page-section--spaced">
-          <div className="page-highlight-band page-card">
-            <div>
-              <div className="section-label">Why It Matters</div>
-              <h2 className="page-heading">A refined first impression creates stronger trust before the site visit even begins.</h2>
-              <p className="page-copy">
-                This page is designed as an extension of the home page rather than a disconnected template. The
-                result is a more cohesive brand experience, which helps the business feel larger, sharper, and more
-                premium across touchpoints.
-              </p>
-            </div>
+<section className="page-section page-section--spaced">
+  <div className="page-highlight-band page-card">
+    <div>
+      <div className="section-label">Why It Matters</div>
+      <h2 className="page-heading">Why Lothal Is Becoming a High-Potential Real Estate Destination</h2>
+      <p className="page-copy" style={{ marginBottom: '8px' }}>Lothal enjoys a strong locational advantage because it lies close to:</p>
+      <ul style={{ paddingLeft: '18px', margin: '0 0 12px', color: 'inherit' }}>
+        <li className="page-copy" style={{ marginBottom: '4px' }}>Dholera SIR Activation Zone</li>
+        <li className="page-copy" style={{ marginBottom: '4px' }}>Ahmedabad–Dholera Expressway</li>
+        <li className="page-copy" style={{ marginBottom: '4px' }}>Dholera International Airport corridor</li>
+        <li className="page-copy" style={{ marginBottom: '4px' }}>Future industrial and semiconductor zones</li>
+        <li className="page-copy">Logistics and manufacturing hubs</li>
+      </ul>
+      <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: '700', color: '#e8d09a', marginBottom: '12px' }}>
+  This creates a powerful combination of:
+</p>
+      <ul style={{ paddingLeft: '18px', margin: '0 0 12px', color: 'rgba(255,255,255,0.78)' }}>
+  <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '8px' }}>Tourism growth</li>
+  <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '8px' }}>Industrial development</li>
+  <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '8px' }}>Future employment generation</li>
+  <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px' }}>Real estate appreciation potential</li>
+</ul>
+    </div>
 
-            <div className="page-highlight-list">
-              {HIGHLIGHTS.map((item) => (
-                <div key={item} className="page-highlight-item">{item}</div>
-              ))}
-              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>Plan A Visit</button>
-            </div>
-          </div>
-        </section>
-      </main>
+    <div className="page-highlight-list" style={{ justifyContent: 'flex-start', paddingTop: '70px' }}>
+  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '26px', fontWeight: '600', color: '#e8d09a', margin: '0 0 8px' }}>
+    The Perfect Blend of Heritage + Future Infrastructure
+  </h3>
+  <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', fontWeight: '600', color: 'rgba(255,255,255,0.55)', marginBottom: '14px' }}>
+    Ancient Legacy. Modern Opportunity.
+  </p>
+  <p className="page-copy" style={{ color: 'rgba(255,255,255,0.78)', fontSize: '16px', marginBottom: '12px' }}>
+    More than 4,500 years ago, traders from Mesopotamia connected with Lothal through maritime trade routes. Today, the same land is reconnecting with the future through:
+  </p>
+  <ul style={{ paddingLeft: '18px', margin: '0 0 12px', color: 'rgba(255,255,255,0.78)' }}>
+    <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '4px' }}>Smart infrastructure</li>
+    <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '4px' }}>Industrial expansion</li>
+    <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '4px' }}>Tourism development</li>
+    <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px', marginBottom: '4px' }}>Global investment interest</li>
+    <li style={{ fontFamily: 'var(--font-body)', fontSize: '16px' }}>Government-backed mega projects</li>
+  </ul>
+  <p style={{ fontFamily: 'var(--font-body)', fontSize: '16px', color: 'rgba(255,255,255,0.78)', marginBottom: '20px' }}>
+    Lothal is no longer just an archaeological destination — it is evolving into a future-ready growth ecosystem.
+  </p>
+  <button className="gold-btn" onClick={() => window.open('https://wa.me/916384800001', '_blank')}>
+    Plan A Visit
+  </button>
+</div>
+  </div>
+</section>
+ </main>
     </div>
   );
 }
