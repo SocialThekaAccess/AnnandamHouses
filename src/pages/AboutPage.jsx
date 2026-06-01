@@ -25,7 +25,7 @@ const CallNowBtn = () => {
 
 const STATS = [
   { value: "12+", label: "Years of Trust", copy: "A calmer, consultative approach shaped around families, end-use buyers, and long-hold investors." },
-  { value: "200+", label: "Premium Plots", copy: "A tightly positioned plotted community selected for growth visibility and smoother customer decision-making." },
+  { value: "200", label: "Premium Plots", copy: "A tightly positioned plotted community selected for growth visibility and smoother customer decision-making." },
   { value: "500+", label: "Client Conversations", copy: "Market walkthroughs, location briefings, and guided visits designed to remove uncertainty from the buying journey." },
 ];
 

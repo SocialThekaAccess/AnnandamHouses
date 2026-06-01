@@ -18,7 +18,7 @@
   transition: opacity 0.25s ease;
 }
 
-/* Logo — hidden on desktop (hero has its own logo), shown on mobile */
+/* Logo — hidden on desktop (hero has its own logo), shown on mobile only */
 .navbar__logo {
   display: none;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 .navbar__logo img {
-  height: 44px;
+  height: 64px;
   width: auto;
   object-fit: contain;
 }
