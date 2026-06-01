@@ -192,14 +192,29 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 6px;
+  margin-top: -16px;
 }
 
 .footer-main__logo {
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   filter: drop-shadow(0 4px 16px rgba(184,151,90,0.25));
+}
+
+.footer-main__logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-main__logo-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.04);
 }
 
 .footer-main__brand-name {
@@ -456,14 +471,18 @@
 }
 
 @media (max-width: 480px) {
-  .footer-main__brand-name {
-    font-size: 24px;
+  .footer-main__logo {
+    width: 100px;   /* 60px → 100px */
+    height: 100px;
   }
+}
 
   .footer-main__logo {
-    width: 60px;
-    height: 60px;
-  }
+  width: 150px;   
+  height: 150px; 
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(184,151,90,0.25));
+}
 }
 
 /* ── Location Video Modal ── */

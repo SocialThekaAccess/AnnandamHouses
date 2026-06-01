@@ -137,7 +137,13 @@ export default function Footer({ onNavigate }) {
           <div className="footer-main__inner">
             <div className="footer-main__grid">
               <div className="footer-main__brand">
-                <img src={logo} alt="Anandam Homes" className="footer-main__logo" />
+                <button
+                  onClick={() => handleNavigate("/")}
+                  className="footer-main__logo-btn"
+                  aria-label="Go to Home"
+                >
+                  <img src={logo} alt="Anandam Homes" className="footer-main__logo" />
+                </button>
                 {/* <div className="footer-main__brand-name">Anandam Homes</div> */}
                 <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>

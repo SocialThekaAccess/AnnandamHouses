@@ -32,8 +32,6 @@
   width: 100%;
 }
 
-
-
 /* ══════════════════════════════════════════════════════
    HERO
    ══════════════════════════════════════════════════════ */
@@ -81,15 +79,15 @@
   height: auto;
 }
 
+/* ── Logo — single definition, no duplicate ── */
 .page-hero__logo {
   position: absolute;
-  top: 28px;
-  left: 5%;
+  top: 0;
+  left: 2%;    /* 0 → 2% */
   z-index: 6;
 }
-
 .page-hero__logo img {
-  height: 90px;
+  height: 180px;
   width: auto;
   object-fit: contain;
 }
@@ -368,7 +366,6 @@
   background: var(--jub-bg-warm);
 }
 
-/* Red top bar on hover */
 .page-feature::before {
   content: "";
   position: absolute;
@@ -386,7 +383,6 @@
   transform: scaleX(1);
 }
 
-/* Feature number */
 .page-feature::after {
   content: attr(data-num);
   position: absolute;
@@ -474,7 +470,6 @@
   gap: 14px;
 }
 
-/* Red arrow bullet */
 .page-highlight-item::before {
   content: "→";
   color: var(--jub-red);
@@ -1330,7 +1325,6 @@
 }
 
 @media (max-width: 768px) {
-  /* ── Hero: auto-height, no cropping, no gap ── */
   .page-hero {
     min-height: unset !important;
     height: auto;
@@ -1339,12 +1333,10 @@
     overflow: hidden;
   }
 
-  /* Backdrop: block element with exact image aspect ratio */
   .page-hero__backdrop {
     position: relative !important;
     inset: unset !important;
     width: 100%;
-    /* Default 16:9 — overridden per-page via --img-ratio custom property */
     padding-top: 0;
     background: none !important;
     transform: none !important;
@@ -1355,7 +1347,6 @@
     transform: none !important;
   }
 
-  /* Overlay: sits on top of backdrop */
   .page-hero::before {
     display: none;
   }
@@ -1364,7 +1355,6 @@
     display: block;
   }
 
-  /* Inner content: sits below image, dark bg, no min-height */
   .page-hero__inner {
     position: relative !important;
     inset: unset !important;
@@ -1376,7 +1366,6 @@
     z-index: 2;
   }
 
-  /* Show hero text below image */
   .page-hero__title {
     font-size: clamp(26px, 7vw, 38px);
     color: #fff;
@@ -1394,7 +1383,6 @@
     margin-bottom: 10px;
   }
 
-  /* Panel below text */
   .page-hero__panel {
     background: rgba(255,255,255,0.06);
     border-left: 3px solid #2f6b4f;
@@ -1406,15 +1394,11 @@
   }
 
   /* Hide logo & call btn — navbar handles them */
-  .page-hero__logo {
-    display: none;
-  }
-
+  .page-hero__logo,
   .page-hero__call-btn {
     display: none;
   }
 
-  /* ── Section padding ── */
   .page-section {
     padding-left: 20px;
     padding-right: 20px;
@@ -1436,14 +1420,12 @@
     gap: 0;
   }
 
-  /* Values grid: 2 columns at tablet */
   .values-page__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  /* Hero already handled by 768px block — just tighten inner padding */
   .page-hero__inner {
     padding: 20px 16px 28px !important;
   }
@@ -1530,5 +1512,3 @@
     gap: 16px;
   }
 }
-
-

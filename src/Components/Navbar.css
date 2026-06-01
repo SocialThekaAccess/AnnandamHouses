@@ -18,18 +18,9 @@
   transition: opacity 0.25s ease;
 }
 
-/* Logo — hidden on desktop (hero has its own logo), shown on mobile only */
+/* Logo — always hidden in navbar, hero has its own logo */
 .navbar__logo {
-  display: none;
-  align-items: center;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-
-.navbar__logo img {
-  height: 64px;
-  width: auto;
-  object-fit: contain;
+  display: none !important;
 }
 
 /* ── Desktop links ── */
@@ -244,9 +235,13 @@
     padding: 0 16px;
   }
 
-  /* Show logo on mobile */
+  /* Show logo on mobile — always */
   .navbar__logo {
     display: flex;
+  }
+
+  .navbar__logo img {
+    height: 80px;
   }
 
   /* Hide desktop links */

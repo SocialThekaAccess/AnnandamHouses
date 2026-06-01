@@ -58,7 +58,7 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
 
   return (
     <>
-      <nav className={`navbar${scrolled ? " scrolled" : ""}`} aria-label="Primary">
+      <nav className={`navbar${scrolled ? " scrolled" : ""}${currentPath !== HOME_PATH ? " navbar--show-logo" : ""}`} aria-label="Primary">
         {/* Logo — visible on mobile */}
         <a
           className="navbar__logo"
