@@ -67,7 +67,7 @@ export default function CustomerReviews() {
         <div className="customer-reviews__intro">
           <span className="section-label">Customer Reviews</span>
           <h2 className="section-title" id="customer-reviews-title">
-            A Google-style review line built around client trust.
+            We deliver what we promise 
           </h2>
           <p className="customer-reviews__text">
             Real-estate decisions feel better when the experience is clear, calm,
