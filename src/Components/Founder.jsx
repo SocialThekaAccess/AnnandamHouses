@@ -42,7 +42,7 @@ export default function Founder() {
               <div className="founder__photo-frame-br" />
               <div className="founder__photo-badge">
                 <span>Founder &amp; Director</span>
-                <strong>Anandam Homes</strong>
+                <strong>Anandam </strong>
               </div>
             </div>
           </div>
@@ -61,13 +61,13 @@ export default function Founder() {
               With over 15 years of experience in real estate development, our founder
               has been at the forefront of identifying high-growth investment opportunities
               across Gujarat. A firm believer in transparent, customer-first business
-              practices, he established Anandam Homes with a singular vision — to make
+              practices, he established Anandam with a singular vision — to make
               premium land ownership accessible, trustworthy, and rewarding.
             </p>
 
             <p className="founder__desc">
               His deep understanding of the Lothal Smart City project and its long-term
-              potential has positioned Anandam Homes as one of the most trusted names
+              potential has positioned Anandam as one of the most trusted names
               in the region. Every plot sold carries his personal commitment to quality,
               legal clarity, and customer satisfaction.
             </p>

@@ -110,7 +110,7 @@ export default function Footer({ onNavigate }) {
         <div className="footer-disclaimer">
           <div className="footer-disclaimer__inner">
             <p className="footer-disclaimer__text">
-              <strong>Disclaimer</strong> - Anandam Homes, its logo, and all related project names are proprietary.
+              <strong>Disclaimer</strong> - Anandam , its logo, and all related project names are proprietary.
               Information on this website is for general guidance only and does not constitute an offer or legal advice.
               Plot availability, pricing, and approvals are subject to change. Please verify all details during your site visit.
             </p>
@@ -159,7 +159,7 @@ export default function Footer({ onNavigate }) {
               </div>
 
               <div className="footer-main__col">
-                <div className="footer-main__label">Anandam Homes</div>
+                <div className="footer-main__label">Anandam </div>
                 <div className="footer-main__sub">Corporate Office : Sco 67, Ground Floor, Sector 82, JLPL,Mohali</div>
                 {/* <p className="footer-main__address">
                     Lothal Smart City,<br />
@@ -195,7 +195,7 @@ export default function Footer({ onNavigate }) {
 
             <div className="footer-main__meta">
               <p className="footer-main__crafted">
-                &copy; {new Date().getFullYear()} Anandam Homes. All rights reserved.
+                &copy; {new Date().getFullYear()} Anandam . All rights reserved.
               </p>
               <div className="footer-main__legal">
                 <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(PRIVACY_PATH)}>
@@ -225,7 +225,7 @@ export default function Footer({ onNavigate }) {
         <div className="loc-modal__backdrop" onClick={() => setVideoOpen(false)}>
           <div className="loc-modal__box" onClick={(e) => e.stopPropagation()}>
             <div className="loc-modal__header">
-              <span className="loc-modal__title">📍 Anandam Homes — Location View</span>
+              <span className="loc-modal__title">📍 Anandam  — Location View</span>
               <button className="loc-modal__close" onClick={() => setVideoOpen(false)} aria-label="Close">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>

@@ -171,7 +171,7 @@ export default function ValuesPage({ onNavigate }) {
                 </h2>
                 <p className="page-copy">
                   These six values are the cornerstone of everything we do at
-                  Anandam Homes. They guide our team, shape our processes, and
+                  Anandam . They guide our team, shape our processes, and
                   define the experience we deliver to every customer who trusts
                   us with their investment.
                 </p>
@@ -214,7 +214,7 @@ export default function ValuesPage({ onNavigate }) {
                 Experience the difference that values-driven real estate makes.
               </h2>
               <p className="page-copy">
-                When you invest with Anandam Homes, you're not just buying a plot
+                When you invest with Anandam , you're not just buying a plot
                 — you're partnering with a team that holds itself to the highest
                 standards of integrity, transparency, and customer care.
               </p>

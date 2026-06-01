@@ -107,7 +107,7 @@ export default function Contact() {
               </div> */}
 
               <h3 className="contact__info-title">
-                Anandam Homes
+                Anandam 
                 <em>Future-Ready Development</em>
               </h3>
 

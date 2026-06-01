@@ -140,7 +140,7 @@ export default function Features() {
             Modern Lifestyle Features
           </h2>
           <p className="features__subtitle">
-            Inspired by thoughtful large-format communities, Anandam Homes brings together
+            Inspired by thoughtful large-format communities, Anandam  brings together
             infrastructure, presentation, and practical amenities to create a more complete plotted address.
           </p>
         </div>
