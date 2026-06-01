@@ -198,7 +198,7 @@ export default function Values() {
           </div>
           <div className="values__cta-mid">
             <span className="values__cta-meta">Our Location</span>
-            <span className="values__cta-val">Lothal Smart City, Gujarat</span>
+            <span className="values__cta-val">Sco 67, Ground Floor, Sector 82, JLPL,Mohali</span>
           </div>
           <button
             className="values__cta-btn"

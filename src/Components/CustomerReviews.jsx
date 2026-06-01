@@ -17,7 +17,7 @@ const REVIEWS = [
       "The project presentation felt well planned and the location insights helped us make a confident family decision.",
   },
   {
-    author: "Priya Mehta",
+    author: "Priya Mehta",   
     review:
       "We appreciated the respectful follow-up and the way the team explained the investment potential without pressure.",
   },

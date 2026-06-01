@@ -137,7 +137,7 @@ export default function Features() {
           <span className="section-label features__label">Development Highlights</span>
           <h2 className="section-title features__title">
             Carefully Planned Plots With<br />
-            <span>Modern Lifestyle Features</span>
+            Modern Lifestyle Features
           </h2>
           <p className="features__subtitle">
             Inspired by thoughtful large-format communities, Anandam Homes brings together

@@ -46,7 +46,7 @@ const SendIcon = () => (
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
 { icon: <MailIcon />, label: "Email Us", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-  { icon: <MapPinIcon />, label: "Location", value: "Lothal Smart City, Ahmedabad District, Gujarat-382120", href: null },
+  { icon: <MapPinIcon />, label: "Location", value: "Sco 67, Ground Floor, Sector 82, JLPL,Mohali", href: null },
 ];
 
 export default function Contact() {

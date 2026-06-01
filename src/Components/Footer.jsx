@@ -154,7 +154,7 @@ export default function Footer({ onNavigate }) {
 
               <div className="footer-main__col">
                 <div className="footer-main__label">Anandam Homes</div>
-                <div className="footer-main__sub">Corporate Office:</div>
+                <div className="footer-main__sub">Corporate Office : Sco 67, Ground Floor, Sector 82, JLPL,Mohali</div>
                 {/* <p className="footer-main__address">
                     Lothal Smart City,<br />
                   Ahmedabad District,<br />

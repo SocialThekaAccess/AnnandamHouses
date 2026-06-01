@@ -122,7 +122,7 @@ const features = [
 ];
 
 const stats = [
-  { icon: "plots", target: 200, suffix: "+", label: "Premium Plots" },
+  { icon: "plots", target: 200,  label: "Premium Plots" },
   { icon: "star", target: 25, suffix: "+", label: "Years Experience" },
   { icon: "family", target: 500, suffix: "+", label: "Happy Families" },
   { icon: "shield", target: 100, suffix: "%", label: "Buyer-Focused Support" },
