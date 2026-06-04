@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./BrandStory.css";
+import BreathesImg from "../assets/BreathesNatures.png";
 
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
@@ -15,33 +16,61 @@ function useInView(threshold = 0.1) {
   return [ref, visible];
 }
 
+function useInViewCounter(threshold = 0.25) {
+  const ref = useRef(null);
+  const [run, setRun] = useState(false);
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setRun(true); io.disconnect(); } },
+      { threshold }
+    );
+    if (ref.current) io.observe(ref.current);
+    return () => io.disconnect();
+  }, [threshold]);
+  return [ref, run];
+}
+
+function Counter({ target, suffix = "", duration = 2400, run }) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!run) return;
+    let start = null;
+    const tick = (ts) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      setVal(Math.floor(ease * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [run, target, duration]);
+  return <>{val}{suffix}</>;
+}
+
 const CHECKLIST = [
-  "Registry-ready property options",
+  "NANOC title clear project ",
+  "Registry-ready property",
+  "Immediate Possession",
   "Clear and transparent process",
   "Expert guidance for Dholera investment",
-  "Support for residential and bulk land deals",
   "Proper documentation assistance",
   "Long-term investment-focused approach",
   "Strategic locations with high growth potential",
   "Market insights and future development updates",
-  "Market insights and future development updates",
 ];
 
-const APPROACH = [
-  {
-    // title: "Premium Yet Practical",
-    desc: "Dholera is growing as one of India's most planned smart city destinations. With major infrastructure, industrial growth, and strong connectivity coming to the region, it offers great potential for future property investment.",
-  },
-  {
-    // title: "Investment With Clarity",
-    desc: "Dholera offers a unique opportunity for investors looking toward future growth. Supported by smart city planning, expanding industries, and major infrastructure projects, the region is positioned for strong long-term development.",
-  },
+const stats = [
+  { target: 200, label: "Premium Plots" },
+  { target: 25, suffix: "+", label: "Years Experience" },
+  { target: 500, suffix: "+", label: "Happy Families" },
+  { target: 100, suffix: "%", label: "Buyer-Focused Support" },
 ];
 
 export default function BrandStory() {
   const [introRef, introVisible] = useInView(0.1);
   const [valuesRef, valuesVisible] = useInView(0.1);
   const [approachRef, approachVisible] = useInView(0.1);
+  const [statsRef, statsRun] = useInViewCounter(0.25);
 
   return (
     <section className="brand-story" id="brand-story">
@@ -57,13 +86,11 @@ export default function BrandStory() {
             <div className="bs-intro__text">
               <h3 className="bs-values__heading">Why Choose Anandam?</h3>
               <p className="bs-intro__para">
-               Anandam is created for buyers and investors who want secure, transparent, and future-ready property options in Dholera. We focus on helping people make smart real estate decisions with proper guidance, clear documentation, and honest support.
+               Anandam  brings you a thoughtfully planned residential plotting project locatedin Dholera, one of Gujarat's most promising growth corridors. Surrounded by future-ready development, strong connectivity, and peaceful surroundings, Anandam  is designed for people who want a secure, well-connected, and valuable place for their future home.
               </p>
               <p className="bs-intro__para">
-                Whether you are planning to buy a residential plot, invest for long-term growth, or explore bulk land deals, Anandam gives you the right information and support at every step.
-               Our goal is to make property investment simple, safe, and stress-free for every buyer.
+                The project enjoys easy connectivity to important nearby destinations such as Dholera SIR, Dholera Airport, National Highway and National Maritime Heritage Complex. This makes the location ideal for those who want to stay connected to developing infrastructure while enjoying a calm and open environment.
               </p>
-              
               <a
                 href="https://wa.me/916384800001"
                 className="bs-intro__cta"
@@ -83,7 +110,6 @@ export default function BrandStory() {
               className={`bs-values reveal-up${valuesVisible ? " is-visible" : ""}`}
               style={{ transitionDelay: "0.15s" }}
             >
-              {/* <h3 className="bs-values__heading">Why Choose Anandam?</h3> */}
               <ul className="bs-values__list">
                 {CHECKLIST.map((item, i) => (
                   <li key={i} className="bs-values__item">
@@ -101,23 +127,46 @@ export default function BrandStory() {
         </div>
       </div>
 
-      {/* ── Approach + Bottom Label ── */}
-      <div className="bs-approach-wrap">
+      {/* ── Anandam Exotica Section ── */}
+      <div className="bs-exotica-wrap">
         <div className="bs-container">
           <div
             ref={approachRef}
-            className={`bs-approach reveal-up${approachVisible ? " is-visible" : ""}`}
+            className={`bs-exotica reveal-up${approachVisible ? " is-visible" : ""}`}
           >
-            <div className="bs-approach__label">Build Your Future with Anandam</div>
-            <div className="bs-approach__grid">
-              {APPROACH.map((a, i) => (
-                <div key={i} className="bs-approach__card">
-                  <div className="bs-approach__num">0{i + 1}</div>
-                  <h4 className="bs-approach__title">{a.title}</h4>
-                  <p className="bs-approach__desc">{a.desc}</p>
-                </div>
-              ))}
+            {/* Left: Image */}
+            <div className="bs-exotica__img-col">
+              <img src={BreathesImg} alt="Where Luxury Breathes Natures" className="bs-exotica__img" />
             </div>
+
+            {/* Right: Heading on top, then desc + stats */}
+            <div className="bs-exotica__right">
+              <div className="bs-exotica__header">
+                <span className="bs-exotica__eyebrow">Anandam Exotica</span>
+                <div className="bs-exotica__line" />
+                <h2 className="bs-exotica__heading">Where Luxury Breathes Natures</h2>
+              </div>
+
+              <p className="bs-exotica__desc">
+                Anandam Exotica – A residential plotting destination in Dholera, offering connectivity, comfort, and future-ready value. Anandam Exotica gives you the opportunity to own a residential plot in a location that is peaceful today and promising for tomorrow. With wide internal roads, green surroundings, planned layout, and essential development features, the project is created to offer a clean and organized living environment.
+              </p>
+              <p className="bs-exotica__desc">
+                The location near Lothal and Dholera makes it suitable for people who want to stay close to upcoming infrastructure while still enjoying open space, fresh surroundings, and a calm lifestyle away from crowded city areas.
+              </p>
+
+              {/* ── Stats ── */}
+              <div className="bs-stats" ref={statsRef}>
+                {stats.map((s) => (
+                  <div className="bs-stat" key={s.label}>
+                    <div className="bs-stat__val">
+                      <Counter target={s.target} suffix={s.suffix} run={statsRun} />
+                    </div>
+                    <div className="bs-stat__label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

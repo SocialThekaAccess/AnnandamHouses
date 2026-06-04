@@ -10,7 +10,7 @@ const NAV_ITEMS = [
    { label: "Our Projects", path: "/our-projects" },
   { label: "About Us", path: "/about-us" },
   // { label: "Our Projects", path: "/our-projects" },
-  { label: "Our Values", path: "/our-values" },
+  // { label: "Our Values", path: "/our-values" },
   { label: "Blog", path: "/blog" },
   { label: "Contact Us", path: "/contact-us" },
 ];

@@ -191,21 +191,20 @@ export default function About() {
             </div>
 
             <p className="ae-desc">
-              Dholera Special Investment Region, also known as Dholera , is India's first and
-              largest greenfield smart city, located around 100 km from Ahmedabad, Gujarat. Planned
-              as a world-class industrial and residential destination, Dholera is a key part of the
-              Delhi-Mumbai Industrial Corridor (DMIC) and is being developed under the Gujarat
-              Special Investment Region Act.
+              Dholera Smart City is a planned smart city in Gujarat, India, developed as part of the Delhi-Mumbai Industrial Corridor (DMIC). It is India’s first greenfield smart city, building from scratch with modern infrastructure and proper planning. The city is designed to become a major industrial, manufacturing, and technology hub, with sectors like semiconductors, renewable energy, data centres, and logistics.
             </p>
             <p className="ae-desc">
-              Spread across nearly 920 sq. km, Dholera Smart City is designed to bring together
-              advanced infrastructure, industrial growth, clean planning, sustainable living, and
-              long-term investment opportunities.
-            </p>
-            <p className="ae-desc">
-              At Anandam Homes, we help investors and homebuyers understand the real potential of
+            Why Invest in Dholera?<br />
+           ✓ India's First Special Investment Region (SIR)<br />
+           ✓ Part of the Delhi-Mumbai Industrial Corridor (DMIC)<br />
+           ✓ India's First Semiconductor Hub<br />
+           ✓ Government-Backed Projects
+           ✓ Strong Connectivity via Road, Railway, Sea Port, Airport, MonoRail
+          </p>
+            {/* <p className="ae-desc">
+              At Anandam, we help investors and homebuyers understand the real potential of
               Dholera and choose the right property options with complete guidance and transparency.
-            </p>
+            </p> */}
 
             {/* <div className="ae-counters" ref={countersRef}>
               {stats.map((s) => (

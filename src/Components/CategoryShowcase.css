@@ -1,14 +1,14 @@
-/* ===== CATEGORY SHOWCASE — Jubilee-style 3-panel ===== */
+/* ===== CATEGORY SHOWCASE ===== */
 
 .cat-showcase {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 520px;
+  height: 580px;
   position: relative;
   overflow: hidden;
 }
 
-/* ── Single full-section video background ── */
+/* Full background video */
 .cat-showcase__video {
   position: absolute;
   inset: 0;
@@ -20,27 +20,23 @@
   z-index: 0;
 }
 
-/* Base dark overlay over entire video */
 .cat-showcase__video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5, 8, 20, 0.35);
+  background: rgba(5, 10, 20, 0.5);
   z-index: 1;
   pointer-events: none;
 }
 
-/* ── Each Panel ── */
+/* Panel */
 .cat-panel {
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   z-index: 2;
-
   opacity: 0;
   transform: translateY(40px);
-  transition:
-    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cat-panel.is-visible {
@@ -48,20 +44,19 @@
   transform: translateY(0);
 }
 
-/* Divider between panels */
 .cat-panel + .cat-panel {
-  border-left: 1px solid rgba(184, 151, 90, 0.25);
+  border-left: 1px solid rgba(184, 151, 90, 0.2);
 }
 
-/* ── Per-panel gradient overlay ── */
+/* Gradient overlay per panel */
 .cat-panel__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    160deg,
-    rgba(5, 8, 20, 0.05) 0%,
-    rgba(20, 52, 39, 0.30) 35%,
-    rgba(5, 8, 20, 0.88) 100%
+    to bottom,
+    rgba(5, 10, 20, 0.0) 0%,
+    rgba(10, 30, 20, 0.55) 50%,
+    rgba(5, 10, 20, 0.92) 100%
   );
   transition: background 0.4s ease;
   z-index: 1;
@@ -69,32 +64,66 @@
 
 .cat-panel:hover .cat-panel__overlay {
   background: linear-gradient(
-    160deg,
-    rgba(5, 8, 20, 0.15) 0%,
-    rgba(20, 52, 39, 0.50) 35%,
-    rgba(5, 8, 20, 0.95) 100%
+    to bottom,
+    rgba(5, 10, 20, 0.1) 0%,
+    rgba(10, 30, 20, 0.7) 50%,
+    rgba(5, 10, 20, 0.97) 100%
   );
 }
 
-/* ── Content ── */
+/* Content */
 .cat-panel__content {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 40px 36px;
+  inset: 0;
+  padding: 36px 32px;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;  /* center align */
-  text-align: center;   /* text center */
-  gap: 6px;
-  transform: translateY(8px);
-  transition: transform 0.4s ease;
+  justify-content: flex-end;
+  gap: 0;
 }
 
-.cat-panel:hover .cat-panel__content {
-  transform: translateY(0);
+/* Eyebrow */
+.cat-panel__eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(184, 151, 90, 0.7);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Gold divider line */
+.cat-panel__divider {
+  width: 32px;
+  height: 1.5px;
+  background: #B8975A;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+/* Number */
+.cat-panel__num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(184, 151, 90, 0.5);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Title */
+.cat-panel__title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(22px, 2.5vw, 34px) !important;
+  font-weight: 600 !important;
+  font-style: normal !important;
+  color: #F5F0E8;
+  line-height: 1.1;
+  margin: 0 0 6px;
 }
 
 /* Subtitle */
@@ -102,44 +131,29 @@
   font-family: 'Poppins', sans-serif;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--antique-gold, #B8975A);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 2px;
-}
-
-.cat-panel__sub::before {
-  content: '';
+  color: #B8975A;
+  margin-bottom: 14px;
   display: block;
-  width: 24px;
-  height: 1.5px;
-  background: var(--antique-gold, #B8975A);
-  flex-shrink: 0;
-   display: none;
 }
 
-/* Title */
-.cat-panel__title {
-  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
-  font-size: clamp(32px, 3.5vw, 52px);
-  font-weight: 600;
-  color: #F5F0E8;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
-  margin: 0;
-}
-
-/* Desc */
+/* Description — hidden by default, shown on hover */
 .cat-panel__desc {
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: rgba(245, 240, 232, 0.5);
-  margin-bottom: 8px;
+  font-size: 12.5px;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.8;
+  margin: 0 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.3s ease;
+}
+
+.cat-panel:hover .cat-panel__desc {
+  max-height: 160px;
+  opacity: 1;
 }
 
 /* Button */
@@ -147,28 +161,23 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--antique-gold, #B8975A);
+  background: #B8975A;
   color: #fff;
   border: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 13px 26px;
+  padding: 12px 22px;
   border-radius: 2px;
   cursor: pointer;
   width: fit-content;
-  margin-top: 8px;
-  box-shadow: 0 4px 20px rgba(184, 151, 90, 0.35);
-
+  box-shadow: 0 4px 20px rgba(184, 151, 90, 0.3);
   opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease,
+              background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cat-panel:hover .cat-panel__btn {
@@ -177,11 +186,11 @@
 }
 
 .cat-panel__btn:hover {
-  background: var(--warm-gold, #C3A95E);
-  box-shadow: 0 8px 28px rgba(184, 151, 90, 0.55);
+  background: #C3A95E;
+  box-shadow: 0 8px 28px rgba(184, 151, 90, 0.5);
 }
 
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 900px) {
   .cat-showcase {
     grid-template-columns: 1fr;
@@ -189,12 +198,17 @@
   }
 
   .cat-panel {
-    height: 340px;
+    height: 360px;
     border-left: none !important;
     border-top: 1px solid rgba(184, 151, 90, 0.2);
   }
 
   .cat-panel:first-child { border-top: none; }
+
+  .cat-panel__desc {
+    max-height: 120px;
+    opacity: 1;
+  }
 
   .cat-panel__btn {
     opacity: 1;
@@ -202,17 +216,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .cat-panel__content { padding: 32px 24px; }
-  .cat-panel__desc { font-size: 11px; }
-}
-
 @media (max-width: 560px) {
-  .cat-panel { height: 280px; }
-  .cat-panel__content { padding: 28px 20px; }
-  .cat-panel__title { font-size: clamp(28px, 8vw, 40px); }
-  .cat-panel__btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .cat-panel { height: 300px; }
+  .cat-panel__content { padding: 24px 20px; }
+  .cat-panel__title { font-size: clamp(20px, 7vw, 28px) !important; }
 }
