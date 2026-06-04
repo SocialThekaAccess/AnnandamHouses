@@ -5,22 +5,36 @@
   justify-content: center;
 }
 
-/* .blog-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(6, 12, 10, 0.12);
-  pointer-events: none;
-  z-index: 1;
-} */
-
 /* ── Section Header ── */
 .blog-section-header {
-  padding-top: 56px;
-  padding-bottom: 8px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 40px;
+  border-bottom: 1px solid rgba(184, 151, 90, 0.2);
+}
+
+.blog-section-header__left {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  border-bottom: 1px solid rgba(184, 151, 90, 0.15);
+  gap: 10px;
+}
+
+.blog-section-header__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #1c1c1c;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.blog-section-header__title span {
+  color: #2f6b4f;
+  font-style: italic;
 }
 
 .blog-section__sub {
@@ -28,8 +42,45 @@
   font-size: 14px;
   color: rgba(27, 67, 50, 0.55);
   line-height: 1.75;
-  max-width: 580px;
-  margin: 0 0 20px;
+  max-width: 520px;
+  margin: 0;
+}
+
+.blog-section-header__right {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(184, 151, 90, 0.2);
+}
+
+.blog-section-header__stat {
+  padding: 20px 32px;
+  border-right: 1px solid rgba(184, 151, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.blog-section-header__stat:last-child {
+  border-right: none;
+}
+
+.blog-section-header__stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2f6b4f;
+  line-height: 1;
+}
+
+.blog-section-header__stat-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(27, 67, 50, 0.45);
+  white-space: nowrap;
 }
 
 /* ── Blog Grid ── */
@@ -208,6 +259,8 @@
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .blog-cta-band { grid-template-columns: 1fr; }
   .blog-cta-band__left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .blog-section-header { grid-template-columns: 1fr; gap: 28px; }
+  .blog-section-header__right { width: fit-content; }
 }
 
 @media (max-width: 640px) {
@@ -215,4 +268,5 @@
   .blog-card__img-wrap { height: 180px; }
   .blog-cta-band__left, .blog-cta-band__right { padding: 36px 5%; }
   .blog-hero--full { min-height: unset; }
+  .blog-section-header__stat { padding: 16px 20px; }
 }

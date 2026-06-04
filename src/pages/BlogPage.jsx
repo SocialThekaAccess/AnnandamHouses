@@ -72,14 +72,13 @@ export default function BlogPage({ onNavigate }) {
   return (
     <div className="page-shell">
 
-      <section className="page-hero blog-hero--full">
+      <section className="page-hero blog-hero--full page-hero--no-overlay">
         <div
           className="page-hero__backdrop"
           style={{ backgroundImage: `url(${blogHeroImg})`, backgroundPosition: "center center" }}
         >
           <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="blog-hero__overlay" />
         <CallNowBtn />
       </section>
 
@@ -87,8 +86,25 @@ export default function BlogPage({ onNavigate }) {
 
         {/* Header */}
         <section className="page-section blog-section-header">
-          <span className="section-label">Latest Articles</span>
-          <p className="blog-section__sub">In-depth coverage of Dholera's infrastructure, investment climate, and real estate opportunities.</p>
+          <div className="blog-section-header__left">
+            <span className="section-label">Latest Articles</span>
+            <h2 className="blog-section-header__title">Insights on Dholera</h2>
+            <p className="blog-section__sub">In-depth coverage of Dholera's infrastructure, investment climate, and real estate opportunities.</p>
+          </div>
+          <div className="blog-section-header__right">
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">6</span>
+              <span className="blog-section-header__stat-label">Articles</span>
+            </div>
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">2026</span>
+              <span className="blog-section-header__stat-label">Latest Year</span>
+            </div>
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">5</span>
+              <span className="blog-section-header__stat-label">Min Avg Read</span>
+            </div>
+          </div>
         </section>
 
         {/* 3-col card grid */}
