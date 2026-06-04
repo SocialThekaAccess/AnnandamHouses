@@ -10,6 +10,7 @@ import Values from "./Components/Values";
 // import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import BrandStory from "./Components/BrandStory";
+import FAQ from "./Components/FAQ";
 import ImageCarousel from "./Components/ImageCarousel";
 import Marquee from "./Components/Marquee";
 import CustomerReviews from "./Components/CustomerReviews";
@@ -176,6 +177,7 @@ function HomePage() {
       <CustomerReviews />
       <CategoryShowcase />
       <Marquee />
+      <FAQ />
       <Contact />
       <ImageCarousel />
     </div>

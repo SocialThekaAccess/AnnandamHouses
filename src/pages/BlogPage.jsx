@@ -1,223 +1,142 @@
-import { useState } from "react";
-import logoImg from "../assets/anandamhomeslogo.png";
-import blogHeroImg from "../assets/BlogSlider.png";
 import "./PageShell.css";
+import "./BlogPage.css";
+import blogHeroImg from "../assets/BlogSlider.png";
+import { useCallModal } from "../context/CallModalContext";
 
-// ── Blog Data ──
-const BLOG_POSTS = [
+const CallNowBtn = () => {
+  const { setOpen } = useCallModal();
+  return (
+    <button onClick={() => setOpen(true)} className="page-hero__call-btn" aria-label="Call Now" type="button">
+      <span className="page-hero__call-btn__icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </span>
+      <span className="page-hero__call-btn__text">Call Now</span>
+    </button>
+  );
+};
+
+const BLOGS = [
   {
-    id: 1,
-    category: "Investment Guide",
-    date: "May 2025",
-    readTime: "5 min read",
-    title: "Why Dholera SIR Is India's Most Promising Real Estate Investment in 2025",
-    excerpt:
-      "Dholera Special Investment Region is no longer just a government project on paper. With airports, expressways, and industrial zones taking shape, here's why investors are paying attention now.",
-    featured: true,
+    tag: "Market Insight",
+    date: "June 1, 2026",
+    title: "Dholera Appreciation Reality: What Happened to Buyers Who Entered Early?",
+    excerpt: "Early investors in Dholera SIR are already seeing significant appreciation. This piece explores real outcomes, location advantages, and why the window for entry is still open for long-term buyers.",
+    read: "5 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F7a59233952c7cf1c02d7231339b52c30605e2c52-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
   {
-    id: 2,
-    category: "Smart City",
-    date: "April 2025",
-    readTime: "4 min read",
-    title: "What Makes Dholera a True Smart City — Not Just a Buzzword",
-    excerpt:
-      "Underground utilities, smart traffic systems, and a master plan built from scratch. We break down what 'smart city' actually means for someone buying a plot in Dholera.",
-    featured: false,
+    tag: "Infrastructure",
+    date: "May 28, 2026",
+    title: "Dholera International Airport: Location, Connectivity and Future Growth",
+    excerpt: "The Dholera International Airport is one of the most critical infrastructure projects shaping the region's future. Here is what its location and connectivity mean for real estate buyers.",
+    read: "4 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F372f0a4a7a030ad8e7018b910cc94b809ffcf13f-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
   {
-    id: 3,
-    category: "Buyer's Guide",
-    date: "March 2025",
-    readTime: "6 min read",
-    title: "Plots: What to Check Before You Buy in Gujarat",
-    excerpt:
-      "Not all RERA approvals are equal. This guide walks you through the documents, checks, and red flags every plot buyer in Gujarat should know before signing anything.",
-    featured: false,
+    tag: "Connectivity",
+    date: "May 25, 2026",
+    title: "Dedicated Freight Corridor: How India's Biggest Rail Network Connects Dholera to Delhi and Mumbai",
+    excerpt: "The Dedicated Freight Corridor directly links Dholera to India's largest commercial hubs. For investors, this means industrial growth, employment, and long-term residential demand.",
+    read: "6 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F149eb9c0d043d8cb7ea378291717ff7402805751-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
   {
-    id: 4,
-    category: "Lothal Heritage",
-    date: "February 2025",
-    readTime: "3 min read",
-    title: "Lothal: Where 5,000 Years of History Meets India's Future",
-    excerpt:
-      "The UNESCO World Heritage site of Lothal is at the heart of India's newest investment corridor. Understanding the heritage value helps explain why land here is appreciating fast.",
-    featured: false,
+    tag: "Investment Guide",
+    date: "April 25, 2026",
+    title: "Which is the Best Location to Buy Plots in Dholera Under 10 Lakh?",
+    excerpt: "Not every buyer needs a large budget to enter Dholera. This guide breaks down the most promising affordable plot zones, what to verify, and how to make a confident decision.",
+    read: "5 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F9f816a4a3ea0a1c2d7061b72ee50d82612dd47a5-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
   {
-    id: 5,
-    category: "Investment Guide",
-    date: "January 2025",
-    readTime: "5 min read",
-    title: "Plotted Development vs Apartment: Which Is the Better Long-Term Bet?",
-    excerpt:
-      "For investors thinking beyond five years, plotted developments in emerging corridors often outperform apartments in saturated urban markets. Here's the data and the logic behind it.",
-    featured: false,
+    tag: "Smart City",
+    date: "February 14, 2026",
+    title: "Why 2026 Is the Best Time to Buy Plots in Dholera Smart City",
+    excerpt: "With the expressway inaugurated, airport construction underway, and industrial activation in progress — 2026 represents a defining entry point for buyers who want growth without peak pricing.",
+    read: "4 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F9eaadf9be767d4169b1b86a790e952b26a192287-1200x800.jpg%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
   {
-    id: 6,
-    category: "Infrastructure",
-    date: "December 2024",
-    readTime: "4 min read",
-    title: "The Delhi-Mumbai Industrial Corridor: What It Means for Dholera Landowners",
-    excerpt:
-      "The DMIC is one of the largest infrastructure projects in Indian history. Dholera sits at a key node. Here's how the corridor translates into real value for plot owners.",
-    featured: false,
+    tag: "Location",
+    date: "January 10, 2026",
+    title: "Lothal to Dholera: Understanding the Growth Corridor That Is Shaping Gujarat's Future",
+    excerpt: "The stretch between Lothal and Dholera is quickly emerging as one of Gujarat's most strategically important real estate corridors with infrastructure, heritage, and industry converging.",
+    read: "5 min read",
+    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2Fd1237b91addac62baa38e9f7424fd4cf3c109605-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
   },
 ];
 
-const CATEGORIES = ["All", "Investment Guide", "Smart City", "Buyer's Guide", "Lothal Heritage", "Infrastructure"];
-
 export default function BlogPage({ onNavigate }) {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filtered =
-    activeCategory === "All"
-      ? BLOG_POSTS
-      : BLOG_POSTS.filter((p) => p.category === activeCategory);
-
-  const featured = BLOG_POSTS.find((p) => p.featured);
-  const rest = filtered.filter((p) => !p.featured || activeCategory !== "All");
-
   return (
     <div className="page-shell">
-      {/* ── Hero ── */}
-      <section className="page-hero page-hero--no-overlay blog-hero">
+
+      <section className="page-hero blog-hero--full">
         <div
-          className="page-hero__backdrop blog-hero__backdrop"
-          style={{ backgroundImage: `url(${blogHeroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
-        <div className="page-hero__logo">
-          <img src={logoImg} alt="Anandam Homes" />
+          className="page-hero__backdrop"
+          style={{ backgroundImage: `url(${blogHeroImg})`, backgroundPosition: "center center" }}
+        >
+          <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        {/* <div className="blog-hero__inner">
-          <span className="page-hero__eyebrow">Insights &amp; Perspectives</span>
-          <h1 className="page-hero__title">
-            The Anandam <span>Journal</span>
-          </h1>
-          <p className="page-hero__description">
-            Expert guides, investment insights, and stories from India's most exciting real estate corridor — written for buyers who want clarity, not hype.
-          </p>
-        </div> */}
+        <div className="blog-hero__overlay" />
+        <CallNowBtn />
       </section>
 
       <main className="page-main">
 
-        {/* ── Featured Post ── */}
-        {activeCategory === "All" && featured && (
-          <section className="page-section">
-            <div className="blog-featured">
-              <div className="blog-featured__label-row">
-                <span className="section-label">Featured Article</span>
-              </div>
-              <div className="blog-featured__body">
-                <div className="blog-featured__meta">
-                  <span className="blog-tag">{featured.category}</span>
-                  <span className="blog-meta-dot" />
-                  <span className="blog-meta-text">{featured.date}</span>
-                  <span className="blog-meta-dot" />
-                  <span className="blog-meta-text">{featured.readTime}</span>
-                </div>
-                <h2 className="blog-featured__title">{featured.title}</h2>
-                <p className="blog-featured__excerpt">{featured.excerpt}</p>
-                <button className="gold-btn" type="button">
-                  Read Article
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </button>
-              </div>
-              <div className="blog-featured__visual">
-                <div className="blog-featured__img-placeholder">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ color: "rgba(184,151,90,0.3)" }}>
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span>Featured Image</span>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ── Category Filter ── */}
-        <section className="page-section page-section--spaced">
-          <div className="blog-filter">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                className={`blog-filter__btn${activeCategory === cat ? " blog-filter__btn--active" : ""}`}
-                onClick={() => setActiveCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        {/* Header */}
+        <section className="page-section blog-section-header">
+          <span className="section-label">Latest Articles</span>
+          <p className="blog-section__sub">In-depth coverage of Dholera's infrastructure, investment climate, and real estate opportunities.</p>
         </section>
 
-        {/* ── Post Grid ── */}
-        <section className="page-section page-section--spaced">
+        {/* 3-col card grid */}
+        <section className="page-section blog-grid-section">
           <div className="blog-grid">
-            {rest.map((post) => (
-              <article key={post.id} className="blog-card">
+            {BLOGS.map((blog, i) => (
+              <article key={i} className="blog-card" onClick={() => onNavigate?.("/contact-us")}>
                 <div className="blog-card__img-wrap">
-                  <div className="blog-card__img-placeholder">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ color: "rgba(184,151,90,0.25)" }}>
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
-                  </div>
+                  <img src={blog.img} alt={blog.title} className="blog-card__img" />
                 </div>
                 <div className="blog-card__body">
-                  <div className="blog-card__meta">
-                    <span className="blog-tag">{post.category}</span>
-                    <span className="blog-meta-dot" />
-                    <span className="blog-meta-text">{post.date}</span>
-                    <span className="blog-meta-dot" />
-                    <span className="blog-meta-text">{post.readTime}</span>
+                  <h3 className="blog-card__title">{blog.title}</h3>
+                  <div className="blog-card__footer">
+                    <span className="blog-card__date">{blog.date}</span>
+                    <button className="blog-card__cta" onClick={(e) => { e.stopPropagation(); onNavigate?.("/contact-us"); }}>
+                      Explore More
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                      </svg>
+                    </button>
                   </div>
-                  <h3 className="blog-card__title">{post.title}</h3>
-                  <p className="blog-card__excerpt">{post.excerpt}</p>
-                  <button className="blog-card__link" type="button">
-                    Read More
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </button>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* ── CTA Band ── */}
-        <section className="page-section page-section--spaced">
-          <div className="page-highlight-band page-card">
-            <div>
-              <div className="section-label">Stay Informed</div>
-              <h2 className="page-heading">Questions About Investing in Dholera?</h2>
-              <p className="page-copy">
-                Our team is on the ground in Lothal every day. Whether you want to understand the market, verify documents, or simply plan a site visit — we are here to give you honest answers.
-              </p>
+        {/* CTA Band */}
+        <section className="page-section page-section--fullwidth">
+          <div className="blog-cta-band">
+            <div className="blog-cta-band__left">
+              <span className="section-label" style={{ color: "#e8d09a" }}>Get In Touch</span>
+              <h3 className="blog-cta-band__title">Ready to explore a plot in Dholera?</h3>
+              <p className="blog-cta-band__copy">Speak with our team for location walkthroughs, pricing guidance, and a clear picture of what the Dholera opportunity looks like for you.</p>
             </div>
-            <div className="page-highlight-list">
-              {[
-                "Free consultation with no obligation to buy.",
-                "Transparent pricing with zero hidden charges.",
-                "RERA-verified plots with clear title documentation.",
-              ].map((item) => (
-                <div key={item} className="page-highlight-item">{item}</div>
-              ))}
-              <button
-                className="gold-btn"
-                type="button"
-                onClick={() => window.open("https://wa.me/916384800001", "_blank")}
-              >
+            <div className="blog-cta-band__right">
+              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>
                 Talk to Our Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+              <button className="blog-cta-band__wa" onClick={() => window.open("https://wa.me/916384800001", "_blank")}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.847L.057 23.882l6.197-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-5.001-1.373l-.359-.213-3.718.975.992-3.618-.234-.372A9.787 9.787 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+                </svg>
+                WhatsApp Us
               </button>
             </div>
           </div>
