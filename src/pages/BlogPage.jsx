@@ -123,7 +123,7 @@ const CallNowBtn = () => {
   );
 };
 
-export default function ProjectsPage({ onNavigate }) {
+export default function BlogPage({ onNavigate }) {
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">

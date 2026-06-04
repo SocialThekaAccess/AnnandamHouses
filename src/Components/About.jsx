@@ -157,7 +157,7 @@ export default function About() {
               <div className="ae-img-photo">
                 <img
                   src={doleaImg}
-                  alt="Lothal Smart City — Anandam"
+                  alt="Dholera  — Anandam Homes"
                   className="ae-img-bg"
                 />
                 <div className="ae-img-overlay" aria-hidden="true" />
@@ -173,18 +173,17 @@ export default function About() {
               </div>
             </div>
 
-            <p className="ae-signature">Creating lasting value through planning, trust, and buyer-focused development</p>
+            <p className="ae-signature">Get clear guidance on Dholera , the semiconductor hub, upcoming infrastructure, connectivity, and the best investment options near Dholera.</p>
           </div>
 
           <div
             ref={contentRef}
             className={`ae-content ae-reveal-right${contentVisible ? " vis" : ""}`}
           >
-            <div className="ae-eyebrow">About Anandam </div>
+            <div className="ae-eyebrow">About Dholera </div>
 
             <h2 className="ae-heading">
-              Invest in India&apos;s
-              First Greenfield Smart City
+             Invest in India's First <br/> Greenfield Smart City
             </h2>
 
             <div className="ae-divider" aria-hidden="true">
@@ -192,25 +191,23 @@ export default function About() {
             </div>
 
             <p className="ae-desc">
-              Lothal Smart City is envisioned to be a global manufacturing hub and a smart,
-              sustainable city of the future. Excellent infrastructure, world-class connectivity
-              and government initiatives make it the perfect destination for investment.
+              Dholera Special Investment Region, also known as Dholera , is India's first and
+              largest greenfield smart city, located around 100 km from Ahmedabad, Gujarat. Planned
+              as a world-class industrial and residential destination, Dholera is a key part of the
+              Delhi-Mumbai Industrial Corridor (DMIC) and is being developed under the Gujarat
+              Special Investment Region Act.
             </p>
             <p className="ae-desc">
-              Anandam Exotica brings you an exclusive opportunity to own premium residential plots
-              in this landmark development.
+              Spread across nearly 920 sq. km, Dholera Smart City is designed to bring together
+              advanced infrastructure, industrial growth, clean planning, sustainable living, and
+              long-term investment opportunities.
             </p>
             <p className="ae-desc">
-             The Future Begins Here
-Dholera Smart City is India's most ambitious infrastructure and industrial development project, designed to become a global hub for innovation, manufacturing, and sustainable urban living.
-
-
-A City Built for Tomorrow
-Positioned as a key growth engine of Gujarat, Dholera is attracting industries, investors, entrepreneurs, and visionaries from across the globe.
+              At Anandam Homes, we help investors and homebuyers understand the real potential of
+              Dholera and choose the right property options with complete guidance and transparency.
             </p>
-            
 
-            <div className="ae-counters" ref={countersRef}>
+            {/* <div className="ae-counters" ref={countersRef}>
               {stats.map((s) => (
                 <div className="ae-counter" key={s.label}>
                   {icons[s.icon]}
@@ -220,14 +217,14 @@ Positioned as a key growth engine of Gujarat, Dholera is attracting industries, 
                   <div className="ae-counter-label">{s.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* <button
               className="ae-cta"
               onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               <div className="ae-cta-icon">{icons.pin}</div>
-              <span className="ae-cta-text">Explore Premium Plot Options</span>
+              <span className="ae-cta-text">Speak with Our Investment Advisor Today</span>
               <span className="ae-cta-arrow">{icons.arrow}</span>
             </button> */}
           </div>

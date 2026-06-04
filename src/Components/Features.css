@@ -36,11 +36,11 @@
 .features__label { justify-content: center; }
 
 .features__title {
-  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
-  font-size: clamp(28px, 5vw, 62px);
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 400;
   color: #545b61;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   margin-bottom: 18px;
 }

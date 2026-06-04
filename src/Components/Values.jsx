@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Values.css";
 import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
@@ -8,22 +8,14 @@ import Value4 from "../assets/Value4.png";
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          io.disconnect();
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect(); } },
       { threshold }
     );
-
     if (ref.current) io.observe(ref.current);
     return () => io.disconnect();
   }, [threshold]);
-
   return [ref, visible];
 }
 
@@ -50,15 +42,13 @@ const VALUES = [
     num: "04",
     title: "Excellence",
     desc: "We don't settle for ordinary. From plot planning to amenities, every detail is crafted to deliver a world-class living experience in Lothal Smart City.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
   },
   {
     num: "05",
     title: "Transparency",
     desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in, with no surprises and no hidden charges.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
   },
   {
     num: "06",
@@ -77,28 +67,26 @@ export default function Values() {
 
   return (
     <section className="values" id="values">
-      <div className="container">
+      <div className="values__container">
+
+        {/* Header */}
         <div
           ref={headerRef}
           className={`values__header reveal-up${headerVisible ? " is-visible" : ""}`}
         >
-          <div className="values__header-eyebrow">
-            <span className="values__eyebrow-line" />
-            <span className="values__eyebrow-text">Our Foundation</span>
-            <span className="values__eyebrow-line" />
-          </div>
-          <h2 className="values__heading">What We Stand For</h2>
-          <p className="values__subheading">
-            Our values are the cornerstone of every decision we make.
-            <br />
-            They guide us in creating spaces that last for generations.
-          </p>
+          <span className="values__eyebrow">About Anandam </span>
+          <h2 className="values__heading">Your Trusted Property Partner in Dholera</h2>
+          {/* <p className="values__subheading">
+            Our approach is simple, calm, and consultative. Every buyer gets proper information, personal guidance, and a smooth experience from the first conversation to the final site visit.
+          </p> */}
         </div>
 
+        {/* Slider */}
         <div
           ref={bodyRef}
           className={`values__slider reveal-up${bodyVisible ? " is-visible" : ""}`}
         >
+          {/* LEFT — text */}
           <div className="values__left">
             <div className="values__left-inner" key={`text-${active}`}>
               <h3 className="values__content-title">{current.title}</h3>
@@ -106,14 +94,12 @@ export default function Values() {
             </div>
           </div>
 
+          {/* CENTER — image */}
           <div className="values__center" key={`img-${active}`}>
-            <img
-              src={current.image}
-              alt={current.title}
-              className="values__center-img"
-            />
+            <img src={current.image} alt={current.title} className="values__center-img" />
           </div>
 
+          {/* RIGHT — tabs */}
           <div className="values__tabs">
             {VALUES.map((value, index) => (
               <button
@@ -126,36 +112,17 @@ export default function Values() {
               >
                 <div className="values__tab-arrow">
                   {active === index ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="17 7 7 17" />
                       <polyline points="7 7 7 17 17 17" />
                     </svg>
                   ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="7 17 17 7" />
                       <polyline points="7 7 17 7 17 17" />
                     </svg>
                   )}
                 </div>
-
                 <span className="values__tab-title">{value.title}</span>
                 <span className="values__tab-num">{value.num}</span>
               </button>
@@ -163,22 +130,14 @@ export default function Values() {
           </div>
         </div>
 
+        {/* CTA Bar */}
         <div
           className={`values__cta reveal-up${bodyVisible ? " is-visible" : ""}`}
           style={{ transitionDelay: "0.2s" }}
         >
           <div className="values__cta-left">
             <div className="values__cta-icon">
-              <svg
-                width="26"
-                height="26"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />
                 <line x1="8" y1="2" x2="8" y2="6" />
@@ -187,41 +146,29 @@ export default function Values() {
             </div>
             <div>
               <p className="values__cta-label">Ready to invest in your future?</p>
-              <p className="values__cta-title">Book Your Site Visit Today!</p>
+              <p className="values__cta-title">Book Your Site Visit Today</p>
             </div>
           </div>
           <div className="values__cta-mid">
             <span className="values__cta-meta">Call Us</span>
-            <a href="tel:+916384800001" className="values__cta-val">
-              +91 63848 00001
-            </a>
+            <a href="tel:+916384800001" className="values__cta-val">+91 63848 00001</a>
           </div>
           <div className="values__cta-mid">
             <span className="values__cta-meta">Our Location</span>
-            <span className="values__cta-val">Sco 67, Ground Floor, Sector 82, JLPL,Mohali</span>
+            <span className="values__cta-val">Sco 67, Ground Floor, Sector 82, JLPL, Mohali</span>
           </div>
           <button
             className="values__cta-btn"
-            onClick={() =>
-              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Book Now
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </button>
         </div>
+
       </div>
     </section>
   );

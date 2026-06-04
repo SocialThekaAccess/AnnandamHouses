@@ -52,8 +52,9 @@ const LinkedInIcon = () => (
 
 const FOOTER_NAV = [
     { label: "Home", href: HOME_PATH },
-  { label: "About Us", href: "/about-us" },
+  // { label: "About Us", href: "/about-us" },
   { label: "Our Projects", href: PROJECTS_PATH },
+   { label: "About Us", href: "/about-us" },
   { label: "Our Values", href: "/our-values" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: CONTACT_PATH },

@@ -14,15 +14,17 @@
 
 .customer-reviews__intro {
   max-width: 760px;
-  margin-bottom: 34px;
+  margin: 0 auto 34px;
+  text-align: center;
 }
 
 .customer-reviews__text {
   max-width: 620px;
-  margin-top: 16px;
+  margin: 16px auto 0;
   font-size: 15px;
   line-height: 1.9;
   color: rgba(60, 61, 61, 0.82);
+  text-align: center;
 }
 
 .reviews-ticker {
