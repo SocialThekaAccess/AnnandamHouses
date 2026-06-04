@@ -1,0 +1,196 @@
+/* ===== ABOUT PAGE ===== */
+
+/* Checklist */
+.about-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  color: var(--text-body, #3C3D3D);
+  line-height: 1.6;
+}
+
+.about-checklist__icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(184, 151, 90, 0.12);
+  border: 1px solid rgba(184, 151, 90, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B8975A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Why Lothal-Dholera Section ── */
+.about-location {
+  background: #fff;
+  border: 1px solid rgba(184, 151, 90, 0.15);
+  overflow: hidden;
+}
+
+/* Full-width header bar */
+.about-location__intro {
+  padding: 48px 48px 36px;
+  border-bottom: 1px solid rgba(184, 151, 90, 0.12);
+}
+
+.about-location__intro .section-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-location__intro .page-heading {
+  font-size: clamp(20px, 2.5vw, 30px) !important;
+  font-weight: 400 !important;
+  margin-bottom: 10px;
+  max-width: 700px;
+}
+
+.about-location__intro .page-copy {
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Two-column grid */
+.about-location__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-location__card {
+  padding: 40px 48px;
+}
+
+/* divider between cards */
+.about-location__card:first-child {
+  border-right: 1px solid rgba(184, 151, 90, 0.12);
+}
+
+/* Left card */
+.about-location__card-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #B8975A;
+  margin: 0 0 20px;
+}
+
+.about-location__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-location__list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  color: var(--text-body, #3C3D3D);
+  line-height: 1.5;
+}
+
+.about-location__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #B8975A;
+  flex-shrink: 0;
+}
+
+.about-location__combo {
+  border-top: 1px solid rgba(184, 151, 90, 0.12);
+  padding-top: 20px;
+}
+
+.about-location__combo-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #7A7A7A);
+  margin: 0 0 14px;
+}
+
+.about-location__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-location__tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1b4332;
+  background: rgba(27, 67, 50, 0.06);
+  border: 1px solid rgba(27, 67, 50, 0.12);
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+/* Right dark card */
+.about-location__card--dark {
+  background: #1e4d3b;
+}
+
+.about-location__accent-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(17px, 1.8vw, 22px) !important;
+  font-weight: 400 !important;
+  color: #F5F0E8;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.about-location__accent-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(184, 151, 90, 0.7);
+  margin: 0 0 22px;
+  display: block;
+}
+
+.about-location__accent-copy {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: rgba(245, 240, 232, 0.6);
+  line-height: 1.85;
+  margin: 0 0 14px;
+}
+
+.about-location__card--dark .gold-btn {
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-location__intro { padding: 32px 24px 24px; }
+
+  .about-location__grid { grid-template-columns: 1fr; }
+
+  .about-location__card { padding: 28px 24px; }
+
+  .about-location__card:first-child { border-right: none; border-bottom: 1px solid rgba(184, 151, 90, 0.12); }
+}

@@ -163,6 +163,7 @@ function HomePage() {
         <div className="home-map__header">
           <span className="home-map__eyebrow">National Maritime Heritage Complex</span>
           <h2 className="home-map__heading">Master Plan of World's Biggest Maritime Museum</h2>
+          <p>NMHC is being developed as a “complete” tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
         </div>
         <img src={mapImg} alt="Development map" className="home-map__img" />
       </div>
