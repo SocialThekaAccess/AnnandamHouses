@@ -2,6 +2,7 @@ import "./PageShell.css";
 import "./AboutPage.css";
 import aboutBg from "../assets/about.png";
 import logoImg from "../assets/anandamhomeslogo.png";
+import heroImg from "../assets/AnnandamHomes1.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -19,11 +20,22 @@ const CallNowBtn = () => {
 };
 
 const STATS = [
-  { value: "12+", label: "Years of Trust", copy: "A calmer, consultative approach shaped around families, end-use buyers, and long-hold investors." },
-  { value: "200+", label: "Premium Plots", copy: "Well-planned plotted options selected for location advantage, growth visibility, and smoother decision-making." },
-  { value: "500+", label: "Client Conversations", copy: "Detailed market discussions, location walkthroughs, and guided visits designed to remove confusion from the buying journey." },
+  {
+    value: "12+",
+    label: "Years of Trust",
+    copy: "A calmer, consultative approach shaped around families, end-use buyers, and long-hold investors.",
+  },
+  {
+    value: "200",
+    label: "Premium Plots",
+    copy: "Well-planned plotted options selected for location advantage, growth visibility, and smoother decision-making.",
+  },
+  {
+    value: "500+",
+    label: "Client Conversations",
+    copy: "Detailed market discussions, location walkthroughs, and guided visits designed to remove confusion from the buying journey.",
+  },
 ];
-
 const PILLARS = [
   { title: "Luxury Through Restraint", copy: "Our brand language is quiet, polished, and architectural. We focus on proportion, detail, and credibility instead of noise." },
   { title: "Investment With Clarity", copy: "Every conversation is built around transparency, approvals, location logic, and practical ownership guidance." },
@@ -68,54 +80,83 @@ export default function AboutPage({ onNavigate }) {
       <main className="page-main">
 
         {/* ── Who We Are ── */}
-        <section className="page-section">
-          <div className="page-card">
-            <div className="page-intro-grid">
-              <div>
-                <div className="section-label">Who We Are</div>
-                <h2 className="page-heading">A Trusted Real Estate Brand Built on Clarity, Confidence and Long Term Value</h2>
-                <p className="page-copy">
-                  Anandam Homes is a modern real estate brand created for buyers and investors who want more than just a property. We focus on clear guidance, premium presentation, transparent dealings, and investment options that support long-term growth.
-                </p>
-              </div>
-              <div>
-                <p className="page-copy">
-                  For us, real estate is not just about selling land or plots. It is about helping buyers understand the location, future development, legal process, documentation, and overall value before making a decision.
-                </p>
-                <ul className="about-checklist">
-                  {CHECKLIST.map((item) => (
-                    <li key={item} className="about-checklist__item">
-                      <span className="about-checklist__icon">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <button className="gold-btn" style={{ marginTop: "24px" }} onClick={() => onNavigate?.("/contact-us")}>
-                  Talk to Our Team
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        <section className="page-section page-section--fullwidth">
+          <div className="aw-who">
+
+            {/* LEFT — heading + para + trust badge */}
+            <div className="aw-who__left">
+              <div className="section-label">Who We Are</div>
+              <h2 className="aw-who__heading">A Trusted Real Estate Brand Built on Clarity, Confidence and Long Term Value</h2>
+              <div className="aw-who__rule" />
+              <p className="aw-who__para">
+                Anandam is a modern real estate brand created for buyers and investors who want more than just a property. We focus on clear guidance, premium presentation, transparent dealings, and investment options that support long-term growth.
+              </p>
+              <div className="aw-who__trust">
+                <div className="aw-who__trust-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+                    <path d="m9 12 2 2 4-5"/>
                   </svg>
-                </button>
+                </div>
+                <div>
+                  <p className="aw-who__trust-title">Your Trust.</p>
+                  <p className="aw-who__trust-sub">Our Responsibility.</p>
+                </div>
               </div>
             </div>
 
-            <div className="page-stat-grid">
-              {STATS.map((item) => (
-                <article key={item.label} className="page-stat">
-                  <div className="page-stat__value">{item.value}</div>
-                  <div className="page-stat__label">{item.label}</div>
-                  <div className="page-stat__copy">{item.copy}</div>
-                </article>
-              ))}
+            {/* CENTER — image */}
+            <div className="aw-who__center">
+              <img src={heroImg} alt="Anandam Homes" className="aw-who__img" />
             </div>
+
+            {/* RIGHT — checklist + CTA */}
+            <div className="aw-who__right">
+              {[
+                { icon: "doc",   title: "Legally clear property options",       desc: "All properties verified and legally compliant for your peace of mind." },
+                { icon: "hand",  title: "Transparent guidance with no hidden charges", desc: "Honest information and clear processes at every step." },
+                { icon: "chart", title: "Investment-focused approach in the Lothal–Dholera growth corridor", desc: "Helping you choose locations with strong future potential." },
+                { icon: "user",  title: "Dedicated relationship manager for every buyer", desc: "Personal support and expert guidance whenever you need it." },
+                { icon: "pin",   title: "Guided site visits as per your convenience", desc: "Flexible visits and complete support to help you decide better." },
+              ].map((item, i) => (
+                <div key={i} className="aw-who__item">
+                  <div className="aw-who__item-icon">
+                    {item.icon === "doc"   && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>}
+                    {item.icon === "hand"  && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M18 11V6a2 2 0 00-2-2v0a2 2 0 00-2 2v0M14 10V4a2 2 0 00-2-2v0a2 2 0 00-2 2v2M10 10.5V6a2 2 0 00-2-2v0a2 2 0 00-2 2v8l2 2 1.5 2.5h6.5a2 2 0 002-2v-3a2 2 0 00-2-2h-4"/></svg>}
+                    {item.icon === "chart" && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>}
+                    {item.icon === "user"  && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-8 0v2"/><circle cx="12" cy="7" r="4"/></svg>}
+                    {item.icon === "pin"   && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>}
+                  </div>
+                  <div>
+                    <p className="aw-who__item-title">{item.title}</p>
+                    <p className="aw-who__item-desc">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+              <button className="gold-btn aw-who__cta" onClick={() => onNavigate?.("/contact-us")}>
+                Talk to Our Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+            </div>
+
           </div>
         </section>
 
-        {/* ── Pillars ── */}
+        {/* ── Stats Row ── */}
+        <section className="page-section page-section--fullwidth page-section--spaced">
+          <div className="aw-stats">
+            {STATS.map((item) => (
+              <div key={item.label} className="aw-stats__item">
+                <div className="aw-stats__icon">{item.icon}</div>
+                <div className="aw-stats__value">{item.value}</div>
+                <div className="aw-stats__label">{item.label}</div>
+                <p className="aw-stats__copy">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+        </section>
         <section className="page-section page-section--spaced">
           <div className="page-feature-grid">
             {PILLARS.map((item) => (
@@ -133,7 +174,7 @@ export default function AboutPage({ onNavigate }) {
 
             <div className="about-location__intro">
               <span className="section-label">Why It Matters</span>
-              <h2 className="page-heading">Why Lothal-Dholera Is Becoming a High-Potential Real Estate Destination</h2>
+              <h2 className="page-heading">Why Dholera Is Becoming a High-Potential Real Estate Destination</h2>
               <p className="page-copy">The Lothal-Dholera belt is gaining strong attention because of its strategic location and upcoming infrastructure growth.</p>
             </div>
 
@@ -165,13 +206,13 @@ export default function AboutPage({ onNavigate }) {
                 <h3 className="about-location__accent-title">The Perfect Blend of Heritage and Future Infrastructure</h3>
                 <span className="about-location__accent-sub">Ancient Legacy. Modern Opportunity.</span>
                 <p className="about-location__accent-copy">
-                  Lothal has a rich historical identity as one of the most important ancient trade and maritime centres. Today, the same region is gaining attention because of modern infrastructure, industrial expansion, tourism development, and government-backed mega projects.
+                  has a rich historical identity as one of the most important ancient trade and maritime centres. Today, the same region is gaining attention because of modern infrastructure, industrial expansion, tourism development, and government-backed mega projects.
                 </p>
                 <p className="about-location__accent-copy">
-                  With growing connectivity and planned development, Lothal is now becoming part of a larger growth corridor connected with Dholera's future-ready development. At Anandam Homes, we help buyers explore this opportunity with proper guidance, transparency, and confidence.
+                  With growing connectivity and planned development, is now becoming part of a larger growth corridor connected with Dholera's future-ready development. At Anandam , we help buyers explore this opportunity with proper guidance, transparency, and confidence.
                 </p>
                 <p className="about-location__accent-copy">
-                  Lothal is no longer just an archaeological destination — it is evolving into a future-ready growth ecosystem.
+                  is no longer just an archaeological destination — it is evolving into a future-ready growth ecosystem.
                 </p>
                 <button className="gold-btn" onClick={() => window.open('https://wa.me/916384800001', '_blank')}>
                   Plan A Visit
