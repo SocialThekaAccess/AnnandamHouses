@@ -60,8 +60,8 @@ export default function CategoryShowcase() {
 
   return (
     <section className="cat-showcase" ref={ref}>
-      <video className="cat-showcase__video" src={doleraVideo} autoPlay muted loop playsInline />
-      <div className="cat-showcase__video-overlay" />
+      <video className="cat-showcase__video" src={doleraVideo} autoPlay muted loop playsInline style={{display:'none'}} />
+      <div className="cat-showcase__video-overlay" style={{background:'#0d1f18'}} />
 
       {PANELS.map((panel, i) => (
         <div

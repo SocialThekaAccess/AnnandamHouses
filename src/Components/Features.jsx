@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import "./Features.css";
+import imgGrand from "../assets/Grand Arrival Experience.png";
+import imgCommunity from "../assets/Community-Led Amenities.png";
+import imgGreen from "../assets/Green Open Surroundings.png";
+import imgRoads from "../assets/Well-Planned Internal Roads.png";
+import imgSecurity from "../assets/Security-Focused Planning.png";
+import imgUtility from "../assets/Organized Utility Network.png";
+import imgDoc from "../assets/Documentation With Clarity.png";
+import imgInfra from "../assets/Essential Infrastructure Support.png";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -17,99 +25,42 @@ function useInView(threshold = 0.15) {
 
 const FEATURES = [
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="8" y="28" width="48" height="28" rx="2"/>
-        <polyline points="4,28 32,8 60,28"/>
-        <rect x="24" y="40" width="16" height="16"/>
-        <line x1="32" y1="8" x2="32" y2="4"/>
-      </svg>
-    ),
+    img: imgGrand,
     title: "Grand Arrival Experience",
     desc: "A polished entry statement with controlled access, surveillance support, and a stronger first impression for residents and guests.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="6" y="20" width="52" height="36" rx="2"/>
-        <path d="M6 32 h52"/>
-        <path d="M20 20 V14 Q32 6 44 14 V20"/>
-        <circle cx="32" cy="26" r="4"/>
-        <rect x="26" y="38" width="12" height="18"/>
-      </svg>
-    ),
+    img: imgCommunity,
     title: "Community-Led Amenities",
     desc: "Purposeful shared spaces planned to support recreation, comfort, and a more complete day-to-day lifestyle within the development.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8 56 Q16 32 32 24 Q48 32 56 56"/>
-        <path d="M20 56 Q24 40 32 36 Q40 40 44 56"/>
-        <circle cx="32" cy="18" r="6"/>
-        <path d="M24 18 Q20 10 28 8"/>
-        <path d="M40 18 Q44 10 36 8"/>
-      </svg>
-    ),
+    img: imgGreen,
     title: "Green Open Surroundings",
     desc: "Landscaped pockets, tree-lined stretches, and breathing space that add calm visual character across the community.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="10" y="10" width="44" height="44" rx="3"/>
-        <line x1="10" y1="26" x2="54" y2="26"/>
-        <line x1="10" y1="40" x2="54" y2="40"/>
-        <line x1="26" y1="10" x2="26" y2="54"/>
-        <line x1="40" y1="10" x2="40" y2="54"/>
-      </svg>
-    ),
+    img: imgRoads,
     title: "Well-Planned Internal Roads",
     desc: "Wide movement corridors with supporting street lighting and drainage planning for smoother everyday access.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="32" cy="32" r="22"/>
-        <path d="M32 10 V32 L46 46"/>
-        <circle cx="32" cy="32" r="3" fill="currentColor"/>
-        <path d="M22 14 Q10 22 10 32"/>
-        <path d="M42 14 Q54 22 54 32"/>
-      </svg>
-    ),
+    img: imgSecurity,
     title: "Security-Focused Planning",
     desc: "A development approach that prioritizes monitored entry, perimeter definition, and reassurance for modern families.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M32 8 L38 20 L52 22 L42 32 L44 46 L32 40 L20 46 L22 32 L12 22 L26 20 Z"/>
-      </svg>
-    ),
+    img: imgUtility,
     title: "Organized Utility Network",
     desc: "Cleaner infrastructure planning for essential services, supporting a more orderly and future-ready neighborhood environment.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 52 L12 28 L32 12 L52 28 L52 52"/>
-        <rect x="22" y="36" width="10" height="16"/>
-        <rect x="36" y="30" width="10" height="10"/>
-        <line x1="8" y1="52" x2="56" y2="52"/>
-      </svg>
-    ),
+    img: imgDoc,
     title: "Documentation With Clarity",
     desc: "Approvals, layout understanding, and essential paperwork are handled with greater transparency so decisions feel more secure.",
   },
   {
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="32" cy="44" rx="20" ry="8"/>
-        <path d="M12 44 V32 Q12 16 32 12 Q52 16 52 32 V44"/>
-        <path d="M22 32 Q22 24 32 22 Q42 24 42 32"/>
-        <circle cx="32" cy="32" r="4"/>
-      </svg>
-    ),
+    img: imgInfra,
     title: "Essential Infrastructure Support",
     desc: "Core service planning for water flow, drainage, and long-term functionality across the plotted community.",
   },
@@ -156,7 +107,9 @@ export default function Features() {
                 className={`feat-card reveal-up${cardsVisible ? " is-visible" : ""}`}
                 style={{ transitionDelay: cardsVisible ? `${i * 0.12}s` : "0s" }}
               >
-                <div className="feat-card__icon">{f.icon}</div>
+                <div className="feat-card__icon">
+                  <img src={f.img} alt={f.title} className="feat-card__img" />
+                </div>
                 <h3 className="feat-card__title">{f.title}</h3>
                 <p className="feat-card__desc">{f.desc}</p>
               </div>

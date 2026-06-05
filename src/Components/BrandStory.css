@@ -221,8 +221,8 @@
 .bs-exotica {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: start;
+  gap: 60px;
+  align-items: center;
 }
 
 .bs-exotica__left {
@@ -375,11 +375,15 @@
 
 .bs-exotica__img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
-  border-radius: 4px;
-  box-shadow: 0 24px 60px rgba(27, 67, 50, 0.12);
+  border-radius: 20px 60px 20px 60px;
+  box-shadow:
+    0 32px 72px rgba(27, 67, 50, 0.18),
+    0 0 0 4px rgba(184, 151, 90, 0.15),
+    0 0 0 8px rgba(184, 151, 90, 0.05);
 }
 
 .bs-exotica__header {

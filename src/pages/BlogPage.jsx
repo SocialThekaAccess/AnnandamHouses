@@ -21,50 +21,50 @@ const BLOGS = [
   {
     tag: "Market Insight",
     date: "June 1, 2026",
-    title: "Dholera Appreciation Reality: What Happened to Buyers Who Entered Early?",
-    excerpt: "Early investors in Dholera SIR are already seeing significant appreciation. This piece explores real outcomes, location advantages, and why the window for entry is still open for long-term buyers.",
+    title: "Dholera Value Growth Truth: What Occurred with Investors Who Bought Early?",
+    excerpt: "Pioneer investors in Dholera SIR are already witnessing substantial gains. This piece examines actual outcomes, locational strengths, and why the opportunity for entry remains open for long-horizon buyers.",
     read: "5 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F7a59233952c7cf1c02d7231339b52c30605e2c52-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSUxuSa7w2xepJlBNE65qNy1eRpjcuwurvA&s",
   },
   {
     tag: "Infrastructure",
     date: "May 28, 2026",
-    title: "Dholera International Airport: Location, Connectivity and Future Growth",
-    excerpt: "The Dholera International Airport is one of the most critical infrastructure projects shaping the region's future. Here is what its location and connectivity mean for real estate buyers.",
+    title: "Dholera International Airport: Position, Access and Upcoming Expansion",
+    excerpt: "The Dholera International Airport stands among the most pivotal infrastructure developments shaping this region's trajectory. Here is what its placement and road/rail links mean for property investors.",
     read: "4 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F372f0a4a7a030ad8e7018b910cc94b809ffcf13f-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWERg8KuGCUgqzqbl2ruo6YBLdxnJKO-srw&s",
   },
   {
     tag: "Connectivity",
     date: "May 25, 2026",
-    title: "Dedicated Freight Corridor: How India's Biggest Rail Network Connects Dholera to Delhi and Mumbai",
-    excerpt: "The Dedicated Freight Corridor directly links Dholera to India's largest commercial hubs. For investors, this means industrial growth, employment, and long-term residential demand.",
+    title: "Dedicated Freight Corridor: How India's Largest Rail Network Links Dholera to Delhi and Mumbai",
+    excerpt: "The Dedicated Freight Corridor seamlessly connects Dholera to India's biggest commercial centres. For buyers, this translates into industrial expansion, job creation, and sustained residential demand.",
     read: "6 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F149eb9c0d043d8cb7ea378291717ff7402805751-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67_lA_QgnDalRTZ_at9m_I_Go-oOPCZWqDw&s",
   },
   {
     tag: "Investment Guide",
     date: "April 25, 2026",
-    title: "Which is the Best Location to Buy Plots in Dholera Under 10 Lakh?",
-    excerpt: "Not every buyer needs a large budget to enter Dholera. This guide breaks down the most promising affordable plot zones, what to verify, and how to make a confident decision.",
+    title: "Where to Purchase the Best Plots in Dholera Within 10 Lakh?",
+    excerpt: "A large budget is not mandatory to step into Dholera. This guide outlines the most promising budget-friendly plot zones, key verification points, and how to arrive at a well-informed decision.",
     read: "5 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F9f816a4a3ea0a1c2d7061b72ee50d82612dd47a5-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://imagecdn.99acres.com/media1/32508/9/650169375M-1767029914146.webp",
   },
   {
     tag: "Smart City",
     date: "February 14, 2026",
-    title: "Why 2026 Is the Best Time to Buy Plots in Dholera Smart City",
-    excerpt: "With the expressway inaugurated, airport construction underway, and industrial activation in progress — 2026 represents a defining entry point for buyers who want growth without peak pricing.",
+    title: "Why 2026 Marks the Ideal Moment to Purchase Plots in Dholera Smart City",
+    excerpt: "With the expressway launched, airport development underway, and industrial zones activating — 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
     read: "4 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2F9eaadf9be767d4169b1b86a790e952b26a192287-1200x800.jpg%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDwW0hgPXLAiiHVIJQDYBwEGvbygPT3LXw&s",
   },
   {
     tag: "Location",
     date: "January 10, 2026",
-    title: "Lothal to Dholera: Understanding the Growth Corridor That Is Shaping Gujarat's Future",
-    excerpt: "The stretch between Lothal and Dholera is quickly emerging as one of Gujarat's most strategically important real estate corridors with infrastructure, heritage, and industry converging.",
+    title: "Lothal to Dholera: Decoding the Growth Belt That Is Defining Gujarat's Tomorrow",
+    excerpt: "The stretch between Lothal and Dholera is rapidly evolving into one of Gujarat's most strategically significant real estate belts, with infrastructure, heritage, and industry converging together.",
     read: "5 min read",
-    img: "https://www.bookmyassets.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fc3e1h345%2Fprojects%2Fd1237b91addac62baa38e9f7424fd4cf3c109605-1200x800.webp%3Frect%3D1%2C0%2C1199%2C800%26w%3D700%26h%3D467%26q%3D75%26auto%3Dformat&w=384&q=75",
+    img: "https://production-aum-storage.s3.ap-south-1.amazonaws.com/web/content/5/images/variants/rect_large_jpg/18-1769367936276.jpg",
   },
 ];
 
@@ -117,15 +117,6 @@ export default function BlogPage({ onNavigate }) {
                 </div>
                 <div className="blog-card__body">
                   <h3 className="blog-card__title">{blog.title}</h3>
-                  <div className="blog-card__footer">
-                    <span className="blog-card__date">{blog.date}</span>
-                    <button className="blog-card__cta" onClick={(e) => { e.stopPropagation(); onNavigate?.("/contact-us"); }}>
-                      Explore More
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                      </svg>
-                    </button>
-                  </div>
                 </div>
               </article>
             ))}
