@@ -359,8 +359,8 @@
 
   .call-modal__box {
     grid-template-columns: 1fr;
-    border-radius: 16px 16px 0 0;
-    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+    max-height: 55vh;
     overflow-y: auto;
     animation: modalSlideUpMobile 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
@@ -370,16 +370,30 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  /* Hide left panel on mobile */
   .call-modal__left {
-    padding: 36px 24px 28px;
+    display: none;
   }
 
-  .call-modal__phone-number {
-    font-size: 24px;
+  .call-modal__right {
+    border-radius: 20px 20px 0 0;
   }
 
   .call-modal__right-body {
-    padding: 28px 24px 24px;
+    padding: 24px 20px 20px;
+  }
+
+  .call-modal__right-heading {
+    font-size: 18px;
+  }
+
+  .call-modal__right-sub {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .call-modal__field {
+    margin-bottom: 12px;
   }
 
   .call-modal__close {
@@ -389,11 +403,7 @@
 }
 
 @media (max-width: 400px) {
-  .call-modal__phone-number {
-    font-size: 20px;
-  }
-
-  .call-modal__left-heading {
-    font-size: 20px;
+  .call-modal__box {
+    max-height: 60vh;
   }
 }

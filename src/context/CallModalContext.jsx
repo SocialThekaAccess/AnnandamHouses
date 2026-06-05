@@ -8,13 +8,14 @@ export function CallModalProvider({ children }) {
   const [currentPath, setCurrentPath] = useState(null);
   const timerRef = useRef(null);
 
-  // Auto-open modal 2 seconds after every page navigation
+  // Auto-open modal — only on home page, after 5 seconds
   useEffect(() => {
     if (currentPath === null) return;
+    if (currentPath !== "/") return;
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       setOpen(true);
-    }, 0);
+    }, 5000);
     return () => clearTimeout(timerRef.current);
   }, [currentPath]);
 
