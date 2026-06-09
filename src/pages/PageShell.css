@@ -675,7 +675,7 @@
    ══════════════════════════════════════════════════════ */
 .page-contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   padding: 0;
   border-top: 1px solid var(--jub-border);
@@ -708,11 +708,13 @@
 
 .page-contact-card__value {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: clamp(14px, 1.4vw, 20px);
   font-weight: 600;
   color: var(--jub-dark);
-  line-height: 1.3;
+  line-height: 1.35;
   margin-bottom: 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .page-contact-card__copy {

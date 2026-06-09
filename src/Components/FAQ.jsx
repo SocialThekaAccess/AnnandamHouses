@@ -3,16 +3,16 @@ import "./FAQ.css";
 
 const FAQS = [
   {
-    q: "What type of plots does Anandam Homes offer in Dholera?",
-    a: "Anandam Homes offers premium residential plots in Dholera SIR — India's first greenfield smart city. Our plots are carefully selected for location advantage, legal clarity, and long-term growth potential.",
+    q: "What type of plots does Anandam  offer in Dholera?",
+    a: "Anandam  offers premium residential plots in Dholera SIR — India's first greenfield smart city. Our plots are carefully selected for location advantage, legal clarity, and long-term growth potential.",
   },
   {
     q: "Are these government approved plots?",
-    a: "Yes. All plots offered through Anandam Homes are legally verified with clear titles and proper documentation. We ensure full transparency in every transaction with no hidden charges.",
+    a: "Yes. All plots offered through Anandam  are legally verified with clear titles and proper documentation. We ensure full transparency in every transaction with no hidden charges.",
   },
   {
     q: "Who usually considers buying plots in Dholera?",
-    a: "Our buyers include end-use families planning future homes, NRIs looking for high-growth Indian real estate, and investors seeking long-term appreciation in the Dholera–Lothal growth corridor.",
+    a: "Our buyers include end-use families planning future , NRIs looking for high-growth Indian real estate, and investors seeking long-term appreciation in the Dholera–Lothal growth corridor.",
   },
   {
     q: "What should I check before buying a plot in Dholera?",

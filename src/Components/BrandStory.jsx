@@ -58,6 +58,8 @@ const CHECKLIST = [
   "Long-term investment-focused approach",
   "Strategic locations with high growth potential",
   "Market insights and future development updates",
+  "Trusted support from inquiry to registration",
+  "End-to-end support from inquiry to registration", 
 ];
 
 const stats = [
