@@ -205,14 +205,14 @@ function App() {
     window.scrollTo(0, 0);
 
     const titles = {
-      [ROUTES.HOME]: "Anandam Homes",
-      [ROUTES.ABOUT]: "About Us | Anandam Homes",
-      [ROUTES.PROJECTS]: "Our Projects | Anandam Homes",
-      [ROUTES.VALUES]: "Our Values | Anandam Homes",
-      [ROUTES.BLOG]: "Blog | Anandam Homes",
-      [ROUTES.CONTACT]: "Contact Us | Anandam Homes",
-      [ROUTES.PRIVACY]: "Privacy Policy | Anandam Homes",
-      [ROUTES.TERMS]: "Terms and Conditions | Anandam Homes",
+      [ROUTES.HOME]: "Anandam",
+      [ROUTES.ABOUT]: "About Us | Anandam",
+      [ROUTES.PROJECTS]: "Our Projects | Anandam",
+      [ROUTES.VALUES]: "Our Values | Anandam",
+      [ROUTES.BLOG]: "Blog | Anandam",
+      [ROUTES.CONTACT]: "Contact Us | Anandam",
+      [ROUTES.PRIVACY]: "Privacy Policy | Anandam",
+      [ROUTES.TERMS]: "Terms and Conditions | Anandam",
     };
 
     document.title = titles[pathname] || "Anandam Homes";
