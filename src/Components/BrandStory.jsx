@@ -136,7 +136,9 @@ export default function BrandStory() {
           >
             {/* Left: Image */}
             <div className="bs-exotica__img-col">
-              <img src={BreathesImg} alt="Where Luxury Breathes Natures" className="bs-exotica__img" />
+              <div className="bs-exotica__img-wrap">
+                <img src={BreathesImg} alt="Where Luxury Breathes Natures" className="bs-exotica__img" />
+              </div>
             </div>
 
             {/* Right: Heading on top, then desc + stats */}
