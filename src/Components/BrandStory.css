@@ -34,13 +34,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .bs-intro__text {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .bs-intro__para {
@@ -84,6 +85,8 @@
   padding: 36px 40px;
   border-radius: 2px;
   position: relative;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .bs-values::before {
