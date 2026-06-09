@@ -190,10 +190,10 @@ export default function CallModal() {
                   required
                 >
                   <option value="" disabled>Select an option</option>
-                  <option value="residential-plot">Residential Plot</option>
-                  <option value="investment-query">Investment Query</option>
-                  <option value="site-visit">Site Visit</option>
-                  <option value="general-enquiry">General Enquiry</option>
+                  <option value="residential-plot">Residential Plot Enquiry</option>
+                  <option value="investment-query">Investment Counsultation</option>
+                  <option value="site-visit">Site Visit Planning</option>
+                  <option value="general-enquiry">Documentation Support</option>
                 </select>
               </div>
 

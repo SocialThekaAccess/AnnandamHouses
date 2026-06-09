@@ -1,118 +1,12 @@
 import "./PageShell.css";
-import heroBg from "../assets/ourProjects.png";
-import logoImg from "../assets/anandamhomeslogo.png";
-import mapPreview from "../assets/mapourproject.png";
+import "./BlogPage.css";
+import blogHeroImg from "../assets/BlogSlider.png";
 import { useCallModal } from "../context/CallModalContext";
-
-const PROJECT_MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
-
-const PROJECT_STATS = [
-  {
-    value: "60-106.26",
-    label: "SQMT Options",
-    copy: "Diverse residential plot sizes, from compact 60 SQMT options to expansive 106.26 SQMT premium sites.",
-  },
-  {
-    value: "40 FT",
-    label: "Main Road",
-    copy: "Grand planning with a 40-feet main road and wide internal avenues for smooth, comfortable movement across the community.",
-  },
-  {
-    value: "2,800+",
-    label: "SQMT Open Space",
-    copy: "Large common plot and landscaped green zones designed for recreation, breathing space, and community use.",
-  },
-];
-
-const PROJECT_SIZES = [
-  "The Ultimate & The Destined: Prime plots located at the northern edge.",
-  "The Six Senses & The Ritz Plaza: Centrally located for easy access to all amenities.",
-  "Castle Rock & Empire Enclave: Premium blocks flanking the main boulevard.",
-  "The Courtyard & Elite Grove: Located near the grand entrance and major open green zones.",
-];
-
-const PLOT_OPTIONS = [
-  {
-    type: "The Elite",
-    dimensions: "6.9 x 15.4",
-    area: "106.26 SQMT",
-    idealFor: "Luxury villas and more spacious garden-facing homes.",
-  },
-  {
-    type: "The Standard",
-    dimensions: "7.5 x 12",
-    area: "90.00 SQMT",
-    idealFor: "Family homes with comfortable planning and ample parking potential.",
-  },
-  {
-    type: "The Classic",
-    dimensions: "7.0 x 12",
-    area: "84.00 SQMT",
-    idealFor: "Optimized modern residences with balanced living spaces.",
-  },
-  {
-    type: "The Smart",
-    dimensions: "6.0 x 10",
-    area: "60.00 SQMT",
-    idealFor: "Weekend retreats, compact homes, and investor-led builds.",
-  },
-  {
-    type: "Corner Plots",
-    dimensions: "Non-Standard",
-    area: "Varies",
-    idealFor: "Premium visibility, open edges, and stronger frontage value.",
-  },
-];
-
-const PROJECT_BADGES = [
-  "Gated Community",
-  "Ready-to-Build",
-  "Clear Title Plots",
-  "Heritage-Led Location",
-];
-
-const PROJECT_HIGHLIGHTS = [
-  {
-    title: "The Ultimate & The Destined",
-    copy: "Prime plots positioned along the northern edge for buyers who value quieter placement and a more exclusive address feel.",
-  },
-  {
-    title: "The Six Senses & The Ritz Plaza",
-    copy: "Centrally placed residential clusters with practical access to the broader layout, making everyday movement more convenient.",
-  },
-  {
-    title: "Castle Rock, Empire Enclave, The Courtyard & Elite Grove",
-    copy: "Premium blocks arranged around the main boulevard, entrance edge, and green zones to create privacy, prestige, and visual balance.",
-  },
-];
-
-const QUICK_POINTS = [
-  "Strategic location near the UNESCO World Heritage site of Lothal",
-  "Secure gated community planned for serene modern living",
-  "Ready-to-build infrastructure with clear title plots",
-  "Ideal for weekend homes and long-term investment positioning",
-];
-
-const PROJECT_LIST = [
-  {
-    label: "First Project",
-    title: "Anandam Exotica",
-    copy: "Discover a lifestyle of serenity and sophistication in Lothal, where heritage meets modern living through meticulously planned residential plots inside a secure gated community.",
-    href: PROJECT_MAP_URL,
-    action: "Open Project Location",
-  },
-];
 
 const CallNowBtn = () => {
   const { setOpen } = useCallModal();
-
   return (
-    <button
-      onClick={() => setOpen(true)}
-      className="page-hero__call-btn"
-      aria-label="Call Now"
-      type="button"
-    >
+    <button onClick={() => setOpen(true)} className="page-hero__call-btn" aria-label="Call Now" type="button">
       <span className="page-hero__call-btn__icon">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
@@ -123,212 +17,138 @@ const CallNowBtn = () => {
   );
 };
 
-export default function ProjectsPage({ onNavigate }) {
+const BLOGS = [
+  {
+    tag: "Market Insight",
+    date: "June 1, 2026",
+    title: "Dholera Value Growth Truth: What Occurred with Investors Who Bought Early?",
+    excerpt: "Pioneer investors in Dholera SIR are already witnessing substantial gains. This piece examines actual outcomes, locational strengths, and why the opportunity for entry remains open for long-horizon buyers.",
+    read: "5 min read",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSUxuSa7w2xepJlBNE65qNy1eRpjcuwurvA&s",
+  },
+  {
+    tag: "Infrastructure",
+    date: "May 28, 2026",
+    title: "Dholera International Airport: Position, Access and Upcoming Expansion",
+    excerpt: "The Dholera International Airport stands among the most pivotal infrastructure developments shaping this region's trajectory. Here is what its placement and road/rail links mean for property investors.",
+    read: "4 min read",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWERg8KuGCUgqzqbl2ruo6YBLdxnJKO-srw&s",
+  },
+  {
+    tag: "Connectivity",
+    date: "May 25, 2026",
+    title: "Dedicated Freight Corridor: How India's Largest Rail Network Links Dholera to Delhi and Mumbai",
+    excerpt: "The Dedicated Freight Corridor seamlessly connects Dholera to India's biggest commercial centres. For buyers, this translates into industrial expansion, job creation, and sustained residential demand.",
+    read: "6 min read",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67_lA_QgnDalRTZ_at9m_I_Go-oOPCZWqDw&s",
+  },
+  {
+    tag: "Investment Guide",
+    date: "April 25, 2026",
+    title: "Where to Purchase the Best Plots in Dholera Within 10 Lakh?",
+    excerpt: "A large budget is not mandatory to step into Dholera. This guide outlines the most promising budget-friendly plot zones, key verification points, and how to arrive at a well-informed decision.",
+    read: "5 min read",
+    img: "https://imagecdn.99acres.com/media1/32508/9/650169375M-1767029914146.webp",
+  },
+  {
+    tag: "Smart City",
+    date: "February 14, 2026",
+    title: "Why 2026 Marks the Ideal Moment to Purchase Plots in Dholera Smart City",
+    excerpt: "With the expressway launched, airport development underway, and industrial zones activating — 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
+    read: "4 min read",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDwW0hgPXLAiiHVIJQDYBwEGvbygPT3LXw&s",
+  },
+  {
+    tag: "Location",
+    date: "January 10, 2026",
+    title: "Lothal to Dholera: Decoding the Growth Belt That Is Defining Gujarat's Tomorrow",
+    excerpt: "The stretch between Lothal and Dholera is rapidly evolving into one of Gujarat's most strategically significant real estate belts, with infrastructure, heritage, and industry converging together.",
+    read: "5 min read",
+    img: "https://production-aum-storage.s3.ap-south-1.amazonaws.com/web/content/5/images/variants/rect_large_jpg/18-1769367936276.jpg",
+  },
+];
+
+export default function BlogPage({ onNavigate }) {
   return (
     <div className="page-shell">
-      <section className="page-hero page-hero--no-overlay">
+
+      <section className="page-hero blog-hero--full page-hero--no-overlay">
         <div
           className="page-hero__backdrop"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundPosition: "center 40%",
-            "--img-ratio": "56%",
-          }}
+          style={{ backgroundImage: `url(${blogHeroImg})`, backgroundPosition: "center center" }}
         >
-          <img src={heroBg} alt="" className="page-hero__mobile-img" draggable="false" />
-        </div>
-        <div className="page-hero__logo">
-          <img src={logoImg} alt="Anandam Homes" />
+          <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
         <CallNowBtn />
-        <div className="page-hero__inner page-hero__inner--hidden" />
       </section>
 
       <main className="page-main">
-        <section className="page-section">
-          <div className="page-card">
-            <div className="page-intro-grid">
-              <div>
-                <div className="section-label">Project Overview</div>
-                <h2 className="page-heading">
-                  Welcome to Anandam Exotica – Lothal
-                </h2>
-                <p className="page-copy">
-                  Where heritage meets modern living. Anandam Exotica is a premium plotted development created for those
-                  who seek the right blend of tranquility, connectivity, and long-term value in the historic heart of Lothal.
-                </p>
-              </div>
 
-              <div>
-                <p className="page-copy">
-                  Whether you are planning a dream weekend home or making a high-yield investment in Gujarat's
-                  fastest-growing corridor, Anandam Exotica is designed as the place where your future begins.
-                </p>
-                <div className="project-page__quick-list">
-                  {QUICK_POINTS.map((item) => (
-                    <div key={item} className="project-page__quick-item">
-                      <span className="project-page__quick-dot" aria-hidden="true" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <button className="gold-btn" type="button" onClick={() => onNavigate?.("/contact-us")}>
-                  Plan A Site Visit
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </button>
-              </div>
+        {/* Header */}
+        <section className="page-section blog-section-header">
+          <div className="blog-section-header__left">
+            <span className="section-label">Latest Articles</span>
+            <h2 className="blog-section-header__title">Insights on Dholera</h2>
+            <p className="blog-section__sub">In-depth coverage of Dholera's infrastructure, investment climate, and real estate opportunities.</p>
+          </div>
+          <div className="blog-section-header__right">
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">6</span>
+              <span className="blog-section-header__stat-label">Articles</span>
             </div>
-
-            <div className="page-stat-grid">
-              {PROJECT_STATS.map((item) => (
-                <article key={item.label} className="page-stat">
-                  <div className="page-stat__value">{item.value}</div>
-                  <div className="page-stat__label">{item.label}</div>
-                  <div className="page-stat__copy">{item.copy}</div>
-                </article>
-              ))}
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">2026</span>
+              <span className="blog-section-header__stat-label">Latest Year</span>
+            </div>
+            <div className="blog-section-header__stat">
+              <span className="blog-section-header__stat-num">5</span>
+              <span className="blog-section-header__stat-label">Min Avg Read</span>
             </div>
           </div>
         </section>
 
-        <section className="page-section page-section--spaced">
-          <div className="project-page__project-grid">
-            {PROJECT_LIST.map((project) => (
-              <article key={project.title} className="project-page__project-card page-card">
-                <div className="project-page__project-main">
-                  <div>
-                    <div className="project-page__project-label">{project.label}</div>
-                    <h2 className="project-page__project-title">{project.title}</h2>
-                    <p className="project-page__project-copy">{project.copy}</p>
-                  </div>
-
-                  <div className="project-page__project-side">
-                    <div className="project-page__project-badges">
-                      {PROJECT_BADGES.map((badge) => (
-                        <span key={badge} className="project-page__project-badge">{badge}</span>
-                      ))}
-                    </div>
-                    <a
-                      href={project.href}
-                      className="project-page__project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.action}
-                    </a>
-                  </div>
+        {/* 3-col card grid */}
+        <section className="page-section blog-grid-section">
+          <div className="blog-grid">
+            {BLOGS.map((blog, i) => (
+              <article key={i} className="blog-card" onClick={() => onNavigate?.("/contact-us")}>
+                <div className="blog-card__img-wrap">
+                  <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                </div>
+                <div className="blog-card__body">
+                  <h3 className="blog-card__title">{blog.title}</h3>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="page-section page-section--spaced">
-          <div className="project-page__showcase page-card">
-            <div className="project-page__visual">
-              <img
-                src={mapPreview}
-                alt="Anandam Exotica full master plan"
-                className="project-page__visual-img"
-              />
-
-              <div className="project-page__size-block">
-                <div className="project-page__size-label">The Master Plan</div>
-                <div className="project-page__size-list">
-                  {PROJECT_SIZES.map((size) => (
-                    <div key={size} className="project-page__size-item">{size}</div>
-                  ))}
-                </div>
-              </div>
+        {/* CTA Band */}
+        <section className="page-section page-section--fullwidth">
+          <div className="blog-cta-band">
+            <div className="blog-cta-band__left">
+              <span className="section-label" style={{ color: "#e8d09a" }}>Get In Touch</span>
+              <h3 className="blog-cta-band__title">Ready to explore a plot in Dholera?</h3>
+              <p className="blog-cta-band__copy">Speak with our team for location walkthroughs, pricing guidance, and a clear picture of what the Dholera opportunity looks like for you.</p>
             </div>
-
-            <div className="project-page__content">
-              <div className="section-label">Plot Options</div>
-              <h2 className="page-heading">
-                Choose Your Perfect Space
-              </h2>
-              <p className="page-copy">
-                We offer a variety of plot sizes tailored to different budgets, lifestyles, and architectural goals,
-                from compact weekend-home options to larger premium plots with a more expansive feel.
-              </p>
-
-              <div className="project-page__table-box">
-                <div className="project-page__table-head">
-                  <div>Plot Type</div>
-                  <div>Dimensions (Meters)</div>
-                  <div>Area (Carpet)</div>
-                  <div>Ideal For</div>
-                </div>
-                <div className="project-page__plot-list">
-                  {PLOT_OPTIONS.map((option) => (
-                    <article key={option.type} className="project-page__plot-row">
-                      <div className="project-page__plot-cell">
-                        <span className="project-page__plot-label">Plot Type</span>
-                        <span className="project-page__plot-value project-page__plot-value--strong">{option.type}</span>
-                      </div>
-                      <div className="project-page__plot-cell">
-                        <span className="project-page__plot-label">Dimensions (Meters)</span>
-                        <span className="project-page__plot-value">{option.dimensions}</span>
-                      </div>
-                      <div className="project-page__plot-cell">
-                        <span className="project-page__plot-label">Area (Carpet)</span>
-                        <span className="project-page__plot-value project-page__plot-value--strong">{option.area}</span>
-                      </div>
-                      <div className="project-page__plot-cell">
-                        <span className="project-page__plot-label">Ideal For</span>
-                        <span className="project-page__plot-value">{option.idealFor}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="page-section page-section--spaced">
-          <div className="page-feature-grid">
-            {PROJECT_HIGHLIGHTS.map((item, index) => (
-              <article key={item.title} className="page-feature page-card" data-num={`0${index + 1}`}>
-                <h3 className="page-feature__title">{item.title}</h3>
-                <p className="page-feature__copy">{item.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="page-section page-section--spaced">
-          <div className="page-highlight-band page-card">
-            <div>
-              <div className="section-label">Why This Page Helps</div>
-              <h2 className="page-heading">Why Invest in Lothal?</h2>
-              <p className="page-copy">
-                As a key node in the Delhi-Mumbai Industrial Corridor and close to the upcoming National Maritime
-                Heritage Complex, Lothal is seeing powerful infrastructure growth. Investing here is not just buying
-                land, it is securing a stake in one of India's most promising heritage-tourism hubs.
-              </p>
-            </div>
-
-            <div className="page-highlight-list">
-              {[
-                "Heritage value meets modern infrastructure in a high-potential corridor.",
-                "Strong tourism and industrial momentum supports long-term appreciation.",
-                "Experience a life of peace, pride, and prosperity at Anandam Exotica.",
-              ].map((item) => (
-                <div key={item} className="page-highlight-item">{item}</div>
-              ))}
-              <button
-                className="gold-btn"
-                type="button"
-                onClick={() => window.open('https://wa.me/916384800001', '_blank')}
-              >
-                Talk To The Team
+            <div className="blog-cta-band__right">
+              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>
+                Talk to Our Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </button>
+              <button className="blog-cta-band__wa" onClick={() => window.open("https://wa.me/916384800001", "_blank")}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.524 5.847L.057 23.882l6.197-1.624A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-5.001-1.373l-.359-.213-3.718.975.992-3.618-.234-.372A9.787 9.787 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+                </svg>
+                WhatsApp Us
               </button>
             </div>
           </div>
         </section>
+
       </main>
     </div>
   );
