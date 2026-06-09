@@ -233,11 +233,13 @@
 
   .navbar {
     padding: 0 16px;
+    justify-content: space-between;
   }
 
   /* Show logo on mobile — always */
   .navbar__logo {
-    display: flex;
+    display: flex !important;
+    order: 1;
   }
 
   .navbar__logo img {
@@ -249,9 +251,11 @@
     display: none;
   }
 
-  /* Show call + hamburger group */
+  /* Show call + hamburger group — always on right */
   .navbar__mobile-actions {
     display: flex;
+    order: 2;
+    margin-left: auto;
   }
 }
 

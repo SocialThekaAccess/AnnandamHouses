@@ -1,6 +1,7 @@
 import "./PageShell.css";
 import heroBg from "../assets/ourProjects.png";
 import logoImg from "../assets/anandamhomeslogo.png";
+import mapPreview from "../assets/AnandamMaps.jpeg";
 import { useCallModal } from "../context/CallModalContext";
 
 const PROJECT_MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
@@ -228,7 +229,7 @@ export default function ProjectsPage({ onNavigate }) {
           <div className="project-page__showcase page-card">
             <div className="project-page__visual">
               <img
-                src="/projects/anandam-exotica/map-preview.png"
+                src={mapPreview}
                 alt="Anandam Exotica full master plan"
                 className="project-page__visual-img"
               />

@@ -26,7 +26,8 @@ const CallNowBtn = () => {
 const CHANNELS = [
   { label: "Phone", value: "+91 63848 00001", copy: "Best for immediate callback requests and site-visit confirmations." },
   { label: "Email", value: "anandamhomesofficial@gmail.com", copy: "Ideal for document sharing, investor questions, and detailed follow-ups." },
-  // { label: "Location", value: "Lothal Smart City, Ahmedabad District", copy: "Use the form below to schedule a guided discussion before your visit." },
+  { label: "Corporate Office", value: "Sco 67, Ground Floor, Sector 82, JLPL, Mohali", copy: "Our primary office for sales, documentation, and buyer meetings." },
+  { label: "Registered Office", value: "K.P. Epitome, A Block, Off. No 514, Near Lake, Makarba, Ahmedabad, Gujarat 380051", copy: "Registered address for all official and legal correspondence." },
 ];
 
 export default function ContactPage() {
@@ -75,19 +76,35 @@ export default function ContactPage() {
               <div>
                 <div className="section-label">Reach Us</div>
                 <h2 className="page-heading">
-                  Multiple ways to connect, one consistent luxury experience.
+                  Get in touch with our team today.
                 </h2>
                 <p className="page-copy">
-                  The upper section gives the contact page presence and breathing room before the form begins. It
-                  makes the route feel deliberate, premium, and fully aligned with the rest of the brand board.
+                  Whether you have questions about Dholera plots, want to schedule a site visit, or need guidance on documentation and investment — our team is available to help you at every step.
                 </p>
               </div>
 
               <div>
                 <p className="page-copy">
-                  Below this introduction, the original contact form remains in place so the page keeps the same
-                  practical enquiry flow while gaining a much stronger visual opening.
+                  Every enquiry is handled personally by a dedicated relationship manager. Reach us by phone, WhatsApp, or email and we will respond promptly with the right guidance for your investment journey.
                 </p>
+                <div style={{ marginTop: "24px", display: "flex", flexDirection: "column", gap: "14px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#B8975A", minWidth: "120px" }}>Call / WhatsApp</span>
+                    <a href="tel:+916384800001" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "14px", fontWeight: 600, color: "#1b4332", textDecoration: "none" }}>+91 63848 00001</a>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#B8975A", minWidth: "120px" }}>Email</span>
+                    <a href="mailto:anandamhomesofficial@gmail.com" style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", fontWeight: 500, color: "#1b4332", textDecoration: "none" }}>anandamhomesofficial@gmail.com</a>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#B8975A", minWidth: "120px", paddingTop: "2px" }}>Corporate</span>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", color: "#3C3D3D", lineHeight: 1.6 }}>Sco 67, Ground Floor, Sector 82, JLPL, Mohali</span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#B8975A", minWidth: "120px", paddingTop: "2px" }}>Registered</span>
+                    <span style={{ fontFamily: "'Poppins',sans-serif", fontSize: "13px", color: "#3C3D3D", lineHeight: 1.6 }}>K.P. Epitome, A Block, Off. No 514, Near Lake, Makarba, Ahmedabad, Gujarat 380051</span>
+                  </div>
+                </div>
               </div>
             </div>
 

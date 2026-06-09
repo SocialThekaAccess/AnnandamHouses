@@ -16,72 +16,73 @@ function useInView(threshold = 0.1) {
   return [ref, visible];
 }
 
-const ArrowIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"/>
-    <polyline points="12 5 19 12 12 19"/>
-  </svg>
-);
-
-const CATEGORIES = [
+const PANELS = [
   {
-    href: "#about",
-    showBtn: false,
-  },
-  {
+    eyebrow: "Anandam Exotica — Where Luxury Breathes Nature",
+    num: "01",
     title: "Residential Plots",
     subtitle: "Thoughtfully Planned",
-    desc: "Spaces shaped for end use, family comfort, and long-term ownership.",
+    desc: "Anandam Exotica is a residential plotting destination in Dholera offering connectivity, comfort, and future-ready value. Wide internal roads, green surroundings, and a planned layout create a clean and organized living environment close to upcoming infrastructure.",
+    btn: "Book a Site Visit",
     href: "#contact",
-    showBtn: true,
   },
   {
-    href: "#values",
-    showBtn: false,
+    eyebrow: "Location Advantage",
+    num: "02",
+    title: "Dholera SIR",
+    subtitle: "India's First Smart City",
+    desc: "Strategically located near the Delhi-Mumbai Industrial Corridor, Dholera SIR is India's largest greenfield smart city. Proximity to the international airport, expressway, and semiconductor zones makes it one of the highest-potential investment zones in the country.",
+    btn: "Learn More",
+    href: "#about",
+  },
+  {
+    eyebrow: "Our Promise",
+    num: "03",
+    title: "Clear Guidance",
+    subtitle: "Every Step of the Way",
+    desc: "From your first enquiry to the final documentation, we provide transparent support with no hidden charges. A dedicated relationship manager accompanies every buyer through the process with clarity, honesty, and patience.",
+    btn: "Talk to Our Team",
+    href: "#contact",
+    wa: true,
   },
 ];
 
 export default function CategoryShowcase() {
   const [ref, visible] = useInView(0.1);
 
-  const scrollTo = (href) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (panel) => {
+    if (panel.wa) {
+      window.open("https://wa.me/916384800001", "_blank");
+    } else {
+      document.querySelector(panel.href)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <section className="cat-showcase" ref={ref}>
-      <video
-        className="cat-showcase__video"
-        src={doleraVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
-      <div className="cat-showcase__video-overlay" />
+      <video className="cat-showcase__video" src={doleraVideo} autoPlay muted loop playsInline style={{display:'none'}} />
+      <div className="cat-showcase__video-overlay" style={{background:'#0d1f18'}} />
 
-      {CATEGORIES.map((cat, i) => (
+      {PANELS.map((panel, i) => (
         <div
           key={i}
           className={`cat-panel${visible ? " is-visible" : ""}`}
           style={{ transitionDelay: `${i * 0.15}s` }}
         >
           <div className="cat-panel__overlay" />
-
           <div className="cat-panel__content">
-            {cat.subtitle && <span className="cat-panel__sub">{cat.subtitle}</span>}
-            {cat.title && <h2 className="cat-panel__title">{cat.title}</h2>}
-            {cat.desc && <span className="cat-panel__desc">{cat.desc}</span>}
-
-            {cat.showBtn && (
-              <button
-                className="cat-panel__btn"
-                onClick={() => scrollTo(cat.href)}
-              >
-                Explore More <ArrowIcon />
-              </button>
-            )}
+            <span className="cat-panel__eyebrow">{panel.eyebrow}</span>
+            <div className="cat-panel__divider" />
+            <span className="cat-panel__num">{panel.num}</span>
+            <h2 className="cat-panel__title">{panel.title}</h2>
+            <span className="cat-panel__sub">{panel.subtitle}</span>
+            <p className="cat-panel__desc">{panel.desc}</p>
+            <button className="cat-panel__btn" onClick={() => handleClick(panel)}>
+              {panel.btn}
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
           </div>
         </div>
       ))}

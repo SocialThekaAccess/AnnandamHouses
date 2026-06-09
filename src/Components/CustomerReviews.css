@@ -1,5 +1,5 @@
 .customer-reviews {
-  padding: 104px 0 36px;
+  padding: 60px 0 36px;
   background:
     radial-gradient(circle at top left, rgba(184, 151, 90, 0.14), transparent 34%),
     linear-gradient(180deg, #faf8f5 0%, #f5f0e8 100%);
@@ -14,15 +14,17 @@
 
 .customer-reviews__intro {
   max-width: 760px;
-  margin-bottom: 34px;
+  margin: 0 auto 34px;
+  text-align: center;
 }
 
 .customer-reviews__text {
   max-width: 620px;
-  margin-top: 16px;
+  margin: 16px auto 0;
   font-size: 15px;
   line-height: 1.9;
   color: rgba(60, 61, 61, 0.82);
+  text-align: center;
 }
 
 .reviews-ticker {

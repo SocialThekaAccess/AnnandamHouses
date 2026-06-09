@@ -4,7 +4,17 @@
 .home-page :not(.hero):not(.hero *) h4,
 .home-page :not(.hero):not(.hero *) h5,
 .home-page :not(.hero):not(.hero *) h6 {
-  font-family: "Playfair Display", serif !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.home-page .values .values__heading {
+  font-family: 'Poppins', sans-serif !important;
+  font-style: normal !important;
+}
+
+.home-page .values .values__card-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-style: normal !important;
 }
 
 .home-page :not(.hero):not(.hero *) p {
@@ -14,8 +24,34 @@
 
 .home-map {
   max-width: 1240px;
-  margin: 0 auto 0;
+  margin: 0 auto;
   padding: 28px 5% 0;
+}
+
+.home-map__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.home-map__eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #B8975A;
+  margin-bottom: 12px;
+}
+
+.home-map__heading {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(22px, 3vw, 38px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  color: #2c3e35;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .home-map__img {

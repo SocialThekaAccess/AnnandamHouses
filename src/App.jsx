@@ -4,10 +4,14 @@ import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import mapImg from "./assets/map.png";
 import CallModal from "./Components/CallModal";
+import { useCallModal } from "./context/CallModalContext";
 import About from "./Components/About";
 import Values from "./Components/Values";
 // import Projects from "./Components/Projects";
 import Features from "./Components/Features";
+import BrandStory from "./Components/BrandStory";
+import FAQ from "./Components/FAQ";
+import ImageCarousel from "./Components/ImageCarousel";
 import Marquee from "./Components/Marquee";
 import CustomerReviews from "./Components/CustomerReviews";
 import Contact from "./Components/Contact";
@@ -156,17 +160,26 @@ function HomePage() {
     <div className="home-page">
       <Hero />
       <About />
+      <div className="home-map">
+        <div className="home-map__header">
+          <span className="home-map__eyebrow">National Maritime Heritage Complex</span>
+          <h2 className="home-map__heading">Master Plan of World's Biggest Maritime Museum</h2>
+          <p>NMHC is being developed as a “complete” tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
+        </div>
+        <img src={mapImg} alt="Development map" className="home-map__img" />
+      </div>
       {/* <Location /> */}
+      <BrandStory />
       <Values />
+      {/* <BrandStory /> */}
       {/* <Projects /> */}
       <Features />
       <CustomerReviews />
       <CategoryShowcase />
       <Marquee />
+      <FAQ />
       <Contact />
-      <div className="home-map">
-        <img src={mapImg} alt="Development map" className="home-map__img" />
-      </div>
+      <ImageCarousel />
     </div>
   );
 }
@@ -204,6 +217,12 @@ function App() {
 
     document.title = titles[pathname] || "Anandam Homes";
   }, [pathname]);
+
+  const { setCurrentPath } = useCallModal();
+
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname, setCurrentPath]);
 
   const navigate = (nextPath) => {
     if (nextPath === pathname) {

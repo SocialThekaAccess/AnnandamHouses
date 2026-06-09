@@ -52,8 +52,9 @@ const LinkedInIcon = () => (
 
 const FOOTER_NAV = [
     { label: "Home", href: HOME_PATH },
-  { label: "About Us", href: "/about-us" },
+  // { label: "About Us", href: "/about-us" },
   { label: "Our Projects", href: PROJECTS_PATH },
+   { label: "About Us", href: "/about-us" },
   { label: "Our Values", href: "/our-values" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: CONTACT_PATH },
@@ -160,7 +161,8 @@ export default function Footer({ onNavigate }) {
 
               <div className="footer-main__col">
                 <div className="footer-main__label">Anandam </div>
-                <div className="footer-main__sub">Corporate Office : Sco 67, Ground Floor, Sector 82, JLPL,Mohali</div>
+                <div className="footer-main__sub">Corporate Office: Sco 67, Ground Floor, Sector 82, JLPL, Mohali</div>
+                <div className="footer-main__sub">Registered Office:  K.P. Epitome, A Block, Off. No 514, Near Lake, Makarba, Ahmedabad, Gujarat 380051</div>
                 {/* <p className="footer-main__address">
                     Lothal Smart City,<br />
                   Ahmedabad District,<br />

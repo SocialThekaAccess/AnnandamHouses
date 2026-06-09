@@ -46,7 +46,8 @@ const SendIcon = () => (
 const CONTACT_INFO = [
   { icon: <PhoneIcon />, label: "Call Us", value: "+91 63848 00001", href: "tel:+916384800001" },
 { icon: <MailIcon />, label: "Email Us", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
-  { icon: <MapPinIcon />, label: "Location", value: "Sco 67, Ground Floor, Sector 82, JLPL,Mohali", href: null },
+  { icon: <MapPinIcon />, label: "Corporate Office", value: "Sco 67, Ground Floor, Sector 82, JLPL, Mohali", href: null },
+  { icon: <MapPinIcon />, label: "Registered Office", value: "K.P. Epitome, A Block, Off. No 514, Near Lake, Makarba, Ahmedabad, Gujarat 380051", href: null },
 ];
 
 export default function Contact() {
@@ -123,8 +124,8 @@ export default function Contact() {
                     <div>
                       <span className="contact__info-label">{label}</span>
                       {href
-                        ? <a href={href} className={`contact__info-value${label === "Location" ? " contact__info-value--location" : ""}`}>{value}</a>
-                        : <span className={`contact__info-value${label === "Location" ? " contact__info-value--location" : ""}`}>{value}</span>
+                        ? <a href={href} className={`contact__info-value contact__info-value--location`}>{value}</a>
+                        : <span className={`contact__info-value contact__info-value--location`}>{value}</span>
                       }
                     </div>
                   </div>

@@ -45,7 +45,7 @@ function ReviewCard({ author, review }) {
   return (
     <article className="reviews-card">
       <div className="reviews-card__meta">
-        <span className="reviews-card__source">Google review</span>
+        {/* <span className="reviews-card__source">Google review</span> */}
         <div className="reviews-card__stars" aria-label="5 out of 5 stars">
           {Array.from({ length: 5 }).map((_, index) => (
             <StarIcon key={index} />

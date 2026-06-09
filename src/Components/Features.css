@@ -1,6 +1,6 @@
 /* ===== FEATURES — Anandam Exotica ===== */
 .features {
-  padding: 130px 0;
+  padding: 80px 0 60px;
   background: var(--bg, #FAF8F5);
   position: relative;
   overflow: hidden;
@@ -36,11 +36,11 @@
 .features__label { justify-content: center; }
 
 .features__title {
-  font-family: 'Crimson Text', 'crimson-regular', Georgia, serif;
-  font-size: clamp(28px, 5vw, 62px);
-  font-weight: 600;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(22px, 3.5vw, 42px);
+  font-weight: 400;
   color: #545b61;
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   margin-bottom: 18px;
 }
@@ -113,26 +113,42 @@
 
 .feat-card:hover::before { opacity: 1; }
 
+/* ── FIX: Image perfectly centered ── */
 .feat-card__icon {
-  width: 72px; height: 72px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(184,151,90,0.25);
+  background: #f0ece4;
+  flex-shrink: 0;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(184,151,90,0.2);
-  border-radius: 50%;
-  background: rgba(184,151,90,0.04);
-  color: var(--gold-dark, #9A7A3A);
-  transition: all 0.4s ease;
-  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
-.feat-card__icon svg { width: 34px; height: 34px; }
+.feat-card__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
 
 .feat-card:hover .feat-card__icon {
-  background: rgba(184,151,90,0.1);
   border-color: var(--antique-gold, #B8975A);
-  box-shadow: 0 0 24px rgba(184,151,90,0.18);
-  transform: scale(1.08);
+  box-shadow: 0 0 28px rgba(184,151,90,0.25);
+  transform: scale(1.06);
 }
 
 .feat-card__title {
@@ -142,6 +158,8 @@
   color: var(--text-primary, #1A2456);
   line-height: 1.2;
   transition: color 0.3s;
+  width: 100%;
+  text-align: center;
 }
 
 .feat-card:hover .feat-card__title { color: var(--royal-navy, #1A2456); }
@@ -150,6 +168,8 @@
   font-size: 13px;
   line-height: 1.85;
   color: var(--text-muted, #7A7A7A);
+  width: 100%;
+  text-align: center;
 }
 
 /* ── Navigation ── */
