@@ -154,8 +154,12 @@ export default function Values() {
             <a href="tel:+916384800001" className="values__cta-val">+91 63848 00001</a>
           </div>
           <div className="values__cta-mid">
-            <span className="values__cta-meta">Our Location</span>
+            <span className="values__cta-meta">Corporate Office</span>
             <span className="values__cta-val">Sco 67, Ground Floor, Sector 82, JLPL, Mohali</span>
+          </div>
+          <div className="values__cta-mid">
+            <span className="values__cta-meta">Registered Office</span>
+            <span className="values__cta-val">K.P. Epitome, A Block, Off. No 514, Near Lake, Makarba, Ahmedabad, Gujarat 380051</span>
           </div>
           <button
             className="values__cta-btn"

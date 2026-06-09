@@ -291,11 +291,15 @@
 
 .values__cta-val {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   color: #F5F0E8;
   text-decoration: none;
   transition: color 0.2s;
+  max-width: 180px;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
 }
 
 a.values__cta-val:hover { color: #B8975A; }

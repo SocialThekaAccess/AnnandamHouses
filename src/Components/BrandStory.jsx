@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./BrandStory.css";
 import BreathesImg from "../assets/BreathesNatures.png";
+import MobileExoticaImg from "../assets/risponsiveAnandamExotica.png";
 
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
@@ -137,7 +138,8 @@ export default function BrandStory() {
             {/* Left: Image */}
             <div className="bs-exotica__img-col">
               <div className="bs-exotica__img-wrap">
-                <img src={BreathesImg} alt="Where Luxury Breathes Natures" className="bs-exotica__img" />
+                <img src={BreathesImg} alt="Where Luxury Breathes Natures" className="bs-exotica__img bs-exotica__img--desktop" />
+                <img src={MobileExoticaImg} alt="Anandam Exotica" className="bs-exotica__img bs-exotica__img--mobile" />
               </div>
             </div>
 
