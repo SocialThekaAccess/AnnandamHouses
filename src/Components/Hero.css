@@ -357,17 +357,17 @@
 /* ── Responsive ── */
 /* ══════════════════════════════════════════
    MOBILE — ≤768px
-   Image renders as real <img>, zero crop,
-   text block sits below on dark bg
+   Image with fixed aspect ratio, text overlay on top
 ══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Hero becomes a column — image on top, text below */
+  /* Hero becomes relative container */
   .hero {
     min-height: unset !important;
     height: auto;
     flex-direction: column;
     align-items: stretch;
     overflow: hidden;
+    background: #060c0a;
   }
 
   /* Hide desktop background-image slides */
@@ -378,10 +378,50 @@
   /* Show mobile <img> slides */
   .hero__slides-mobile {
     display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Each mobile slide — fixed aspect ratio box */
+  .hero__mobile-slide {
+    display: none;
+    width: 100%;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #060c0a;
+  }
+
+  .hero__mobile-slide--active {
+    display: block;
+  }
+
+  /* Image fills the aspect-ratio box, cropped to fit */
+  .hero__mobile-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  /* Mobile overlay — gradient from bottom so text is readable */
+  .hero__overlay--mobile {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 12, 10, 0.15) 0%,
+      rgba(6, 12, 10, 0.30) 50%,
+      rgba(6, 12, 10, 0.75) 85%,
+      rgba(6, 12, 10, 0.95) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
   }
 
   /* Overlay on desktop slides — hide */
-  .hero__overlay {
+  .hero__overlay:not(.hero__overlay--mobile) {
     display: none;
   }
 
@@ -401,23 +441,27 @@
     display: none;
   }
 
-  /* Progress bar — sits at very top of section */
+  /* Progress bar — at bottom of the image block */
   .hero__progress {
-    position: relative;
-    bottom: unset;
-    top: unset;
-    order: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
   }
 
-  /* Text container — below the image, dark background */
+  /* Text container — overlaid on top of the image at bottom */
   .hero__container {
-    position: relative;
-    z-index: 2;
-    padding: 24px 20px 48px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: 0 20px 40px;
     min-height: unset;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: flex-start;
-    background: #060c0a;
+    background: transparent;
   }
 
   .hero__left {
@@ -426,19 +470,20 @@
     text-align: left;
     opacity: 1 !important;
     transform: none !important;
+    width: 100%;
   }
 
   .hero__headline {
-    font-size: clamp(26px, 8vw, 40px);
+    font-size: clamp(24px, 7.5vw, 38px);
     line-height: 1.05;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #fff;
   }
 
   .hero__tagline {
-    font-size: clamp(13px, 4vw, 16px);
-    line-height: 1.65;
-    color: rgba(255,255,255,0.78);
+    font-size: clamp(12px, 3.5vw, 15px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.80);
   }
 
   .hero__tagline br {
@@ -446,19 +491,20 @@
   }
 
   .hero__rule {
-    width: 48px;
-    margin: 16px 0 0;
+    width: 40px;
+    margin: 14px 0 0;
   }
 
-  /* Slider numbers — inline below text */
+  /* Slider numbers — over the image, bottom right */
   .hero__slider-nums {
-    position: relative;
-    bottom: unset;
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    top: unset;
     left: unset;
-    right: unset;
-    margin-top: 18px;
-    gap: 12px;
-    z-index: 2;
+    margin-top: 0;
+    gap: 10px;
+    z-index: 7;
   }
 
   .hero__slider-num {
@@ -475,19 +521,32 @@
   .page-hero__call-btn {
     display: none;
   }
+
+  /* Make the whole hero section height = image height */
+  .hero {
+    position: relative;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero__container {
-    padding: 20px 16px 40px;
+  .hero__mobile-slide {
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero__mobile-img {
+    object-position: center 25%;
   }
 
   .hero__headline {
-    font-size: clamp(22px, 8vw, 34px);
+    font-size: clamp(22px, 7.5vw, 32px);
   }
 
   .hero__tagline {
-    font-size: clamp(12px, 4vw, 14px);
+    font-size: clamp(11px, 3.5vw, 13px);
+  }
+
+  .hero__container {
+    padding: 0 16px 36px;
   }
 }
 

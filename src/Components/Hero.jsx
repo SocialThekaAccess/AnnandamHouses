@@ -94,7 +94,7 @@ export default function Hero() {
   const slide = SLIDES[current];
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" style={{ position: "relative" }}>
 
       {/* ── Desktop: background-image slides (absolute, full-bleed) ── */}
       <div className="hero__slides-desktop">
