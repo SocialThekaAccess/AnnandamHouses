@@ -155,7 +155,7 @@ export default function ProjectsPage({ onNavigate }) {
                 </h2>
                 <p className="page-copy">
                   Where heritage meets modern living. Anandam Exotica is a premium plotted development created for those
-                  who seek the right blend of tranquility, connectivity, and long-term value in the historic heart of Lothal.
+                  who seek the right blend of tranquility, connectivity, and long-term value in the historic heart of Lothal. Designed for modern families and forward-thinking investors, the project offers thoughtfully planned plots in a rapidly developing location. With excellent infrastructure growth, seamless accessibility, and strong future appreciation potential.
                 </p>
               </div>
 
