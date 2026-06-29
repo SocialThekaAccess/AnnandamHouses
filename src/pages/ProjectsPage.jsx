@@ -150,11 +150,14 @@ export default function ProjectsPage({ onNavigate }) {
             <div className="page-intro-grid">
               <div>
                 <div className="section-label">Project Overview</div>
-                <h2 className="page-heading">
-                  Welcome to Anandam Exotica – Lothal
+                <h1 className="page-heading">
+                 Welcome to Anandam Exotica – Lothal
+                </h1>
+                <h2 className="page-subheading" style={{ fontSize: '1.25rem', fontWeight: '400', marginTop: '0.75rem', marginBottom: '1rem', color: '#666' }}>
+                  Where heritage meets modern living
                 </h2>
                 <p className="page-copy">
-                  Where heritage meets modern living. Anandam Exotica is a premium plotted development created for those
+                  Anandam Exotica is a premium plotted development created for those
                   who seek the right blend of tranquility, connectivity, and long-term value in the historic heart of Lothal. Designed for modern families and forward-thinking investors, the project offers thoughtfully planned plots in a rapidly developing location. With excellent infrastructure growth, seamless accessibility, and strong future appreciation potential.
                 </p>
               </div>
