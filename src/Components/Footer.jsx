@@ -63,9 +63,9 @@ const FOOTER_NAV = [
 
 const SOCIALS = [
   { label: "LinkedIn", icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/anandam-exotica-082002410/" },
-  { label: "Facebook", icon: <FacebookIcon />, href: "#" },
-  { label: "Instagram", icon: <InstagramIcon />, href: "#" },
-  { label: "YouTube", icon: <YoutubeIcon />, href: "#" },
+  { label: "Facebook", icon: <FacebookIcon />, href: "https://www.facebook.com/profile.php?id=61590008555380" },
+  { label: "Instagram", icon: <InstagramIcon />, href: "https://www.instagram.com/anandam.exotica/" },
+  { label: "YouTube", icon: <YoutubeIcon />, href: "https://www.youtube.com/@Anandamexotica" },
 ];
 
 function CtaBand({ onNavigate }) {
@@ -143,9 +143,9 @@ export default function Footer({ onNavigate }) {
                   className="footer-main__logo-btn"
                   aria-label="Go to Home"
                 >
-                  <img src={logo} alt="Anandam Homes" className="footer-main__logo" />
+                  <img src={logo} alt="Anandam Properties" className="footer-main__logo" />
                 </button>
-                {/* <div className="footer-main__brand-name">Anandam Homes</div> */}
+                {/* <div className="footer-main__brand-name">Anandam Properties</div> */}
                 <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>
 

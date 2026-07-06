@@ -129,7 +129,7 @@ export default function Hero() {
 
       {/* Logo — desktop only */}
       <div className="hero__logo">
-        <img src={logoImg} alt="Anandam Homes" />
+        <img src={logoImg} alt="Anandam Properties" />
       </div>
 
       {/* Call Now — desktop only */}

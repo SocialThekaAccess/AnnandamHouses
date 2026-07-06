@@ -44,7 +44,7 @@ export default function ContactPage() {
           <img src={ContactUs} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
         <div className="page-hero__logo">
-          <img src={logoImg} alt="Anandam Homes" />
+          <img src={logoImg} alt="Anandam Properties" />
         </div>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden">

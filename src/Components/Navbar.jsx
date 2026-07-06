@@ -65,9 +65,9 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
           className="navbar__logo"
           href="/"
           onClick={(e) => { e.preventDefault(); handleNavigate("/"); }}
-          aria-label="Anandam Homes — Home"
+          aria-label="Anandam Properties — Home"
         >
-          <img src={logoImg} alt="Anandam Homes" />
+          <img src={logoImg} alt="Anandam Properties" />
         </a>
 
         {/* Desktop links */}

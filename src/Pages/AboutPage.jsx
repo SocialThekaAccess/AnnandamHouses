@@ -71,7 +71,7 @@ export default function AboutPage({ onNavigate }) {
           <img src={aboutBg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
         <div className="page-hero__logo">
-          <img src={logoImg} alt="Anandam Homes" />
+          <img src={logoImg} alt="Anandam Properties" />
         </div>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden" />
@@ -107,7 +107,7 @@ export default function AboutPage({ onNavigate }) {
 
             {/* CENTER — image */}
             <div className="aw-who__center">
-              <img src={heroImg} alt="Anandam Homes" className="aw-who__img" />
+              <img src={heroImg} alt="Anandam Properties" className="aw-who__img" />
             </div>
 
             {/* RIGHT — checklist + CTA */}

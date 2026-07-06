@@ -40,7 +40,7 @@ const LEGAL_PAGES = {
     eyebrow: "Privacy Policy",
     title: "Privacy designed with the same clarity as the rest of the brand experience.",
     intro:
-      "This policy explains how Anandam Homes may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
+      "This policy explains how Anandam Properties may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
     summaryTitle: "Your information is used to support property enquiries, buyer communication, and service improvement.",
     summaryCopy:
       "We keep the language practical and transparent so visitors understand what data may be requested, why it matters, and how it is handled in the normal course of business.",
@@ -81,7 +81,7 @@ const LEGAL_PAGES = {
     eyebrow: "Terms and Conditions",
     title: "Terms that support a more professional and transparent buyer journey.",
     intro:
-      "These terms govern use of the Anandam Homes website and any information, communication, and brand materials presented across its pages.",
+      "These terms govern use of the Anandam Properties website and any information, communication, and brand materials presented across its pages.",
     summaryTitle: "Use of this website means you agree to engage with its content responsibly and verify important project details directly with our team.",
     summaryCopy:
       "The website is intended as an introductory information resource. It supports early-stage understanding, but it does not replace formal legal, financial, technical, or contractual review.",
@@ -94,17 +94,17 @@ const LEGAL_PAGES = {
       {
         title: "Project Availability and Updates",
         copy:
-          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Homes before making decisions or relying on any published statement.",
+          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Properties before making decisions or relying on any published statement.",
       },
       {
         title: "Intellectual Property",
         copy:
-          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Homes or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
+          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Properties or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
       },
       {
         title: "Third-Party Links and Platforms",
         copy:
-          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Homes is not responsible for the availability, security, or content policies of those external platforms.",
+          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Properties is not responsible for the availability, security, or content policies of those external platforms.",
       },
       {
         title: "Limitation of Reliance",
@@ -215,7 +215,7 @@ function App() {
       [ROUTES.TERMS]: "Terms and Conditions | Anandam",
     };
 
-    document.title = titles[pathname] || "Anandam Homes";
+    document.title = titles[pathname] || "Anandam Properties";
   }, [pathname]);
 
   const { setCurrentPath } = useCallModal();

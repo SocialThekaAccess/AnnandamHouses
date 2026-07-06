@@ -70,7 +70,7 @@ export default function CallModal() {
       className="call-modal__backdrop"
       role="dialog"
       aria-modal="true"
-      aria-label="Contact Anandam Homes"
+      aria-label="Contact Anandam Properties"
       onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
     >
       <div className="call-modal__box">
