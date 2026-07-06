@@ -1,8 +1,41 @@
+# Anandam Properties - Robots Configuration
+# Website: https://anandamproperties.com
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://annandam-houses.vercel.app/sitemap.xml
+# Special rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
-# Disallow admin/private paths (add as needed)
+# Special rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Disallow admin/private paths
+Disallow: /admin/
+Disallow: /private/
 Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important resources
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.pdf$
+Allow: /*.mp4$
+
+# Sitemaps
+Sitemap: https://anandamproperties.com/sitemap.xml
+
+# Additional sitemap references (if needed in future)
+# Sitemap: https://anandamproperties.com/sitemap-blog.xml
+# Sitemap: https://anandamproperties.com/sitemap-projects.xml

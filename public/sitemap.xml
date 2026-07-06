@@ -6,42 +6,66 @@
 
   <!-- Home -->
   <url>
-    <loc>https://annandam-houses.vercel.app/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://anandamproperties.com/</loc>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Our Projects - Anandam Exotica Lothal -->
+  <url>
+    <loc>https://anandamproperties.com/our-projects</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://anandamproperties.com/contact-us</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- About Us -->
   <url>
-    <loc>https://annandam-houses.vercel.app/about-us</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://anandamproperties.com/about-us</loc>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Our Values -->
   <url>
-    <loc>https://annandam-houses.vercel.app/our-values</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://anandamproperties.com/our-values</loc>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://annandam-houses.vercel.app/blog</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://anandamproperties.com/blog</loc>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
-  <!-- Contact Us -->
+  <!-- Privacy Policy -->
   <url>
-    <loc>https://annandam-houses.vercel.app/contact-us</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://anandamproperties.com/privacy-policy</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms and Conditions -->
+  <url>
+    <loc>https://anandamproperties.com/terms-and-conditions</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

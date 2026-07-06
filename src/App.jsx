@@ -205,17 +205,60 @@ function App() {
     window.scrollTo(0, 0);
 
     const titles = {
-      [ROUTES.HOME]: "Anandam",
-      [ROUTES.ABOUT]: "About Us | Anandam",
-      [ROUTES.PROJECTS]: "Our Projects | Anandam",
-      [ROUTES.VALUES]: "Our Values | Anandam",
-      [ROUTES.BLOG]: "Blog | Anandam",
-      [ROUTES.CONTACT]: "Contact Us | Anandam",
-      [ROUTES.PRIVACY]: "Privacy Policy | Anandam",
-      [ROUTES.TERMS]: "Terms and Conditions | Anandam",
+      [ROUTES.HOME]: "Anandam | Premium Plots in Lothal & Dholera – Invest in Gujarat's Growth Corridor",
+      [ROUTES.ABOUT]: "About Us | Anandam Properties",
+      [ROUTES.PROJECTS]: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
+      [ROUTES.VALUES]: "Our Values | Anandam Properties",
+      [ROUTES.BLOG]: "Blog | Anandam Properties",
+      [ROUTES.CONTACT]: "Contact Us | Anandam Properties",
+      [ROUTES.PRIVACY]: "Privacy Policy | Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions | Anandam Properties",
+    };
+
+    const descriptions = {
+      [ROUTES.HOME]: "Explore premium plots near Lothal UNESCO Heritage Site & Dholera SIR. Anandam Properties offers transparent guidance, clear titles, and high-potential investment in Gujarat's fastest-growing corridor. Book a free site visit today.",
+      [ROUTES.ABOUT]: "Learn about Anandam Properties - Your trusted partner for premium plotted development in Gujarat.",
+      [ROUTES.PROJECTS]: "Anandam Exotica offers plotted development near Lothal UNESCO site & Dholera SIR. Plot sizes from 60–106 SQMT. Gated community, clear titles, ready infrastructure. Book a site visit.",
+      [ROUTES.VALUES]: "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.",
+      [ROUTES.BLOG]: "Read the latest insights and updates from Anandam Properties.",
+      [ROUTES.CONTACT]: "Get in touch with Anandam Properties for premium plot investments in Gujarat.",
+      [ROUTES.PRIVACY]: "Privacy Policy - Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions - Anandam Properties",
     };
 
     document.title = titles[pathname] || "Anandam Properties";
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', descriptions[pathname] || descriptions[ROUTES.HOME]);
+
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    const baseUrl = 'https://anandamproperties.com';
+    const canonicalUrl = pathname === ROUTES.HOME ? baseUrl + '/' : baseUrl + pathname;
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Update Open Graph URL
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', canonicalUrl);
+    }
+
+    // Update Twitter URL
+    let twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', canonicalUrl);
+    }
   }, [pathname]);
 
   const { setCurrentPath } = useCallModal();

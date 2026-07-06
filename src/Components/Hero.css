@@ -307,6 +307,7 @@
   height: auto;
   display: block;
   object-fit: contain;
+  object-position: center center;
 }
 
 .hero__overlay--mobile {
@@ -354,7 +355,6 @@
   stroke: rgba(255,255,255,0.60);
 }
 
-/* ── Responsive ── */
 /* ══════════════════════════════════════════
    MOBILE — ≤768px
    Image with fixed aspect ratio, text overlay on top
@@ -362,21 +362,13 @@
 @media (max-width: 768px) {
   /* Hero becomes relative container */
   .hero {
-    min-height: unset !important;
-    height: auto;
-    flex-direction: column;
-    align-items: stretch;
+    min-height: 100svh;
     overflow: hidden;
     background: #060c0a;
   }
 
-  /* Hide desktop background-image slides */
+  /* Show desktop slides on mobile too */
   .hero__slides-desktop {
-    display: none;
-  }
-
-  /* Show mobile <img> slides */
-  .hero__slides-mobile {
     display: block;
     position: relative;
     width: 100%;
@@ -425,18 +417,23 @@
     display: none;
   }
 
-  /* Grid pattern — hide on mobile */
+  /* Keep overlay */
+  .hero__overlay {
+    display: block;
+  }
+
+  /* Hide grid pattern */
   .hero__grid-pattern {
     display: none;
   }
 
-  /* Hide desktop logo & call btn — navbar handles them */
+  /* Hide desktop logo & call btn */
   .hero__logo,
   .hero__call-btn {
     display: none;
   }
 
-  /* Hide desktop scroll indicator */
+  /* Hide scroll indicator */
   .hero__scroll {
     display: none;
   }
@@ -516,7 +513,20 @@
     color: #fff;
   }
 
-  /* page-hero logo & call btn (inner pages) — navbar handles them */
+  /* On mobile, shift second slide to show the gate (right side of image) */
+  .hero__slide:nth-child(2) {
+    background-position: 70% top !important;
+  }
+
+  /* Progress bar */
+  .hero__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* page-hero logo & call btn (inner pages) */
   .page-hero__logo,
   .page-hero__call-btn {
     display: none;
