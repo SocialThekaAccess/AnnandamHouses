@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import ReactPlayer from "react-player";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -97,17 +98,34 @@ export default function Hero() {
   return (
     <section id="home" className="hero" style={{ position: "relative" }}>
 
-      {/* ── Video Background ── */}
+      {/* ── YouTube Video Background ── */}
       <div className="hero__video-bg">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="hero__video"
-        >
-          <source src={dholeraBgVideo} type="video/mp4" />
-        </video>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=4vm0QR8v9zY"
+          playing={true}
+          loop={true}
+          muted={true}
+          width="100%"
+          height="100%"
+          className="hero__video-player"
+          playsinline={true}
+          config={{
+            youtube: {
+              playerVars: {
+                autoplay: 1,
+                controls: 0,
+                rel: 0,
+                showinfo: 0,
+                mute: 1,
+                modestbranding: 1,
+                iv_load_policy: 3,
+                disablekb: 1,
+                fs: 0,
+                playsinline: 1
+              }
+            }
+          }}
+        />
       </div>
 
       {/* Overlay on top of video */}
