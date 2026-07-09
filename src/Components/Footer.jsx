@@ -79,9 +79,16 @@ function CtaBand({ onNavigate }) {
         <a href="tel:+916384800001" className="cta-band__phone">
           <PhoneIcon /> +91 63848 00001
         </a>
-        <button className="cta-band__btn" onClick={() => onNavigate?.(CONTACT_PATH)}>
+        <a 
+          href={CONTACT_PATH} 
+          className="cta-band__btn" 
+          onClick={(e) => { 
+            e.preventDefault(); 
+            onNavigate?.(CONTACT_PATH); 
+          }}
+        >
           Plan Your Visit
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -122,14 +129,17 @@ export default function Footer({ onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <div className="footer-nav__inner">
             {FOOTER_NAV.map(({ label, href }) => (
-              <button
+              <a
                 key={label}
-                type="button"
+                href={href}
                 className="footer-nav__link"
-                onClick={() => handleNavigate(href)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigate(href);
+                }}
               >
                 {label}
-              </button>
+              </a>
             ))}
           </div>
         </nav>
@@ -138,13 +148,17 @@ export default function Footer({ onNavigate }) {
           <div className="footer-main__inner">
             <div className="footer-main__grid">
               <div className="footer-main__brand">
-                <button
-                  onClick={() => handleNavigate("/")}
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigate("/");
+                  }}
                   className="footer-main__logo-btn"
                   aria-label="Go to Home"
                 >
                   <img src={logo} alt="Anandam Properties" className="footer-main__logo" />
-                </button>
+                </a>
                 {/* <div className="footer-main__brand-name">Anandam Properties</div> */}
                 <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>
@@ -200,12 +214,12 @@ export default function Footer({ onNavigate }) {
                 &copy; {new Date().getFullYear()} Anandam . All rights reserved.
               </p>
               <div className="footer-main__legal">
-                <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(PRIVACY_PATH)}>
+                <a href={PRIVACY_PATH} className="footer-main__privacy" onClick={(e) => { e.preventDefault(); handleNavigate(PRIVACY_PATH); }}>
                   Privacy Policy
-                </button>
-                <button type="button" className="footer-main__privacy" onClick={() => handleNavigate(TERMS_PATH)}>
+                </a>
+                <a href={TERMS_PATH} className="footer-main__privacy" onClick={(e) => { e.preventDefault(); handleNavigate(TERMS_PATH); }}>
                   Terms and Conditions
-                </button>
+                </a>
               </div>
             </div>
           </div>

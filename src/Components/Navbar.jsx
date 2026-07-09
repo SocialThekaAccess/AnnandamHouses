@@ -73,15 +73,18 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
         {/* Desktop links */}
         <div className="navbar__links" role="list">
           {NAV_ITEMS.map((item) => (
-            <button
+            <a
               key={item.path}
-              type="button"
+              href={item.path}
               role="listitem"
               className={`navbar__link${currentPath === item.path ? " is-active" : ""}`}
-              onClick={() => handleNavigate(item.path)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigate(item.path);
+              }}
             >
               {item.label}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -120,14 +123,17 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
       >
         <div className="navbar__drawer-inner">
           {NAV_ITEMS.map((item) => (
-            <button
+            <a
               key={item.path}
-              type="button"
+              href={item.path}
               className={`navbar__drawer-link${currentPath === item.path ? " is-active" : ""}`}
-              onClick={() => handleNavigate(item.path)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigate(item.path);
+              }}
             >
               {item.label}
-            </button>
+            </a>
           ))}
         </div>
       </div>
