@@ -18,19 +18,21 @@
   z-index: 0;
   overflow: hidden;
   background: #0a0f0d;
+  cursor: default;
 }
 
-/* Hide YouTube player controls */
+/* Hide all YouTube UI elements including play/pause button */
 .cat-showcase__video::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  bottom: 0;
   background: transparent;
   z-index: 10;
   pointer-events: none;
+  cursor: default;
 }
 
 .cat-showcase__video-overlay {

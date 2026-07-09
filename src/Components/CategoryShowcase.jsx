@@ -83,16 +83,17 @@ export default function CategoryShowcase() {
             pointerEvents: 'none',
           }}
         />
-        {/* Cover for YouTube controls */}
+        {/* Full cover to hide all YouTube UI elements */}
         <div style={{
           position: 'absolute',
-          bottom: 0,
+          top: 0,
           left: 0,
           right: 0,
-          height: '80px',
+          bottom: 0,
           background: 'transparent',
           zIndex: 5,
           pointerEvents: 'none',
+          cursor: 'default',
         }} />
       </div>
       <div className="cat-showcase__video-overlay" />
