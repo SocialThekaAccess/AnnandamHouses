@@ -5,5 +5,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     caseSensitive: false
+  },
+  server: {
+    historyApiFallback: true
+  },
+  preview: {
+    historyApiFallback: true
   }
 })
