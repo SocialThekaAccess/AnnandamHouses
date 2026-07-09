@@ -99,57 +99,17 @@ export default function Hero() {
       {/* ── YouTube Video Background ── */}
       <div className="hero__video-bg">
         <iframe
-          src="https://www.youtube.com/embed/4vm0QR8v9zY?autoplay=1&mute=1&loop=1&playlist=4vm0QR8v9zY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          src="https://www.youtube.com/embed/4vm0QR8v9zY?autoplay=1&mute=1&loop=1&playlist=4vm0QR8v9zY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
           title="Anandam Properties Background Video"
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '100vw',
-            height: '100vh',
-            minWidth: '100%',
-            minHeight: '100%',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
-            objectFit: 'cover',
-            zIndex: 0
-          }}
         />
       </div>
 
-      {/* ── Desktop: background-image slides (absolute, full-bleed) ── */}
-      <div className="hero__slides-desktop" style={{ display: 'none' }}>
-        {SLIDES.map((s, i) => (
-          <div
-            key={i}
-            className={`hero__slide${i === current ? " hero__slide--active" : ""}${i === prev ? " hero__slide--prev" : ""}`}
-            style={{ backgroundImage: `url(${s.bg})`, backgroundPosition: s.pos }}
-          />
-        ))}
-        <div className="hero__overlay" />
-        <div className="hero__grid-pattern" />
-      </div>
-
-      {/* ── Mobile: real <img> — zero crop, natural height ── */}
-      <div className="hero__slides-mobile" aria-hidden="true" style={{ display: 'none' }}>
-        {SLIDES.map((s, i) => (
-          <div
-            key={i}
-            className={`hero__mobile-slide${i === current ? " hero__mobile-slide--active" : ""}`}
-          >
-            <img
-              src={s.bg}
-              alt=""
-              className="hero__mobile-img"
-              draggable="false"
-            />
-          </div>
-        ))}
-        <div className="hero__overlay hero__overlay--mobile" />
-      </div>
+      {/* Overlay on top of video */}
+      <div className="hero__overlay" />
+      <div className="hero__grid-pattern" />
 
       {/* Logo — desktop only */}
       <div className="hero__logo">

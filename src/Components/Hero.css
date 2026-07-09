@@ -37,6 +37,14 @@
   min-width: 177.77vh; /* 16:9 aspect ratio */
   transform: translate(-50%, -50%);
   pointer-events: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .hero__video-bg iframe {
+    width: 300vw;
+    height: 168.75vw;
+  }
 }
 
 /* ── Slider backgrounds ── */
@@ -69,13 +77,13 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   background: linear-gradient(
     105deg,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.65) 40%,
-    rgba(0, 0, 0, 0.45) 70%,
-    rgba(0, 0, 0, 0.30) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.70) 40%,
+    rgba(0, 0, 0, 0.50) 70%,
+    rgba(0, 0, 0, 0.35) 100%
   );
 }
 
@@ -91,7 +99,7 @@
 .hero__grid-pattern {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   background-image:
     linear-gradient(rgba(184,151,90,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(184,151,90,0.03) 1px, transparent 1px);
@@ -104,7 +112,7 @@
   position: absolute;
   top: 0;
   left: 5%;    /* 0 → 5% — text ke saath match */
-  z-index: 6;
+  z-index: 10;
 }
 
 .hero__logo img {
@@ -118,7 +126,7 @@
   position: absolute;
   top: 32px;
   right: 5%;
-  z-index: 1002;
+  z-index: 10;
   display: inline-flex;
   align-items: center;
   gap: 0;
@@ -181,7 +189,7 @@
 /* ── Main container ── */
 .hero__container {
   position: relative;
-  z-index: 5;
+  z-index: 10;
   width: 100%;
   max-width: none;
   margin: 0;
@@ -353,7 +361,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0;
-  z-index: 6;
+  z-index: 10;
   animation: bounce 2.2s ease-in-out infinite;
   text-decoration: none;
   cursor: pointer;
