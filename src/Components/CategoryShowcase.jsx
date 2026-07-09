@@ -57,9 +57,9 @@ export default function CategoryShowcase() {
     }
   };
 
-  // Extract video ID from YouTube URL
+  // Extract video ID from YouTube URL and create clean embed URL
   const videoId = "4vm0QR8v9zY";
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&cc_load_policy=0&start=0&end=0&autohide=1&wmode=transparent`;
 
   return (
     <section className="cat-showcase" ref={ref}>
@@ -68,33 +68,25 @@ export default function CategoryShowcase() {
         <iframe
           src={embedUrl}
           title="Dholera Background Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+          allow="autoplay; encrypted-media"
+          frameBorder="0"
+          tabIndex="-1"
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%) scale(1.02)',
+            transform: 'translate(-50%, -50%) scale(1.05)',
             width: '100vw',
-            height: '56.25vw', // 16:9 aspect ratio
+            height: '56.25vw',
             minHeight: '100%',
-            minWidth: '177.78vh', // 16:9 aspect ratio
+            minWidth: '177.78vh',
             border: 'none',
             pointerEvents: 'none',
+            outline: 'none',
           }}
         />
-        {/* Full cover to hide all YouTube UI elements */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'transparent',
-          zIndex: 5,
-          pointerEvents: 'none',
-          cursor: 'default',
-        }} />
+        {/* Invisible overlay to block all interactions */}
+        <div className="cat-showcase__video-blocker" />
       </div>
       <div className="cat-showcase__video-overlay" />
 

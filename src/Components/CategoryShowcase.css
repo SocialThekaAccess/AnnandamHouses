@@ -21,9 +21,8 @@
   cursor: default;
 }
 
-/* Hide all YouTube UI elements including play/pause button */
-.cat-showcase__video::after {
-  content: '';
+/* Block all video interactions and hide controls */
+.cat-showcase__video-blocker {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,6 +30,20 @@
   bottom: 0;
   background: transparent;
   z-index: 10;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Additional safeguard using pseudo-element */
+.cat-showcase__video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 9;
   pointer-events: none;
   cursor: default;
 }
