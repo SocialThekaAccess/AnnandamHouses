@@ -49,6 +49,13 @@ const PANELS = [
 
 export default function CategoryShowcase() {
   const [ref, visible] = useInView(0.1);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    // Start playing after component mounts
+    const timer = setTimeout(() => setPlaying(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleClick = (panel) => {
     if (panel.wa) {
@@ -63,12 +70,18 @@ export default function CategoryShowcase() {
       <div className="cat-showcase__video">
         <ReactPlayer
           url="https://www.youtube.com/watch?v=4vm0QR8v9zY"
-          playing={true}
+          playing={playing}
           loop={true}
           muted={true}
           width="100%"
           height="100%"
           playsinline={true}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
           config={{
             youtube: {
               playerVars: {
@@ -78,10 +91,12 @@ export default function CategoryShowcase() {
                 showinfo: 0,
                 mute: 1,
                 modestbranding: 1,
+                loop: 1,
                 iv_load_policy: 3,
                 disablekb: 1,
                 fs: 0,
-                playsinline: 1
+                playsinline: 1,
+                enablejsapi: 1
               }
             }
           }}
