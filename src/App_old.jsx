@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
@@ -8,6 +8,7 @@ import CallModal from "./Components/CallModal";
 import { useCallModal } from "./context/CallModalContext";
 import About from "./Components/About";
 import Values from "./Components/Values";
+// import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import BrandStory from "./Components/BrandStory";
 import FAQ from "./Components/FAQ";
@@ -75,7 +76,7 @@ const LEGAL_PAGES = {
     eyebrow: "Privacy Policy",
     title: "Privacy designed with the same clarity as the rest of the brand experience.",
     intro:
-      "This policy explains how Anandam Homes may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
+      "This policy explains how Anandam Properties may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
     summaryTitle: "Your information is used to support property enquiries, buyer communication, and service improvement.",
     summaryCopy:
       "We keep the language practical and transparent so visitors understand what data may be requested, why it matters, and how it is handled in the normal course of business.",
@@ -116,7 +117,7 @@ const LEGAL_PAGES = {
     eyebrow: "Terms and Conditions",
     title: "Terms that support a more professional and transparent buyer journey.",
     intro:
-      "These terms govern use of the Anandam Homes website and any information, communication, and brand materials presented across its pages.",
+      "These terms govern use of the Anandam Properties website and any information, communication, and brand materials presented across its pages.",
     summaryTitle: "Use of this website means you agree to engage with its content responsibly and verify important project details directly with our team.",
     summaryCopy:
       "The website is intended as an introductory information resource. It supports early-stage understanding, but it does not replace formal legal, financial, technical, or contractual review.",
@@ -129,17 +130,17 @@ const LEGAL_PAGES = {
       {
         title: "Project Availability and Updates",
         copy:
-          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Homes before making decisions or relying on any published statement.",
+          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Properties before making decisions or relying on any published statement.",
       },
       {
         title: "Intellectual Property",
         copy:
-          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Homes or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
+          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Properties or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
       },
       {
         title: "Third-Party Links and Platforms",
         copy:
-          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Homes is not responsible for the availability, security, or content policies of those external platforms.",
+          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Properties is not responsible for the availability, security, or content policies of those external platforms.",
       },
       {
         title: "Limitation of Reliance",
@@ -258,12 +259,15 @@ function HomePage() {
         <div className="home-map__header">
           <span className="home-map__eyebrow">National Maritime Heritage Complex</span>
           <h2 className="home-map__heading">Master Plan of World's Biggest Maritime Museum</h2>
-          <p>NMHC is being developed as a "complete" tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
+          <p>NMHC is being developed as a “complete” tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
         </div>
         <img src={mapImg} alt="Development map" className="home-map__img" />
       </div>
+      {/* <Location /> */}
       <BrandStory />
       <Values />
+      {/* <BrandStory /> */}
+      {/* <Projects /> */}
       <Features />
       <CustomerReviews />
       <CategoryShowcase />
@@ -275,34 +279,128 @@ function HomePage() {
   );
 }
 
-function AppContent() {
-  return (
-    <>
-      <ScrollToTop />
-      <PageMetadata />
-      <Navbar />
-      <Routes>
-        <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-        <Route path={ROUTES.PROJECTS} element={<ProjectsPage />} />
-        <Route path={ROUTES.VALUES} element={<ValuesPage />} />
-        <Route path={ROUTES.BLOG} element={<BlogPage />} />
-        <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
-        <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />
-      </Routes>
-      <Footer />
-      <BackToTopButton />
-      <CallModal />
-    </>
-  );
+function getPathname() {
+  const path = window.location.pathname || ROUTES.HOME;
+  if (Object.values(ROUTES).includes(path)) {
+    return path;
+  }
+  return ROUTES.HOME;
 }
 
 function App() {
+  const [pathname, setPathname] = useState(getPathname);
+
+  useEffect(() => {
+    const handlePopState = () => setPathname(getPathname());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const titles = {
+      [ROUTES.HOME]: "Anandam | Premium Plots in Lothal & Dholera – Invest in Gujarat's Growth Corridor",
+      [ROUTES.ABOUT]: "About Us | Anandam Properties",
+      [ROUTES.PROJECTS]: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
+      [ROUTES.VALUES]: "Our Values | Anandam Properties",
+      [ROUTES.BLOG]: "Blog | Anandam Properties",
+      [ROUTES.CONTACT]: "Contact Us | Anandam Properties",
+      [ROUTES.PRIVACY]: "Privacy Policy | Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions | Anandam Properties",
+    };
+
+    const descriptions = {
+      [ROUTES.HOME]: "Explore premium plots near Lothal UNESCO Heritage Site & Dholera SIR. Anandam Properties offers transparent guidance, clear titles, and high-potential investment in Gujarat's fastest-growing corridor. Book a free site visit today.",
+      [ROUTES.ABOUT]: "Learn about Anandam Properties - Your trusted partner for premium plotted development in Gujarat.",
+      [ROUTES.PROJECTS]: "Anandam Exotica offers plotted development near Lothal UNESCO site & Dholera SIR. Plot sizes from 60–106 SQMT. Gated community, clear titles, ready infrastructure. Book a site visit.",
+      [ROUTES.VALUES]: "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.",
+      [ROUTES.BLOG]: "Read the latest insights and updates from Anandam Properties.",
+      [ROUTES.CONTACT]: "Get in touch with Anandam Properties for premium plot investments in Gujarat.",
+      [ROUTES.PRIVACY]: "Privacy Policy - Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions - Anandam Properties",
+    };
+
+    document.title = titles[pathname] || "Anandam Properties";
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', descriptions[pathname] || descriptions[ROUTES.HOME]);
+
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    const baseUrl = 'https://anandamproperties.com';
+    const canonicalUrl = pathname === ROUTES.HOME ? baseUrl + '/' : baseUrl + pathname;
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Update Open Graph URL
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', canonicalUrl);
+    }
+
+    // Update Twitter URL
+    let twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', canonicalUrl);
+    }
+  }, [pathname]);
+
+  const { setCurrentPath } = useCallModal();
+
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname, setCurrentPath]);
+
+  const navigate = (nextPath) => {
+    if (nextPath === pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    window.history.pushState({}, "", nextPath);
+    setPathname(nextPath);
+  };
+
+  const renderPage = () => {
+    switch (pathname) {
+      case ROUTES.ABOUT:
+        return <AboutPage onNavigate={navigate} />;
+      case ROUTES.PROJECTS:
+        return <ProjectsPage onNavigate={navigate} />;
+      case ROUTES.VALUES:
+        return <ValuesPage onNavigate={navigate} />;
+      case ROUTES.BLOG:
+        return <BlogPage onNavigate={navigate} />;
+      case ROUTES.CONTACT:
+        return <ContactPage />;
+      case ROUTES.PRIVACY:
+      case ROUTES.TERMS:
+        return <LegalPage {...LEGAL_PAGES[pathname]} onNavigate={navigate} />;
+      case ROUTES.HOME:
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <>
+      <Navbar currentPath={pathname} onNavigate={navigate} />
+      {renderPage()}
+      <Footer currentPath={pathname} onNavigate={navigate} />
+      <ScrollToTop />
+      <CallModal />
+    </>
   );
 }
 

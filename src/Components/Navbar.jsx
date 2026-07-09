@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
@@ -15,7 +16,9 @@ const NAV_ITEMS = [
   { label: "Contact Us", path: "/contact-us" },
 ];
 
-export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
+export default function Navbar() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [scrolled, setScrolled] = useState(false);
   const [menuState, setMenuState] = useState({ open: false, path: HOME_PATH });
   const { setOpen } = useCallModal();
@@ -48,43 +51,29 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
     });
   };
 
-  const handleNavigate = (path) => {
-    closeMenu();
-    if (currentPath === path) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    onNavigate?.(path);
-  };
-
   return (
     <>
       <nav className={`navbar${scrolled ? " scrolled" : ""}${currentPath !== HOME_PATH ? " navbar--show-logo" : ""}`} aria-label="Primary">
         {/* Logo — visible on mobile */}
-        <a
+        <Link
           className="navbar__logo"
-          href="/"
-          onClick={(e) => { e.preventDefault(); handleNavigate("/"); }}
+          to="/"
           aria-label="Anandam Properties — Home"
         >
           <img src={logoImg} alt="Anandam Properties" />
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <div className="navbar__links" role="list">
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.path}
-              href={item.path}
+              to={item.path}
               role="listitem"
               className={`navbar__link${currentPath === item.path ? " is-active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigate(item.path);
-              }}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -123,17 +112,14 @@ export default function Navbar({ currentPath = HOME_PATH, onNavigate }) {
       >
         <div className="navbar__drawer-inner">
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.path}
-              href={item.path}
+              to={item.path}
               className={`navbar__drawer-link${currentPath === item.path ? " is-active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigate(item.path);
-              }}
+              onClick={closeMenu}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

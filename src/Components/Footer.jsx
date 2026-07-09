@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Footer.css";
 import logo from "../assets/anandamhomeslogo.png";
-import googleEarthVideo from "../assets/GoogleEarth.mp4";
+import googleEarthVideo from "./assets/GoogleEarth.mp4";
 
 const MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
 
@@ -68,7 +69,7 @@ const SOCIALS = [
   { label: "YouTube", icon: <YoutubeIcon />, href: "https://www.youtube.com/@Anandamexotica" },
 ];
 
-function CtaBand({ onNavigate }) {
+function CtaBand() {
   return (
     <div className="cta-band">
       <div>
@@ -79,40 +80,21 @@ function CtaBand({ onNavigate }) {
         <a href="tel:+916384800001" className="cta-band__phone">
           <PhoneIcon /> +91 63848 00001
         </a>
-        <a 
-          href={CONTACT_PATH} 
-          className="cta-band__btn" 
-          onClick={(e) => { 
-            e.preventDefault(); 
-            onNavigate?.(CONTACT_PATH); 
-          }}
-        >
+        <Link to={CONTACT_PATH} className="cta-band__btn">
           Plan Your Visit
-        </a>
+        </Link>
       </div>
     </div>
   );
 }
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
   const [videoOpen, setVideoOpen] = useState(false);
-  const handleNavigate = (href) => {
-    if (href.includes("#")) {
-      const [path, hash] = href.split("#");
-      if (path === HOME_PATH || path === "") {
-        onNavigate?.(HOME_PATH);
-        requestAnimationFrame(() => {
-          document.querySelector(`#${hash}`)?.scrollIntoView({ behavior: "smooth" });
-        });
-        return;
-      }
-    }
-    onNavigate?.(href);
-  };
+  const location = useLocation();
 
   return (
     <>
-      <CtaBand onNavigate={handleNavigate} />
+      <CtaBand />
 
       <footer className="footer-shell">
         <div className="footer-disclaimer">
@@ -129,17 +111,13 @@ export default function Footer({ onNavigate }) {
         <nav className="footer-nav" aria-label="Footer navigation">
           <div className="footer-nav__inner">
             {FOOTER_NAV.map(({ label, href }) => (
-              <a
+              <Link
                 key={label}
-                href={href}
+                to={href}
                 className="footer-nav__link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigate(href);
-                }}
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </div>
         </nav>
@@ -148,17 +126,13 @@ export default function Footer({ onNavigate }) {
           <div className="footer-main__inner">
             <div className="footer-main__grid">
               <div className="footer-main__brand">
-                <a
-                  href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavigate("/");
-                  }}
+                <Link
+                  to="/"
                   className="footer-main__logo-btn"
                   aria-label="Go to Home"
                 >
                   <img src={logo} alt="Anandam Properties" className="footer-main__logo" />
-                </a>
+                </Link>
                 {/* <div className="footer-main__brand-name">Anandam Properties</div> */}
                 <div className="footer-main__brand-tag">Thoughtfully planned spaces for the next chapter of living</div>
               </div>
@@ -214,12 +188,12 @@ export default function Footer({ onNavigate }) {
                 &copy; {new Date().getFullYear()} Anandam . All rights reserved.
               </p>
               <div className="footer-main__legal">
-                <a href={PRIVACY_PATH} className="footer-main__privacy" onClick={(e) => { e.preventDefault(); handleNavigate(PRIVACY_PATH); }}>
+                <Link to={PRIVACY_PATH} className="footer-main__privacy">
                   Privacy Policy
-                </a>
-                <a href={TERMS_PATH} className="footer-main__privacy" onClick={(e) => { e.preventDefault(); handleNavigate(TERMS_PATH); }}>
+                </Link>
+                <Link to={TERMS_PATH} className="footer-main__privacy">
                   Terms and Conditions
-                </a>
+                </Link>
               </div>
             </div>
           </div>
