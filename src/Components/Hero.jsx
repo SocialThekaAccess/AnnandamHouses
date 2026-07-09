@@ -4,6 +4,7 @@ import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import Anandamslider2 from "../assets/Anandamslider2.png";
 import Anandamslider3 from "../assets/sliderhome3.png";
+import dholeraBgVideo from "../assets/dholeravideo.mp4";
 import { useCallModal } from "../context/CallModalContext";
 
 const ChevronDown = () => (
@@ -96,15 +97,17 @@ export default function Hero() {
   return (
     <section id="home" className="hero" style={{ position: "relative" }}>
 
-      {/* ── YouTube Video Background ── */}
+      {/* ── Video Background ── */}
       <div className="hero__video-bg">
-        <iframe
-          src="https://www.youtube.com/embed/4vm0QR8v9zY?autoplay=1&mute=1&loop=1&playlist=4vm0QR8v9zY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-          title="Anandam Properties Background Video"
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero__video"
+        >
+          <source src={dholeraBgVideo} type="video/mp4" />
+        </video>
       </div>
 
       {/* Overlay on top of video */}
