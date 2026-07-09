@@ -96,8 +96,32 @@ export default function Hero() {
   return (
     <section id="home" className="hero" style={{ position: "relative" }}>
 
+      {/* ── YouTube Video Background ── */}
+      <div className="hero__video-bg">
+        <iframe
+          src="https://www.youtube.com/embed/4vm0QR8v9zY?autoplay=1&mute=1&loop=1&playlist=4vm0QR8v9zY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          title="Anandam Properties Background Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '100vw',
+            height: '100vh',
+            minWidth: '100%',
+            minHeight: '100%',
+            transform: 'translate(-50%, -50%)',
+            pointerEvents: 'none',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+        />
+      </div>
+
       {/* ── Desktop: background-image slides (absolute, full-bleed) ── */}
-      <div className="hero__slides-desktop">
+      <div className="hero__slides-desktop" style={{ display: 'none' }}>
         {SLIDES.map((s, i) => (
           <div
             key={i}
@@ -110,7 +134,7 @@ export default function Hero() {
       </div>
 
       {/* ── Mobile: real <img> — zero crop, natural height ── */}
-      <div className="hero__slides-mobile" aria-hidden="true">
+      <div className="hero__slides-mobile" aria-hidden="true" style={{ display: 'none' }}>
         {SLIDES.map((s, i) => (
           <div
             key={i}
@@ -149,15 +173,15 @@ export default function Hero() {
 
       {/* Text content */}
       <div className="hero__container">
-        <div className={`hero__left${loaded ? "" : " hidden"}${textVisible ? "" : " text-out"}`}>
-          <h1 className="hero__headline">{slide.headline}</h1>
-          <p className="hero__tagline">{slide.tagline}</p>
+        <div className={`hero__left${loaded ? "" : " hidden"}`}>
+          <h1 className="hero__headline">Thoughtfully<br />Planned Living</h1>
+          <p className="hero__tagline">Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</p>
           <div className="hero__rule" />
         </div>
       </div>
 
       {/* Slide numbers */}
-      <div className="hero__slider-nums">
+      <div className="hero__slider-nums" style={{ display: 'none' }}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
@@ -170,7 +194,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="hero__progress">
+      <div className="hero__progress" style={{ display: 'none' }}>
         <div key={current} className="hero__progress-bar" />
       </div>
 
