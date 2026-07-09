@@ -74,7 +74,7 @@ export default function CategoryShowcase() {
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -50%) scale(1.02)',
             width: '100vw',
             height: '56.25vw', // 16:9 aspect ratio
             minHeight: '100%',
@@ -83,6 +83,17 @@ export default function CategoryShowcase() {
             pointerEvents: 'none',
           }}
         />
+        {/* Cover for YouTube controls */}
+        <div style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '80px',
+          background: 'transparent',
+          zIndex: 5,
+          pointerEvents: 'none',
+        }} />
       </div>
       <div className="cat-showcase__video-overlay" />
 
