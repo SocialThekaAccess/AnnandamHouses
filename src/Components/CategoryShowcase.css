@@ -14,10 +14,29 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
+}
+
+.cat-showcase__video > div,
+.cat-showcase__video iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: 100vw !important;
+  height: 56.25vw !important; /* 16:9 aspect ratio */
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .cat-showcase__video > div,
+  .cat-showcase__video iframe {
+    width: 177.78vh !important; /* 16:9 aspect ratio */
+    height: 100vh !important;
+  }
 }
 
 .cat-showcase__video-overlay {

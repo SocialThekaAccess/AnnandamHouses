@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import doleraVideo from "../assets/dholeravideo.mp4";
+import ReactPlayer from "react-player";
 import "./CategoryShowcase.css";
 
 function useInView(threshold = 0.1) {
@@ -60,8 +60,34 @@ export default function CategoryShowcase() {
 
   return (
     <section className="cat-showcase" ref={ref}>
-      <video className="cat-showcase__video" src={doleraVideo} autoPlay muted loop playsInline style={{display:'none'}} />
-      <div className="cat-showcase__video-overlay" style={{background:'#0d1f18'}} />
+      <div className="cat-showcase__video">
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=4vm0QR8v9zY"
+          playing={true}
+          loop={true}
+          muted={true}
+          width="100%"
+          height="100%"
+          playsinline={true}
+          config={{
+            youtube: {
+              playerVars: {
+                autoplay: 1,
+                controls: 0,
+                rel: 0,
+                showinfo: 0,
+                mute: 1,
+                modestbranding: 1,
+                iv_load_policy: 3,
+                disablekb: 1,
+                fs: 0,
+                playsinline: 1
+              }
+            }
+          }}
+        />
+      </div>
+      <div className="cat-showcase__video-overlay" />
 
       {PANELS.map((panel, i) => (
         <div
