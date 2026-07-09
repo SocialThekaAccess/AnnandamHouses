@@ -1,11 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import ReactPlayer from "react-player";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import Anandamslider2 from "../assets/Anandamslider2.png";
 import Anandamslider3 from "../assets/sliderhome3.png";
-import dholeraBgVideo from "../assets/dholeravideo.mp4";
 import { useCallModal } from "../context/CallModalContext";
 
 const ChevronDown = () => (
@@ -97,38 +95,25 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero" style={{ position: "relative" }}>
-
-      {/* ── YouTube Video Background ── */}
-      <div className="hero__video-bg">
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=4vm0QR8v9zY"
-          playing={true}
-          loop={true}
-          muted={true}
-          width="100%"
-          height="100%"
-          className="hero__video-player"
-          playsinline={true}
-          config={{
-            youtube: {
-              playerVars: {
-                autoplay: 1,
-                controls: 0,
-                rel: 0,
-                showinfo: 0,
-                mute: 1,
-                modestbranding: 1,
-                iv_load_policy: 3,
-                disablekb: 1,
-                fs: 0,
-                playsinline: 1
-              }
-            }
+      <div className="hero__slides-desktop">
+        {prev !== null && (
+          <div
+            className="hero__slide hero__slide--prev"
+            style={{
+              backgroundImage: `url(${SLIDES[prev].bg})`,
+              backgroundPosition: SLIDES[prev].pos,
+            }}
+          />
+        )}
+        <div
+          className="hero__slide hero__slide--active"
+          style={{
+            backgroundImage: `url(${slide.bg})`,
+            backgroundPosition: slide.pos,
           }}
         />
       </div>
 
-      {/* Overlay on top of video */}
       <div className="hero__overlay" />
       <div className="hero__grid-pattern" />
 
@@ -154,15 +139,15 @@ export default function Hero() {
 
       {/* Text content */}
       <div className="hero__container">
-        <div className={`hero__left${loaded ? "" : " hidden"}`}>
-          <h1 className="hero__headline">Thoughtfully<br />Planned Living</h1>
-          <p className="hero__tagline">Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</p>
+        <div className={`hero__left${loaded ? "" : " hidden"}${textVisible ? "" : " text-out"}`}>
+          <h1 className="hero__headline">{slide.headline}</h1>
+          <p className="hero__tagline">{slide.tagline}</p>
           <div className="hero__rule" />
         </div>
       </div>
 
       {/* Slide numbers */}
-      <div className="hero__slider-nums" style={{ display: 'none' }}>
+      <div className="hero__slider-nums">
         {SLIDES.map((_, i) => (
           <button
             key={i}
@@ -175,7 +160,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="hero__progress" style={{ display: 'none' }}>
+      <div className="hero__progress">
         <div key={current} className="hero__progress-bar" />
       </div>
 
