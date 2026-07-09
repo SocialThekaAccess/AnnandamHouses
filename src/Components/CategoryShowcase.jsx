@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 import "./CategoryShowcase.css";
 
 function useInView(threshold = 0.1) {
@@ -49,13 +48,6 @@ const PANELS = [
 
 export default function CategoryShowcase() {
   const [ref, visible] = useInView(0.1);
-  const [playing, setPlaying] = useState(false);
-
-  useEffect(() => {
-    // Start playing after component mounts
-    const timer = setTimeout(() => setPlaying(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleClick = (panel) => {
     if (panel.wa) {
@@ -65,40 +57,30 @@ export default function CategoryShowcase() {
     }
   };
 
+  // Extract video ID from YouTube URL
+  const videoId = "4vm0QR8v9zY";
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
+
   return (
     <section className="cat-showcase" ref={ref}>
+      {/* YouTube Video Background */}
       <div className="cat-showcase__video">
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=4vm0QR8v9zY"
-          playing={playing}
-          loop={true}
-          muted={true}
-          width="100%"
-          height="100%"
-          playsinline={true}
+        <iframe
+          src={embedUrl}
+          title="Dholera Background Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
           style={{
             position: 'absolute',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-          }}
-          config={{
-            youtube: {
-              playerVars: {
-                autoplay: 1,
-                controls: 0,
-                rel: 0,
-                showinfo: 0,
-                mute: 1,
-                modestbranding: 1,
-                loop: 1,
-                iv_load_policy: 3,
-                disablekb: 1,
-                fs: 0,
-                playsinline: 1,
-                enablejsapi: 1
-              }
-            }
+            width: '100vw',
+            height: '56.25vw', // 16:9 aspect ratio
+            minHeight: '100%',
+            minWidth: '177.78vh', // 16:9 aspect ratio
+            border: 'none',
+            pointerEvents: 'none',
           }}
         />
       </div>
