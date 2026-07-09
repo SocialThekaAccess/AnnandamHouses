@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Footer.css";
 import logo from "../assets/anandamhomeslogo.png";
-import googleEarthVideo from "./assets/GoogleEarth.mp4";
+import googleEarthVideo from "../assets/GoogleEarth.mp4";
 
 const MAP_URL = "https://www.google.com/maps?q=22.48065913178268,72.33683683815303";
 
