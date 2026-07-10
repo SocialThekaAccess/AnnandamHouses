@@ -37,8 +37,8 @@ const ROUTES = {
 
 const PAGE_METADATA = {
   [ROUTES.HOME]: {
-    title: "Anandam | Premium Plots in Lothal & Dholera – Invest in Gujarat's Growth Corridor",
-    description: "Explore premium RERA-approved plots near Lothal UNESCO Heritage Site & Dholera SIR. Anandam offers transparent guidance, clear titles, and high-potential investment in Gujarat's fastest-growing corridor. Book a free site visit today.",
+    title: "Premium Residential Plots Near Dholera & Lothal | Anandam Properties",
+    description: "Explore premium residential plots near Dholera Smart City and Lothal. Anandam Properties offers legally verified plots, transparent documentation, and expert guidance for long-term property investment in Gujarat",
   },
   [ROUTES.ABOUT]: {
     title: "About Us | Anandam Homes",
@@ -46,7 +46,7 @@ const PAGE_METADATA = {
   },
   [ROUTES.PROJECTS]: {
     title: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
-    description: "Anandam Exotica offers RERA-approved plotted development near Lothal UNESCO site & Dholera SIR. Plot sizes from 60–106 SQMT. Gated community, clear titles, ready infrastructure. Book a site visit.",
+    description: "Anandam Exotica offers premium plotted development near Lothal UNESCO Heritage Site & Dholera SIR. Plot sizes from 60–106 SQMT with a gated community, clear titles, and ready infrastructure. Book your site visit today.",
   },
   [ROUTES.VALUES]: {
     title: "Our Values | Anandam Homes",
