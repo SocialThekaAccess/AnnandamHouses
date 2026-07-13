@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./PageShell.css";
 import "./AboutPage.css";
 import aboutBg from "../assets/about.png";
@@ -61,6 +62,28 @@ const ZONES = [
 const COMBO = ["Tourism growth", "Industrial development", "Future employment", "Long-term appreciation", "Better connectivity"];
 
 export default function AboutPage({ onNavigate }) {
+  useEffect(() => {
+    // Set page title and meta description
+    document.title = "About Us | Anandam Properties";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Learn about Anandam Properties - Your trusted partner for premium plotted development in Gujarat.");
+    }
+    
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "About Us | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Learn about Anandam Properties - Your trusted partner for premium plotted development in Gujarat.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">

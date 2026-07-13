@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Contact from "../Components/Contact";
 import "./PageShell.css";
 import ContactUs from "../assets/ContactUsA.png";
@@ -31,6 +32,25 @@ const CHANNELS = [
 ];
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = "Contact Us | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Get in touch with Anandam Properties for premium plot investments in Gujarat.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Contact Us | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Get in touch with Anandam Properties for premium plot investments in Gujarat.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
@@ -69,6 +70,25 @@ const BLOGS = [
 ];
 
 export default function BlogPage({ onNavigate }) {
+  useEffect(() => {
+    document.title = "Blog | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Read the latest insights and updates from Anandam Properties.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Blog | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Read the latest insights and updates from Anandam Properties.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
 

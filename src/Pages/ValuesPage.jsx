@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./PageShell.css";
 import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
@@ -141,6 +142,25 @@ const PILLARS = [
 ];
 
 export default function ValuesPage({ onNavigate }) {
+  useEffect(() => {
+    document.title = "Our Values | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Our Values | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">

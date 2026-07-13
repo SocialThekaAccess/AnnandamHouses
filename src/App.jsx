@@ -17,12 +17,12 @@ import CustomerReviews from "./Components/CustomerReviews";
 import Contact from "./Components/Contact";
 import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
-import AboutPage from "./pages/AboutPage";
-import BlogPage from "./pages/BlogPage";
-import ContactPage from "./pages/ContactPage";
-import LegalPage from "./pages/LegalPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import ValuesPage from "./pages/ValuesPage";
+import AboutPage from "./Pages/AboutPage";
+import BlogPage from "./Pages/BlogPage";
+import ContactPage from "./Pages/ContactPage";
+import LegalPage from "./Pages/LegalPage";
+import ProjectsPage from "./Pages/ProjectsPage";
+import ValuesPage from "./Pages/ValuesPage";
 
 const ROUTES = {
   HOME: "/",
