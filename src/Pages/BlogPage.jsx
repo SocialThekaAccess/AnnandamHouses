@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
 import logoImg from "../assets/anandamhomeslogo.png";
+import blogCardImg from "../assets/Anandamblog1.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -22,56 +23,19 @@ const CallNowBtn = () => {
 
 const BLOGS = [
   {
-    tag: "Market Insight",
-    date: "June 1, 2026",
-    title: "Dholera Value Growth Truth: What Occurred with Investors Who Bought Early?",
-    excerpt: "Pioneer investors in Dholera SIR are already witnessing substantial gains. This piece examines actual outcomes, locational strengths, and why the opportunity for entry remains open for long-horizon buyers.",
-    read: "5 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSUxuSa7w2xepJlBNE65qNy1eRpjcuwurvA&s",
-  },
-  {
-    tag: "Infrastructure",
-    date: "May 28, 2026",
-    title: "Dholera International Airport: Position, Access and Upcoming Expansion",
-    excerpt: "The Dholera International Airport stands among the most pivotal infrastructure developments shaping this region's trajectory. Here is what its placement and road/rail links mean for property investors.",
-    read: "4 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWERg8KuGCUgqzqbl2ruo6YBLdxnJKO-srw&s",
-  },
-  {
-    tag: "Connectivity",
-    date: "May 25, 2026",
-    title: "Dedicated Freight Corridor: How India's Largest Rail Network Links Dholera to Delhi and Mumbai",
-    excerpt: "The Dedicated Freight Corridor seamlessly connects Dholera to India's biggest commercial centres. For buyers, this translates into industrial expansion, job creation, and sustained residential demand.",
-    read: "6 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67_lA_QgnDalRTZ_at9m_I_Go-oOPCZWqDw&s",
-  },
-  {
     tag: "Investment Guide",
-    date: "April 25, 2026",
-    title: "Where to Purchase the Best Plots in Dholera Within 10 Lakh?",
-    excerpt: "A large budget is not mandatory to step into Dholera. This guide outlines the most promising budget-friendly plot zones, key verification points, and how to arrive at a well-informed decision.",
-    read: "5 min read",
-    img: "https://imagecdn.99acres.com/media1/32508/9/650169375M-1767029914146.webp",
-  },
-  {
-    tag: "Smart City",
-    date: "February 14, 2026",
-    title: "Why 2026 Marks the Ideal Moment to Purchase Plots in Dholera Smart City",
-    excerpt: "With the expressway launched, airport development underway, and industrial zones activating — 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
-    read: "4 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDwW0hgPXLAiiHVIJQDYBwEGvbygPT3LXw&s",
-  },
-  {
-    tag: "Location",
-    date: "January 10, 2026",
-    title: "Lothal to Dholera: Decoding the Growth Belt That Is Defining Gujarat's Tomorrow",
-    excerpt: "The stretch between Lothal and Dholera is rapidly evolving into one of Gujarat's most strategically significant real estate belts, with infrastructure, heritage, and industry converging together.",
-    read: "5 min read",
-    img: "https://production-aum-storage.s3.ap-south-1.amazonaws.com/web/content/5/images/variants/rect_large_jpg/18-1769367936276.jpg",
+    date: "June 2026",
+    title: "Plots in Lothal: Why Investing Near Dholera SIR is a Smart Decision for the Future",
+    excerpt: "Gujarat has become one of India's most attractive real estate destinations, with Dholera SIR and historic Lothal driving investor interest.",
+    read: "8 min read",
+    img: blogCardImg,
+    link: "/blog/plots-in-lothal-near-dholera-sir",
   },
 ];
 
-export default function BlogPage({ onNavigate }) {
+export default function BlogPage() {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     document.title = "Blog | Anandam Properties";
     
@@ -118,16 +82,16 @@ export default function BlogPage({ onNavigate }) {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">6</span>
-              <span className="blog-section-header__stat-label">Articles</span>
+              <span className="blog-section-header__stat-num">1</span>
+              <span className="blog-section-header__stat-label">Article</span>
             </div>
             <div className="blog-section-header__stat">
               <span className="blog-section-header__stat-num">2026</span>
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">5</span>
-              <span className="blog-section-header__stat-label">Min Avg Read</span>
+              <span className="blog-section-header__stat-num">8</span>
+              <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>
         </section>
@@ -136,14 +100,34 @@ export default function BlogPage({ onNavigate }) {
         <section className="page-section blog-grid-section">
           <div className="blog-grid">
             {BLOGS.map((blog, i) => (
-              <article key={i} className="blog-card" onClick={() => onNavigate?.("/contact-us")}>
-                <div className="blog-card__img-wrap">
-                  <img src={blog.img} alt={blog.title} className="blog-card__img" />
-                </div>
-                <div className="blog-card__body">
-                  <h3 className="blog-card__title">{blog.title}</h3>
-                </div>
-              </article>
+              blog.link ? (
+                <Link 
+                  key={i} 
+                  to={blog.link}
+                  className="blog-card"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div className="blog-card__img-wrap">
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                  </div>
+                  <div className="blog-card__body">
+                    <h3 className="blog-card__title">{blog.title}</h3>
+                  </div>
+                </Link>
+              ) : (
+                <article 
+                  key={i} 
+                  className="blog-card" 
+                  onClick={() => navigate("/contact-us")}
+                >
+                  <div className="blog-card__img-wrap">
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                  </div>
+                  <div className="blog-card__body">
+                    <h3 className="blog-card__title">{blog.title}</h3>
+                  </div>
+                </article>
+              )
             ))}
           </div>
         </section>
@@ -157,7 +141,7 @@ export default function BlogPage({ onNavigate }) {
               <p className="blog-cta-band__copy">Speak with our team for location walkthroughs, pricing guidance, and a clear picture of what the Dholera opportunity looks like for you.</p>
             </div>
             <div className="blog-cta-band__right">
-              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>
+              <button className="gold-btn" onClick={() => navigate("/contact-us")}>
                 Talk to Our Team
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

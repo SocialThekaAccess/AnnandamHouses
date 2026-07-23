@@ -17,12 +17,13 @@ import CustomerReviews from "./Components/CustomerReviews";
 import Contact from "./Components/Contact";
 import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
-import AboutPage from "./Pages/AboutPage";
-import BlogPage from "./Pages/BlogPage";
-import ContactPage from "./Pages/ContactPage";
-import LegalPage from "./Pages/LegalPage";
-import ProjectsPage from "./Pages/ProjectsPage";
-import ValuesPage from "./Pages/ValuesPage";
+import AboutPage from "./pages/AboutPage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
+import ContactPage from "./pages/ContactPage";
+import LegalPage from "./pages/LegalPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ValuesPage from "./pages/ValuesPage";
 
 const ROUTES = {
   HOME: "/",
@@ -30,6 +31,7 @@ const ROUTES = {
   PROJECTS: "/our-projects",
   VALUES: "/our-values",
   BLOG: "/blog",
+  BLOG_POST_LOTHAL: "/blog/plots-in-lothal-near-dholera-sir",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -55,6 +57,10 @@ const PAGE_METADATA = {
   [ROUTES.BLOG]: {
     title: "Blog | Anandam Homes",
     description: "Read the latest insights and updates from Anandam Homes.",
+  },
+  [ROUTES.BLOG_POST_LOTHAL]: {
+    title: "Plots in Lothal Near Dholera SIR | Premium Residential Plots | Anandam Properties",
+    description: "Explore premium residential plots in Lothal near Dholera SIR with Anandam Properties. Invest in RERA-ready plotted developments offering excellent connectivity, modern infrastructure, transparent documentation, and strong long-term growth potential near Ahmedabad.",
   },
   [ROUTES.CONTACT]: {
     title: "Contact Us | Anandam Homes",
@@ -287,6 +293,7 @@ function AppContent() {
         <Route path={ROUTES.PROJECTS} element={<ProjectsPage />} />
         <Route path={ROUTES.VALUES} element={<ValuesPage />} />
         <Route path={ROUTES.BLOG} element={<BlogPage />} />
+        <Route path={ROUTES.BLOG_POST_LOTHAL} element={<BlogPostPage />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
         <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />

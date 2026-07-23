@@ -102,33 +102,44 @@
   padding-bottom: 60px;
 }
 
+/* Container is now full section width, cards are fixed/comfortable
+   size and wrap naturally as more blogs get added. A single card no
+   longer stretches to an odd centered box — it sits at a proper
+   card width, and future cards will flow into a real grid. */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
 }
 
 /* ── Blog Card ── */
 .blog-card {
   background: #fff;
   border: 1px solid rgba(184, 151, 90, 0.15);
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(27, 67, 50, 0.06);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .blog-card:hover {
-  box-shadow: 0 8px 32px rgba(27, 67, 50, 0.1);
+  box-shadow: 0 12px 36px rgba(27, 67, 50, 0.14);
   transform: translateY(-4px);
 }
 
-/* Image */
+/* Image — switched from a fixed 210px crop (which cut off the top
+   line of text baked into the thumbnail) to an aspect-ratio box with
+   the image anchored to the top, so the full graphic reads cleanly. */
 .blog-card__img-wrap {
   width: 100%;
-  height: 210px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -137,7 +148,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: left top;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -209,10 +220,12 @@
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
   background: #1b4332;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .blog-cta-band__left {
-  padding: 56px 5%;
+  padding: 56px 5% 56px 6%;
   border-right: 1px solid rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
@@ -267,9 +280,20 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
+/* Extra breathing room so a fixed/floating widget (e.g. a scroll-to-top
+   or WhatsApp button living outside this component) doesn't sit on top
+   of the "Get In Touch" label at the bottom of the page. */
+.blog-cta-band__left,
+.blog-cta-band__right {
+  padding-left: max(5%, 64px);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+    max-width: 500px;
+  }
   .blog-cta-band { grid-template-columns: 1fr; }
   .blog-cta-band__left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .blog-section-header { grid-template-columns: 1fr; gap: 28px; }
@@ -277,8 +301,11 @@
 }
 
 @media (max-width: 640px) {
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-card__img-wrap { height: 180px; }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .blog-card__img-wrap { aspect-ratio: 16 / 9; }
   .blog-cta-band__left, .blog-cta-band__right { padding: 36px 5%; }
   .blog-hero--full { min-height: unset; }
   .blog-section-header__stat { padding: 16px 20px; }

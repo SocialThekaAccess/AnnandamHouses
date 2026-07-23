@@ -47,9 +47,17 @@
   <!-- Blog -->
   <url>
     <loc>https://anandamproperties.com/blog</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Post - Plots in Lothal Near Dholera SIR -->
+  <url>
+    <loc>https://anandamproperties.com/blog/plots-in-lothal-near-dholera-sir</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Privacy Policy -->
