@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./PageShell.css";
 import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
@@ -173,9 +174,9 @@ export default function ValuesPage({ onNavigate }) {
         >
           <img src={Valuesimg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden"></div>
       </section>

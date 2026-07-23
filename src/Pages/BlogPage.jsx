@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
+import logoImg from "../assets/anandamhomeslogo.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -99,6 +101,9 @@ export default function BlogPage({ onNavigate }) {
         >
           <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
+          <img src={logoImg} alt="Anandam Properties" />
+        </Link>
         <CallNowBtn />
       </section>
 

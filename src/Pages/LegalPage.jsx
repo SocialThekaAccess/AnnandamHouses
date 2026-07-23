@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PageShell.css";
 import aboutBg from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -38,9 +39,9 @@ export default function LegalPage({ eyebrow, title, intro, summaryTitle, summary
         >
           <img src={aboutBg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner">
           <div className="page-hero__copy">

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import Anandamhomes1 from "../assets/AnnandamHomes1.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -118,9 +119,9 @@ export default function Hero() {
       <div className="hero__grid-pattern" />
 
       {/* Logo — desktop only */}
-      <div className="hero__logo">
+      <Link to="/" className="hero__logo" aria-label="Anandam Properties — Home">
         <img src={logoImg} alt="Anandam Properties" />
-      </div>
+      </Link>
 
       {/* Call Now — desktop only */}
       <button
@@ -164,11 +165,21 @@ export default function Hero() {
         <div key={current} className="hero__progress-bar" />
       </div>
 
-      <a href="#about" className="hero__scroll">
+      <button
+        type="button"
+        className="hero__scroll"
+        onClick={() => {
+          const aboutSection = document.getElementById('about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+        aria-label="Scroll to About section"
+      >
         <div className="hero__scroll-circle">
           <ChevronDown />
         </div>
-      </a>
+      </button>
     </section>
   );
 }

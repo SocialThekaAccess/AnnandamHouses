@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./PageShell.css";
 import heroBg from "../assets/ourProjects.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -157,9 +158,9 @@ export default function ProjectsPage({ onNavigate }) {
         >
           <img src={heroBg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden" />
       </section>
