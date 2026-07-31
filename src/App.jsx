@@ -20,6 +20,7 @@ import Footer from "./Components/Footer";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import BlogPostWeekendHome from "./pages/BlogPostWeekendHome";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -32,6 +33,7 @@ const ROUTES = {
   VALUES: "/our-values",
   BLOG: "/blog",
   BLOG_POST_LOTHAL: "/blog/plots-in-lothal-near-dholera-sir",
+  BLOG_POST_WEEKEND_HOME: "/blog/weekend-home-plots-near-ahmedabad",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -61,6 +63,10 @@ const PAGE_METADATA = {
   [ROUTES.BLOG_POST_LOTHAL]: {
     title: "Plots in Lothal Near Dholera SIR | Premium Residential Plots | Anandam Properties",
     description: "Explore premium residential plots in Lothal near Dholera SIR with Anandam Properties. Invest in RERA-ready plotted developments offering excellent connectivity, modern infrastructure, transparent documentation, and strong long-term growth potential near Ahmedabad.",
+  },
+  [ROUTES.BLOG_POST_WEEKEND_HOME]: {
+    title: "Weekend Home Plots Near Ahmedabad | Lothal Investment",
+    description: "Explore weekend home plots near Ahmedabad in Lothal. Invest in gated, RERA-approved plots near Dholera SIR with excellent growth potential and peaceful living.",
   },
   [ROUTES.CONTACT]: {
     title: "Contact Us | Anandam Homes",
@@ -294,6 +300,7 @@ function AppContent() {
         <Route path={ROUTES.VALUES} element={<ValuesPage />} />
         <Route path={ROUTES.BLOG} element={<BlogPage />} />
         <Route path={ROUTES.BLOG_POST_LOTHAL} element={<BlogPostPage />} />
+        <Route path={ROUTES.BLOG_POST_WEEKEND_HOME} element={<BlogPostWeekendHome />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
         <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />

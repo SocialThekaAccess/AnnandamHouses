@@ -23,6 +23,15 @@ const CallNowBtn = () => {
 
 const BLOGS = [
   {
+    tag: "Lifestyle & Investment",
+    date: "July 2026",
+    title: "Weekend Home Plots Near Ahmedabad: Why Families Are Choosing Lothal Over the Usual Getaway Spots",
+    excerpt: "A quieter weekend option that doesn't involve hotel bookings — an actual piece of land you own, close enough to reach after work on a Friday.",
+    read: "10 min read",
+    img: blogCardImg,
+    link: "/blog/weekend-home-plots-near-ahmedabad",
+  },
+  {
     tag: "Investment Guide",
     date: "June 2026",
     title: "Plots in Lothal: Why Investing Near Dholera SIR is a Smart Decision for the Future",
@@ -82,15 +91,15 @@ export default function BlogPage() {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">1</span>
-              <span className="blog-section-header__stat-label">Article</span>
+              <span className="blog-section-header__stat-num">2</span>
+              <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
               <span className="blog-section-header__stat-num">2026</span>
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">8</span>
+              <span className="blog-section-header__stat-num">10</span>
               <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>
