@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
-import featuredImg from "../assets/Anandamblog1.png";
+import featuredImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
 
 export default function BlogPostWeekendHome() {
   const navigate = useNavigate();

@@ -5,6 +5,8 @@ import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import blogCardImg from "../assets/Anandamblog1.png";
+import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
+import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -28,7 +30,7 @@ const BLOGS = [
     title: "Weekend Home Plots Near Ahmedabad: Why Families Are Choosing Lothal Over the Usual Getaway Spots",
     excerpt: "A quieter weekend option that doesn't involve hotel bookings — an actual piece of land you own, close enough to reach after work on a Friday.",
     read: "10 min read",
-    img: blogCardImg,
+    img: weekendHomeImg,
     link: "/blog/weekend-home-plots-near-ahmedabad",
   },
   {
@@ -39,6 +41,15 @@ const BLOGS = [
     read: "8 min read",
     img: blogCardImg,
     link: "/blog/plots-in-lothal-near-dholera-sir",
+  },
+  {
+    tag: "Market Insights",
+    date: "August 2026",
+    title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
+    excerpt: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
+    read: "12 min read",
+    img: lothalCorridorImg,
+    link: "/blog/lothal-dholera-corridor-growth-hub",
   },
 ];
 
@@ -91,7 +102,7 @@ export default function BlogPage() {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">2</span>
+              <span className="blog-section-header__stat-num">3</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -99,7 +110,7 @@ export default function BlogPage() {
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">10</span>
+              <span className="blog-section-header__stat-num">12</span>
               <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>
