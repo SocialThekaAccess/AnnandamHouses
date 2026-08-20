@@ -7,6 +7,7 @@ import logoImg from "../assets/anandamhomeslogo.png";
 import blogCardImg from "../assets/Anandamblog1.png";
 import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
 import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
+import microLocationImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is the Next Growth Hub.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -24,6 +25,15 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Buyer's Guide",
+    date: "August 2026",
+    title: "Plots Near Dholera SIR: A Micro-Location Scorecard for Comparing Two Similar Properties",
+    excerpt: "Comparing plots near Dholera SIR? Use this practical micro-location scorecard to assess access, surroundings, plot usability, documentation and future development.",
+    read: "15 min read",
+    img: microLocationImg,
+    link: "/blog/micro-location-buying-guide-dholera",
+  },
   {
     tag: "Lifestyle & Investment",
     date: "July 2026",
@@ -102,7 +112,7 @@ export default function BlogPage() {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">3</span>
+              <span className="blog-section-header__stat-num">4</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -110,7 +120,7 @@ export default function BlogPage() {
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">12</span>
+              <span className="blog-section-header__stat-num">15</span>
               <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>

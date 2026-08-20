@@ -22,6 +22,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import BlogPostWeekendHome from "./pages/BlogPostWeekendHome";
 import BlogPostLothalCorridor from "./pages/BlogPostLothalCorridor";
+import BlogPostMicroLocation from "./pages/BlogPostMicroLocation";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -36,6 +37,7 @@ const ROUTES = {
   BLOG_POST_LOTHAL: "/blog/plots-in-lothal-near-dholera-sir",
   BLOG_POST_WEEKEND_HOME: "/blog/weekend-home-plots-near-ahmedabad",
   BLOG_POST_LOTHAL_CORRIDOR: "/blog/lothal-dholera-corridor-growth-hub",
+  BLOG_POST_MICRO_LOCATION: "/blog/micro-location-buying-guide-dholera",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -73,6 +75,10 @@ const PAGE_METADATA = {
   [ROUTES.BLOG_POST_LOTHAL_CORRIDOR]: {
     title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
     description: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
+  },
+  [ROUTES.BLOG_POST_MICRO_LOCATION]: {
+    title: "Plots Near Dholera SIR: Micro-Location Buying Guide",
+    description: "Comparing plots near Dholera SIR? Use this practical micro-location scorecard to assess access, surroundings, plot usability, documentation and future development.",
   },
   [ROUTES.CONTACT]: {
     title: "Contact Us | Anandam Homes",
@@ -308,6 +314,7 @@ function AppContent() {
         <Route path={ROUTES.BLOG_POST_LOTHAL} element={<BlogPostPage />} />
         <Route path={ROUTES.BLOG_POST_WEEKEND_HOME} element={<BlogPostWeekendHome />} />
         <Route path={ROUTES.BLOG_POST_LOTHAL_CORRIDOR} element={<BlogPostLothalCorridor />} />
+        <Route path={ROUTES.BLOG_POST_MICRO_LOCATION} element={<BlogPostMicroLocation />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
         <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />
