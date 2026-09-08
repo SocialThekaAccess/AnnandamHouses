@@ -47,9 +47,17 @@
   <!-- Blog -->
   <url>
     <loc>https://anandamproperties.com/blog</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Post - Clear Title Residential Plots Gujarat -->
+  <url>
+    <loc>https://anandamproperties.com/blog/clear-title-residential-plots-gujarat</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Blog Post - Micro-Location Buying Guide Dholera -->

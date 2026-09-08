@@ -23,6 +23,11 @@ import BlogPostPage from "./pages/BlogPostPage";
 import BlogPostWeekendHome from "./pages/BlogPostWeekendHome";
 import BlogPostLothalCorridor from "./pages/BlogPostLothalCorridor";
 import BlogPostMicroLocation from "./pages/BlogPostMicroLocation";
+import BlogPostDholeraExpressway from "./pages/BlogPostDholeraExpressway";
+import BlogPostDholeraSIRSmartCity from "./pages/BlogPostDholeraSIRSmartCity";
+import BlogPostDMICRealEstate from "./pages/BlogPostDMICRealEstate";
+import BlogPostClearTitlePlots from "./pages/BlogPostClearTitlePlots";
+import BlogPostPremiumUNESCOPlots from "./pages/BlogPostPremiumUNESCOPlots";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -38,6 +43,11 @@ const ROUTES = {
   BLOG_POST_WEEKEND_HOME: "/blog/weekend-home-plots-near-ahmedabad",
   BLOG_POST_LOTHAL_CORRIDOR: "/blog/lothal-dholera-corridor-growth-hub",
   BLOG_POST_MICRO_LOCATION: "/blog/micro-location-buying-guide-dholera",
+  BLOG_POST_DHOLERA_EXPRESSWAY: "/blog/dholera-expressway-property-investment",
+  BLOG_POST_DHOLERA_SIR_SMART_CITY: "/blog/dholera-sir-smart-city-investment",
+  BLOG_POST_DMIC_REAL_ESTATE: "/blog/delhi-mumbai-industrial-corridor-real-estate-dholera",
+  BLOG_POST_CLEAR_TITLE_PLOTS: "/blog/clear-title-residential-plots-gujarat",
+  BLOG_POST_PREMIUM_UNESCO_PLOTS: "/blog/premium-plots-near-unesco-heritage-site-lothal-dholera",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -79,6 +89,26 @@ const PAGE_METADATA = {
   [ROUTES.BLOG_POST_MICRO_LOCATION]: {
     title: "Plots Near Dholera SIR: Micro-Location Buying Guide",
     description: "Comparing plots near Dholera SIR? Use this practical micro-location scorecard to assess access, surroundings, plot usability, documentation and future development.",
+  },
+  [ROUTES.BLOG_POST_DHOLERA_EXPRESSWAY]: {
+    title: "Dholera Expressway Property Investment | Plots Near Ahmedabad",
+    description: "Explore Dholera expressway property investment and plotted development near Ahmedabad. Learn how connectivity, Dholera SIR and Lothal may influence long-term land demand.",
+  },
+  [ROUTES.BLOG_POST_DHOLERA_SIR_SMART_CITY]: {
+    title: "Dholera SIR Smart City Investment | Dholera Investment Plots",
+    description: "Explore Dholera SIR smart city investment, Dholera SIR investment plots and Dholera Smart City plots with insights on infrastructure, DMIC and long-term potential.",
+  },
+  [ROUTES.BLOG_POST_DMIC_REAL_ESTATE]: {
+    title: "Delhi Mumbai Industrial Corridor Real Estate | Dholera Airport Plots",
+    description: "Explore Delhi Mumbai industrial corridor real estate and plots near Dholera International Airport, including Dholera SIR, expressway and long-term property factors.",
+  },
+  [ROUTES.BLOG_POST_CLEAR_TITLE_PLOTS]: {
+    title: "Clear Title Residential Plots Gujarat | Buy Plots in Gujarat",
+    description: "Looking for clear title residential plots Gujarat? Learn what to verify before you buy plots in Gujarat and how to evaluate long-term plotted investments near Dholera.",
+  },
+  [ROUTES.BLOG_POST_PREMIUM_UNESCO_PLOTS]: {
+    title: "Premium Plots Near UNESCO Heritage Site | Lothal Dholera Plots",
+    description: "Explore premium plots near UNESCO heritage site searches around Lothal and Dholera, NMHC development, Dholera SIR connectivity and long-term investment plots Gujarat.",
   },
   [ROUTES.CONTACT]: {
     title: "Contact Us | Anandam Homes",
@@ -315,6 +345,11 @@ function AppContent() {
         <Route path={ROUTES.BLOG_POST_WEEKEND_HOME} element={<BlogPostWeekendHome />} />
         <Route path={ROUTES.BLOG_POST_LOTHAL_CORRIDOR} element={<BlogPostLothalCorridor />} />
         <Route path={ROUTES.BLOG_POST_MICRO_LOCATION} element={<BlogPostMicroLocation />} />
+        <Route path={ROUTES.BLOG_POST_DHOLERA_EXPRESSWAY} element={<BlogPostDholeraExpressway />} />
+        <Route path={ROUTES.BLOG_POST_DHOLERA_SIR_SMART_CITY} element={<BlogPostDholeraSIRSmartCity />} />
+        <Route path={ROUTES.BLOG_POST_DMIC_REAL_ESTATE} element={<BlogPostDMICRealEstate />} />
+        <Route path={ROUTES.BLOG_POST_CLEAR_TITLE_PLOTS} element={<BlogPostClearTitlePlots />} />
+        <Route path={ROUTES.BLOG_POST_PREMIUM_UNESCO_PLOTS} element={<BlogPostPremiumUNESCOPlots />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
         <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />

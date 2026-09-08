@@ -8,6 +8,11 @@ import blogCardImg from "../assets/Anandamblog1.png";
 import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
 import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
 import microLocationImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is the Next Growth Hub.png";
+import dholeraExpresswayImg from "../assets/Dholera Expressway Property Investment_ Why a Plotted Development Near Ahmedabad Deserves Long-Term Attention.png";
+import dholeraSIRSmartCityImg from "../assets/Dholera SIR Smart City Investment_ Understanding Dholera SIR Investment Plots and Dholera Smart City Plots.png";
+import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real Estate_ Why Plots Near Dholera International Airport Are Drawing Attention.png";
+import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
+import premiumUNESCOPlotsImg from "../assets/Premium Plots Near UNESCO Heritage Site_ Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -25,6 +30,51 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Infrastructure Investment",
+    date: "September 2026",
+    title: "Dholera Expressway Property Investment: Why a Plotted Development Near Ahmedabad Deserves Long-Term Attention",
+    excerpt: "Explore Dholera expressway property investment and plotted development near Ahmedabad. Learn how connectivity, Dholera SIR and Lothal may influence long-term land demand.",
+    read: "12 min read",
+    img: dholeraExpresswayImg,
+    link: "/blog/dholera-expressway-property-investment",
+  },
+  {
+    tag: "Smart City Development",
+    date: "September 2026",
+    title: "Dholera SIR Smart City Investment: Understanding Dholera SIR Investment Plots and Dholera Smart City Plots",
+    excerpt: "Explore Dholera SIR smart city investment, Dholera SIR investment plots and Dholera Smart City plots with insights on infrastructure, DMIC and long-term potential.",
+    read: "14 min read",
+    img: dholeraSIRSmartCityImg,
+    link: "/blog/dholera-sir-smart-city-investment",
+  },
+  {
+    tag: "Industrial Corridor",
+    date: "September 2026",
+    title: "Delhi Mumbai Industrial Corridor Real Estate: Why Plots Near Dholera International Airport Are Drawing Attention",
+    excerpt: "Explore Delhi Mumbai industrial corridor real estate and plots near Dholera International Airport, including Dholera SIR, expressway and long-term property factors.",
+    read: "13 min read",
+    img: dmicRealEstateImg,
+    link: "/blog/delhi-mumbai-industrial-corridor-real-estate-dholera",
+  },
+  {
+    tag: "Legal Guide",
+    date: "September 2026",
+    title: "Clear Title Residential Plots Gujarat: What to Check Before You Buy Plots in Gujarat for Long-Term Investment",
+    excerpt: "Looking for clear title residential plots Gujarat? Learn what to verify before you buy plots in Gujarat and how to evaluate long-term plotted investments near Dholera.",
+    read: "11 min read",
+    img: clearTitlePlotsImg,
+    link: "/blog/clear-title-residential-plots-gujarat",
+  },
+  {
+    tag: "Heritage & Tourism",
+    date: "September 2026",
+    title: "Premium Plots Near UNESCO Heritage Site: Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat",
+    excerpt: "Explore premium plots near UNESCO heritage site searches around Lothal and Dholera, NMHC development, Dholera SIR connectivity and long-term investment plots Gujarat.",
+    read: "13 min read",
+    img: premiumUNESCOPlotsImg,
+    link: "/blog/premium-plots-near-unesco-heritage-site-lothal-dholera",
+  },
   {
     tag: "Buyer's Guide",
     date: "August 2026",
@@ -112,7 +162,7 @@ export default function BlogPage() {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">4</span>
+              <span className="blog-section-header__stat-num">9</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
