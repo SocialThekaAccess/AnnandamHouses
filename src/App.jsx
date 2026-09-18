@@ -21,6 +21,15 @@ import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailSTTGDC from "./pages/BlogDetailSTTGDC";
 import BlogDetailRailway from "./pages/BlogDetailRailway";
+import BlogPostPage from "./pages/BlogPostPage";
+import BlogPostWeekendHome from "./pages/BlogPostWeekendHome";
+import BlogPostLothalCorridor from "./pages/BlogPostLothalCorridor";
+import BlogPostMicroLocation from "./pages/BlogPostMicroLocation";
+import BlogPostDholeraExpressway from "./pages/BlogPostDholeraExpressway";
+import BlogPostDholeraSIRSmartCity from "./pages/BlogPostDholeraSIRSmartCity";
+import BlogPostDMICRealEstate from "./pages/BlogPostDMICRealEstate";
+import BlogPostClearTitlePlots from "./pages/BlogPostClearTitlePlots";
+import BlogPostPremiumUNESCOPlots from "./pages/BlogPostPremiumUNESCOPlots";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -34,6 +43,15 @@ const ROUTES = {
   BLOG: "/blog",
   BLOG_STTGDC: "/blog/stt-gdc-dholera-data-centre",
   BLOG_RAILWAY: "/blog/sarkhej-dholera-railway-epc-tender",
+  BLOG_POST_LOTHAL: "/blog/plots-in-lothal-near-dholera-sir",
+  BLOG_POST_WEEKEND_HOME: "/blog/weekend-home-plots-near-ahmedabad",
+  BLOG_POST_LOTHAL_CORRIDOR: "/blog/lothal-dholera-corridor-growth-hub",
+  BLOG_POST_MICRO_LOCATION: "/blog/micro-location-buying-guide-dholera",
+  BLOG_POST_DHOLERA_EXPRESSWAY: "/blog/dholera-expressway-property-investment",
+  BLOG_POST_DHOLERA_SIR_SMART_CITY: "/blog/dholera-sir-smart-city-investment",
+  BLOG_POST_DMIC_REAL_ESTATE: "/blog/delhi-mumbai-industrial-corridor-real-estate-dholera",
+  BLOG_POST_CLEAR_TITLE_PLOTS: "/blog/clear-title-residential-plots-gujarat",
+  BLOG_POST_PREMIUM_UNESCO_PLOTS: "/blog/premium-plots-near-unesco-heritage-site-lothal-dholera",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -301,6 +319,24 @@ function App() {
         return <BlogDetailSTTGDC onNavigate={navigate} />;
       case ROUTES.BLOG_RAILWAY:
         return <BlogDetailRailway onNavigate={navigate} />;
+      case ROUTES.BLOG_POST_LOTHAL:
+        return <BlogPostPage />;
+      case ROUTES.BLOG_POST_WEEKEND_HOME:
+        return <BlogPostWeekendHome />;
+      case ROUTES.BLOG_POST_LOTHAL_CORRIDOR:
+        return <BlogPostLothalCorridor />;
+      case ROUTES.BLOG_POST_MICRO_LOCATION:
+        return <BlogPostMicroLocation />;
+      case ROUTES.BLOG_POST_DHOLERA_EXPRESSWAY:
+        return <BlogPostDholeraExpressway />;
+      case ROUTES.BLOG_POST_DHOLERA_SIR_SMART_CITY:
+        return <BlogPostDholeraSIRSmartCity />;
+      case ROUTES.BLOG_POST_DMIC_REAL_ESTATE:
+        return <BlogPostDMICRealEstate />;
+      case ROUTES.BLOG_POST_CLEAR_TITLE_PLOTS:
+        return <BlogPostClearTitlePlots />;
+      case ROUTES.BLOG_POST_PREMIUM_UNESCO_PLOTS:
+        return <BlogPostPremiumUNESCOPlots />;
       case ROUTES.CONTACT:
         return <ContactPage />;
       case ROUTES.PRIVACY:
