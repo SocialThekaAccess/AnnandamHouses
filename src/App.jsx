@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
@@ -8,6 +7,7 @@ import CallModal from "./Components/CallModal";
 import { useCallModal } from "./context/CallModalContext";
 import About from "./Components/About";
 import Values from "./Components/Values";
+// import Projects from "./Components/Projects";
 import Features from "./Components/Features";
 import BrandStory from "./Components/BrandStory";
 import FAQ from "./Components/FAQ";
@@ -19,15 +19,8 @@ import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
-import BlogPostPage from "./pages/BlogPostPage";
-import BlogPostWeekendHome from "./pages/BlogPostWeekendHome";
-import BlogPostLothalCorridor from "./pages/BlogPostLothalCorridor";
-import BlogPostMicroLocation from "./pages/BlogPostMicroLocation";
-import BlogPostDholeraExpressway from "./pages/BlogPostDholeraExpressway";
-import BlogPostDholeraSIRSmartCity from "./pages/BlogPostDholeraSIRSmartCity";
-import BlogPostDMICRealEstate from "./pages/BlogPostDMICRealEstate";
-import BlogPostClearTitlePlots from "./pages/BlogPostClearTitlePlots";
-import BlogPostPremiumUNESCOPlots from "./pages/BlogPostPremiumUNESCOPlots";
+import BlogDetailSTTGDC from "./pages/BlogDetailSTTGDC";
+import BlogDetailRailway from "./pages/BlogDetailRailway";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -39,89 +32,11 @@ const ROUTES = {
   PROJECTS: "/our-projects",
   VALUES: "/our-values",
   BLOG: "/blog",
-  BLOG_POST_LOTHAL: "/blog/plots-in-lothal-near-dholera-sir",
-  BLOG_POST_WEEKEND_HOME: "/blog/weekend-home-plots-near-ahmedabad",
-  BLOG_POST_LOTHAL_CORRIDOR: "/blog/lothal-dholera-corridor-growth-hub",
-  BLOG_POST_MICRO_LOCATION: "/blog/micro-location-buying-guide-dholera",
-  BLOG_POST_DHOLERA_EXPRESSWAY: "/blog/dholera-expressway-property-investment",
-  BLOG_POST_DHOLERA_SIR_SMART_CITY: "/blog/dholera-sir-smart-city-investment",
-  BLOG_POST_DMIC_REAL_ESTATE: "/blog/delhi-mumbai-industrial-corridor-real-estate-dholera",
-  BLOG_POST_CLEAR_TITLE_PLOTS: "/blog/clear-title-residential-plots-gujarat",
-  BLOG_POST_PREMIUM_UNESCO_PLOTS: "/blog/premium-plots-near-unesco-heritage-site-lothal-dholera",
+  BLOG_STTGDC: "/blog/stt-gdc-dholera-data-centre",
+  BLOG_RAILWAY: "/blog/sarkhej-dholera-railway-epc-tender",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
-};
-
-const PAGE_METADATA = {
-  [ROUTES.HOME]: {
-    title: "Premium Residential Plots Near Dholera & Lothal | Anandam Properties",
-    description: "Explore premium residential plots near Dholera Smart City and Lothal. Anandam Properties offers legally verified plots, transparent documentation, and expert guidance for long-term property investment in Gujarat",
-  },
-  [ROUTES.ABOUT]: {
-    title: "About Us | Anandam Homes",
-    description: "Learn about Anandam Homes - Your trusted partner for premium plotted development in Gujarat.",
-  },
-  [ROUTES.PROJECTS]: {
-    title: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
-    description: "Anandam Exotica offers premium plotted development near Lothal UNESCO Heritage Site & Dholera SIR. Plot sizes from 60–106 SQMT with a gated community, clear titles, and ready infrastructure. Book your site visit today.",
-  },
-  [ROUTES.VALUES]: {
-    title: "Our Values | Anandam Homes",
-    description: "Discover the values that drive Anandam Homes - transparency, quality, and customer satisfaction.",
-  },
-  [ROUTES.BLOG]: {
-    title: "Blog | Anandam Homes",
-    description: "Read the latest insights and updates from Anandam Homes.",
-  },
-  [ROUTES.BLOG_POST_LOTHAL]: {
-    title: "Plots in Lothal Near Dholera SIR | Premium Residential Plots | Anandam Properties",
-    description: "Explore premium residential plots in Lothal near Dholera SIR with Anandam Properties. Invest in RERA-ready plotted developments offering excellent connectivity, modern infrastructure, transparent documentation, and strong long-term growth potential near Ahmedabad.",
-  },
-  [ROUTES.BLOG_POST_WEEKEND_HOME]: {
-    title: "Weekend Home Plots Near Ahmedabad | Lothal Investment",
-    description: "Explore weekend home plots near Ahmedabad in Lothal. Invest in gated, RERA-approved plots near Dholera SIR with excellent growth potential and peaceful living.",
-  },
-  [ROUTES.BLOG_POST_LOTHAL_CORRIDOR]: {
-    title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
-    description: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
-  },
-  [ROUTES.BLOG_POST_MICRO_LOCATION]: {
-    title: "Plots Near Dholera SIR: Micro-Location Buying Guide",
-    description: "Comparing plots near Dholera SIR? Use this practical micro-location scorecard to assess access, surroundings, plot usability, documentation and future development.",
-  },
-  [ROUTES.BLOG_POST_DHOLERA_EXPRESSWAY]: {
-    title: "Dholera Expressway Property Investment | Plots Near Ahmedabad",
-    description: "Explore Dholera expressway property investment and plotted development near Ahmedabad. Learn how connectivity, Dholera SIR and Lothal may influence long-term land demand.",
-  },
-  [ROUTES.BLOG_POST_DHOLERA_SIR_SMART_CITY]: {
-    title: "Dholera SIR Smart City Investment | Dholera Investment Plots",
-    description: "Explore Dholera SIR smart city investment, Dholera SIR investment plots and Dholera Smart City plots with insights on infrastructure, DMIC and long-term potential.",
-  },
-  [ROUTES.BLOG_POST_DMIC_REAL_ESTATE]: {
-    title: "Delhi Mumbai Industrial Corridor Real Estate | Dholera Airport Plots",
-    description: "Explore Delhi Mumbai industrial corridor real estate and plots near Dholera International Airport, including Dholera SIR, expressway and long-term property factors.",
-  },
-  [ROUTES.BLOG_POST_CLEAR_TITLE_PLOTS]: {
-    title: "Clear Title Residential Plots Gujarat | Buy Plots in Gujarat",
-    description: "Looking for clear title residential plots Gujarat? Learn what to verify before you buy plots in Gujarat and how to evaluate long-term plotted investments near Dholera.",
-  },
-  [ROUTES.BLOG_POST_PREMIUM_UNESCO_PLOTS]: {
-    title: "Premium Plots Near UNESCO Heritage Site | Lothal Dholera Plots",
-    description: "Explore premium plots near UNESCO heritage site searches around Lothal and Dholera, NMHC development, Dholera SIR connectivity and long-term investment plots Gujarat.",
-  },
-  [ROUTES.CONTACT]: {
-    title: "Contact Us | Anandam Homes",
-    description: "Get in touch with Anandam Homes for premium plot investments in Gujarat.",
-  },
-  [ROUTES.PRIVACY]: {
-    title: "Privacy Policy | Anandam Homes",
-    description: "Privacy Policy - Anandam Homes",
-  },
-  [ROUTES.TERMS]: {
-    title: "Terms and Conditions | Anandam Homes",
-    description: "Terms and Conditions - Anandam Homes",
-  },
 };
 
 const LEGAL_PAGES = {
@@ -129,7 +44,7 @@ const LEGAL_PAGES = {
     eyebrow: "Privacy Policy",
     title: "Privacy designed with the same clarity as the rest of the brand experience.",
     intro:
-      "This policy explains how Anandam Homes may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
+      "This policy explains how Anandam Properties may collect, use, store, and protect information shared through this website, enquiries, calls, and site-visit coordination.",
     summaryTitle: "Your information is used to support property enquiries, buyer communication, and service improvement.",
     summaryCopy:
       "We keep the language practical and transparent so visitors understand what data may be requested, why it matters, and how it is handled in the normal course of business.",
@@ -170,7 +85,7 @@ const LEGAL_PAGES = {
     eyebrow: "Terms and Conditions",
     title: "Terms that support a more professional and transparent buyer journey.",
     intro:
-      "These terms govern use of the Anandam Homes website and any information, communication, and brand materials presented across its pages.",
+      "These terms govern use of the Anandam Properties website and any information, communication, and brand materials presented across its pages.",
     summaryTitle: "Use of this website means you agree to engage with its content responsibly and verify important project details directly with our team.",
     summaryCopy:
       "The website is intended as an introductory information resource. It supports early-stage understanding, but it does not replace formal legal, financial, technical, or contractual review.",
@@ -183,17 +98,17 @@ const LEGAL_PAGES = {
       {
         title: "Project Availability and Updates",
         copy:
-          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Homes before making decisions or relying on any published statement.",
+          "Project details, pricing, approvals, inventory status, development timelines, and location-related references may change over time. Visitors should confirm the latest information directly with Anandam Properties before making decisions or relying on any published statement.",
       },
       {
         title: "Intellectual Property",
         copy:
-          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Homes or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
+          "Website design, branding, logos, graphics, copy, and related materials remain the property of Anandam Properties or their respective owners unless otherwise stated. Unauthorized copying, redistribution, or commercial use is not permitted.",
       },
       {
         title: "Third-Party Links and Platforms",
         copy:
-          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Homes is not responsible for the availability, security, or content policies of those external platforms.",
+          "This website may include links to third-party services or platforms such as maps, social media, or messaging channels. Anandam Properties is not responsible for the availability, security, or content policies of those external platforms.",
       },
       {
         title: "Limitation of Reliance",
@@ -210,65 +125,6 @@ const LEGAL_PAGES = {
 };
 
 function ScrollToTop() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
-  return null;
-}
-
-function PageMetadata() {
-  const location = useLocation();
-  const { setCurrentPath } = useCallModal();
-
-  useEffect(() => {
-    setCurrentPath(location.pathname);
-  }, [location.pathname, setCurrentPath]);
-
-  useEffect(() => {
-    const metadata = PAGE_METADATA[location.pathname] || PAGE_METADATA[ROUTES.HOME];
-    
-    document.title = metadata.title;
-    
-    // Update meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', metadata.description);
-
-    // Update canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    const baseUrl = 'https://anandamproperties.com';
-    const canonicalUrl = location.pathname === ROUTES.HOME ? baseUrl + '/' : baseUrl + location.pathname;
-    canonicalLink.setAttribute('href', canonicalUrl);
-
-    // Update Open Graph URL
-    let ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute('content', canonicalUrl);
-    }
-
-    // Update Twitter URL
-    let twitterUrl = document.querySelector('meta[name="twitter:url"]');
-    if (twitterUrl) {
-      twitterUrl.setAttribute('content', canonicalUrl);
-    }
-  }, [location.pathname]);
-
-  return null;
-}
-
-function BackToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -312,12 +168,15 @@ function HomePage() {
         <div className="home-map__header">
           <span className="home-map__eyebrow">National Maritime Heritage Complex</span>
           <h2 className="home-map__heading">Master Plan of World's Biggest Maritime Museum</h2>
-          <p>NMHC is being developed as a "complete" tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
+          <p>NMHC is being developed as a “complete” tourist destination where all needs of tourists will be taken care of within one complex. Tourists from all over the world will be visiting the complex. It is being designed in a way that a few days holiday can be planned by a family/ group at NMHC itself.</p>
         </div>
         <img src={mapImg} alt="Development map" className="home-map__img" />
       </div>
+      {/* <Location /> */}
       <BrandStory />
       <Values />
+      {/* <BrandStory /> */}
+      {/* <Projects /> */}
       <Features />
       <CustomerReviews />
       <CategoryShowcase />
@@ -329,43 +188,138 @@ function HomePage() {
   );
 }
 
-function AppContent() {
-  return (
-    <>
-      <ScrollToTop />
-      <PageMetadata />
-      <Navbar />
-      <Routes>
-        <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-        <Route path={ROUTES.PROJECTS} element={<ProjectsPage />} />
-        <Route path={ROUTES.VALUES} element={<ValuesPage />} />
-        <Route path={ROUTES.BLOG} element={<BlogPage />} />
-        <Route path={ROUTES.BLOG_POST_LOTHAL} element={<BlogPostPage />} />
-        <Route path={ROUTES.BLOG_POST_WEEKEND_HOME} element={<BlogPostWeekendHome />} />
-        <Route path={ROUTES.BLOG_POST_LOTHAL_CORRIDOR} element={<BlogPostLothalCorridor />} />
-        <Route path={ROUTES.BLOG_POST_MICRO_LOCATION} element={<BlogPostMicroLocation />} />
-        <Route path={ROUTES.BLOG_POST_DHOLERA_EXPRESSWAY} element={<BlogPostDholeraExpressway />} />
-        <Route path={ROUTES.BLOG_POST_DHOLERA_SIR_SMART_CITY} element={<BlogPostDholeraSIRSmartCity />} />
-        <Route path={ROUTES.BLOG_POST_DMIC_REAL_ESTATE} element={<BlogPostDMICRealEstate />} />
-        <Route path={ROUTES.BLOG_POST_CLEAR_TITLE_PLOTS} element={<BlogPostClearTitlePlots />} />
-        <Route path={ROUTES.BLOG_POST_PREMIUM_UNESCO_PLOTS} element={<BlogPostPremiumUNESCOPlots />} />
-        <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.PRIVACY} element={<LegalPage {...LEGAL_PAGES[ROUTES.PRIVACY]} />} />
-        <Route path={ROUTES.TERMS} element={<LegalPage {...LEGAL_PAGES[ROUTES.TERMS]} />} />
-      </Routes>
-      <Footer />
-      <BackToTopButton />
-      <CallModal />
-    </>
-  );
+function getPathname() {
+  const path = window.location.pathname || ROUTES.HOME;
+  if (Object.values(ROUTES).includes(path)) {
+    return path;
+  }
+  // support blog sub-routes
+  if (path.startsWith("/blog/")) return path;
+  return ROUTES.HOME;
 }
 
 function App() {
+  const [pathname, setPathname] = useState(getPathname);
+
+  useEffect(() => {
+    const handlePopState = () => setPathname(getPathname());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const titles = {
+      [ROUTES.HOME]: "Anandam | Premium Plots in Lothal & Dholera – Invest in Gujarat's Growth Corridor",
+      [ROUTES.ABOUT]: "About Us | Anandam Properties",
+      [ROUTES.PROJECTS]: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
+      [ROUTES.VALUES]: "Our Values | Anandam Properties",
+      [ROUTES.BLOG]: "Blog | Anandam Properties",
+      [ROUTES.BLOG_STTGDC]: "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation | Anandam Properties",
+      [ROUTES.BLOG_RAILWAY]: "Western Railway ₹18,901.68 Crore EPC Tender: Sarkhej-Dholera Semi High-Speed Rail Line Explained | Anandam Properties",
+      [ROUTES.CONTACT]: "Contact Us | Anandam Properties",
+      [ROUTES.PRIVACY]: "Privacy Policy | Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions | Anandam Properties",
+    };
+
+    const descriptions = {
+      [ROUTES.HOME]: "Explore premium plots near Lothal UNESCO Heritage Site & Dholera SIR. Anandam Properties offers transparent guidance, clear titles, and high-potential investment in Gujarat's fastest-growing corridor. Book a free site visit today.",
+      [ROUTES.ABOUT]: "Learn about Anandam Properties - Your trusted partner for premium plotted development in Gujarat.",
+      [ROUTES.PROJECTS]: "Anandam Exotica offers plotted development near Lothal UNESCO site & Dholera SIR. Plot sizes from 60–106 SQMT. Gated community, clear titles, ready infrastructure. Book a site visit.",
+      [ROUTES.VALUES]: "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.",
+      [ROUTES.BLOG]: "Read the latest insights and updates from Anandam Properties.",
+      [ROUTES.BLOG_STTGDC]: "STT GDC India is evaluating a ₹8,000–₹10,000 crore data centre investment in Dholera. Learn what this means for Dholera's technology ecosystem, real estate outlook, and why the project is still under feasibility study.",
+      [ROUTES.BLOG_RAILWAY]: "Western Railway has issued an ₹18,901.68 crore EPC tender for the 109 km Sarkhej-Dholera semi-high-speed double railway line, with spur lines to Dholera International Airport and Lothal. Understand what this means for Dholera's connectivity and real estate.",
+      [ROUTES.CONTACT]: "Get in touch with Anandam Properties for premium plot investments in Gujarat.",
+      [ROUTES.PRIVACY]: "Privacy Policy - Anandam Properties",
+      [ROUTES.TERMS]: "Terms and Conditions - Anandam Properties",
+    };
+
+    document.title = titles[pathname] || "Anandam Properties";
+
+    // Update meta description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', descriptions[pathname] || descriptions[ROUTES.HOME]);
+
+    // Update canonical URL
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    const baseUrl = 'https://anandamproperties.com';
+    const canonicalUrl = pathname === ROUTES.HOME ? baseUrl + '/' : baseUrl + pathname;
+    canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Update Open Graph URL
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', canonicalUrl);
+    }
+
+    // Update Twitter URL
+    let twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute('content', canonicalUrl);
+    }
+  }, [pathname]);
+
+  const { setCurrentPath } = useCallModal();
+
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname, setCurrentPath]);
+
+  const navigate = (nextPath) => {
+    if (nextPath === pathname) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    window.history.pushState({}, "", nextPath);
+    setPathname(nextPath);
+  };
+
+  const renderPage = () => {
+    switch (pathname) {
+      case ROUTES.ABOUT:
+        return <AboutPage onNavigate={navigate} />;
+      case ROUTES.PROJECTS:
+        return <ProjectsPage onNavigate={navigate} />;
+      case ROUTES.VALUES:
+        return <ValuesPage onNavigate={navigate} />;
+      case ROUTES.BLOG:
+        return <BlogPage onNavigate={navigate} />;
+      case ROUTES.BLOG_STTGDC:
+        return <BlogDetailSTTGDC onNavigate={navigate} />;
+      case ROUTES.BLOG_RAILWAY:
+        return <BlogDetailRailway onNavigate={navigate} />;
+      case ROUTES.CONTACT:
+        return <ContactPage />;
+      case ROUTES.PRIVACY:
+      case ROUTES.TERMS:
+        return <LegalPage {...LEGAL_PAGES[pathname]} onNavigate={navigate} />;
+      case ROUTES.HOME:
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
+    <>
+      <Navbar currentPath={pathname} onNavigate={navigate} />
+      {renderPage()}
+      <Footer currentPath={pathname} onNavigate={navigate} />
+      <ScrollToTop />
+      <CallModal />
+    </>
   );
 }
 

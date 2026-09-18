@@ -1,5 +1,4 @@
 ﻿import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
@@ -13,6 +12,8 @@ import dholeraSIRSmartCityImg from "../assets/Dholera SIR Smart City Investment_
 import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real Estate_ Why Plots Near Dholera International Airport Are Drawing Attention.png";
 import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
 import premiumUNESCOPlotsImg from "../assets/Premium Plots Near UNESCO Heritage Site_ Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat.png";
+import sttGdcImg from "../assets/STT GDC Dholera ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation.png";
+import railwayImg from "../assets/Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -30,6 +31,24 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Infrastructure News",
+    date: "September 2026",
+    title: "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation",
+    excerpt: "STT GDC India is evaluating a ₹8,000–₹10,000 crore data centre investment in Dholera. Learn what this means for Dholera's technology ecosystem and real estate outlook.",
+    read: "10 min read",
+    img: sttGdcImg,
+    link: "/blog/stt-gdc-dholera-data-centre",
+  },
+  {
+    tag: "Infrastructure News",
+    date: "September 2026",
+    title: "Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line",
+    excerpt: "Western Railway has issued an ₹18,901.68 crore EPC tender for the 109 km Sarkhej-Dholera semi-high-speed double railway line. Understand what this means for Dholera's connectivity.",
+    read: "11 min read",
+    img: railwayImg,
+    link: "/blog/sarkhej-dholera-railway-epc-tender",
+  },
   {
     tag: "Infrastructure Investment",
     date: "September 2026",
@@ -85,10 +104,19 @@ const BLOGS = [
     link: "/blog/micro-location-buying-guide-dholera",
   },
   {
+    tag: "Market Insights",
+    date: "August 2026",
+    title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
+    excerpt: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
+    read: "12 min read",
+    img: lothalCorridorImg,
+    link: "/blog/lothal-dholera-corridor-growth-hub",
+  },
+  {
     tag: "Lifestyle & Investment",
     date: "July 2026",
     title: "Weekend Home Plots Near Ahmedabad: Why Families Are Choosing Lothal Over the Usual Getaway Spots",
-    excerpt: "A quieter weekend option that doesn't involve hotel bookings ΓÇö an actual piece of land you own, close enough to reach after work on a Friday.",
+    excerpt: "A quieter weekend option that doesn't involve hotel bookings — an actual piece of land you own, close enough to reach after work on a Friday.",
     read: "10 min read",
     img: weekendHomeImg,
     link: "/blog/weekend-home-plots-near-ahmedabad",
@@ -102,19 +130,10 @@ const BLOGS = [
     img: blogCardImg,
     link: "/blog/plots-in-lothal-near-dholera-sir",
   },
-  {
-    tag: "Market Insights",
-    date: "August 2026",
-    title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
-    excerpt: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
-    read: "12 min read",
-    img: lothalCorridorImg,
-    link: "/blog/lothal-dholera-corridor-growth-hub",
-  },
 ];
 
-export default function BlogPage() {
-  const navigate = useNavigate();
+export default function BlogPage({ onNavigate }) {
+  const navigate = onNavigate || ((path) => { window.history.pushState({}, "", path); window.dispatchEvent(new PopStateEvent("popstate")); });
   
   useEffect(() => {
     document.title = "Blog | Anandam Properties";
@@ -145,9 +164,9 @@ export default function BlogPage() {
         >
           <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
+        <a href="/" className="page-hero__logo" aria-label="Anandam Properties — Home" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
           <img src={logoImg} alt="Anandam Properties" />
-        </Link>
+        </a>
         <CallNowBtn />
       </section>
 
@@ -162,7 +181,7 @@ export default function BlogPage() {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">9</span>
+              <span className="blog-section-header__stat-num">11</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -181,11 +200,12 @@ export default function BlogPage() {
           <div className="blog-grid">
             {BLOGS.map((blog, i) => (
               blog.link ? (
-                <Link 
-                  key={i} 
-                  to={blog.link}
+                <a
+                  key={i}
+                  href={blog.link}
                   className="blog-card"
                   style={{ textDecoration: 'none' }}
+                  onClick={(e) => { e.preventDefault(); navigate(blog.link); }}
                 >
                   <div className="blog-card__img-wrap">
                     <img src={blog.img} alt={blog.title} className="blog-card__img" />
@@ -193,11 +213,11 @@ export default function BlogPage() {
                   <div className="blog-card__body">
                     <h3 className="blog-card__title">{blog.title}</h3>
                   </div>
-                </Link>
+                </a>
               ) : (
-                <article 
-                  key={i} 
-                  className="blog-card" 
+                <article
+                  key={i}
+                  className="blog-card"
                   onClick={() => navigate("/contact-us")}
                 >
                   <div className="blog-card__img-wrap">
