@@ -1,3 +1,18 @@
+/* ── Featured Image (replaces hero) ── */
+.bd-featured-img-wrap {
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  margin-top: 70px; /* navbar clearance */
+}
+.bd-featured-img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Meta Bar ── */
 .bd-meta-bar { padding-top: 32px; padding-bottom: 0; }
 .bd-meta-bar__inner {
