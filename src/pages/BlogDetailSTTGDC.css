@@ -1,10 +1,7 @@
 /* ── Featured Image (replaces hero) ── */
 .bd-featured-img-wrap {
   width: 100%;
-  max-width: 860px;
-  margin: 80px auto 0;
-  padding: 0 20px;
-  box-sizing: border-box;
+  margin: 24px 0 36px;
 }
 .bd-featured-img {
   width: 100%;
@@ -15,7 +12,7 @@
 }
 
 /* ── Meta Bar ── */
-.bd-meta-bar { padding-top: 32px; padding-bottom: 0; }
+.bd-meta-bar { padding-top: 100px; padding-bottom: 0; }
 .bd-meta-bar__inner {
   display: flex;
   align-items: center;

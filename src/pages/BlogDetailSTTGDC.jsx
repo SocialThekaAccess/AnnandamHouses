@@ -35,11 +35,6 @@ export default function BlogDetailSTTGDC({ onNavigate }) {
 
       <main className="page-main">
 
-        {/* Featured Image */}
-        <div className="bd-featured-img-wrap">
-          <img src={blogHeroImg} alt="STT GDC Dholera Data Centre Investment" className="bd-featured-img" />
-        </div>
-
         {/* Breadcrumb + Meta */}
         <section className="page-section bd-meta-bar">
           <div className="bd-meta-bar__inner">
@@ -75,15 +70,21 @@ export default function BlogDetailSTTGDC({ onNavigate }) {
                 <p className="bd-lead">
                   The proposal came into focus following a meeting between Gujarat Chief Minister Bhupendra Patel and Bimal Khandelwal, CEO of STT GDC India, during the Mumbai Roadshow for the Vibrant Gujarat Global Summit 2027.
                 </p>
+              </header>
+
+              {/* Featured Image — after title, like other blog posts */}
+              <div className="bd-featured-img-wrap">
+                <img src={blogHeroImg} alt="STT GDC Dholera Data Centre Investment" className="bd-featured-img" />
+              </div>
+
+              <div className="bd-body">
+
                 <div className="bd-notice">
                   <span className="bd-notice__icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                   </span>
                   <p>The proposed investment has not yet been confirmed as a final project. STT GDC India is currently evaluating the opportunity, and a feasibility study is underway.</p>
                 </div>
-              </header>
-
-              <div className="bd-body">
 
                 <h2>What Is STT GDC India Considering in Dholera?</h2>
                 <p>STT GDC India is exploring the possibility of developing large-scale, sustainable digital infrastructure in Dholera.</p>

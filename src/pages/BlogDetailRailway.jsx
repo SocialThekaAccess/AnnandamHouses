@@ -63,11 +63,6 @@ export default function BlogDetailRailway({ onNavigate }) {
 
       <main className="page-main">
 
-        {/* Featured Image */}
-        <div className="bd-featured-img-wrap">
-          <img src={blogHeroImg} alt="Sarkhej Dholera Railway EPC Tender" className="bd-featured-img" />
-        </div>
-
         {/* Breadcrumb + Tags */}
         <section className="page-section bd-meta-bar">
           <div className="bd-meta-bar__inner">
@@ -97,15 +92,21 @@ export default function BlogDetailRailway({ onNavigate }) {
                 <p className="bd-lead">Dholera's infrastructure development has taken another significant step forward with Western Railway issuing an Engineering, Procurement and Construction (EPC) tender worth ₹18,901.68 crore for the Sarkhej-Dholera Semi High-Speed Double Railway Line.</p>
                 <p className="bd-lead">The proposed railway corridor will connect Sarkhej in Ahmedabad with Dholera and will also include dedicated spur connectivity towards Dholera International Airport and the National Maritime Heritage Complex (NMHC) at Lothal.</p>
                 <p className="bd-lead">This development follows the Union Cabinet's approval of the larger Ahmedabad (Sarkhej)-Dholera semi-high-speed rail project in May 2026.</p>
+              </header>
+
+              {/* Featured Image — after title */}
+              <div className="bd-featured-img-wrap">
+                <img src={blogHeroImg} alt="Sarkhej Dholera Railway EPC Tender" className="bd-featured-img" />
+              </div>
+
+              <div className="bd-body">
+
                 <div className="bd-notice">
                   <span className="bd-notice__icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                   </span>
                   <p>The railway line has entered the bidding and contracting stage, but construction under this EPC package has not yet started.</p>
                 </div>
-              </header>
-
-              <div className="bd-body">
 
                 <h2>What Is the ₹18,901.68 Crore Sarkhej-Dholera Rail Tender?</h2>
                 <p>Western Railway has invited bids for a comprehensive EPC package for the proposed semi-high-speed double railway line between Sarkhej and Dholera.</p>
