@@ -84,7 +84,14 @@
   position: absolute;
   top: 0;
   left: 2%;
-  z-index: 6;
+  z-index: 1001;  /* Navbar ke upar */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  display: block;
+}
+.page-hero__logo:hover {
+  opacity: 0.85;
 }
 .page-hero__logo img {
   height: 180px;
@@ -1397,7 +1404,12 @@
     font-size: 18px;
   }
 
-  .page-hero__logo,
+  /* Logo hidden on mobile since navbar shows it */
+  .page-hero__logo {
+    display: none;
+  }
+  
+  /* Call button hidden on mobile */
   .page-hero__call-btn {
     display: none;
   }

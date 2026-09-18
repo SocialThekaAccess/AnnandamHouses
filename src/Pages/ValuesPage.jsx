@@ -1,4 +1,6 @@
-﻿import "./PageShell.css";
+﻿import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./PageShell.css";
 import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
 import Value3 from "../assets/Value3.png";
@@ -141,6 +143,25 @@ const PILLARS = [
 ];
 
 export default function ValuesPage({ onNavigate }) {
+  useEffect(() => {
+    document.title = "Our Values | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Our Values | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">
@@ -153,9 +174,9 @@ export default function ValuesPage({ onNavigate }) {
         >
           <img src={Valuesimg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden"></div>
       </section>

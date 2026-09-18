@@ -1,4 +1,6 @@
-﻿import Contact from "../Components/Contact";
+﻿import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Contact from "../Components/Contact";
 import "./PageShell.css";
 import ContactUs from "../assets/ContactUsA.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -31,6 +33,25 @@ const CHANNELS = [
 ];
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = "Contact Us | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Get in touch with Anandam Properties for premium plot investments in Gujarat.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Contact Us | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Get in touch with Anandam Properties for premium plot investments in Gujarat.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">
@@ -43,9 +64,9 @@ export default function ContactPage() {
         >
           <img src={ContactUs} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden">
           <div className="page-hero__copy">

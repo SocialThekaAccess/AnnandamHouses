@@ -1,9 +1,18 @@
-﻿import "./PageShell.css";
+﻿import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
 import logoImg from "../assets/anandamhomeslogo.png";
-import sttGdcImg from "../assets/stt-gdc-dholera-data-centre.png";
-import railwayImg from "../assets/sarkhej-dholera-railway-epc-tender.png";
+import blogCardImg from "../assets/Anandamblog1.png";
+import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
+import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
+import microLocationImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is the Next Growth Hub.png";
+import dholeraExpresswayImg from "../assets/Dholera Expressway Property Investment_ Why a Plotted Development Near Ahmedabad Deserves Long-Term Attention.png";
+import dholeraSIRSmartCityImg from "../assets/Dholera SIR Smart City Investment_ Understanding Dholera SIR Investment Plots and Dholera Smart City Plots.png";
+import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real Estate_ Why Plots Near Dholera International Airport Are Drawing Attention.png";
+import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
+import premiumUNESCOPlotsImg from "../assets/Premium Plots Near UNESCO Heritage Site_ Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -22,80 +31,110 @@ const CallNowBtn = () => {
 
 const BLOGS = [
   {
-    tag: "Connectivity",
-    date: "September 18, 2026",
-    title: "Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line",
-    excerpt: "Western Railway has issued an ₹18,901.68 crore EPC tender for the Sarkhej-Dholera semi-high-speed double railway line, including spur lines to Dholera International Airport and Lothal. Here is what it means for the region.",
+    tag: "Infrastructure Investment",
+    date: "September 2026",
+    title: "Dholera Expressway Property Investment: Why a Plotted Development Near Ahmedabad Deserves Long-Term Attention",
+    excerpt: "Explore Dholera expressway property investment and plotted development near Ahmedabad. Learn how connectivity, Dholera SIR and Lothal may influence long-term land demand.",
+    read: "12 min read",
+    img: dholeraExpresswayImg,
+    link: "/blog/dholera-expressway-property-investment",
+  },
+  {
+    tag: "Smart City Development",
+    date: "September 2026",
+    title: "Dholera SIR Smart City Investment: Understanding Dholera SIR Investment Plots and Dholera Smart City Plots",
+    excerpt: "Explore Dholera SIR smart city investment, Dholera SIR investment plots and Dholera Smart City plots with insights on infrastructure, DMIC and long-term potential.",
+    read: "14 min read",
+    img: dholeraSIRSmartCityImg,
+    link: "/blog/dholera-sir-smart-city-investment",
+  },
+  {
+    tag: "Industrial Corridor",
+    date: "September 2026",
+    title: "Delhi Mumbai Industrial Corridor Real Estate: Why Plots Near Dholera International Airport Are Drawing Attention",
+    excerpt: "Explore Delhi Mumbai industrial corridor real estate and plots near Dholera International Airport, including Dholera SIR, expressway and long-term property factors.",
+    read: "13 min read",
+    img: dmicRealEstateImg,
+    link: "/blog/delhi-mumbai-industrial-corridor-real-estate-dholera",
+  },
+  {
+    tag: "Legal Guide",
+    date: "September 2026",
+    title: "Clear Title Residential Plots Gujarat: What to Check Before You Buy Plots in Gujarat for Long-Term Investment",
+    excerpt: "Looking for clear title residential plots Gujarat? Learn what to verify before you buy plots in Gujarat and how to evaluate long-term plotted investments near Dholera.",
+    read: "11 min read",
+    img: clearTitlePlotsImg,
+    link: "/blog/clear-title-residential-plots-gujarat",
+  },
+  {
+    tag: "Heritage & Tourism",
+    date: "September 2026",
+    title: "Premium Plots Near UNESCO Heritage Site: Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat",
+    excerpt: "Explore premium plots near UNESCO heritage site searches around Lothal and Dholera, NMHC development, Dholera SIR connectivity and long-term investment plots Gujarat.",
+    read: "13 min read",
+    img: premiumUNESCOPlotsImg,
+    link: "/blog/premium-plots-near-unesco-heritage-site-lothal-dholera",
+  },
+  {
+    tag: "Buyer's Guide",
+    date: "August 2026",
+    title: "Plots Near Dholera SIR: A Micro-Location Scorecard for Comparing Two Similar Properties",
+    excerpt: "Comparing plots near Dholera SIR? Use this practical micro-location scorecard to assess access, surroundings, plot usability, documentation and future development.",
+    read: "15 min read",
+    img: microLocationImg,
+    link: "/blog/micro-location-buying-guide-dholera",
+  },
+  {
+    tag: "Lifestyle & Investment",
+    date: "July 2026",
+    title: "Weekend Home Plots Near Ahmedabad: Why Families Are Choosing Lothal Over the Usual Getaway Spots",
+    excerpt: "A quieter weekend option that doesn't involve hotel bookings ΓÇö an actual piece of land you own, close enough to reach after work on a Friday.",
     read: "10 min read",
-    img: railwayImg,
-    slug: "/blog/sarkhej-dholera-railway-epc-tender",
-  },
-  {
-    tag: "Digital Infrastructure",
-    date: "September 18, 2026",
-    title: "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation",
-    excerpt: "STT GDC India is evaluating a potential ₹8,000–₹10,000 crore sustainable data centre investment in Dholera following discussions at the Vibrant Gujarat Global Summit 2027 Mumbai Roadshow. Here is what it means for the region.",
-    read: "8 min read",
-    img: sttGdcImg,
-    slug: "/blog/stt-gdc-dholera-data-centre",
-  },
-  {
-    tag: "Market Insight",
-    date: "June 1, 2026",
-    title: "Dholera Value Growth Truth: What Occurred with Investors Who Bought Early?",
-    excerpt: "Pioneer investors in Dholera SIR are already witnessing substantial gains. This piece examines actual outcomes, locational strengths, and why the opportunity for entry remains open for long-horizon buyers.",
-    read: "5 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSUxuSa7w2xepJlBNE65qNy1eRpjcuwurvA&s",
-    slug: "/contact-us",
-  },
-  {
-    tag: "Infrastructure",
-    date: "May 28, 2026",
-    title: "Dholera International Airport: Position, Access and Upcoming Expansion",
-    excerpt: "The Dholera International Airport stands among the most pivotal infrastructure developments shaping this region's trajectory. Here is what its placement and road/rail links mean for property investors.",
-    read: "4 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWERg8KuGCUgqzqbl2ruo6YBLdxnJKO-srw&s",
-    slug: "/contact-us",
-  },
-  {
-    tag: "Connectivity",
-    date: "May 25, 2026",
-    title: "Dedicated Freight Corridor: How India's Largest Rail Network Links Dholera to Delhi and Mumbai",
-    excerpt: "The Dedicated Freight Corridor seamlessly connects Dholera to India's biggest commercial centres. For buyers, this translates into industrial expansion, job creation, and sustained residential demand.",
-    read: "6 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67_lA_QgnDalRTZ_at9m_I_Go-oOPCZWqDw&s",
-    slug: "/contact-us",
+    img: weekendHomeImg,
+    link: "/blog/weekend-home-plots-near-ahmedabad",
   },
   {
     tag: "Investment Guide",
-    date: "April 25, 2026",
-    title: "Where to Purchase the Best Plots in Dholera Within 10 Lakh?",
-    excerpt: "A large budget is not mandatory to step into Dholera. This guide outlines the most promising budget-friendly plot zones, key verification points, and how to arrive at a well-informed decision.",
-    read: "5 min read",
-    img: "https://imagecdn.99acres.com/media1/32508/9/650169375M-1767029914146.webp",
-    slug: "/contact-us",
+    date: "June 2026",
+    title: "Plots in Lothal: Why Investing Near Dholera SIR is a Smart Decision for the Future",
+    excerpt: "Gujarat has become one of India's most attractive real estate destinations, with Dholera SIR and historic Lothal driving investor interest.",
+    read: "8 min read",
+    img: blogCardImg,
+    link: "/blog/plots-in-lothal-near-dholera-sir",
   },
   {
-    tag: "Smart City",
-    date: "February 14, 2026",
-    title: "Why 2026 Marks the Ideal Moment to Purchase Plots in Dholera Smart City",
-    excerpt: "With the expressway launched, airport development underway, and industrial zones activating ΓÇö 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
-    read: "4 min read",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDwW0hgPXLAiiHVIJQDYBwEGvbygPT3LXw&s",
-    slug: "/contact-us",
-  },
-  {
-    tag: "Location",
-    date: "January 10, 2026",
-    title: "Lothal to Dholera: Decoding the Growth Belt That Is Defining Gujarat's Tomorrow",
-    excerpt: "The stretch between Lothal and Dholera is rapidly evolving into one of Gujarat's most strategically significant real estate belts, with infrastructure, heritage, and industry converging together.",
-    read: "5 min read",
-    img: "https://production-aum-storage.s3.ap-south-1.amazonaws.com/web/content/5/images/variants/rect_large_jpg/18-1769367936276.jpg",
-    slug: "/contact-us",
+    tag: "Market Insights",
+    date: "August 2026",
+    title: "Plots in Lothal: Why the Lothal-Dholera Corridor is the Next Growth Hub",
+    excerpt: "Discover why plots in Lothal and the Lothal-Dholera corridor are emerging as smart investment choices with strong connectivity, heritage value, and future growth.",
+    read: "12 min read",
+    img: lothalCorridorImg,
+    link: "/blog/lothal-dholera-corridor-growth-hub",
   },
 ];
 
-export default function BlogPage({ onNavigate }) {
+export default function BlogPage() {
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    document.title = "Blog | Anandam Properties";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Read the latest insights and updates from Anandam Properties.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Blog | Anandam Properties");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Read the latest insights and updates from Anandam Properties.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
 
@@ -106,9 +145,9 @@ export default function BlogPage({ onNavigate }) {
         >
           <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
       </section>
 
@@ -123,7 +162,7 @@ export default function BlogPage({ onNavigate }) {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">8</span>
+              <span className="blog-section-header__stat-num">9</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -131,8 +170,8 @@ export default function BlogPage({ onNavigate }) {
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">5</span>
-              <span className="blog-section-header__stat-label">Min Avg Read</span>
+              <span className="blog-section-header__stat-num">15</span>
+              <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>
         </section>
@@ -141,14 +180,34 @@ export default function BlogPage({ onNavigate }) {
         <section className="page-section blog-grid-section">
           <div className="blog-grid">
             {BLOGS.map((blog, i) => (
-              <article key={i} className="blog-card" onClick={() => onNavigate?.(blog.slug || "/contact-us")}>
-                <div className="blog-card__img-wrap">
-                  <img src={blog.img} alt={blog.title} className="blog-card__img" />
-                </div>
-                <div className="blog-card__body">
-                  <h3 className="blog-card__title">{blog.title}</h3>
-                </div>
-              </article>
+              blog.link ? (
+                <Link 
+                  key={i} 
+                  to={blog.link}
+                  className="blog-card"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <div className="blog-card__img-wrap">
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                  </div>
+                  <div className="blog-card__body">
+                    <h3 className="blog-card__title">{blog.title}</h3>
+                  </div>
+                </Link>
+              ) : (
+                <article 
+                  key={i} 
+                  className="blog-card" 
+                  onClick={() => navigate("/contact-us")}
+                >
+                  <div className="blog-card__img-wrap">
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                  </div>
+                  <div className="blog-card__body">
+                    <h3 className="blog-card__title">{blog.title}</h3>
+                  </div>
+                </article>
+              )
             ))}
           </div>
         </section>
@@ -162,7 +221,7 @@ export default function BlogPage({ onNavigate }) {
               <p className="blog-cta-band__copy">Speak with our team for location walkthroughs, pricing guidance, and a clear picture of what the Dholera opportunity looks like for you.</p>
             </div>
             <div className="blog-cta-band__right">
-              <button className="gold-btn" onClick={() => onNavigate?.("/contact-us")}>
+              <button className="gold-btn" onClick={() => navigate("/contact-us")}>
                 Talk to Our Team
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>

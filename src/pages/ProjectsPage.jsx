@@ -1,4 +1,6 @@
-﻿import "./PageShell.css";
+﻿import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./PageShell.css";
 import heroBg from "../assets/ourProjects.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import mapPreview from "../assets/AnandamMaps.jpeg";
@@ -124,6 +126,25 @@ const CallNowBtn = () => {
 };
 
 export default function ProjectsPage({ onNavigate }) {
+  useEffect(() => {
+    document.title = "Our Projects | Anandam Exotica Lothal - Premium Plots Near UNESCO Heritage Site";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Discover Anandam Exotica Lothal - RERA-approved premium plots from 60-106 SQMT near UNESCO World Heritage Site. Gated community with 40ft main road, 2800+ SQMT open space, and clear titles.");
+    }
+    
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Anandam Exotica Lothal - Premium Plotted Development");
+    }
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "RERA-approved gated community near Lothal UNESCO site and Dholera SIR. Plot sizes 60-106 SQMT with clear infrastructure and premium amenities.");
+    }
+  }, []);
+
   return (
     <div className="page-shell">
       <section className="page-hero page-hero--no-overlay">
@@ -137,9 +158,9 @@ export default function ProjectsPage({ onNavigate }) {
         >
           <img src={heroBg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <div className="page-hero__logo">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
-        </div>
+        </Link>
         <CallNowBtn />
         <div className="page-hero__inner page-hero__inner--hidden" />
       </section>
