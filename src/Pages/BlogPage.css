@@ -1,11 +1,11 @@
-/* ── Hero ── */
+﻿/* ΓöÇΓöÇ Hero ΓöÇΓöÇ */
 .blog-hero--full {
   min-height: 92vh;
   align-items: center;
   justify-content: center;
 }
 
-/* ── Section Header ── */
+/* ΓöÇΓöÇ Section Header ΓöÇΓöÇ */
 .blog-section-header {
   padding-top: 64px;
   padding-bottom: 48px;
@@ -83,7 +83,7 @@
   white-space: nowrap;
 }
 
-/* ── Blog Grid ── */
+/* ΓöÇΓöÇ Blog Grid ΓöÇΓöÇ */
 .blog-grid-section {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -95,7 +95,7 @@
   gap: 28px;
 }
 
-/* ── Blog Card ── */
+/* ΓöÇΓöÇ Blog Card ΓöÇΓöÇ */
 .blog-card {
   background: #fff;
   border: 1px solid rgba(184, 151, 90, 0.15);
@@ -190,7 +190,7 @@
   gap: 10px;
 }
 
-/* ── CTA Band ── */
+/* ΓöÇΓöÇ CTA Band ΓöÇΓöÇ */
 .blog-cta-band {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
@@ -254,7 +254,7 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* ── Responsive ── */
+/* ΓöÇΓöÇ Responsive ΓöÇΓöÇ */
 @media (max-width: 1024px) {
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .blog-cta-band { grid-template-columns: 1fr; }

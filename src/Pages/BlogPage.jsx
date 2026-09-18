@@ -1,6 +1,9 @@
-import "./PageShell.css";
+﻿import "./PageShell.css";
 import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
+import logoImg from "../assets/anandamhomeslogo.png";
+import sttGdcImg from "../assets/stt-gdc-dholera-data-centre.png";
+import railwayImg from "../assets/sarkhej-dholera-railway-epc-tender.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -19,12 +22,31 @@ const CallNowBtn = () => {
 
 const BLOGS = [
   {
+    tag: "Connectivity",
+    date: "September 18, 2026",
+    title: "Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line",
+    excerpt: "Western Railway has issued an ₹18,901.68 crore EPC tender for the Sarkhej-Dholera semi-high-speed double railway line, including spur lines to Dholera International Airport and Lothal. Here is what it means for the region.",
+    read: "10 min read",
+    img: railwayImg,
+    slug: "/blog/sarkhej-dholera-railway-epc-tender",
+  },
+  {
+    tag: "Digital Infrastructure",
+    date: "September 18, 2026",
+    title: "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation",
+    excerpt: "STT GDC India is evaluating a potential ₹8,000–₹10,000 crore sustainable data centre investment in Dholera following discussions at the Vibrant Gujarat Global Summit 2027 Mumbai Roadshow. Here is what it means for the region.",
+    read: "8 min read",
+    img: sttGdcImg,
+    slug: "/blog/stt-gdc-dholera-data-centre",
+  },
+  {
     tag: "Market Insight",
     date: "June 1, 2026",
     title: "Dholera Value Growth Truth: What Occurred with Investors Who Bought Early?",
     excerpt: "Pioneer investors in Dholera SIR are already witnessing substantial gains. This piece examines actual outcomes, locational strengths, and why the opportunity for entry remains open for long-horizon buyers.",
     read: "5 min read",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSUxuSa7w2xepJlBNE65qNy1eRpjcuwurvA&s",
+    slug: "/contact-us",
   },
   {
     tag: "Infrastructure",
@@ -33,6 +55,7 @@ const BLOGS = [
     excerpt: "The Dholera International Airport stands among the most pivotal infrastructure developments shaping this region's trajectory. Here is what its placement and road/rail links mean for property investors.",
     read: "4 min read",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWERg8KuGCUgqzqbl2ruo6YBLdxnJKO-srw&s",
+    slug: "/contact-us",
   },
   {
     tag: "Connectivity",
@@ -41,6 +64,7 @@ const BLOGS = [
     excerpt: "The Dedicated Freight Corridor seamlessly connects Dholera to India's biggest commercial centres. For buyers, this translates into industrial expansion, job creation, and sustained residential demand.",
     read: "6 min read",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67_lA_QgnDalRTZ_at9m_I_Go-oOPCZWqDw&s",
+    slug: "/contact-us",
   },
   {
     tag: "Investment Guide",
@@ -49,14 +73,16 @@ const BLOGS = [
     excerpt: "A large budget is not mandatory to step into Dholera. This guide outlines the most promising budget-friendly plot zones, key verification points, and how to arrive at a well-informed decision.",
     read: "5 min read",
     img: "https://imagecdn.99acres.com/media1/32508/9/650169375M-1767029914146.webp",
+    slug: "/contact-us",
   },
   {
     tag: "Smart City",
     date: "February 14, 2026",
     title: "Why 2026 Marks the Ideal Moment to Purchase Plots in Dholera Smart City",
-    excerpt: "With the expressway launched, airport development underway, and industrial zones activating — 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
+    excerpt: "With the expressway launched, airport development underway, and industrial zones activating ΓÇö 2026 presents a defining entry window for buyers seeking growth ahead of peak valuations.",
     read: "4 min read",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9CDwW0hgPXLAiiHVIJQDYBwEGvbygPT3LXw&s",
+    slug: "/contact-us",
   },
   {
     tag: "Location",
@@ -65,6 +91,7 @@ const BLOGS = [
     excerpt: "The stretch between Lothal and Dholera is rapidly evolving into one of Gujarat's most strategically significant real estate belts, with infrastructure, heritage, and industry converging together.",
     read: "5 min read",
     img: "https://production-aum-storage.s3.ap-south-1.amazonaws.com/web/content/5/images/variants/rect_large_jpg/18-1769367936276.jpg",
+    slug: "/contact-us",
   },
 ];
 
@@ -78,6 +105,9 @@ export default function BlogPage({ onNavigate }) {
           style={{ backgroundImage: `url(${blogHeroImg})`, backgroundPosition: "center center" }}
         >
           <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
+        </div>
+        <div className="page-hero__logo">
+          <img src={logoImg} alt="Anandam Properties" />
         </div>
         <CallNowBtn />
       </section>
@@ -93,7 +123,7 @@ export default function BlogPage({ onNavigate }) {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">6</span>
+              <span className="blog-section-header__stat-num">8</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -111,7 +141,7 @@ export default function BlogPage({ onNavigate }) {
         <section className="page-section blog-grid-section">
           <div className="blog-grid">
             {BLOGS.map((blog, i) => (
-              <article key={i} className="blog-card" onClick={() => onNavigate?.("/contact-us")}>
+              <article key={i} className="blog-card" onClick={() => onNavigate?.(blog.slug || "/contact-us")}>
                 <div className="blog-card__img-wrap">
                   <img src={blog.img} alt={blog.title} className="blog-card__img" />
                 </div>

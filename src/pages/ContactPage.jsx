@@ -1,4 +1,4 @@
-import Contact from "../Components/Contact";
+﻿import Contact from "../Components/Contact";
 import "./PageShell.css";
 import ContactUs from "../assets/ContactUsA.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   Get in touch with our team today.
                 </h2>
                 <p className="page-copy">
-                  Whether you have questions about Dholera plots, want to schedule a site visit, or need guidance on documentation and investment — our team is available to help you at every step.
+                  Whether you have questions about Dholera plots, want to schedule a site visit, or need guidance on documentation and investment ΓÇö our team is available to help you at every step.
                 </p>
               </div>
 

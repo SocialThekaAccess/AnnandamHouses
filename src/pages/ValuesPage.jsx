@@ -1,4 +1,4 @@
-import "./PageShell.css";
+﻿import "./PageShell.css";
 import Value1 from "../assets/Value1.png";
 import Value2 from "../assets/Value2.png";
 import Value3 from "../assets/Value3.png";
@@ -46,7 +46,7 @@ const VALUES = [
   {
     num: "02",
     title: "Commitment",
-    desc: "We stand by every promise made to our customers. From plot delivery timelines to infrastructure quality — our commitment is absolute and non-negotiable at every step of the journey.",
+    desc: "We stand by every promise made to our customers. From plot delivery timelines to infrastructure quality ΓÇö our commitment is absolute and non-negotiable at every step of the journey.",
     image: Value2,
     tag: "Our Promise",
   },
@@ -67,14 +67,14 @@ const VALUES = [
   {
     num: "05",
     title: "Transparency",
-    desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in — no surprises, no hidden charges, ever.",
+    desc: "Open books, clear communication. We believe our customers deserve to know exactly what they are investing in ΓÇö no surprises, no hidden charges, ever.",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80&auto=format&fit=crop",
     tag: "Our Approach",
   },
   {
     num: "06",
     title: "One Team One Goal",
-    desc: "Our entire team works with a single mission — to help you secure the best investment of your life in India's fastest growing smart city, Lothal.",
+    desc: "Our entire team works with a single mission ΓÇö to help you secure the best investment of your life in India's fastest growing smart city, Lothal.",
     image: Value4,
     tag: "Our Mission",
   },
@@ -100,7 +100,7 @@ const PILLARS = [
       </svg>
     ),
     title: "People-Centric",
-    copy: "Every decision we make starts and ends with the people we serve — our customers, partners, and community.",
+    copy: "Every decision we make starts and ends with the people we serve ΓÇö our customers, partners, and community.",
   },
   {
     icon: (
@@ -118,7 +118,7 @@ const PILLARS = [
       </svg>
     ),
     title: "Growth Focused",
-    copy: "We invest in locations, processes, and relationships that create lasting value — not just short-term gains.",
+    copy: "We invest in locations, processes, and relationships that create lasting value ΓÇö not just short-term gains.",
   },
   {
     icon: (
@@ -136,7 +136,7 @@ const PILLARS = [
       </svg>
     ),
     title: "Trust Built Daily",
-    copy: "Trust isn't claimed — it's earned through consistent action, honest communication, and reliable delivery.",
+    copy: "Trust isn't claimed ΓÇö it's earned through consistent action, honest communication, and reliable delivery.",
   },
 ];
 
@@ -180,7 +180,7 @@ export default function ValuesPage({ onNavigate }) {
                 <p className="page-copy">
                   In a market where trust is everything, our values are our
                   differentiator. We don't just talk about integrity and
-                  transparency — we build them into every document, every site
+                  transparency ΓÇö we build them into every document, every site
                   visit, and every conversation.
                 </p>
               </div>
@@ -215,14 +215,14 @@ export default function ValuesPage({ onNavigate }) {
               </h2>
               <p className="page-copy">
                 When you invest with Anandam , you're not just buying a plot
-                — you're partnering with a team that holds itself to the highest
+                ΓÇö you're partnering with a team that holds itself to the highest
                 standards of integrity, transparency, and customer care.
               </p>
             </div>
             <div className="page-highlight-list">
               {[
                 "Legally clear titles",
-                "Zero hidden charges — ever",
+                "Zero hidden charges ΓÇö ever",
                 "Dedicated relationship manager",
                 "Guided site visits at your convenience",
               ].map((item) => (

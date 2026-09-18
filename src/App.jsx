@@ -19,6 +19,8 @@ import CategoryShowcase from "./Components/CategoryShowcase";
 import Footer from "./Components/Footer";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
+import BlogDetailSTTGDC from "./pages/BlogDetailSTTGDC";
+import BlogDetailRailway from "./pages/BlogDetailRailway";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -30,6 +32,8 @@ const ROUTES = {
   PROJECTS: "/our-projects",
   VALUES: "/our-values",
   BLOG: "/blog",
+  BLOG_STTGDC: "/blog/stt-gdc-dholera-data-centre",
+  BLOG_RAILWAY: "/blog/sarkhej-dholera-railway-epc-tender",
   CONTACT: "/contact-us",
   PRIVACY: "/privacy-policy",
   TERMS: "/terms-and-conditions",
@@ -189,6 +193,8 @@ function getPathname() {
   if (Object.values(ROUTES).includes(path)) {
     return path;
   }
+  // support blog sub-routes
+  if (path.startsWith("/blog/")) return path;
   return ROUTES.HOME;
 }
 
@@ -210,6 +216,8 @@ function App() {
       [ROUTES.PROJECTS]: "Anandam Exotica Lothal – Premium Plotted Development near UNESCO Heritage Site, Gujarat",
       [ROUTES.VALUES]: "Our Values | Anandam Properties",
       [ROUTES.BLOG]: "Blog | Anandam Properties",
+      [ROUTES.BLOG_STTGDC]: "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation | Anandam Properties",
+      [ROUTES.BLOG_RAILWAY]: "Western Railway ₹18,901.68 Crore EPC Tender: Sarkhej-Dholera Semi High-Speed Rail Line Explained | Anandam Properties",
       [ROUTES.CONTACT]: "Contact Us | Anandam Properties",
       [ROUTES.PRIVACY]: "Privacy Policy | Anandam Properties",
       [ROUTES.TERMS]: "Terms and Conditions | Anandam Properties",
@@ -221,6 +229,8 @@ function App() {
       [ROUTES.PROJECTS]: "Anandam Exotica offers plotted development near Lothal UNESCO site & Dholera SIR. Plot sizes from 60–106 SQMT. Gated community, clear titles, ready infrastructure. Book a site visit.",
       [ROUTES.VALUES]: "Discover the values that drive Anandam Properties - transparency, quality, and customer satisfaction.",
       [ROUTES.BLOG]: "Read the latest insights and updates from Anandam Properties.",
+      [ROUTES.BLOG_STTGDC]: "STT GDC India is evaluating a ₹8,000–₹10,000 crore data centre investment in Dholera. Learn what this means for Dholera's technology ecosystem, real estate outlook, and why the project is still under feasibility study.",
+      [ROUTES.BLOG_RAILWAY]: "Western Railway has issued an ₹18,901.68 crore EPC tender for the 109 km Sarkhej-Dholera semi-high-speed double railway line, with spur lines to Dholera International Airport and Lothal. Understand what this means for Dholera's connectivity and real estate.",
       [ROUTES.CONTACT]: "Get in touch with Anandam Properties for premium plot investments in Gujarat.",
       [ROUTES.PRIVACY]: "Privacy Policy - Anandam Properties",
       [ROUTES.TERMS]: "Terms and Conditions - Anandam Properties",
@@ -287,6 +297,10 @@ function App() {
         return <ValuesPage onNavigate={navigate} />;
       case ROUTES.BLOG:
         return <BlogPage onNavigate={navigate} />;
+      case ROUTES.BLOG_STTGDC:
+        return <BlogDetailSTTGDC onNavigate={navigate} />;
+      case ROUTES.BLOG_RAILWAY:
+        return <BlogDetailRailway onNavigate={navigate} />;
       case ROUTES.CONTACT:
         return <ContactPage />;
       case ROUTES.PRIVACY:

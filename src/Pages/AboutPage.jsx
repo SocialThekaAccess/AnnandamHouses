@@ -1,4 +1,4 @@
-import "./PageShell.css";
+﻿import "./PageShell.css";
 import "./AboutPage.css";
 import aboutBg from "../assets/about.png";
 import logoImg from "../assets/anandamhomeslogo.png";
@@ -52,7 +52,7 @@ const CHECKLIST = [
 
 const ZONES = [
   "Dholera SIR Activation Zone",
-  "Ahmedabad–Dholera Expressway",
+  "AhmedabadΓÇôDholera Expressway",
   "Dholera International Airport corridor",
   "Future industrial and semiconductor zones",
   "Logistics and manufacturing hubs",
@@ -79,11 +79,11 @@ export default function AboutPage({ onNavigate }) {
 
       <main className="page-main">
 
-        {/* ── Who We Are ── */}
+        {/* ΓöÇΓöÇ Who We Are ΓöÇΓöÇ */}
         <section className="page-section page-section--fullwidth">
           <div className="aw-who">
 
-            {/* LEFT — heading + para + trust badge */}
+            {/* LEFT ΓÇö heading + para + trust badge */}
             <div className="aw-who__left">
               <div className="section-label">Who We Are</div>
               <h2 className="aw-who__heading">A Trusted Real Estate Brand Built on Clarity, Confidence and Long Term Value</h2>
@@ -105,17 +105,17 @@ export default function AboutPage({ onNavigate }) {
               </div>
             </div>
 
-            {/* CENTER — image */}
+            {/* CENTER ΓÇö image */}
             <div className="aw-who__center">
               <img src={heroImg} alt="Anandam Properties" className="aw-who__img" />
             </div>
 
-            {/* RIGHT — checklist + CTA */}
+            {/* RIGHT ΓÇö checklist + CTA */}
             <div className="aw-who__right">
               {[
                 { icon: "doc",   title: "Legally clear property options",       desc: "All properties verified and legally compliant for your peace of mind." },
                 { icon: "hand",  title: "Transparent guidance with no hidden charges", desc: "Honest information and clear processes at every step." },
-                { icon: "chart", title: "Investment-focused approach in the Lothal–Dholera growth corridor", desc: "Helping you choose locations with strong future potential." },
+                { icon: "chart", title: "Investment-focused approach in the LothalΓÇôDholera growth corridor", desc: "Helping you choose locations with strong future potential." },
                 { icon: "user",  title: "Dedicated relationship manager for every buyer", desc: "Personal support and expert guidance whenever you need it." },
                 { icon: "pin",   title: "Guided site visits as per your convenience", desc: "Flexible visits and complete support to help you decide better." },
               ].map((item, i) => (
@@ -144,7 +144,7 @@ export default function AboutPage({ onNavigate }) {
           </div>
         </section>
 
-        {/* ── Stats Row ── */}
+        {/* ΓöÇΓöÇ Stats Row ΓöÇΓöÇ */}
         <section className="page-section page-section--fullwidth page-section--spaced">
           <div className="aw-stats">
             {STATS.map((item) => (
@@ -168,7 +168,7 @@ export default function AboutPage({ onNavigate }) {
           </div>
         </section>
 
-        {/* ── Why Lothal-Dholera ── */}
+        {/* ΓöÇΓöÇ Why Lothal-Dholera ΓöÇΓöÇ */}
         <section className="page-section page-section--spaced">
           <div className="about-location">
 
@@ -212,7 +212,7 @@ export default function AboutPage({ onNavigate }) {
                   With growing connectivity and planned development, is now becoming part of a larger growth corridor connected with Dholera's future-ready development. At Anandam , we help buyers explore this opportunity with proper guidance, transparency, and confidence.
                 </p>
                 <p className="about-location__accent-copy">
-                  is no longer just an archaeological destination — it is evolving into a future-ready growth ecosystem.
+                  is no longer just an archaeological destination ΓÇö it is evolving into a future-ready growth ecosystem.
                 </p>
                 <button className="gold-btn" onClick={() => window.open('https://wa.me/916384800001', '_blank')}>
                   Plan A Visit
