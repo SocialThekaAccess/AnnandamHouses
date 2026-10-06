@@ -140,6 +140,22 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Weekend Home Plots Ahmedabad Guide -->
+  <url>
+    <loc>https://anandamproperties.com/blog/weekend-home-plots-ahmedabad-guide</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Blog: Plotted Development Near Ahmedabad Layout Guide -->
+  <url>
+    <loc>https://anandamproperties.com/blog/plotted-development-near-ahmedabad-layout-guide</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://anandamproperties.com/privacy-policy</loc>
