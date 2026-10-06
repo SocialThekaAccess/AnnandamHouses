@@ -4,6 +4,8 @@ import "./BlogPage.css";
 import blogHeroImg from "../assets/BlogSlider.png";
 import logoImg from "../assets/anandamhomeslogo.png";
 import blogCardImg from "../assets/Anandamblog1.png";
+import weekendHomeGuideImg from "../assets/Weekend Home Plots Near Ahmedabad.png";
+import plottedDevelopmentGuideImg from "../assets/Aerial Plotted Development Near Ahmedabad.png";
 import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
 import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
 import microLocationImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is the Next Growth Hub.png";
@@ -31,6 +33,24 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Lifestyle & Investment",
+    date: "October 2026",
+    title: "Weekend Home Plots Near Ahmedabad: Your Guide to a Peaceful Escape from City Life",
+    excerpt: "Looking for weekend home plots near Ahmedabad? Explore the best locations, gated community benefits, design tips and a buyer's checklist before you invest in land.",
+    read: "12 min read",
+    img: weekendHomeGuideImg,
+    link: "/blog/weekend-home-plots-ahmedabad-guide",
+  },
+  {
+    tag: "Buyer's Guide",
+    date: "October 2026",
+    title: "Plotted Development Near Ahmedabad: How to Read a Layout Before You Invest",
+    excerpt: "Learn how to read a layout plan before you buy. Plotted development near Ahmedabad explained: roads, phasing, gated community rules, Dholera plots and total costs.",
+    read: "14 min read",
+    img: plottedDevelopmentGuideImg,
+    link: "/blog/plotted-development-near-ahmedabad-layout-guide",
+  },
   {
     tag: "Infrastructure News",
     date: "September 2026",
@@ -181,7 +201,7 @@ export default function BlogPage({ onNavigate }) {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">11</span>
+              <span className="blog-section-header__stat-num">13</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">

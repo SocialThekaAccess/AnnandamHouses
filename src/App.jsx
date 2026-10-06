@@ -30,6 +30,8 @@ import BlogPostDholeraSIRSmartCity from "./pages/BlogPostDholeraSIRSmartCity";
 import BlogPostDMICRealEstate from "./pages/BlogPostDMICRealEstate";
 import BlogPostClearTitlePlots from "./pages/BlogPostClearTitlePlots";
 import BlogPostPremiumUNESCOPlots from "./pages/BlogPostPremiumUNESCOPlots";
+import BlogPostWeekendHomeGuide from "./pages/BlogPostWeekendHomeGuide";
+import BlogPostPlottedDevelopmentGuide from "./pages/BlogPostPlottedDevelopmentGuide";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -110,6 +112,8 @@ function SEOUpdater() {
     "/blog": "Blog | Anandam Properties",
     "/blog/stt-gdc-dholera-data-centre": "STT GDC Dholera: ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation | Anandam Properties",
     "/blog/sarkhej-dholera-railway-epc-tender": "Western Railway ₹18,901.68 Crore EPC Tender: Sarkhej-Dholera Semi High-Speed Rail Line Explained | Anandam Properties",
+    "/blog/weekend-home-plots-ahmedabad-guide": "Weekend Home Plots Near Ahmedabad: Your Guide to Peaceful Living",
+    "/blog/plotted-development-near-ahmedabad-layout-guide": "Plotted Development Near Ahmedabad: Read a Layout Before You Buy",
     "/contact-us": "Contact Us | Anandam Properties",
     "/privacy-policy": "Privacy Policy | Anandam Properties",
     "/terms-and-conditions": "Terms and Conditions | Anandam Properties",
@@ -123,6 +127,8 @@ function SEOUpdater() {
     "/blog": "Read the latest insights and updates from Anandam Properties.",
     "/blog/stt-gdc-dholera-data-centre": "STT GDC India is evaluating a ₹8,000–₹10,000 crore data centre investment in Dholera. Learn what this means for Dholera's technology ecosystem and real estate outlook.",
     "/blog/sarkhej-dholera-railway-epc-tender": "Western Railway has issued an ₹18,901.68 crore EPC tender for the 109 km Sarkhej-Dholera semi-high-speed double railway line. Understand what this means for Dholera's connectivity and real estate.",
+    "/blog/weekend-home-plots-ahmedabad-guide": "Looking for weekend home plots near Ahmedabad? Explore the best locations, gated community benefits, design tips and a buyer's checklist before you invest in land.",
+    "/blog/plotted-development-near-ahmedabad-layout-guide": "Learn how to read a layout plan before you buy. Plotted development near Ahmedabad explained: roads, phasing, gated community rules, Dholera plots and total costs.",
     "/contact-us": "Get in touch with Anandam Properties for premium plot investments in Gujarat.",
     "/privacy-policy": "Privacy Policy - Anandam Properties",
     "/terms-and-conditions": "Terms and Conditions - Anandam Properties",
@@ -209,6 +215,8 @@ function AppInner() {
         <Route path="/blog/delhi-mumbai-industrial-corridor-real-estate-dholera" element={<BlogPostDMICRealEstate />} />
         <Route path="/blog/clear-title-residential-plots-gujarat" element={<BlogPostClearTitlePlots />} />
         <Route path="/blog/premium-plots-near-unesco-heritage-site-lothal-dholera" element={<BlogPostPremiumUNESCOPlots />} />
+        <Route path="/blog/weekend-home-plots-ahmedabad-guide" element={<BlogPostWeekendHomeGuide />} />
+        <Route path="/blog/plotted-development-near-ahmedabad-layout-guide" element={<BlogPostPlottedDevelopmentGuide />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<LegalPage {...LEGAL_PAGES["/privacy-policy"]} onNavigate={(path) => navigate(path)} />} />
         <Route path="/terms-and-conditions" element={<LegalPage {...LEGAL_PAGES["/terms-and-conditions"]} onNavigate={(path) => navigate(path)} />} />
