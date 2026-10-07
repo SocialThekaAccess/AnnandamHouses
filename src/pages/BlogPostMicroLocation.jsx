@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -118,7 +118,7 @@ export default function BlogPostMicroLocation() {
                   People researching Dholera smart city plots often focus heavily on major infrastructure announcements. Those developments are important for understanding the larger region, but the quality of the immediate surroundings still matters when comparing individual properties.
                 </p>
 
-                <p>A good location should make sense at both levels—the larger growth corridor and the plot itself.</p>
+                <p>A good location should make sense at both levelsΓÇöthe larger growth corridor and the plot itself.</p>
 
                 <h2>3. Look at Plot Shape and Frontage</h2>
                 <p>Square metre area alone does not tell you whether a plot will be easy to use.</p>
@@ -194,7 +194,7 @@ export default function BlogPostMicroLocation() {
                 <p>"Near Dholera" can cover a large area.</p>
 
                 <p>
-                  A project may be positioned in the wider Dholera–Lothal corridor without being inside Dholera SIR itself.
+                  A project may be positioned in the wider DholeraΓÇôLothal corridor without being inside Dholera SIR itself.
                 </p>
 
                 <p>Buyers should therefore ask precise questions.</p>
@@ -253,7 +253,7 @@ export default function BlogPostMicroLocation() {
                   Long-term investors may prioritise location and connectivity. Future end users may care more about plot dimensions and surroundings. Buyers with a fixed budget may need to balance both.
                 </p>
 
-                <p>Price should therefore be one part of the scorecard—not the entire scorecard.</p>
+                <p>Price should therefore be one part of the scorecardΓÇönot the entire scorecard.</p>
 
                 <h2>9. Visit at More Than One Time of Day</h2>
                 <p>If possible, do not judge a property from one quick afternoon visit.</p>
@@ -371,7 +371,7 @@ export default function BlogPostMicroLocation() {
                 </p>
 
                 <p>
-                  Anandam Properties focuses on thoughtfully planned residential plots in the Dholera–Lothal corridor, with an emphasis on clear guidance, documentation support and planned development.
+                  Anandam Properties focuses on thoughtfully planned residential plots in the DholeraΓÇôLothal corridor, with an emphasis on clear guidance, documentation support and planned development.
                 </p>
 
                 <p>

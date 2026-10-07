@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Contact from "../Components/Contact";
 import "./PageShell.css";
@@ -64,7 +64,7 @@ export default function ContactPage() {
         >
           <img src={ContactUs} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
         </Link>
         <CallNowBtn />
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   Get in touch with our team today.
                 </h2>
                 <p className="page-copy">
-                  Whether you have questions about Dholera plots, want to schedule a site visit, or need guidance on documentation and investment — our team is available to help you at every step.
+                  Whether you have questions about Dholera plots, want to schedule a site visit, or need guidance on documentation and investment ΓÇö our team is available to help you at every step.
                 </p>
               </div>
 

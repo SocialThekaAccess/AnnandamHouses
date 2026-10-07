@@ -1,4 +1,4 @@
-/* ===== ABOUT PAGE ===== */
+﻿/* ===== ABOUT PAGE ===== */
 
 /* Full-width section override */
 .page-section.page-section--fullwidth {
@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-/* ── Who We Are — 3-column ── */
+/* ΓöÇΓöÇ Who We Are ΓÇö 3-column ΓöÇΓöÇ */
 .aw-who {
   display: grid;
   grid-template-columns: 1.1fr 1fr 1.1fr;
@@ -90,7 +90,7 @@
   margin: 0;
 }
 
-/* Center column — image */
+/* Center column ΓÇö image */
 .aw-who__center {
   overflow: hidden;
   min-height: 480px;
@@ -104,7 +104,7 @@
   display: block;
 }
 
-/* Right column — checklist */
+/* Right column ΓÇö checklist */
 .aw-who__right {
   padding: 52px 44px;
   border-left: 1px solid rgba(184, 151, 90, 0.12);
@@ -156,7 +156,7 @@
   align-self: flex-start;
 }
 
-/* ── Stats Row ── */
+/* ΓöÇΓöÇ Stats Row ΓöÇΓöÇ */
 .aw-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -229,7 +229,7 @@
   .aw-stats__item:last-child { border-bottom: none; }
 }
 
-/* ── Location Section ── */
+/* ΓöÇΓöÇ Location Section ΓöÇΓöÇ */
 .about-location {
   background: #fff;
   border: 1px solid rgba(184, 151, 90, 0.15);
@@ -280,7 +280,7 @@
 .about-location__accent-copy { font-family: 'Poppins', sans-serif; font-size: 13px; color: rgba(245,240,232,0.6); line-height: 1.85; margin: 0 0 14px; }
 .about-location__card--dark .gold-btn { margin-top: 12px; }
 
-/* ── Responsive ── */
+/* ΓöÇΓöÇ Responsive ΓöÇΓöÇ */
 @media (max-width: 1024px) {
   .aw-who { grid-template-columns: 1fr 1fr; }
   .aw-who__center { grid-column: 1 / -1; order: -1; min-height: 300px; }

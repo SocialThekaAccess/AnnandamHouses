@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -84,7 +84,7 @@ export default function BlogPostDholeraSIRSmartCity() {
                 </p>
 
                 <p>
-                  The National Industrial Corridor Development Corporation lists Dholera SIR in Gujarat among its developed greenfield industrial smart cities under the Delhi–Mumbai Industrial Corridor framework.
+                  The National Industrial Corridor Development Corporation lists Dholera SIR in Gujarat among its developed greenfield industrial smart cities under the DelhiΓÇôMumbai Industrial Corridor framework.
                 </p>
 
                 <p>
@@ -99,7 +99,7 @@ export default function BlogPostDholeraSIRSmartCity() {
                   This broader economic foundation is one of the main reasons Dholera SIR smart city investment attracts long-term interest.
                 </p>
 
-                <h2>Dholera and the Delhi–Mumbai Industrial Corridor</h2>
+                <h2>Dholera and the DelhiΓÇôMumbai Industrial Corridor</h2>
                 <p>
                   The DMIC is an industrial corridor extending between Delhi NCR and the Mumbai region.
                 </p>
@@ -188,7 +188,7 @@ export default function BlogPostDholeraSIRSmartCity() {
                 <p>Connectivity is another major factor supporting interest in the region.</p>
 
                 <p>
-                  The Ahmedabad–Dholera Expressway is approximately 109 km long. In February 2026, the Ministry of Road Transport and Highways announced that it had been opened for public testing while final operational readiness was being assessed.
+                  The AhmedabadΓÇôDholera Expressway is approximately 109 km long. In February 2026, the Ministry of Road Transport and Highways announced that it had been opened for public testing while final operational readiness was being assessed.
                 </p>
 
                 <p>
@@ -299,7 +299,7 @@ export default function BlogPostDholeraSIRSmartCity() {
 
                 <h2>Anandam Exotica</h2>
                 <p>
-                  Anandam Exotica is presented by Anandam Properties as a residential plotting project connected with the Dholera–Lothal corridor.
+                  Anandam Exotica is presented by Anandam Properties as a residential plotting project connected with the DholeraΓÇôLothal corridor.
                 </p>
 
                 <p>
@@ -411,7 +411,7 @@ export default function BlogPostDholeraSIRSmartCity() {
                 </p>
 
                 <p>
-                  Its position within the DMIC, the Ahmedabad–Dholera Expressway, the international airport project and the broader growth corridor explain increasing interest in Dholera SIR smart city investment.
+                  Its position within the DMIC, the AhmedabadΓÇôDholera Expressway, the international airport project and the broader growth corridor explain increasing interest in Dholera SIR smart city investment.
                 </p>
 
                 <p>
@@ -423,7 +423,7 @@ export default function BlogPostDholeraSIRSmartCity() {
                 <p>Then study the exact plot.</p>
 
                 <p>
-                  Anandam Exotica provides one residential plotting option in the broader Dholera–Lothal corridor, with the company emphasising planning, documentation assistance and long-term value.
+                  Anandam Exotica provides one residential plotting option in the broader DholeraΓÇôLothal corridor, with the company emphasising planning, documentation assistance and long-term value.
                 </p>
 
                 <p>

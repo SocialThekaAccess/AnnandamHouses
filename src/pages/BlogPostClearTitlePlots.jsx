@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -178,7 +178,7 @@ export default function BlogPostClearTitlePlots() {
                 </p>
 
                 <p>
-                  Dholera SIR is part of the Delhi–Mumbai Industrial Corridor programme and is listed by NICDC as one of the greenfield industrial smart cities developed under the corridor strategy.
+                  Dholera SIR is part of the DelhiΓÇôMumbai Industrial Corridor programme and is listed by NICDC as one of the greenfield industrial smart cities developed under the corridor strategy.
                 </p>
 
                 <p>This has created investor demand for:</p>
@@ -195,7 +195,7 @@ export default function BlogPostClearTitlePlots() {
 
                 <h2>Dholera Expressway Property Investment</h2>
                 <p>
-                  The Ahmedabad–Dholera Expressway strengthens the infrastructure case for the region.
+                  The AhmedabadΓÇôDholera Expressway strengthens the infrastructure case for the region.
                 </p>
 
                 <p>
@@ -283,7 +283,7 @@ export default function BlogPostClearTitlePlots() {
                 </p>
 
                 <p>
-                  Anandam Exotica positions itself around the Dholera–Lothal corridor with access to Ahmedabad-side infrastructure and the Ahmedabad–Dholera growth route.
+                  Anandam Exotica positions itself around the DholeraΓÇôLothal corridor with access to Ahmedabad-side infrastructure and the AhmedabadΓÇôDholera growth route.
                 </p>
 
                 <p>Buyers should personally experience the route before purchasing.</p>
@@ -412,7 +412,7 @@ export default function BlogPostClearTitlePlots() {
 
                 <h2>Anandam Exotica and Clear Title Residential Plots Gujarat</h2>
                 <p>
-                  Anandam Exotica is marketed as a planned residential plotting destination serving buyers interested in the Dholera–Lothal corridor.
+                  Anandam Exotica is marketed as a planned residential plotting destination serving buyers interested in the DholeraΓÇôLothal corridor.
                 </p>
 
                 <p>
@@ -443,7 +443,7 @@ export default function BlogPostClearTitlePlots() {
                 </p>
 
                 <p>
-                  Anandam Properties offers a plotted residential option in the Dholera–Lothal corridor, but every buyer should verify the exact property and documentation before purchase.
+                  Anandam Properties offers a plotted residential option in the DholeraΓÇôLothal corridor, but every buyer should verify the exact property and documentation before purchase.
                 </p>
 
                 <p>

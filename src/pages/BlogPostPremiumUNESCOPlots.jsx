@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -65,11 +65,11 @@ export default function BlogPostPremiumUNESCOPlots() {
                 <p>Some benefit from tourism.</p>
 
                 <p>
-                  The Lothal–Dholera corridor in Gujarat is unusual because several of these themes overlap.
+                  The LothalΓÇôDholera corridor in Gujarat is unusual because several of these themes overlap.
                 </p>
 
                 <p>
-                  The region contains one of India's most important archaeological locations at Lothal, the developing National Maritime Heritage Complex, Dholera Special Investment Region, the Ahmedabad–Dholera Expressway and the Dholera International Airport project.
+                  The region contains one of India's most important archaeological locations at Lothal, the developing National Maritime Heritage Complex, Dholera Special Investment Region, the AhmedabadΓÇôDholera Expressway and the Dholera International Airport project.
                 </p>
 
                 <p>
@@ -191,7 +191,7 @@ export default function BlogPostPremiumUNESCOPlots() {
                 </p>
 
                 <p>
-                  NICDC identifies Dholera Special Investment Region as one of the developed greenfield industrial smart-city nodes under the Delhi–Mumbai Industrial Corridor.
+                  NICDC identifies Dholera Special Investment Region as one of the developed greenfield industrial smart-city nodes under the DelhiΓÇôMumbai Industrial Corridor.
                 </p>
 
                 <p>
@@ -239,7 +239,7 @@ export default function BlogPostPremiumUNESCOPlots() {
                 <p>Road connectivity is another critical factor.</p>
 
                 <p>
-                  The Ahmedabad–Dholera Expressway connects the metropolitan Ahmedabad side of the corridor with Dholera.
+                  The AhmedabadΓÇôDholera Expressway connects the metropolitan Ahmedabad side of the corridor with Dholera.
                 </p>
 
                 <p>
@@ -311,7 +311,7 @@ export default function BlogPostPremiumUNESCOPlots() {
 
                 <p>Such questions reduce investment risk.</p>
 
-                <h2>Anandam Exotica Near the Lothal–Dholera Growth Corridor</h2>
+                <h2>Anandam Exotica Near the LothalΓÇôDholera Growth Corridor</h2>
                 <p>
                   Anandam Exotica is presented as a planned residential plotting destination connected to Lothal and Dholera.
                 </p>
@@ -388,7 +388,7 @@ export default function BlogPostPremiumUNESCOPlots() {
 
                 <h2>Long Term Investment Plots Gujarat</h2>
                 <p>
-                  The Lothal–Dholera region makes most sense when considered as a long-term story.
+                  The LothalΓÇôDholera region makes most sense when considered as a long-term story.
                 </p>
 
                 <p>
@@ -417,7 +417,7 @@ export default function BlogPostPremiumUNESCOPlots() {
                 </p>
 
                 <p>
-                  Investors searching for a plotted development near Ahmedabad may consider the Lothal–Dholera side because infrastructure is improving connections across the region.
+                  Investors searching for a plotted development near Ahmedabad may consider the LothalΓÇôDholera side because infrastructure is improving connections across the region.
                 </p>
 
                 <p>
@@ -430,7 +430,7 @@ export default function BlogPostPremiumUNESCOPlots() {
 
                 <h2>Combining Heritage and Infrastructure</h2>
                 <p>
-                  The strongest aspect of the Lothal–Dholera corridor may be its diversity.
+                  The strongest aspect of the LothalΓÇôDholera corridor may be its diversity.
                 </p>
 
                 <p>
@@ -457,7 +457,7 @@ export default function BlogPostPremiumUNESCOPlots() {
 
                 <h2>Questions to Ask Before Buying</h2>
                 <p>
-                  Before purchasing premium plots near UNESCO heritage site searches or any Dholera–Lothal property, ask:
+                  Before purchasing premium plots near UNESCO heritage site searches or any DholeraΓÇôLothal property, ask:
                 </p>
                 <ol>
                   <li>What is the exact location?</li>
@@ -487,7 +487,7 @@ export default function BlogPostPremiumUNESCOPlots() {
 
                 <h2>Final Thoughts</h2>
                 <p>
-                  The Lothal–Dholera corridor combines cultural heritage, tourism development, industrial infrastructure and regional connectivity.
+                  The LothalΓÇôDholera corridor combines cultural heritage, tourism development, industrial infrastructure and regional connectivity.
                 </p>
 
                 <p>

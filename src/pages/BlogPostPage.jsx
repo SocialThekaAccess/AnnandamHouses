@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -101,7 +101,7 @@ export default function BlogPostPage() {
               <p>Key infrastructure developments include:</p>
               <ul>
                 <li>Dholera International Airport</li>
-                <li>Ahmedabad–Dholera Expressway</li>
+                <li>AhmedabadΓÇôDholera Expressway</li>
                 <li>Semiconductor manufacturing hub</li>
                 <li>Industrial zones</li>
                 <li>Metro and railway connectivity</li>
@@ -221,7 +221,7 @@ export default function BlogPostPage() {
 
               <h2>Why Choose Anandam Exotica?</h2>
               <p>
-                Anandam Exotica is designed to provide buyers with more than just a plot—it offers a future-ready community supported by transparent processes and strategic location advantages.
+                Anandam Exotica is designed to provide buyers with more than just a plotΓÇöit offers a future-ready community supported by transparent processes and strategic location advantages.
               </p>
               <p>Key highlights include:</p>
               <ul>

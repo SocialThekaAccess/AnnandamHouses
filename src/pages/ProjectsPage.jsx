@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./PageShell.css";
 import heroBg from "../assets/ourProjects.png";
@@ -158,7 +158,7 @@ export default function ProjectsPage({ onNavigate }) {
         >
           <img src={heroBg} alt="" className="page-hero__mobile-img" draggable="false" />
         </div>
-        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties — Home">
+        <Link to="/" className="page-hero__logo" aria-label="Anandam Properties ΓÇö Home">
           <img src={logoImg} alt="Anandam Properties" />
         </Link>
         <CallNowBtn />
@@ -172,7 +172,7 @@ export default function ProjectsPage({ onNavigate }) {
               <div>
                 <div className="section-label">Project Overview</div>
                 <h1 className="page-heading">
-                 Welcome to Anandam Exotica – Lothal
+                 Welcome to Anandam Exotica ΓÇô Lothal
                 </h1>
                 <h2 className="page-subheading" style={{ fontSize: '1.25rem', fontWeight: '400', marginTop: '0.75rem', marginBottom: '1rem', color: '#666' }}>
                   Where heritage meets modern living

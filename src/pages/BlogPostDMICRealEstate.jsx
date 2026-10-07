@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -84,9 +84,9 @@ export default function BlogPostDMICRealEstate() {
                   These themes are connected, but investors should understand the underlying infrastructure before investing.
                 </p>
 
-                <h2>Understanding the Delhi–Mumbai Industrial Corridor</h2>
+                <h2>Understanding the DelhiΓÇôMumbai Industrial Corridor</h2>
                 <p>
-                  The Delhi–Mumbai Industrial Corridor is a major Government of India industrial development programme.
+                  The DelhiΓÇôMumbai Industrial Corridor is a major Government of India industrial development programme.
                 </p>
 
                 <p>
@@ -211,11 +211,11 @@ export default function BlogPostDMICRealEstate() {
                   The quality of connectivity matters more than a straight-line distance shown on a map.
                 </p>
 
-                <h2>Ahmedabad–Dholera Expressway</h2>
+                <h2>AhmedabadΓÇôDholera Expressway</h2>
                 <p>The expressway adds another major connectivity layer.</p>
 
                 <p>
-                  The Ministry of Road Transport and Highways described the Ahmedabad–Dholera Expressway as a 109.019 km greenfield route providing connectivity to Dholera SIR and the wider region. It was opened for public testing in February 2026.
+                  The Ministry of Road Transport and Highways described the AhmedabadΓÇôDholera Expressway as a 109.019 km greenfield route providing connectivity to Dholera SIR and the wider region. It was opened for public testing in February 2026.
                 </p>
 
                 <p>
@@ -306,7 +306,7 @@ export default function BlogPostDMICRealEstate() {
 
                 <h2>Anandam Exotica as a Residential Plotting Option</h2>
                 <p>
-                  Anandam Exotica is positioned by Anandam Properties as a planned residential plotting destination in the Dholera–Lothal corridor.
+                  Anandam Exotica is positioned by Anandam Properties as a planned residential plotting destination in the DholeraΓÇôLothal corridor.
                 </p>
 
                 <p>
@@ -382,7 +382,7 @@ export default function BlogPostDMICRealEstate() {
                   An emerging area may be more interesting when it has multiple growth drivers.
                 </p>
 
-                <p>The broader Dholera–Lothal region is associated with:</p>
+                <p>The broader DholeraΓÇôLothal region is associated with:</p>
                 <ul>
                   <li>DMIC</li>
                   <li>Dholera SIR</li>
@@ -439,7 +439,7 @@ export default function BlogPostDMICRealEstate() {
                 </p>
 
                 <p>
-                  Anandam Exotica provides a residential plotting proposition within the broader Dholera–Lothal corridor, with the developer emphasising planned development and documentation support.
+                  Anandam Exotica provides a residential plotting proposition within the broader DholeraΓÇôLothal corridor, with the developer emphasising planned development and documentation support.
                 </p>
 
                 <p>

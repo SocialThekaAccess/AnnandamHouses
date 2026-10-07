@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -67,7 +67,7 @@ export default function BlogPostDholeraExpressway() {
                 </p>
 
                 <p>
-                  The Ahmedabad–Dholera Expressway is one of the most important infrastructure projects associated with the Dholera growth corridor. In February 2026, the Ministry of Road Transport and Highways stated that the greenfield expressway stretches approximately 109 km and connects Ahmedabad with the Dholera Special Investment Region. At that time, it had been opened to the public for testing while final operational readiness was being assessed.
+                  The AhmedabadΓÇôDholera Expressway is one of the most important infrastructure projects associated with the Dholera growth corridor. In February 2026, the Ministry of Road Transport and Highways stated that the greenfield expressway stretches approximately 109 km and connects Ahmedabad with the Dholera Special Investment Region. At that time, it had been opened to the public for testing while final operational readiness was being assessed.
                 </p>
 
                 <p>
@@ -86,7 +86,7 @@ export default function BlogPostDholeraExpressway() {
                 </p>
 
                 <p>
-                  The Ahmedabad–Dholera corridor is particularly relevant because Dholera is also part of the wider industrial development strategy associated with the Delhi–Mumbai Industrial Corridor.
+                  The AhmedabadΓÇôDholera corridor is particularly relevant because Dholera is also part of the wider industrial development strategy associated with the DelhiΓÇôMumbai Industrial Corridor.
                 </p>
 
                 <p>
@@ -113,7 +113,7 @@ export default function BlogPostDholeraExpressway() {
                   <li>NRIs looking for land-based investments in Gujarat</li>
                   <li>Buyers who prefer plotted property over apartments</li>
                   <li>People following Dholera infrastructure development</li>
-                  <li>Buyers interested in the Ahmedabad–Lothal–Dholera corridor</li>
+                  <li>Buyers interested in the AhmedabadΓÇôLothalΓÇôDholera corridor</li>
                 </ul>
 
                 <p>
@@ -124,7 +124,7 @@ export default function BlogPostDholeraExpressway() {
                   An attractive regional growth story does not automatically make every nearby plot a good investment.
                 </p>
 
-                <h2>Anandam Exotica and the Dholera–Lothal Corridor</h2>
+                <h2>Anandam Exotica and the DholeraΓÇôLothal Corridor</h2>
                 <p>
                   Anandam Properties describes Anandam Exotica as a residential plotting destination positioned around the Dholera and Lothal growth corridor.
                 </p>
@@ -369,7 +369,7 @@ export default function BlogPostDholeraExpressway() {
 
                 <h2>Final Thoughts</h2>
                 <p>
-                  The Ahmedabad–Dholera corridor combines several important growth drivers.
+                  The AhmedabadΓÇôDholera corridor combines several important growth drivers.
                 </p>
 
                 <p>
@@ -381,7 +381,7 @@ export default function BlogPostDholeraExpressway() {
                 </p>
 
                 <p>
-                  Anandam Exotica positions itself within this wider Dholera–Lothal growth story with planned residential plots and a long-term investment focus.
+                  Anandam Exotica positions itself within this wider DholeraΓÇôLothal growth story with planned residential plots and a long-term investment focus.
                 </p>
 
                 <p>

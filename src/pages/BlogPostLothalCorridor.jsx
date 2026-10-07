@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./PageShell.css";
 import "./BlogPostPage.css";
@@ -59,7 +59,7 @@ export default function BlogPostLothalCorridor() {
               <div className="blog-post__content">
               
                 <p>
-                  Every successful real estate investment begins with one simple decision—choosing the right location before everyone else discovers its potential. Across India, major infrastructure projects have consistently transformed surrounding regions into thriving residential and commercial hubs. Gujarat is witnessing a similar transformation today through the rapidly developing Lothal-Dholera corridor.
+                  Every successful real estate investment begins with one simple decisionΓÇöchoosing the right location before everyone else discovers its potential. Across India, major infrastructure projects have consistently transformed surrounding regions into thriving residential and commercial hubs. Gujarat is witnessing a similar transformation today through the rapidly developing Lothal-Dholera corridor.
                 </p>
 
                 <p>
@@ -73,7 +73,7 @@ export default function BlogPostLothalCorridor() {
                 <p>Let us understand why the Lothal-Dholera corridor is becoming one of Gujarat's most promising real estate destinations.</p>
 
                 <h2>The Importance of the Lothal-Dholera Corridor</h2>
-                <p>Infrastructure does not simply improve transportation—it creates entirely new economic ecosystems.</p>
+                <p>Infrastructure does not simply improve transportationΓÇöit creates entirely new economic ecosystems.</p>
 
                 <p>
                   The Lothal Dholera corridor plots are positioned within a region where industrial development, tourism, logistics, education, and residential expansion are expected to complement each other. Instead of relying on a single growth factor, this corridor benefits from multiple drivers working simultaneously.

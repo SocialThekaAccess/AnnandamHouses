@@ -1,4 +1,4 @@
-/* ── Hero ── */
+﻿/* ΓöÇΓöÇ Hero ΓöÇΓöÇ */
 .blog-hero--full {
   min-height: 92vh;
   align-items: center;
@@ -18,7 +18,7 @@
   visibility: visible !important;
 }
 
-/* ── Section Header ── */
+/* ΓöÇΓöÇ Section Header ΓöÇΓöÇ */
 .blog-section-header {
   padding-top: 64px;
   padding-bottom: 48px;
@@ -96,7 +96,7 @@
   white-space: nowrap;
 }
 
-/* ── Blog Grid ── */
+/* ΓöÇΓöÇ Blog Grid ΓöÇΓöÇ */
 .blog-grid-section {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -104,7 +104,7 @@
 
 /* Container is now full section width, cards are fixed/comfortable
    size and wrap naturally as more blogs get added. A single card no
-   longer stretches to an odd centered box — it sits at a proper
+   longer stretches to an odd centered box ΓÇö it sits at a proper
    card width, and future cards will flow into a real grid. */
 .blog-grid {
   display: grid;
@@ -115,7 +115,7 @@
   gap: 32px;
 }
 
-/* ── Blog Card ── */
+/* ΓöÇΓöÇ Blog Card ΓöÇΓöÇ */
 .blog-card {
   background: #fff;
   border: 1px solid rgba(184, 151, 90, 0.15);
@@ -133,7 +133,7 @@
   transform: translateY(-4px);
 }
 
-/* Image — switched from a fixed 210px crop (which cut off the top
+/* Image ΓÇö switched from a fixed 210px crop (which cut off the top
    line of text baked into the thumbnail) to an aspect-ratio box with
    the image anchored to the top, so the full graphic reads cleanly. */
 .blog-card__img-wrap {
@@ -214,7 +214,7 @@
   gap: 10px;
 }
 
-/* ── CTA Band ── */
+/* ΓöÇΓöÇ CTA Band ΓöÇΓöÇ */
 .blog-cta-band {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
@@ -288,7 +288,7 @@
   padding-left: max(5%, 64px);
 }
 
-/* ── Responsive ── */
+/* ΓöÇΓöÇ Responsive ΓöÇΓöÇ */
 @media (max-width: 1024px) {
   .blog-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
