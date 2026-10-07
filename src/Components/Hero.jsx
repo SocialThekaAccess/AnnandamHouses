@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
-import Anandamhomes1 from "../assets/AnnandamHomes1.png";
+import Anandamhomes1 from "../assets/AnnandamHomes1-compressed.jpg";
 import logoImg from "../assets/anandamhomeslogo.png";
-import Anandamslider2 from "../assets/Anandamslider2.png";
-import Anandamslider3 from "../assets/sliderhome3.png";
+import Anandamslider2 from "../assets/Anandamslider2-compressed.jpg";
+import Anandamslider3 from "../assets/sliderhome3-compressed.jpg";
 import { useCallModal } from "../context/CallModalContext";
 
 const ChevronDown = () => (
