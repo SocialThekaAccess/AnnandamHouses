@@ -113,7 +113,7 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   overflow: hidden;
-  background: #060c0a;
+  background: linear-gradient(135deg, #0a1810 0%, #060c0a 100%);
 }
 
 .hero__slide-img {
@@ -124,6 +124,26 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Better loading on mobile */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimizeQuality;
+}
+
+/* Skeleton loading effect while image loads */
+.hero__slide-img:not([src]) {
+  background: linear-gradient(
+    90deg,
+    rgba(184, 151, 90, 0.05) 0%,
+    rgba(184, 151, 90, 0.1) 50%,
+    rgba(184, 151, 90, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .hero__slide--active {
@@ -490,7 +510,7 @@
 
   /* Optimize slide rendering on mobile */
   .hero__slide {
-    background: #060c0a;
+    background: linear-gradient(135deg, #0a1810 0%, #060c0a 100%);
   }
   
   .hero__slide-img {
@@ -498,7 +518,9 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    image-rendering: -webkit-optimize-contrast;
+    /* Force hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   /* Each mobile slide — fixed aspect ratio box */
