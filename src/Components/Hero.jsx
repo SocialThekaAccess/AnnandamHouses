@@ -149,23 +149,29 @@ export default function Hero() {
       
       <div className={`hero__slides-desktop ${loadedImages.size === 0 ? 'hero__slides--loading' : ''}`}>
         {prev !== null && (
-          <div
-            className="hero__slide hero__slide--prev"
+          <div className="hero__slide hero__slide--prev">
+            <img 
+              src={SLIDES[prev].bg} 
+              alt="" 
+              className="hero__slide-img"
+              loading="eager"
+              style={{
+                objectPosition: SLIDES[prev].pos,
+              }}
+            />
+          </div>
+        )}
+        <div className="hero__slide hero__slide--active">
+          <img 
+            src={slide.bg} 
+            alt="" 
+            className="hero__slide-img"
+            loading="eager"
             style={{
-              backgroundImage: loadedImages.has(SLIDES[prev].bg) ? `url(${SLIDES[prev].bg})` : 'none',
-              backgroundPosition: SLIDES[prev].pos,
-              backgroundColor: '#060c0a',
+              objectPosition: slide.pos,
             }}
           />
-        )}
-        <div
-          className="hero__slide hero__slide--active"
-          style={{
-            backgroundImage: loadedImages.has(slide.bg) ? `url(${slide.bg})` : 'none',
-            backgroundPosition: slide.pos,
-            backgroundColor: '#060c0a',
-          }}
-        />
+        </div>
       </div>
 
       <div className="hero__overlay" />
