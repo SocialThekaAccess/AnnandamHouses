@@ -9,47 +9,20 @@
 
 /* ── Loading indicator ── */
 .hero__loading {
-  position: absolute;
-  inset: 0;
-  z-index: 100;
-  background: #060c0a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  display: none !important; /* Disable loading screen */
 }
 
 .hero__loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 3px solid rgba(184, 151, 90, 0.2);
-  border-top-color: #b8975a;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+  display: none;
 }
 
 .hero__loading-text {
-  font-family: 'Avenir Next', 'Montserrat', sans-serif;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hero__slides--loading {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  display: none;
 }
 
 .hero__slides-desktop {
-  transition: opacity 0.5s ease;
+  transition: none !important;
+  opacity: 1 !important;
 }
 
 /* ── Section ── */
@@ -60,6 +33,12 @@
   align-items: center;
   overflow: hidden;
   background: #060c0a;
+}
+
+/* Make sure images are not hidden by loading states */
+.hero__slides--loading {
+  opacity: 1 !important;
+  display: block !important;
 }
 
 /* ── Video Background ── */
@@ -109,9 +88,6 @@
   transform: scale(1.06);
   transition: opacity 0.9s ease, transform 0.9s ease;
   z-index: 0;
-  will-change: opacity, transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   overflow: hidden;
   background: linear-gradient(135deg, #0a1810 0%, #060c0a 100%);
 }
@@ -123,34 +99,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  /* Better loading on mobile */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: optimizeQuality;
-}
-
-/* Skeleton loading effect while image loads */
-.hero__slide-img:not([src]) {
-  background: linear-gradient(
-    90deg,
-    rgba(184, 151, 90, 0.05) 0%,
-    rgba(184, 151, 90, 0.1) 50%,
-    rgba(184, 151, 90, 0.05) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .hero__slide--active {
-  opacity: 1;
+  opacity: 1 !important;
   transform: scale(1);
   z-index: 1;
   animation: slideIn 0.9s ease forwards;
+}
+
+.hero__slide--active .hero__slide-img {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .hero__slide--prev {
@@ -410,6 +373,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* ── Mobile slides wrapper — hidden on desktop ── */
