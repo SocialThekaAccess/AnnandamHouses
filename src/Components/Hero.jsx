@@ -36,6 +36,8 @@ const SLIDES = [
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(new Set());
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(null);
   const [fading, setFading] = useState(false);
@@ -43,6 +45,47 @@ export default function Hero() {
   const introTimeoutRef = useRef(null);
   const transitionTimeoutRef = useRef(null);
   const { setOpen } = useCallModal();
+
+  useEffect(() => {
+    const imageUrls = SLIDES.map(s => s.bg);
+    let loadedCount = 0;
+    const newLoadedSet = new Set();
+
+    // Start loading first image immediately, others after
+    const loadImage = (url, index) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        // Add important attributes for better loading
+        img.decoding = 'async';
+        img.loading = index === 0 ? 'eager' : 'lazy';
+        
+        img.onload = () => {
+          loadedCount++;
+          newLoadedSet.add(url);
+          setLoadedImages(new Set(newLoadedSet));
+          if (loadedCount === imageUrls.length) {
+            setImagesLoaded(true);
+          }
+          resolve();
+        };
+        img.onerror = () => {
+          console.error(`Failed to load image: ${url}`);
+          loadedCount++;
+          if (loadedCount === imageUrls.length) {
+            setImagesLoaded(true);
+          }
+          resolve();
+        };
+        img.src = url;
+      });
+    };
+
+    // Load first image with priority, then others
+    loadImage(imageUrls[0], 0).then(() => {
+      // Once first image is loaded, load others in parallel
+      imageUrls.slice(1).forEach((url, idx) => loadImage(url, idx + 1));
+    });
+  }, []);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 80);
@@ -96,21 +139,31 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero" style={{ position: "relative" }}>
-      <div className="hero__slides-desktop">
+      {/* Loading indicator - only show if first image not loaded */}
+      {!loadedImages.has(SLIDES[0].bg) && (
+        <div className="hero__loading">
+          <div className="hero__loading-spinner"></div>
+          <p className="hero__loading-text">Loading...</p>
+        </div>
+      )}
+      
+      <div className={`hero__slides-desktop ${loadedImages.size === 0 ? 'hero__slides--loading' : ''}`}>
         {prev !== null && (
           <div
             className="hero__slide hero__slide--prev"
             style={{
-              backgroundImage: `url(${SLIDES[prev].bg})`,
+              backgroundImage: loadedImages.has(SLIDES[prev].bg) ? `url(${SLIDES[prev].bg})` : 'none',
               backgroundPosition: SLIDES[prev].pos,
+              backgroundColor: '#060c0a',
             }}
           />
         )}
         <div
           className="hero__slide hero__slide--active"
           style={{
-            backgroundImage: `url(${slide.bg})`,
+            backgroundImage: loadedImages.has(slide.bg) ? `url(${slide.bg})` : 'none',
             backgroundPosition: slide.pos,
+            backgroundColor: '#060c0a',
           }}
         />
       </div>
