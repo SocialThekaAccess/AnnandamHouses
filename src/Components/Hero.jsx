@@ -5,6 +5,7 @@ import Anandamhomes1 from "../assets/AnnandamHomes1-compressed.jpg";
 import logoImg from "../assets/anandamhomeslogo.png";
 import Anandamslider2 from "../assets/Anandamslider2-compressed.jpg";
 import Anandamslider3 from "../assets/sliderhome3-compressed.jpg";
+import Anandamslider2Mobile from "../assets/AnandamExoticaSlider2Mobileview.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const ChevronDown = () => (
@@ -24,8 +25,9 @@ const SLIDES = [
   },
   {
     bg: Anandamslider2,
+    bgMobile: Anandamslider2Mobile,
     pos: "center center",
-    posMobile: "70% center",
+    posMobile: "center center",
     headline: <>Built Around<br />Real Value</>,
     tagline: <>Designed for families, end users,<br />and long-term confidence.</>,
   },
@@ -65,6 +67,10 @@ export default function Hero() {
     SLIDES.forEach((s) => {
       const img = new Image();
       img.src = s.bg;
+      if (s.bgMobile) {
+        const m = new Image();
+        m.src = s.bgMobile;
+      }
     });
   }, []);
 
@@ -97,6 +103,20 @@ export default function Hero() {
   }, [current, goTo]);
 
   const slide = SLIDES[current];
+  const renderImg = (s, extra = {}) => (
+    <picture>
+      {s.bgMobile && <source media="(max-width: 768px)" srcSet={s.bgMobile} />}
+      <img
+        src={s.bg}
+        alt=""
+        className="hero__slide-img"
+        loading="eager"
+        decoding="async"
+        style={posVars(s)}
+        {...extra}
+      />
+    </picture>
+  );
   const posVars = (s) => ({
     "--pos": s.pos,
     "--pos-m": s.posMobile || s.pos,
@@ -107,26 +127,11 @@ export default function Hero() {
       <div className="hero__slides-desktop">
         {prev !== null && (
           <div className="hero__slide hero__slide--prev">
-            <img
-              src={SLIDES[prev].bg}
-              alt=""
-              className="hero__slide-img"
-              loading="eager"
-              decoding="async"
-              style={posVars(SLIDES[prev])}
-            />
+            {renderImg(SLIDES[prev])}
           </div>
         )}
         <div className="hero__slide hero__slide--active">
-          <img
-            src={slide.bg}
-            alt=""
-            className="hero__slide-img"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            style={posVars(slide)}
-          />
+          {renderImg(slide, { fetchPriority: "high" })}
         </div>
       </div>
 
