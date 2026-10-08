@@ -1,4 +1,4 @@
-﻿/* ΓöÇΓöÇ Hero ΓöÇΓöÇ */
+﻿/* -- Hero -- */
 .blog-hero--full {
   min-height: 92vh;
   align-items: center;
@@ -14,8 +14,8 @@
   display: none !important;
 }
 
-/* ΓöÇΓöÇ Section Header ΓöÇΓöÇ */
-.blog-section-header {
+/* -- Section Header -- */
+.page-section.blog-section-header {
   padding-top: 80px;
   padding-bottom: 48px;
   display: grid;
@@ -92,16 +92,12 @@
   white-space: nowrap;
 }
 
-/* ΓöÇΓöÇ Blog Grid ΓöÇΓöÇ */
+/* -- Blog Grid -- */
 .blog-grid-section {
   padding-top: 40px;
   padding-bottom: 60px;
 }
 
-/* Container is now full section width, cards are fixed/comfortable
-   size and wrap naturally as more blogs get added. A single card no
-   longer stretches to an odd centered box ΓÇö it sits at a proper
-   card width, and future cards will flow into a real grid. */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
@@ -111,7 +107,7 @@
   gap: 32px;
 }
 
-/* ΓöÇΓöÇ Blog Card ΓöÇΓöÇ */
+/* -- Blog Card -- */
 .blog-card {
   background: #fff;
   border: 1px solid rgba(184, 151, 90, 0.15);
@@ -129,9 +125,6 @@
   transform: translateY(-4px);
 }
 
-/* Image ΓÇö switched from a fixed 210px crop (which cut off the top
-   line of text baked into the thumbnail) to an aspect-ratio box with
-   the image anchored to the top, so the full graphic reads cleanly. */
 .blog-card__img-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -153,7 +146,6 @@
   transform: scale(1.05);
 }
 
-/* Body */
 .blog-card__body {
   padding: 24px 24px 20px;
   display: flex;
@@ -172,7 +164,6 @@
   flex: 1;
 }
 
-/* Footer */
 .blog-card__footer {
   display: flex;
   align-items: center;
@@ -210,7 +201,7 @@
   gap: 10px;
 }
 
-/* ΓöÇΓöÇ CTA Band ΓöÇΓöÇ */
+/* -- CTA Band -- */
 .blog-cta-band {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr);
@@ -276,27 +267,37 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Extra breathing room so a fixed/floating widget (e.g. a scroll-to-top
-   or WhatsApp button living outside this component) doesn't sit on top
-   of the "Get In Touch" label at the bottom of the page. */
+/* Extra room so floating widgets don't cover the "Get In Touch" label */
 .blog-cta-band__left,
 .blog-cta-band__right {
   padding-left: max(5%, 64px);
 }
 
-/* ΓöÇΓöÇ Responsive ΓöÇΓöÇ */
+/* -- Responsive -- */
 @media (max-width: 1024px) {
+  .page-section.blog-section-header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 56px;
+  }
+  .blog-section-header__right { width: fit-content; }
+
   .blog-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
     max-width: 500px;
   }
   .blog-cta-band { grid-template-columns: 1fr; }
   .blog-cta-band__left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .blog-section-header { grid-template-columns: 1fr; gap: 28px; }
-  .blog-section-header__right { width: fit-content; }
 }
 
 @media (max-width: 640px) {
+  /* Gap between hero image and "Latest Articles" */
+  .page-section.blog-section-header {
+    padding-top: 48px;
+    padding-bottom: 32px;
+    gap: 24px;
+  }
+
   .blog-grid {
     grid-template-columns: 1fr;
     max-width: 100%;
@@ -305,4 +306,15 @@
   .blog-cta-band__left, .blog-cta-band__right { padding: 36px 5%; }
   .blog-hero--full { min-height: unset; }
   .blog-section-header__stat { padding: 16px 20px; }
+}
+
+/* -- Mobile spacing fix: force gap below hero (overrides PageShell.css) -- */
+@media (max-width: 1024px) {
+  .blog-hero--full {
+    margin-bottom: 32px !important;
+  }
+  .page-section.blog-section-header,
+  .blog-section-header {
+    padding-top: 16px !important;
+  }
 }
