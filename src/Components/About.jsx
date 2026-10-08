@@ -60,7 +60,7 @@ export default function About() {
                   key={i}
                   src={src}
                   alt={`Dholera ${i + 1}`}
-                  loading="lazy"
+                  loading="eager"
                   className={`ae-carousel-img${i === activeIdx ? " active" : ""}`}
                 />
               ))}

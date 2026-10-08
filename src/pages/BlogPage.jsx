@@ -182,7 +182,7 @@ export default function BlogPage({ onNavigate }) {
           className="page-hero__backdrop"
           style={{ backgroundImage: `url(${blogHeroImg})`, backgroundPosition: "center center" }}
         >
-          <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" />
+          <img src={blogHeroImg} alt="" className="page-hero__mobile-img" draggable="false" loading="eager" fetchpriority="high" />
         </div>
         <a href="/" className="page-hero__logo" aria-label="Anandam Properties — Home" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
           <img src={logoImg} alt="Anandam Properties" />
@@ -228,7 +228,7 @@ export default function BlogPage({ onNavigate }) {
                   onClick={(e) => { e.preventDefault(); navigate(blog.link); }}
                 >
                   <div className="blog-card__img-wrap">
-                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" loading="eager" />
                   </div>
                   <div className="blog-card__body">
                     <h3 className="blog-card__title">{blog.title}</h3>
@@ -241,7 +241,7 @@ export default function BlogPage({ onNavigate }) {
                   onClick={() => navigate("/contact-us")}
                 >
                   <div className="blog-card__img-wrap">
-                    <img src={blog.img} alt={blog.title} className="blog-card__img" />
+                    <img src={blog.img} alt={blog.title} className="blog-card__img" loading="eager" />
                   </div>
                   <div className="blog-card__body">
                     <h3 className="blog-card__title">{blog.title}</h3>
