@@ -1,33 +1,14 @@
 /* ─── HERO — Anandam Properties ─────────────────────── */
 @keyframes fadeUp   { from { opacity:0; transform:translateY(36px); } to { opacity:1; transform:translateY(0); } }
-@keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.45; } }
 @keyframes bounce   { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
 @keyframes slideIn  { from { opacity:0; transform:scale(1.06); } to { opacity:1; transform:scale(1); } }
 @keyframes slideOut { from { opacity:1; transform:scale(1); } to { opacity:0; transform:scale(0.97); } }
 @keyframes progress { from { width:0%; } to { width:100%; } }
-@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-/* ── Loading indicator ── */
-.hero__loading {
-  display: none !important; /* Disable loading screen */
-}
-
-.hero__loading-spinner {
-  display: none;
-}
-
-.hero__loading-text {
-  display: none;
-}
-
-.hero__slides-desktop {
-  transition: none !important;
-  opacity: 1 !important;
-}
 
 /* ── Section ── */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   display: flex;
   align-items: center;
@@ -35,52 +16,16 @@
   background: #060c0a;
 }
 
-/* Make sure images are not hidden by loading states */
-.hero__slides--loading {
-  opacity: 1 !important;
-  display: block !important;
-}
-
-/* ── Video Background ── */
-.hero__video-bg {
+/* ── Slides wrapper (desktop + mobile same) ── */
+.hero__slides-desktop {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 0;
-  pointer-events: none;
+  display: block;
 }
 
-.hero__video-player {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: 100vw !important;
-  height: 56.25vw !important; /* 16:9 aspect ratio */
-}
-
-.hero__video-player > div,
-.hero__video-player iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .hero__video-player {
-    width: 177.78vh !important; /* 16:9 aspect ratio */
-    height: 100vh !important;
-  }
-}
-
-/* ── Slider backgrounds ── */
 .hero__slide {
   position: absolute;
   inset: 0;
@@ -99,21 +44,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  object-position: var(--pos, center center);
+  display: block;
 }
 
 .hero__slide--active {
-  opacity: 1 !important;
+  opacity: 1;
   transform: scale(1);
   z-index: 1;
   animation: slideIn 0.9s ease forwards;
-}
-
-.hero__slide--active .hero__slide-img {
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .hero__slide--prev {
@@ -127,7 +66,8 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none;
   background: linear-gradient(
     105deg,
     rgba(0, 0, 0, 0.85) 0%,
@@ -149,7 +89,7 @@
 .hero__grid-pattern {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   background-image:
     linear-gradient(rgba(184,151,90,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(184,151,90,0.03) 1px, transparent 1px);
@@ -161,17 +101,15 @@
 .hero__logo {
   position: absolute;
   top: 0;
-  left: 5%;    /* 0 → 5% — text ke saath match */
-  z-index: 1001;  /* Navbar ke upar */
+  left: 5%;
+  z-index: 1001;
   cursor: pointer;
   transition: opacity 0.2s ease;
   text-decoration: none;
   display: block;
 }
 
-.hero__logo:hover {
-  opacity: 0.85;
-}
+.hero__logo:hover { opacity: 0.85; }
 
 .hero__logo img {
   height: 180px;
@@ -189,20 +127,21 @@
   align-items: center;
   gap: 0;
   text-decoration: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   border-radius: 0;
   overflow: hidden;
-  background: transparent;  /* ← red se transparent karo */
+  background: transparent;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-
 .hero__call-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-  background: transparent;  /* ← yahan bhi */
 }
-/* Left — red square icon */
+
 .hero__call-btn__icon {
   width: 42px;
   height: 42px;
@@ -216,17 +155,14 @@
   transition: background 0.3s ease;
 }
 
-.hero__call-btn:hover .hero__call-btn__icon {
-  background: #234f3b;
-}
+.hero__call-btn:hover .hero__call-btn__icon { background: #234f3b; }
 
-/* Right — dark olive text */
 .hero__call-btn__text {
   padding: 0 18px 0 14px;
   height: 42px;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.10);  /* ← transparent glass */
+  background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-left: 1px solid rgba(255, 255, 255, 0.15);
@@ -235,14 +171,12 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ffff;
+  color: #fff;
   white-space: nowrap;
   transition: background 0.3s ease;
 }
 
-.hero__call-btn:hover .hero__call-btn__text {
-  background: rgba(255, 255, 255, 0.18);  /* ← hover pe thoda aur visible */
-}
+.hero__call-btn:hover .hero__call-btn__text { background: rgba(255, 255, 255, 0.18); }
 
 /* ── Main container ── */
 .hero__container {
@@ -265,9 +199,7 @@
   width: 100%;
 }
 
-.hero__left.hidden {
-  opacity: 0;
-}
+.hero__left.hidden { opacity: 0; }
 
 .hero__left.text-out {
   opacity: 0;
@@ -278,7 +210,7 @@
 /* ── Headline ── */
 .hero__headline {
   font-family: 'Avenir Next', 'Montserrat', 'Arial', sans-serif !important;
-  font-size: clamp(28px, 4vw, 52px);  /* 36px, 5.5vw, 68px → chhota */
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: 0.01em;
@@ -291,7 +223,7 @@
 
 .hero__tagline {
   font-family: 'Avenir Next', 'Montserrat', 'Arial', sans-serif !important;
-  font-size: clamp(13px, 1.6vw, 17px);  /* 17px, 2.2vw, 22px → chhota */
+  font-size: clamp(13px, 1.6vw, 17px);
   font-weight: 400;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.65;
@@ -299,7 +231,6 @@
   margin: 0;
 }
 
-/* ── Divider rule ── */
 .hero__rule {
   width: 72px;
   height: 2px;
@@ -315,7 +246,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  z-index: 6;
+  z-index: 11;
 }
 
 .hero__slider-num {
@@ -342,15 +273,8 @@
   transition: transform 0.3s ease;
 }
 
-.hero__slider-num.active {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.hero__slider-num.active::after {
-  transform: scaleX(1);
-}
-
+.hero__slider-num.active { color: #ffffff; font-weight: 700; }
+.hero__slider-num.active::after { transform: scaleX(1); }
 .hero__slider-num:hover { color: rgba(255,255,255,0.65); }
 
 /* ── Progress bar ── */
@@ -359,7 +283,7 @@
   bottom: 0; left: 0; right: 0;
   height: 2.5px;
   background: rgba(255,255,255,0.07);
-  z-index: 6;
+  z-index: 11;
 }
 
 .hero__progress-bar {
@@ -368,51 +292,7 @@
   animation: progress 5s linear forwards;
 }
 
-/* ── Desktop slides wrapper ── */
-.hero__slides-desktop {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* ── Mobile slides wrapper — hidden on desktop ── */
-.hero__slides-mobile {
-  display: none;
-  position: relative;
-  width: 100%;
-}
-
-.hero__mobile-slide {
-  display: none;
-  width: 100%;
-}
-
-.hero__mobile-slide--active {
-  display: block;
-}
-
-.hero__mobile-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  object-position: center center;
-}
-
-.hero__overlay--mobile {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 35, 24, 0.05) 0%,
-    rgba(10, 35, 24, 0.45) 100%
-  );
-  pointer-events: none;
-}
-
+/* ── Scroll button ── */
 .hero__scroll {
   position: absolute;
   bottom: 28px;
@@ -439,149 +319,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgba(255,255,255,0.6);
   transition: border-color 0.3s ease;
 }
 
-.hero__scroll:hover .hero__scroll-circle {
-  border-color: rgba(47, 107, 79, 0.7);
-}
-
-.hero__scroll svg {
-  stroke: rgba(255,255,255,0.60);
-}
+.hero__scroll:hover .hero__scroll-circle { border-color: rgba(47, 107, 79, 0.7); }
 
 /* ══════════════════════════════════════════
    MOBILE — ≤768px
-   Image with fixed aspect ratio, text overlay on top
+   Full-screen image slider, text at bottom
 ══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Hero becomes relative container */
   .hero {
+    min-height: 100vh;
     min-height: 100svh;
-    overflow: hidden;
-    background: #060c0a;
+    align-items: flex-end;
   }
 
-  /* Loading indicator on mobile */
-  .hero__loading {
-    min-height: 100svh;
-  }
-
-  /* Show desktop slides on mobile too */
-  .hero__slides-desktop {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-
-  /* Optimize slide rendering on mobile */
-  .hero__slide {
-    background: linear-gradient(135deg, #0a1810 0%, #060c0a 100%);
-  }
-  
   .hero__slide-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    /* Force hardware acceleration */
+    object-position: var(--pos-m, var(--pos, center center));
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
   }
 
-  /* Each mobile slide — fixed aspect ratio box */
-  .hero__mobile-slide {
-    display: none;
-    width: 100%;
-    position: relative;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #060c0a;
-  }
-
-  .hero__mobile-slide--active {
-    display: block;
-  }
-
-  /* Image fills the aspect-ratio box, cropped to fit */
-  .hero__mobile-img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center 30%;
-  }
-
-  /* Mobile overlay — gradient from bottom so text is readable */
-  .hero__overlay--mobile {
-    position: absolute;
-    inset: 0;
+  /* Bottom-heavy gradient so text is readable */
+  .hero__overlay {
     background: linear-gradient(
       180deg,
-      rgba(6, 12, 10, 0.15) 0%,
-      rgba(6, 12, 10, 0.30) 50%,
-      rgba(6, 12, 10, 0.75) 85%,
+      rgba(6, 12, 10, 0.25) 0%,
+      rgba(6, 12, 10, 0.20) 40%,
+      rgba(6, 12, 10, 0.75) 75%,
       rgba(6, 12, 10, 0.95) 100%
     );
-    pointer-events: none;
-    z-index: 2;
   }
 
-  /* Overlay on desktop slides — hide */
-  .hero__overlay:not(.hero__overlay--mobile) {
-    display: none;
-  }
+  .hero__overlay::after { display: none; }
+  .hero__grid-pattern { display: none; }
 
-  /* Keep overlay */
-  .hero__overlay {
-    display: block;
-  }
-
-  /* Hide grid pattern */
-  .hero__grid-pattern {
-    display: none;
-  }
-
-  /* Hide desktop logo & call btn */
   .hero__logo,
-  .hero__call-btn {
-    display: none;
-  }
+  .hero__call-btn,
+  .hero__scroll { display: none; }
 
-  /* Hide scroll indicator */
-  .hero__scroll {
-    display: none;
-  }
-
-  /* Progress bar — at bottom of the image block */
-  .hero__progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 6;
-  }
-
-  /* Text container — overlaid on top of the image at bottom */
   .hero__container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    padding: 0 20px 40px;
-    min-height: unset;
+    padding: 0 20px 56px;
     align-items: flex-end;
     justify-content: flex-start;
     background: transparent;
   }
 
   .hero__left {
-    display: block;
     max-width: 100%;
-    text-align: left;
-    opacity: 1 !important;
-    transform: none !important;
     width: 100%;
   }
 
@@ -589,89 +376,40 @@
     font-size: clamp(24px, 7.5vw, 38px);
     line-height: 1.05;
     margin-bottom: 8px;
-    color: #fff;
   }
 
   .hero__tagline {
     font-size: clamp(12px, 3.5vw, 15px);
     line-height: 1.6;
-    color: rgba(255,255,255,0.80);
+    color: rgba(255,255,255,0.85);
   }
 
-  .hero__tagline br {
-    display: none;
-  }
+  .hero__tagline br { display: none; }
 
   .hero__rule {
     width: 40px;
     margin: 14px 0 0;
   }
 
-  /* Slider numbers — over the image, bottom right */
   .hero__slider-nums {
-    position: absolute;
-    bottom: 14px;
+    bottom: 18px;
     right: 16px;
-    top: unset;
-    left: unset;
-    margin-top: 0;
-    gap: 10px;
-    z-index: 7;
+    gap: 12px;
   }
 
   .hero__slider-num {
     font-size: 12px;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.5);
   }
 
-  .hero__slider-num.active {
-    color: #fff;
-  }
+  .hero__slider-num.active { color: #fff; }
 
-  /* On mobile, shift second slide to show the gate (right side of image) */
-  .hero__slide:nth-child(2) .hero__slide-img {
-    object-position: 70% top !important;
-  }
-
-  /* Progress bar */
-  .hero__progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  /* page-hero logo & call btn (inner pages) */
   .page-hero__logo,
-  .page-hero__call-btn {
-    display: none;
-  }
-
-  /* Make the whole hero section height = image height */
-  .hero {
-    position: relative;
-  }
+  .page-hero__call-btn { display: none; }
 }
 
 @media (max-width: 480px) {
-  .hero__mobile-slide {
-    aspect-ratio: 3 / 4;
-  }
-
-  .hero__mobile-img {
-    object-position: center 25%;
-  }
-
-  .hero__headline {
-    font-size: clamp(22px, 7.5vw, 32px);
-  }
-
-  .hero__tagline {
-    font-size: clamp(11px, 3.5vw, 13px);
-  }
-
-  .hero__container {
-    padding: 0 16px 36px;
-  }
+  .hero__container { padding: 0 16px 52px; }
+  .hero__headline { font-size: clamp(22px, 7.5vw, 32px); }
+  .hero__tagline { font-size: clamp(11px, 3.5vw, 13px); }
 }
-

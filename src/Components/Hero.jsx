@@ -13,22 +13,26 @@ const ChevronDown = () => (
   </svg>
 );
 
+// pos = desktop crop, posMobile = mobile crop (optional)
 const SLIDES = [
   {
     bg: Anandamhomes1,
     pos: "center 35%",
+    posMobile: "center 30%",
     headline: <>Thoughtfully<br />Planned Living</>,
     tagline: <>Premium plotted spaces shaped with trust,<br />clarity, and future-ready vision.</>,
   },
   {
     bg: Anandamslider2,
     pos: "center center",
+    posMobile: "70% center",
     headline: <>Built Around<br />Real Value</>,
     tagline: <>Designed for families, end users,<br />and long-term confidence.</>,
   },
   {
     bg: Anandamslider3,
     pos: "center 40%",
+    posMobile: "center 40%",
     headline: <>A Better<br />Address Ahead</>,
     tagline: <>Infrastructure-led growth, refined presentation,<br />and a smoother buying journey.</>,
   },
@@ -51,24 +55,24 @@ export default function Hero() {
 
   useEffect(() => {
     return () => {
-      if (introTimeoutRef.current) {
-        clearTimeout(introTimeoutRef.current);
-      }
-      if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current);
-      }
+      if (introTimeoutRef.current) clearTimeout(introTimeoutRef.current);
+      if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
     };
+  }, []);
+
+  // Preload all slide images so mobile doesn't show blank on switch
+  useEffect(() => {
+    SLIDES.forEach((s) => {
+      const img = new Image();
+      img.src = s.bg;
+    });
   }, []);
 
   const goTo = useCallback((idx) => {
     if (idx === current || fading) return;
 
-    if (introTimeoutRef.current) {
-      clearTimeout(introTimeoutRef.current);
-    }
-    if (transitionTimeoutRef.current) {
-      clearTimeout(transitionTimeoutRef.current);
-    }
+    if (introTimeoutRef.current) clearTimeout(introTimeoutRef.current);
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
 
     setTextVisible(false);
     introTimeoutRef.current = setTimeout(() => {
@@ -93,45 +97,35 @@ export default function Hero() {
   }, [current, goTo]);
 
   const slide = SLIDES[current];
-
-  // Debug: Check if images are properly imported
-  useEffect(() => {
-    console.log('Hero Images:', {
-      slide1: Anandamhomes1,
-      slide2: Anandamslider2,
-      slide3: Anandamslider3,
-      current: slide.bg
-    });
-  }, []);
+  const posVars = (s) => ({
+    "--pos": s.pos,
+    "--pos-m": s.posMobile || s.pos,
+  });
 
   return (
-    <section id="home" className="hero" style={{ position: "relative" }}>      
+    <section id="home" className="hero" style={{ position: "relative" }}>
       <div className="hero__slides-desktop">
         {prev !== null && (
           <div className="hero__slide hero__slide--prev">
-            <img 
-              src={SLIDES[prev].bg} 
-              alt="" 
+            <img
+              src={SLIDES[prev].bg}
+              alt=""
               className="hero__slide-img"
               loading="eager"
               decoding="async"
-              style={{
-                objectPosition: SLIDES[prev].pos,
-              }}
+              style={posVars(SLIDES[prev])}
             />
           </div>
         )}
         <div className="hero__slide hero__slide--active">
-          <img 
-            src={slide.bg} 
-            alt="" 
+          <img
+            src={slide.bg}
+            alt=""
             className="hero__slide-img"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
-            style={{
-              objectPosition: slide.pos,
-            }}
+            fetchPriority="high"
+            style={posVars(slide)}
           />
         </div>
       </div>
@@ -173,6 +167,7 @@ export default function Hero() {
         {SLIDES.map((_, i) => (
           <button
             key={i}
+            type="button"
             className={`hero__slider-num${current === i ? " active" : ""}`}
             onClick={() => goTo(i)}
             aria-label={`Slide ${i + 1}`}
@@ -190,9 +185,9 @@ export default function Hero() {
         type="button"
         className="hero__scroll"
         onClick={() => {
-          const aboutSection = document.getElementById('about');
+          const aboutSection = document.getElementById("about");
           if (aboutSection) {
-            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }}
         aria-label="Scroll to About section"
