@@ -7,13 +7,13 @@ export default defineConfig({
     react(),
     ViteImageOptimizer({
       jpg: {
-        quality: 80,
+        quality: 75,
       },
       png: {
-        quality: 80,
+        quality: 75,
       },
       jpeg: {
-        quality: 80,
+        quality: 75,
       },
     }),
   ],
@@ -35,9 +35,27 @@ export default defineConfig({
               return 'vendor';
             }
           }
-        }
+        },
+        // Better asset naming for caching
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    // Increase target for better compression
+    target: 'es2015',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
   }
 })

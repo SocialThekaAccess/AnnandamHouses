@@ -5,13 +5,15 @@
   justify-content: center;
 }
 
-/* Hide logo on blog page - Navbar already shows it */
-.blog-hero--full .page-hero__logo {
-  display: none !important;
-}
+/* Hide logo on blog page only on mobile - Navbar already shows it */
+@media (max-width: 768px) {
+  .blog-hero--full .page-hero__logo {
+    display: none !important;
+  }
 
-.blog-hero--full .page-hero__logo img {
-  display: none !important;
+  .blog-hero--full .page-hero__logo img {
+    display: none !important;
+  }
 }
 
 /* -- Section Header -- */
