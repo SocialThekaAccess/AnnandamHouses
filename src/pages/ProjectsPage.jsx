@@ -172,7 +172,7 @@ export default function ProjectsPage({ onNavigate }) {
               <div>
                 <div className="section-label">Project Overview</div>
                 <h1 className="page-heading">
-                 Welcome to Anandam Exotica ΓÇô Lothal
+                 Welcome to Anandam Exotica – Lothal
                 </h1>
                 <h2 className="page-subheading" style={{ fontSize: '1.25rem', fontWeight: '400', marginTop: '0.75rem', marginBottom: '1rem', color: '#666' }}>
                   Where heritage meets modern living
