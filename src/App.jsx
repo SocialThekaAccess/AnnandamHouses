@@ -32,6 +32,8 @@ import BlogPostClearTitlePlots from "./pages/BlogPostClearTitlePlots";
 import BlogPostPremiumUNESCOPlots from "./pages/BlogPostPremiumUNESCOPlots";
 import BlogPostWeekendHomeGuide from "./pages/BlogPostWeekendHomeGuide";
 import BlogPostPlottedDevelopmentGuide from "./pages/BlogPostPlottedDevelopmentGuide";
+import DholeraBlog from "./pages/DholeraBlog";
+import DholeraAirportBlog from "./pages/DholeraAirportBlog";
 import ContactPage from "./pages/ContactPage";
 import LegalPage from "./pages/LegalPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -217,6 +219,8 @@ function AppInner() {
         <Route path="/blog/premium-plots-near-unesco-heritage-site-lothal-dholera" element={<BlogPostPremiumUNESCOPlots />} />
         <Route path="/blog/weekend-home-plots-ahmedabad-guide" element={<BlogPostWeekendHomeGuide />} />
         <Route path="/blog/plotted-development-near-ahmedabad-layout-guide" element={<BlogPostPlottedDevelopmentGuide />} />
+        <Route path="/blog/dholera-smart-city-plots" element={<DholeraBlog />} />
+        <Route path="/blog/plots-near-dholera-international-airport" element={<DholeraAirportBlog />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<LegalPage {...LEGAL_PAGES["/privacy-policy"]} onNavigate={(path) => navigate(path)} />} />
         <Route path="/terms-and-conditions" element={<LegalPage {...LEGAL_PAGES["/terms-and-conditions"]} onNavigate={(path) => navigate(path)} />} />

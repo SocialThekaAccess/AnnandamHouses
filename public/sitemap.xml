@@ -156,6 +156,22 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Blog: Dholera Smart City Plots -->
+  <url>
+    <loc>https://anandamproperties.com/blog/dholera-smart-city-plots</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Plots Near Dholera International Airport -->
+  <url>
+    <loc>https://anandamproperties.com/blog/plots-near-dholera-international-airport</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://anandamproperties.com/privacy-policy</loc>

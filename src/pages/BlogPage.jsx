@@ -14,6 +14,8 @@ import dholeraSIRSmartCityImg from "../assets/Dholera SIR Smart City Investment_
 import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real Estate_ Why Plots Near Dholera International Airport Are Drawing Attention.png";
 import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
 import premiumUNESCOPlotsImg from "../assets/Premium Plots Near UNESCO Heritage Site_ Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat.png";
+import dholeraSmartCityPlotsImg from "../assets/DholeraSmartCityPlots.png";
+import dholeraSmartCityInvestmentGuideImg from "../assets/DholeraSmartCityInvestmentGuide.png";
 import sttGdcImg from "../assets/STT GDC Dholera ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation.png";
 import railwayImg from "../assets/Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line.png";
 import { useCallModal } from "../context/CallModalContext";
@@ -33,6 +35,24 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Investment Guide",
+    date: "October 2026",
+    title: "Dholera Smart City Plots: A Practical Investor's Guide to Gujarat's Fastest-Growing Corridor",
+    excerpt: "Explore Dholera Smart City plots with Anandam Properties: premium gated plots of 60-106 sq mt, clear titles and ready infrastructure. Book your free site visit today.",
+    read: "15 min read",
+    img: dholeraSmartCityPlotsImg,
+    link: "/blog/dholera-smart-city-plots",
+  },
+  {
+    tag: "Buyer's Guide",
+    date: "October 2026",
+    title: "Plots Near Dholera International Airport: A Smart Buyer's Guide to Gujarat's Emerging Corridor",
+    excerpt: "Looking for plots near Dholera international airport? Anandam Properties offers premium gated plots of 60-106 sq mt with clear titles. Book your free site visit today.",
+    read: "14 min read",
+    img: dholeraSmartCityPlotsImg,
+    link: "/blog/plots-near-dholera-international-airport",
+  },
   {
     tag: "Lifestyle & Investment",
     date: "October 2026",
