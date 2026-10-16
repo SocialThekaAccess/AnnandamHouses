@@ -15,7 +15,6 @@ import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real E
 import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
 import premiumUNESCOPlotsImg from "../assets/Premium Plots Near UNESCO Heritage Site_ Exploring Lothal, Dholera and Long-Term Investment Plots in Gujarat.png";
 import dholeraSmartCityPlotsImg from "../assets/DholeraSmartCityPlots.png";
-import dholeraSmartCityInvestmentGuideImg from "../assets/DholeraSmartCityInvestmentGuide.png";
 import sttGdcImg from "../assets/STT GDC Dholera ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation.png";
 import railwayImg from "../assets/Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line.png";
 import { useCallModal } from "../context/CallModalContext";
