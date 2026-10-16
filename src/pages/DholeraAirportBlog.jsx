@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./PageShell.css";
 import "./BlogPostPage.css";
-import featuredImg from "../assets/DholeraSmartCityPlots.png";
+import featuredImg from "../assets/Plots near Dholera international airport.png";
 
 export default function DholeraAirportBlog() {
   useEffect(() => {
