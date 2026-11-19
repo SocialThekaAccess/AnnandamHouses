@@ -9,7 +9,7 @@ import plottedDevelopmentGuideImg from "../assets/Aerial Plotted Development Nea
 import lothalCorridorImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is Emerging as Gujarat's Next Real Estate Destination.png";
 import weekendHomeImg from "../assets/Weekend Home Plots Near Ahmedabad Why Families Are Choosing Lothal Over the Usual Getaway Spots.png";
 import microLocationImg from "../assets/Plots in Lothal Why the Lothal-Dholera Corridor is the Next Growth Hub.png";
-import dholeraExpresswayImg from "../assets/Dholera Expressway Property Investment_ Why a Plotted Development Near Ahmedabad Deserves Long-Term Attention.png";
+import dholeraExpresswayImg from "../assets/Dholera Expressway Property Investment How Connectivity Shapes Land Value in Gujarat.png";
 import dholeraSIRSmartCityImg from "../assets/Dholera SIR Smart City Investment_ Understanding Dholera SIR Investment Plots and Dholera Smart City Plots.png";
 import dmicRealEstateImg from "../assets/Delhi Mumbai Industrial Corridor Real Estate_ Why Plots Near Dholera International Airport Are Drawing Attention.png";
 import clearTitlePlotsImg from "../assets/Residential Plots Gujarat_ What to Check Before You Buy Plots in Gujarat for Long-Term Investment.png";
@@ -18,6 +18,10 @@ import dholeraSmartCityPlotsImg from "../assets/DholeraSmartCityPlots.png";
 import plotsNearDholeraAirportImg from "../assets/Plots near Dholera international airport.png";
 import sttGdcImg from "../assets/STT GDC Dholera ₹8,000–₹10,000 Crore Data Centre Investment Under Evaluation.png";
 import railwayImg from "../assets/Western Railway Issues ₹18,901.68 Crore EPC Tender for Sarkhej-Dholera Semi High-Speed Rail Line.png";
+import dholeraSIRInvestmentPlotsImg from "../assets/Dholera SIR Investment Plots What Smart Buyers Should Know Before Investing.png";
+import plotsInLothalImg from "../assets/Plots in Lothal A Buyer's Guide to Land Near Gujarat's Ancient Harappan Port.png";
+import anandamExoticaLothalImg from "../assets/Anandam Exotica Lothal A Gated Plotted Community With Clear Titles in Gujarat's Growth Corridor.png";
+import buyPlotsInGujaratImg from "../assets/Buy Plots in Gujarat A Practical Guide to Long-Term Investment and Weekend Home Land.png";
 import { useCallModal } from "../context/CallModalContext";
 
 const CallNowBtn = () => {
@@ -35,6 +39,51 @@ const CallNowBtn = () => {
 };
 
 const BLOGS = [
+  {
+    tag: "Investment Guide",
+    date: "November 2026",
+    title: "Dholera SIR Investment Plots: What Smart Buyers Should Know Before Investing",
+    excerpt: "Exploring Dholera SIR investment plots? Understand Dholera Smart City plots, infrastructure progress, risks and due diligence before you invest.",
+    read: "18 min read",
+    img: dholeraSIRInvestmentPlotsImg,
+    link: "/blog/dholera-sir-investment-plots-guide",
+  },
+  {
+    tag: "Buyer's Guide",
+    date: "November 2026",
+    title: "Plots in Lothal: A Buyer's Guide to Land Near Gujarat's Ancient Harappan Port",
+    excerpt: "Looking at plots in Lothal? Explore residential plots near Lothal, heritage tourism, Lothal real estate investment potential and what to check first.",
+    read: "16 min read",
+    img: plotsInLothalImg,
+    link: "/blog/plots-in-lothal-buyers-guide",
+  },
+  {
+    tag: "Infrastructure Investment",
+    date: "November 2026",
+    title: "Dholera Expressway Property Investment: How Connectivity Shapes Land Value in Gujarat",
+    excerpt: "Understand Dholera expressway property investment, airport links, Delhi Mumbai industrial corridor real estate and Lothal Dholera corridor plots before buying.",
+    read: "17 min read",
+    img: dholeraExpresswayImg,
+    link: "/blog/dholera-expressway-property-investment-guide",
+  },
+  {
+    tag: "Project Spotlight",
+    date: "November 2026",
+    title: "Anandam Exotica Lothal: A Gated Plotted Community With Clear Titles in Gujarat's Growth Corridor",
+    excerpt: "Discover Anandam Exotica Lothal, a gated plotted development near Ahmedabad. Learn what clear title residential plots in Gujarat mean and what to verify.",
+    read: "15 min read",
+    img: anandamExoticaLothalImg,
+    link: "/blog/anandam-exotica-lothal-gated-community",
+  },
+  {
+    tag: "Buyer's Guide",
+    date: "November 2026",
+    title: "Buy Plots in Gujarat: A Practical Guide to Long-Term Investment and Weekend Home Land",
+    excerpt: "Planning to buy plots in Gujarat? Learn how to choose long term investment plots Gujarat buyers trust, plus weekend home plots near Ahmedabad.",
+    read: "20 min read",
+    img: buyPlotsInGujaratImg,
+    link: "/blog/buy-plots-in-gujarat-investment-guide",
+  },
   {
     tag: "Investment Guide",
     date: "October 2026",
@@ -221,7 +270,7 @@ export default function BlogPage({ onNavigate }) {
           </div>
           <div className="blog-section-header__right">
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">13</span>
+              <span className="blog-section-header__stat-num">18</span>
               <span className="blog-section-header__stat-label">Articles</span>
             </div>
             <div className="blog-section-header__stat">
@@ -229,7 +278,7 @@ export default function BlogPage({ onNavigate }) {
               <span className="blog-section-header__stat-label">Latest Year</span>
             </div>
             <div className="blog-section-header__stat">
-              <span className="blog-section-header__stat-num">15</span>
+              <span className="blog-section-header__stat-num">20</span>
               <span className="blog-section-header__stat-label">Min Read</span>
             </div>
           </div>
